@@ -1,0 +1,5 @@
+id,first_name,last_name,department,status
+1000,Alice,Smith,Engineering,active
+1001,Bob,Jones,Marketing,active
+1002,Charlie,Brown,Sales,inactive
+1003,Diana,Prince,Executive,active

