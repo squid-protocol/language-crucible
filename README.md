@@ -29,6 +29,13 @@ The Crucible contains raw extractions from the following paradigms, testing spec
 * **The Legacy Regex Trap (JavaScript / jQuery & Perl):** Tests unstructured string manipulation, prototype pollution, and extreme cyclomatic complexity.
 * **The Embedded Hardware Boundary (C / Doom & C++ / Godot):** Tests raw pointer math, manual memory allocation, and OS-level I/O abstractions.
 
+## Golden-Master Verification: How GitGalaxy Actually Uses This Repo
+Beyond being a stress test, this repository is the empirical backbone of GitGalaxy's own test suite — the check that the whole engine, wired together, produces the *right* answer on real code, not just on synthetic strings a test author thought to write.
+
+GitGalaxy pins this repo to a tagged release (currently `v1.0`) and checks two deterministic snapshots into its own repo: `tests/golden_master_audit.json` and `tests/golden_master_zero_dep_audit.json`, one for each of the engine's two dependency modes. On every pull request that touches GitGalaxy's parsing engine, its `crucible-audit` CI job clones this exact tagged corpus fresh and re-runs a full scan, then diffs the output against those checked-in snapshots — field by field, down to individual structural-signature counts per file. A diff means GitGalaxy's output changed on this real, unmodified code; it's either a regression that gets fixed, or a deliberate improvement whose new baseline gets explicitly re-blessed (never a blind overwrite).
+
+This is why the paradigms above aren't just adversarial-formatting exercises — every one of them has caught, and continues to guard against, real regressions in GitGalaxy's structural-signature regexes. See GitGalaxy's own [`tests/README.md`](https://github.com/squid-protocol/gitgalaxy/blob/main/tests/README.md#5-golden-master-differential-testing-the-language-crucible) for the full mechanism, and [epic #518](https://github.com/squid-protocol/gitgalaxy/issues/518) for the audit that used this corpus to verify every one of ~40 real regex bugs found across 6 languages before merging.
+
 ## Benchmark Execution
 To run the benchmark and generate the forensic exposure physics:
 
