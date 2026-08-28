@@ -84,6 +84,12 @@ for the full mechanism, and [epic #518](https://github.com/squid-protocol/gitgal
 for the audit that used this corpus to verify every one of ~40 real regex bugs found across 6
 languages before merging.
 
+Cutting a new tag doesn't update that pin by itself — see [`RELEASING.md`](RELEASING.md) for
+the full checklist, including the two hardcoded references in GitGalaxy's own workflows that
+also need to move. And every file's upstream source, commit, and license is tracked in the
+root [`SOURCES.md`](SOURCES.md) — see that file's "Confidence levels" section for what's been
+independently verified versus what's a best-effort match against the source pool.
+
 ## Running a Scan
 
 ```bash

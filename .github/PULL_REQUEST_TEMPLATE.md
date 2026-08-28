@@ -9,3 +9,10 @@ By submitting this Pull Request, you acknowledge the following constraints:
 
 ### Description of Paradigm
 *Describe what this code represents. What parser limitation or structural boundary is this designed to test?*
+
+### Source & License
+*Required for any new file(s) under `data/`. See [`SOURCES.md`](../SOURCES.md) for the format and confidence-level conventions this repo uses (issue [#4](https://github.com/squid-protocol/language-crucible/issues/4)).*
+- **Upstream repo URL:**
+- **Exact commit (if known):**
+- **License:**
+- **`data/<language>/SOURCES.md` row added:** yes / no *(if no, explain why — e.g. license genuinely couldn't be determined)*

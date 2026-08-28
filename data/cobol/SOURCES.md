@@ -9,28 +9,38 @@ artifacts from prior GitGalaxy runs (forged JCL, `*_gitgalaxy_clean_*`
 output directories), those were identified by header/marker inspection and
 explicitly excluded — see notes below.
 
-| Repo folder | Files | Upstream | License | Notes |
-|---|---|---|---|---|
-| `cics-genapp` | 44 | https://github.com/cicsdev/cics-genapp | Eclipse Public License 2.0 | IBM Hursley CICS TS "GenApp" insurance demo. Expanded from 17 files to the complete COBOL/copybook program set. |
-| `cics-banking-sample-application-cbsa` | 66 | https://github.com/cicsdev/cics-banking-sample-application-cbsa | Eclipse Public License 2.0 | IBM CBSA — full CICS/DB2/VSAM bank teller app. Expanded from 4 files to the complete `cobol_src` + `cobol_copy` set. |
-| `CICS-Cobol` | 50 | https://github.com/mainframe-projects/CICS-Cobol | GNU GPL v2.0 | New. Numbered CICS/COBOL language-feature demonstration programs (INSPECT, PERFORM, tables, VSAM access, `EXEC CICS`). |
-| `cobol-programming-course` | 7 | https://github.com/openmainframeproject/cobol-programming-course | CC-BY-4.0 | New. Open Mainframe Project training course COBOL labs (incl. Db2 embedded SQL). |
-| `zopeneditor-sample` | 8 unique | https://github.com/IBM/zopeneditor-sample | Apache License 2.0 | New. IBM z/OS Explorer/Editor sample COBOL programs + copybooks. |
-| `cash-account-cobol` | 3 | https://github.com/IBMStockTrader/cash-account-cobol | Apache License 2.0 | New. IBM Stock Trader's CICS/DB2/VSAM cash-account microservice back end. |
-| `aws-mainframe-modernization-carddemo` | 72 | https://github.com/aws-samples/aws-mainframe-modernization-carddemo | MIT (upstream) — **not verified in this copy, see caveat below** | New. Full CardDemo online (`COxxx`) CICS transactions + batch (`CBxxx`) programs and copybooks. |
-| `cobrix` | 35 | https://github.com/AbsaOSS/cobrix | Apache License 2.0 | Expanded from 9 to 35 files — ABSA Cobrix Spark-COBOL reader's copybook/data-layout test fixtures. |
-| `gnucobol` | 4 | https://github.com/paulsmith/gnucobol | GNU GPL v3.0 (LGPL for library parts, see `COPYING.LESSER`) | New. Official GnuCOBOL compiler tutorial/test programs. Distinct from `gnucobol_internals`, which holds compiler source. |
-| `gnucobol_internals` | 7 | (pre-existing) | — | Unchanged — GnuCOBOL compiler internals (C source), not application COBOL. |
-| `che-che4z-lsp-for-cobol` | 3 | https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol | Eclipse Public License 2.0 | Unchanged (DB2/DataCom `SQLCA`/`SQLDA` copybooks). Its `cicsGenApp` test fixtures were skipped as duplicates of `cics-genapp` above; its embedded CardDemo fixture was promoted to its own `aws-mainframe-modernization-carddemo` folder instead (see below). |
+| Repo folder | Files | Upstream | Commit | License | Notes |
+|---|---|---|---|---|---|
+| `cics-genapp` | 44 | https://github.com/cicsdev/cics-genapp | `63eca1b670d9199637bdc2ca7df6e4189a58c892` | Eclipse Public License 2.0 | IBM Hursley CICS TS "GenApp" insurance demo. Expanded from 17 files to the complete COBOL/copybook program set. |
+| `cics-banking-sample-application-cbsa` | 66 | https://github.com/cicsdev/cics-banking-sample-application-cbsa | `46cbda52051d5cded017d72ad653df68b8ec1b60` | Eclipse Public License 2.0 | IBM CBSA — full CICS/DB2/VSAM bank teller app. Expanded from 4 files to the complete `cobol_src` + `cobol_copy` set. |
+| `CICS-Cobol` | 50 | https://github.com/mainframe-projects/CICS-Cobol | `3fd4d46cabc39079ab198c52c235e58ab017beb7` | GNU GPL v2.0 | New. Numbered CICS/COBOL language-feature demonstration programs (INSPECT, PERFORM, tables, VSAM access, `EXEC CICS`). |
+| `cobol-programming-course` | 7 | https://github.com/openmainframeproject/cobol-programming-course | `11aca51998e11181925ff16c20b32c220360ff66` | CC-BY-4.0 | New. Open Mainframe Project training course COBOL labs (incl. Db2 embedded SQL). |
+| `zopeneditor-sample` | 8 unique | https://github.com/IBM/zopeneditor-sample | `41f70551d85233829a90f7891af2b56092b471c3` | Apache License 2.0 | New. IBM z/OS Explorer/Editor sample COBOL programs + copybooks. |
+| `cash-account-cobol` | 3 | https://github.com/IBMStockTrader/cash-account-cobol | `c35db0d1f283367109bcd5dfadd76560cf53b2dc` | Apache License 2.0 | New. IBM Stock Trader's CICS/DB2/VSAM cash-account microservice back end. |
+| `aws-mainframe-modernization-carddemo` | 72 | https://github.com/aws-samples/aws-mainframe-modernization-carddemo | unknown (see caveat) | MIT (upstream) — **not verified in this copy, see caveat below** | New. Full CardDemo online (`COxxx`) CICS transactions + batch (`CBxxx`) programs and copybooks. |
+| `cobrix` | 35 | https://github.com/AbsaOSS/cobrix | `7200b77cdebb4244137f88b48e908acfc4ccbee1` | Apache License 2.0 | Expanded from 9 to 35 files — ABSA Cobrix Spark-COBOL reader's copybook/data-layout test fixtures. |
+| `gnucobol` | 4 | https://github.com/paulsmith/gnucobol | `d139d06201cf0aba9d143e0f675f446c19603b36` | GNU GPL v3.0 (LGPL for library parts, see `COPYING.LESSER`) | New. Official GnuCOBOL compiler tutorial/test programs. Distinct from `gnucobol_internals`, which holds compiler source. |
+| `gnucobol_internals` | 7 | (pre-existing) | unknown (see root `SOURCES.md`) | — | Unchanged — GnuCOBOL compiler internals (C source), not application COBOL. |
+| `che-che4z-lsp-for-cobol` | 3 | https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol | `dd1133952579575082914476fa699667b8790e1d` | Eclipse Public License 2.0 | Unchanged (DB2/DataCom `SQLCA`/`SQLDA` copybooks). Its `cicsGenApp` test fixtures were skipped as duplicates of `cics-genapp` above; its embedded CardDemo fixture was promoted to its own `aws-mainframe-modernization-carddemo` folder instead (see below). |
 
 **Total: ~289 real COBOL/copybook files across 11 repos** (up from 53 files / 5 repos).
+
+Commits above are the exact `HEAD` of the corresponding clone in the
+`gitgalaxy/data` pool at the moment these files were copied (2026-08-28) —
+see the root `SOURCES.md`'s "Confidence levels" section for what this
+guarantees and doesn't.
 
 ## Caveats
 
 - **`aws-mainframe-modernization-carddemo`**: these files were not cloned
   directly from AWS's repo; they were found as an embedded fixture inside
   `che-che4z-lsp-for-cobol/tests/test_files/` (used upstream to test the
-  COBOL Language Server). No `LICENSE` file ships with that embedded copy.
+  COBOL Language Server). No `LICENSE` file ships with that embedded copy,
+  and because it's a vendored fixture rather than a standalone clone, there
+  is no independent commit to record for it — the closest available
+  reference is che-che4z-lsp-for-cobol's own commit above
+  (`dd1133952579575082914476fa699667b8790e1d`), which is when this fixture
+  was captured into that repo, not a commit of CardDemo itself.
   AWS's CardDemo repo is publicly MIT-licensed, but that hasn't been
   independently verified against this exact copy's provenance — confirm
   against the upstream repo before any external redistribution.

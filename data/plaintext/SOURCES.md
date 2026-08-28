@@ -1,0 +1,12 @@
+# plaintext corpus sources
+
+Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/language-crucible#4 — full per-repo attribution across `data/`). This category predates that audit, so most entries below are `pool-reference` confidence: a same-named clone was found in the `gitgalaxy/data` full-repo pool and its *current* commit is recorded, but that has not been verified as the exact snapshot these files were originally copied from. See the root `SOURCES.md` for the full methodology and what each confidence level means.
+
+| Repo folder | Files | Upstream | Commit | License | Notes |
+|---|---|---|---|---|---|
+| `ansible` | 1 | https://github.com/ansible/ansible | `8d24f0d32ffbc135cd1890c494ffa6730b994c8f` | GNU GPL v3.0 (from pool clone's COPYING, not found locally) | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `cpython` | 3 | https://github.com/python/cpython | `1fd66eadd258223a0e3446b5b23ff2303294112c` | present but unrecognized (see file) | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `django` | 1 | https://github.com/django/django.git | `6b90f8a8d6994dc62cd91dde911fe56ec3389494` | present but unrecognized (see file) (from pool clone's LICENSE.python, not found locally) | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `opencv` | 3 | https://github.com/opencv/opencv.git | `69bdcc93861cda196df935dd2975e6f1384ceced` | Apache License 2.0 | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+
+**Total: 8 files across 4 repo folder(s)** (4 pool-reference).
