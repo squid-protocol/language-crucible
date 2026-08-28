@@ -1,30 +1,34 @@
 # Releasing / tagging this repo
 
-This repo has exactly one git tag, `v1.0` (cut 2026-07-03). That tag matters
-more than a normal "version number" would: **GitGalaxy's own CI pins to it by
-name.** This document exists so cutting the next tag is a deliberate,
-informed decision — not something that happens accidentally, and not
-something that silently breaks GitGalaxy's CI when it does happen.
+This repo is currently tagged at `v1.10` (`v1.0` was cut 2026-07-03, `v1.10`
+on 2026-08-28). The tag matters more than a normal "version number" would:
+**GitGalaxy's own CI pins to it.** This document exists so cutting the next
+tag is a deliberate, informed decision — not something that happens
+accidentally, and not something that silently breaks GitGalaxy's CI when it
+does happen.
 
-## Why this isn't automatic
+## How the pin works (updated 2026-08-28)
 
-Two workflows in the separate `squid-protocol/gitgalaxy` repo hardcode
-`--branch v1.0` when cloning this corpus:
+Bumping `v1.0` → `v1.10` found the pin hardcoded in **eleven** separate
+places across the `gitgalaxy` repo: six workflow files' `git clone --branch`
+steps (not the two this document originally described — `tri-comparison-
+audit.yml`, `tri-comparison-history.yml`, `tree-sitter-accuracy-audit.yml`,
+and `tree-sitter-accuracy-history.yml` also clone this corpus and had drifted
+onto the same literal, undocumented anywhere), plus ~7 purely-informational
+mentions in docs and script error messages. That's now been consolidated
+into two sources of truth in `gitgalaxy`, not eleven:
 
-- **`.github/workflows/golden-crucible.yml`** — the `crucible-audit` job that
-  runs on every GitGalaxy PR, matrixed across full-precision and
-  zero-dependency modes. It clones this repo at `v1.0` and diffs the scan
-  output against two checked-in fixtures,
-  `tests/golden_master_audit.json` and `tests/golden_master_zero_dep_audit.json`.
-- **`.github/workflows/release-crucible-archive.yml`** — runs on a GitGalaxy
-  release, clones this repo at `v1.0` (same string, same comment: "same as
-  CI"), scans it, and opens an automated PR back into this repo archiving the
-  scan output under `raw_output/<release-tag>/`.
+- **`LANGUAGE_CRUCIBLE_REF`** — a GitHub Actions repository variable on
+  `squid-protocol/gitgalaxy`. Every workflow that clones this corpus reads
+  `${{ vars.LANGUAGE_CRUCIBLE_REF }}` instead of a literal tag.
+- **`tests/_crucible_pin.py`**'s `PINNED_TAG` constant — mirrors the variable
+  for local tooling and human-facing messages (a GitHub Actions variable
+  isn't importable from a local pytest run or a docstring).
 
-**Cutting a new tag here does nothing on its own.** There is no dynamic
-"latest tag" resolution — both workflows have to be edited to point at the
-new tag, in that other repo, or GitGalaxy's CI keeps testing against `v1.0`
-forever regardless of what lands on this repo's `main`.
+**Cutting a new tag here still does nothing on its own.** Nothing
+auto-detects a new release of this repo; both of the above still have to be
+updated by hand in `gitgalaxy`. What's changed is that it's now exactly two
+edits instead of potentially eleven silently-missed ones.
 
 ## The full checklist, in order
 
@@ -44,9 +48,15 @@ the very next PR that touches the parsing engine.
    ```
    Do this once per dependency mode (full-precision / zero-dependency) —
    `update_golden_master.py` only updates whichever fixture matches your
-   currently-installed packages. Review the diff it prints before confirming;
-   `golden-master-guard.yml` will flag (non-blockingly) that these fixtures
-   changed on the resulting PR, and the PR description needs to explain why.
+   currently-installed packages. Review the diff it prints before confirming.
+   **Before running either command**, check `git status` (and, if a local
+   sibling `../language-crucible` checkout is what `LANGUAGE_CRUCIBLE_PATH`
+   resolves to, check that checkout's `git status` too) — untracked or
+   ignored artifacts sitting in the corpus checkout get scanned and can
+   silently poison the fixture (see `gitgalaxy`'s
+   `.claude/rules/golden-master-guidelines.md`). `golden-master-guard.yml`
+   will flag (non-blockingly) that these fixtures changed on the resulting
+   PR, and the PR description needs to explain why.
 3. **Here**, cut the tag against the commit that was just blessed:
    ```bash
    git tag -a vX.Y -m "..." <commit>
@@ -55,9 +65,15 @@ the very next PR that touches the parsing engine.
    Write real release notes: summarize what's new since the last tag by
    category, and link the relevant `data/<language>/SOURCES.md` rows as the
    audit trail (see root [`SOURCES.md`](SOURCES.md)).
-4. **In `gitgalaxy`**, bump both hardcoded `--branch v1.0` strings (in
-   `golden-crucible.yml` and `release-crucible-archive.yml`) to `vX.Y`, in a
-   PR that references the fixture-regeneration PR from step 2.
+4. **In `gitgalaxy`**, in a PR that references the fixture-regeneration PR
+   from step 2:
+   ```bash
+   gh variable set LANGUAGE_CRUCIBLE_REF --body vX.Y --repo squid-protocol/gitgalaxy
+   ```
+   and update `tests/_crucible_pin.py`'s `PINNED_TAG` to match. Grep that
+   repo for the old tag string as a final check — a new workflow could always
+   have hardcoded a fresh literal since the last bump instead of using the
+   variable.
 
 Steps 2 and 4 happen in a different repository than this one — treat them as
 a coordinated cross-repo change, not something to do unilaterally from this
@@ -65,30 +81,19 @@ side.
 
 ## Where things stand right now
 
-`v1.0` → `main` is currently 16 commits behind, including:
-
-- The security-perimeter/PR-template chores (`75ce1f6`, `285b997`, `344448b`).
-- Two README rewrites (`433e7be`, `f71a531`) explaining the golden-master
-  mechanism and repositioning why this repo exists.
-- Two automated `raw_output/` baseline archives from GitGalaxy releases
-  (`9d37ebc` v2.4.5, `dbcc23a` v2.4.6) — these came from
-  `release-crucible-archive.yml` and don't themselves require a tag bump
-  here, since they're read-only artifacts about a past scan, not corpus
-  content GitGalaxy's tests scan against.
-- Three large real-content additions: COBOL/JCL (`b0703a7`), shell/PowerShell
-  (`e184f7b`), and Lua/LiveCode (`4ded4fe`) — plus this provenance-audit pass.
-
-That's a substantial, coherent batch — a reasonable point to consider cutting
-`v1.1`, but that's a call for whoever owns this repo to make deliberately,
-following the checklist above, not something done as a side effect of a
-content PR.
+`v1.10` was cut 2026-08-28 against `main`, covering everything through the
+COBOL/JCL, shell/PowerShell, Lua/LiveCode corpus expansions and the
+issue-#4 provenance audit — see the tag's own release notes and root
+[`SOURCES.md`](SOURCES.md) for the full breakdown. `gitgalaxy`'s pin has
+been bumped to match (PR
+[squid-protocol/gitgalaxy#2398](https://github.com/squid-protocol/gitgalaxy/pull/2398)),
+along with the source-of-truth consolidation described above.
 
 ## A known limitation worth a future issue
 
-The pin being a literal hardcoded string in two workflow files, with no
-"latest release" resolution, means this checklist has to be followed by hand
-every time. A future improvement in `gitgalaxy` — e.g. reading the pinned tag
-from a single config value, or resolving "latest tag" at CI time with an
-explicit opt-out for pinning to a specific one — would remove step 4 from
-this list entirely. That's out of scope for this repo to implement; noting
-it here so it isn't lost.
+The pin is still a value someone has to update by hand in two places in
+`gitgalaxy` — a GitHub Actions variable and a Python constant, not
+automatically discovered. A future improvement there — e.g. resolving
+"latest tag" at CI time with an explicit opt-out for pinning to a specific
+one — would remove step 4 from this list entirely. That's out of scope for
+this repo to implement; noting it here so it isn't lost.
