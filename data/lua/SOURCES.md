@@ -14,12 +14,18 @@ scripting (Pandoc document filters, a Redbean web server), and a genuinely
 unusual embedding (Lua running pre-kernel-boot as a BIOS/UEFI loader menu
 system).
 
-| Repo folder | Files | Upstream | License | Notes |
-|---|---|---|---|---|
-| `redis` | 20 | https://github.com/redis/redis (`deps/lua`) | MIT License (Lua's own upstream license, vendored) | **Replaces prior mislabeled content** — this folder previously held only `eval.c`/`script_lua.c`/etc., Redis's C-side *embedding* of the Lua VM, not a single line of actual Lua. Now holds the real Lua 5.1-era reference test/demo suite (`fib.lua`, `sieve.lua`, `life.lua`, `sort.lua`, coroutine/closure tests) plus `etc/strict.lua`. |
-| `cosmopolitan` | 45 | https://github.com/jart/cosmopolitan | ISC License (Cosmopolitan itself); vendored `third_party/lua` test suite carries Lua's own upstream copyright notice in-file (see e.g. `goto.lua`: "See Copyright Notice in file all.lua") | New. Official Lua 5.4 language conformance suite (`goto.lua`, `utf8.lua`, `bitwise.lua`, `coroutine.lua`, `gc.lua` — a newer dialect era than `redis`, exercising syntax that didn't exist in 5.1) plus real Redbean web-server demo scripts (routing, SQLite, crypto, HTTP). |
-| `pandoc` | 25 | https://github.com/jgm/pandoc | GNU GPL v2.0-or-later | New. Pandoc's Lua filter/writer engine test fixtures and module API bindings (`pandoc.list`, `pandoc.path`, `pandoc.template`, etc.) plus top-level filter examples — real production document-processing Lua. |
-| `freebsd-src` | 16 | https://github.com/freebsd/freebsd-src (`stand/lua`) | BSD (multiple clauses; see repo `LICENSE`) | New. The actual FreeBSD boot loader — `menu.lua`, `config.lua`, `loader.lua`, `cli.lua`, `drawer.lua`, `gfx-*.lua` — executed by `lualoader(8)` before the kernel is even running. All available `.lua` files included (man-page `.8`/`.5` files in the same directory were excluded, not Lua source). |
-| `darwin-xnu` | 7 | https://github.com/apple/darwin-xnu | Apple Public Source License 2.0 | New. All available Lua files: kernel `dtrace`/`ktrace` scripting tools (`tools/trace/`) and VM/counter benchmark scripts (`tests/`). |
+| Repo folder | Files | Upstream | Commit | License | Notes |
+|---|---|---|---|---|---|
+| `redis` | 20 | https://github.com/redis/redis (`deps/lua`) | `2ba0194fbe5820cab8602bfa633a7d27e97cabdd` | MIT License (Lua's own upstream license, vendored) | **Replaces prior mislabeled content** — this folder previously held only `eval.c`/`script_lua.c`/etc., Redis's C-side *embedding* of the Lua VM, not a single line of actual Lua. Now holds the real Lua 5.1-era reference test/demo suite (`fib.lua`, `sieve.lua`, `life.lua`, `sort.lua`, coroutine/closure tests) plus `etc/strict.lua`. |
+| `cosmopolitan` | 45 | https://github.com/jart/cosmopolitan | `eedf7d2db6e5ee0e228862690339c166a3f003a7` | ISC License (Cosmopolitan itself); vendored `third_party/lua` test suite carries Lua's own upstream copyright notice in-file (see e.g. `goto.lua`: "See Copyright Notice in file all.lua") | New. Official Lua 5.4 language conformance suite (`goto.lua`, `utf8.lua`, `bitwise.lua`, `coroutine.lua`, `gc.lua` — a newer dialect era than `redis`, exercising syntax that didn't exist in 5.1) plus real Redbean web-server demo scripts (routing, SQLite, crypto, HTTP). |
+| `pandoc` | 25 | https://github.com/jgm/pandoc | `7777de6adb166d92b4c9ee4b24054637ab8477b7` | GNU GPL v2.0-or-later | New. Pandoc's Lua filter/writer engine test fixtures and module API bindings (`pandoc.list`, `pandoc.path`, `pandoc.template`, etc.) plus top-level filter examples — real production document-processing Lua. |
+| `freebsd-src` | 16 | https://github.com/freebsd/freebsd-src (`stand/lua`) | `c70755bc0d8f703dbaa1520c15e8213a95847dd5` | BSD (multiple clauses; see repo `LICENSE`) | New. The actual FreeBSD boot loader — `menu.lua`, `config.lua`, `loader.lua`, `cli.lua`, `drawer.lua`, `gfx-*.lua` — executed by `lualoader(8)` before the kernel is even running. All available `.lua` files included (man-page `.8`/`.5` files in the same directory were excluded, not Lua source). |
+| `darwin-xnu` | 7 | https://github.com/apple/darwin-xnu | `2ff845c2e033bd0ff64b5b6aa6063a1f8f65aa32` | Apple Public Source License 2.0 | New. All available Lua files: kernel `dtrace`/`ktrace` scripting tools (`tools/trace/`) and VM/counter benchmark scripts (`tests/`). |
 
 **Total: ~113 real Lua files across 5 repos** (up from 0 real Lua files — the prior `redis` folder was entirely mislabeled C).
+
+Commits above are the exact `HEAD` of the corresponding clone in the
+`gitgalaxy/data` pool at the moment these files were copied (2026-08-28).
+Note `freebsd-src` and `darwin-xnu` share the same clones (and therefore the
+same commit hashes) as their entries in `../shell/SOURCES.md` — the same
+pool checkout, with different subdirectories selected for each language.
