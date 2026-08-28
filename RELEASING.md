@@ -1,7 +1,8 @@
 # Releasing / tagging this repo
 
-This repo is currently tagged at `v1.10` (`v1.0` was cut 2026-07-03, `v1.10`
-on 2026-08-28). The tag matters more than a normal "version number" would:
+This repo is currently tagged at `v1.1.0` (`v1.0` was cut 2026-07-03,
+`v1.1.0` on 2026-08-28).<sup>†</sup> The tag matters more than a normal
+"version number" would:
 **GitGalaxy's own CI pins to it.** This document exists so cutting the next
 tag is a deliberate, informed decision — not something that happens
 accidentally, and not something that silently breaks GitGalaxy's CI when it
@@ -9,7 +10,7 @@ does happen.
 
 ## How the pin works (updated 2026-08-28)
 
-Bumping `v1.0` → `v1.10` found the pin hardcoded in **eleven** separate
+Bumping `v1.0` → `v1.1.0` found the pin hardcoded in **eleven** separate
 places across the `gitgalaxy` repo: six workflow files' `git clone --branch`
 steps (not the two this document originally described — `tri-comparison-
 audit.yml`, `tri-comparison-history.yml`, `tree-sitter-accuracy-audit.yml`,
@@ -81,13 +82,20 @@ side.
 
 ## Where things stand right now
 
-`v1.10` was cut 2026-08-28 against `main`, covering everything through the
+`v1.1.0` was cut 2026-08-28 against `main`, covering everything through the
 COBOL/JCL, shell/PowerShell, Lua/LiveCode corpus expansions and the
-issue-#4 provenance audit — see the tag's own release notes and root
-[`SOURCES.md`](SOURCES.md) for the full breakdown. `gitgalaxy`'s pin has
-been bumped to match (PR
+issue-#4 provenance audit — see the
+[release notes](https://github.com/squid-protocol/language-crucible/releases/tag/v1.1.0)
+and root [`SOURCES.md`](SOURCES.md) for the full breakdown. `gitgalaxy`'s pin
+has been bumped to match (PR
 [squid-protocol/gitgalaxy#2398](https://github.com/squid-protocol/gitgalaxy/pull/2398)),
 along with the source-of-truth consolidation described above.
+
+<sup>†</sup> A `v1.10` tag briefly existed for a few hours the same day,
+before any GitHub Release was published against it — a two-part-version
+naming slip, corrected to proper three-part semver before it was consumed
+anywhere beyond the still-open gitgalaxy PR above (which was updated to
+match). Deleted rather than kept around as a real prior release.
 
 ## A known limitation worth a future issue
 
