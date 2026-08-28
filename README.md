@@ -54,6 +54,7 @@ specific parsing boundary:
 * **The Legacy Regex Trap (JavaScript / jQuery & Perl):** Tests unstructured string manipulation, prototype pollution, and high cyclomatic complexity.
 * **The Embedded Hardware Boundary (C / Doom & C++ / Godot):** Tests raw pointer math, manual memory allocation, and OS-level I/O abstractions.
 * **The Mainframe Batch/Online Split (COBOL / JCL / CICS):** Tests the engine's ability to correlate two disjoint languages describing one system — job-control decks (`JCL`) that compile, bind, and schedule the very `EXEC CICS`/`EXEC SQL`-laden COBOL programs and copybooks they never textually reference by import. See `data/cobol/SOURCES.md` and `data/jcl/SOURCES.md` for the full provenance and license of every mainframe repo included.
+* **The Glue-Script Substrate (Shell / PowerShell):** Tests parsing across the two dialects that actually build, install, and operate every other paradigm here — POSIX/Bourne/ksh scripts from four decades of Unix-lineage kernels (BSD, illumos, Linux, Darwin XNU, Haiku, SerenityOS, ReactOS) plus Windows-native PowerShell build/CI tooling from the .NET and PowerShell projects themselves — with heavy dynamic dispatch (`eval`, sourcing, indirect variable expansion, cmdlet pipelines) and near-zero static import structure. See `data/shell/SOURCES.md` and `data/powershell/SOURCES.md` for full provenance and license.
 
 ## Golden-Master Verification: How GitGalaxy Actually Uses This Repo
 
