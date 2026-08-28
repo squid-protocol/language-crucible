@@ -40,41 +40,34 @@ the very next PR that touches the parsing engine.
 1. **Batch, don't tag per-PR.** A tag bump is a checkpoint, not a changelog
    entry. Let multiple content-addition PRs land on `main` first.
 2. **In `gitgalaxy`**, with a local checkout of this repo's `main` at the
-   commit you intend to tag: regenerate both golden-master fixtures against
-   it —
-   ```bash
-   python3 tests/tools/update_golden_master.py --yes
-   # or, per tests/README.md's documented shortcut:
-   python3 tests/tools/crucible_check.py --update --yes
-   ```
-   Do this once per dependency mode (full-precision / zero-dependency) —
-   `update_golden_master.py` only updates whichever fixture matches your
-   currently-installed packages. Review the diff it prints before confirming.
-   **Before running either command**, check `git status` (and, if a local
-   sibling `../language-crucible` checkout is what `LANGUAGE_CRUCIBLE_PATH`
-   resolves to, check that checkout's `git status` too) — untracked or
-   ignored artifacts sitting in the corpus checkout get scanned and can
-   silently poison the fixture (see `gitgalaxy`'s
-   `.claude/rules/golden-master-guidelines.md`). `golden-master-guard.yml`
-   will flag (non-blockingly) that these fixtures changed on the resulting
-   PR, and the PR description needs to explain why.
+   commit you intend to tag: work through
+   [`docs/self_scan/BUMPING_THE_CRUCIBLE_PIN.md`](https://github.com/squid-protocol/gitgalaxy/blob/main/docs/self_scan/BUMPING_THE_CRUCIBLE_PIN.md)
+   end to end. That single checklist — not this document — is the source of
+   truth for the `gitgalaxy`-side steps; it covers five separate things that
+   need regenerating together (golden masters, tri-comparison chart/ledger,
+   tree-sitter-accuracy chart/history, and any stale tree-sitter-accuracy
+   baselines), the prerequisites that have caused real CI failures when
+   skipped (a differently-named local checkout baking a wrong `corpus_path`
+   into a baseline; an untracked cache directory poisoning a fixture; the
+   Arduino-ctags shadowing trap), and stops with the golden masters blessed
+   but the pin not yet flipped — do not skip ahead to step 4 below before
+   that checklist says so.
 3. **Here**, cut the tag against the commit that was just blessed:
    ```bash
-   git tag -a vX.Y -m "..." <commit>
-   git push origin vX.Y
+   git tag -a vX.Y.Z -m "..." <commit>
+   git push origin vX.Y.Z
    ```
-   Write real release notes: summarize what's new since the last tag by
-   category, and link the relevant `data/<language>/SOURCES.md` rows as the
-   audit trail (see root [`SOURCES.md`](SOURCES.md)).
-4. **In `gitgalaxy`**, in a PR that references the fixture-regeneration PR
-   from step 2:
-   ```bash
-   gh variable set LANGUAGE_CRUCIBLE_REF --body vX.Y --repo squid-protocol/gitgalaxy
-   ```
-   and update `tests/_crucible_pin.py`'s `PINNED_TAG` to match. Grep that
-   repo for the old tag string as a final check — a new workflow could always
-   have hardcoded a fresh literal since the last bump instead of using the
-   variable.
+   Write real release notes (`gh release create vX.Y.Z --notes-file ...`,
+   not just an annotated tag message — the release notes are what's publicly
+   visible): summarize what's new since the last tag by category, and link
+   the relevant `data/<language>/SOURCES.md` rows as the audit trail (see
+   root [`SOURCES.md`](SOURCES.md)). Use proper three-part semver
+   (`vX.Y.Z`) — a two-part tag was tried once and had to be corrected before
+   it stuck (see the footnote below).
+4. **Back in `gitgalaxy`**, finish `BUMPING_THE_CRUCIBLE_PIN.md`'s remaining
+   steps: bump `LANGUAGE_CRUCIBLE_REF` and `tests/_crucible_pin.py`'s
+   `PINNED_TAG` together, grep for the old tag string as a final check, push,
+   and confirm CI actually passes before merging.
 
 Steps 2 and 4 happen in a different repository than this one — treat them as
 a coordinated cross-repo change, not something to do unilaterally from this
