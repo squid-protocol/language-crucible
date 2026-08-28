@@ -53,6 +53,7 @@ specific parsing boundary:
 * **The Immutable Ledger (Solidity / OpenZeppelin):** Tests financial transaction modifiers and raw `yul` EVM inline assembly.
 * **The Legacy Regex Trap (JavaScript / jQuery & Perl):** Tests unstructured string manipulation, prototype pollution, and high cyclomatic complexity.
 * **The Embedded Hardware Boundary (C / Doom & C++ / Godot):** Tests raw pointer math, manual memory allocation, and OS-level I/O abstractions.
+* **The Mainframe Batch/Online Split (COBOL / JCL / CICS):** Tests the engine's ability to correlate two disjoint languages describing one system — job-control decks (`JCL`) that compile, bind, and schedule the very `EXEC CICS`/`EXEC SQL`-laden COBOL programs and copybooks they never textually reference by import. See `data/cobol/SOURCES.md` and `data/jcl/SOURCES.md` for the full provenance and license of every mainframe repo included.
 
 ## Golden-Master Verification: How GitGalaxy Actually Uses This Repo
 
