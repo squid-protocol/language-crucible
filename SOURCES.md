@@ -41,7 +41,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `dockerfile` | 1 | 71 | 1 pool-reference | Audited | [`data/dockerfile/SOURCES.md`](data/dockerfile/SOURCES.md) |
 | `fortran` | 1 | 15 | 1 unknown | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
 | `go` | 2 | 17 | 2 pool-reference | Audited | [`data/go/SOURCES.md`](data/go/SOURCES.md) |
-| `groovy` | 2 | 9 | 2 pool-reference | Audited | [`data/groovy/SOURCES.md`](data/groovy/SOURCES.md) |
+| `groovy` | 16 | 329 | 14 exact, 2 pool-reference | Audited | [`data/groovy/SOURCES.md`](data/groovy/SOURCES.md) |
 | `haskell` | 1 | 12 | 1 pool-reference | Audited | [`data/haskell/SOURCES.md`](data/haskell/SOURCES.md) |
 | `hlo` | 1 | 4 | 1 unknown | Audited | [`data/hlo/SOURCES.md`](data/hlo/SOURCES.md) |
 | `html` | 15 | 67 | 8 exact, 7 unknown | Audited | [`data/html/SOURCES.md`](data/html/SOURCES.md) |
