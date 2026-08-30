@@ -34,6 +34,17 @@
   },
   {
     "category": "assembly",
+    "repo": "blst_generated_asm",
+    "path": "data/assembly/blst_generated_asm",
+    "files": 14,
+    "url": "https://github.com/supranational/blst",
+    "commit": "f62244ef50ad1a603decdb8f215e982d2a467bb6",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
     "repo": "bootos",
     "path": "data/assembly/bootos",
     "files": 4,
@@ -56,6 +67,61 @@
   },
   {
     "category": "assembly",
+    "repo": "cosmopolitan_runtime",
+    "path": "data/assembly/cosmopolitan_runtime",
+    "files": 17,
+    "url": "https://github.com/jart/cosmopolitan",
+    "commit": "eedf7d2db6e5ee0e228862690339c166a3f003a7",
+    "license": "ISC License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "cosmopolitan_syscalls",
+    "path": "data/assembly/cosmopolitan_syscalls",
+    "files": 15,
+    "url": "https://github.com/jart/cosmopolitan",
+    "commit": "eedf7d2db6e5ee0e228862690339c166a3f003a7",
+    "license": "ISC License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "cpm65_6502",
+    "path": "data/assembly/cpm65_6502",
+    "files": 21,
+    "url": "https://github.com/davidgiven/cpm65",
+    "commit": "ff7f5f938607195c562e53f0a4558086aab4663a",
+    "license": "BSD 2-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "freebsd_kernel_arch",
+    "path": "data/assembly/freebsd_kernel_arch",
+    "files": 17,
+    "url": "https://github.com/freebsd/freebsd-src",
+    "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
+    "license": "BSD (multiple clauses)",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "freebsd_libc_string",
+    "path": "data/assembly/freebsd_libc_string",
+    "files": 25,
+    "url": "https://github.com/freebsd/freebsd-src",
+    "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
+    "license": "BSD (multiple clauses)",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
     "repo": "hellosilicon",
     "path": "data/assembly/hellosilicon",
     "files": 5,
@@ -63,6 +129,83 @@
     "commit": "29170b7e69970e8bfb74e5f210bfe20fa2229d8a",
     "license": "MIT License",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "hellosilicon_aarch64",
+    "path": "data/assembly/hellosilicon_aarch64",
+    "files": 21,
+    "url": "https://github.com/below/HelloSilicon",
+    "commit": "29170b7e69970e8bfb74e5f210bfe20fa2229d8a",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "linux_1_0_kernel",
+    "path": "data/assembly/linux_1_0_kernel",
+    "files": 19,
+    "url": "https://github.com/kalamangga-net/linux-1.0",
+    "commit": "733a0282d6e855c5eee87c86733dca8c0f3e1a42",
+    "license": "GNU GPL v2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "nasm_testsuite",
+    "path": "data/assembly/nasm_testsuite",
+    "files": 19,
+    "url": "https://github.com/netwide-assembler/nasm",
+    "commit": "3cb6231581679a9ab1a8eeb0342375eb7002cebe",
+    "license": "BSD 2-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "os_tutorial_x86",
+    "path": "data/assembly/os_tutorial_x86",
+    "files": 23,
+    "url": "https://github.com/cfenollosa/os-tutorial",
+    "commit": "8002382ee56f876119f77217220b8a5034e9bac1",
+    "license": "BSD 3-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "raspberrypi_baremetal",
+    "path": "data/assembly/raspberrypi_baremetal",
+    "files": 16,
+    "url": null,
+    "commit": null,
+    "license": null,
+    "confidence": "unknown",
+    "note": "ARMv7/ARMv8 bare-metal .asm from PeterLemon/RaspberryPi (pool clone 5783e31ba16353413a9248431da464e37a5619d1). That repo ships no LICENSE/COPYING file anywhere and its README states no terms, so nothing is asserted. Kept for the ARM bare-metal dialect coverage; recorded unknown by design."
+  },
+  {
+    "category": "assembly",
+    "repo": "x86_bare_metal",
+    "path": "data/assembly/x86_bare_metal",
+    "files": 23,
+    "url": "https://github.com/cirosantilli/x86-bare-metal-examples",
+    "commit": "528ab2becc4992218ca0b7e297f3e1f1674268de",
+    "license": "GNU GPL v3.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "assembly",
+    "repo": "xv6_x86_kernel",
+    "path": "data/assembly/xv6_x86_kernel",
+    "files": 8,
+    "url": "https://github.com/mit-pdos/xv6-public",
+    "commit": "eeb7b415dbcb12cc362d0783e41c3d1f44066b17",
+    "license": "MIT License",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1584,6 +1727,105 @@
     "note": null
   },
   {
+    "category": "sqlite",
+    "repo": "dancer2_sqlite",
+    "path": "data/sqlite/dancer2_sqlite",
+    "files": 3,
+    "url": "https://github.com/PerlDancer/Dancer2",
+    "commit": "25176c5b860493b4a6dcda5bc12ecbefa67df716",
+    "license": "Perl 5 terms (Artistic-1.0-or-GPL-1.0-or-later)",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "flask_tutorial_sqlite",
+    "path": "data/sqlite/flask_tutorial_sqlite",
+    "files": 3,
+    "url": "https://github.com/pallets/flask",
+    "commit": "7ef2946fb5151b745df30201b8c27790cac53875",
+    "license": "BSD 3-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "mediawiki_sqlite_alterpatches",
+    "path": "data/sqlite/mediawiki_sqlite_alterpatches",
+    "files": 19,
+    "url": "https://github.com/wikimedia/mediawiki",
+    "commit": "8863834e673e4f297bfbc40cd4d54ee9027ad876",
+    "license": "GNU GPL v2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "mediawiki_sqlite_tables",
+    "path": "data/sqlite/mediawiki_sqlite_tables",
+    "files": 11,
+    "url": "https://github.com/wikimedia/mediawiki",
+    "commit": "8863834e673e4f297bfbc40cd4d54ee9027ad876",
+    "license": "GNU GPL v2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "prisma_sqlite_migrations",
+    "path": "data/sqlite/prisma_sqlite_migrations",
+    "files": 5,
+    "url": "https://github.com/prisma/prisma",
+    "commit": "ada077ba32b5801d00d32f1434a45aaae7bc09a9",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "prisma_typed_sql",
+    "path": "data/sqlite/prisma_typed_sql",
+    "files": 17,
+    "url": "https://github.com/prisma/prisma",
+    "commit": "ada077ba32b5801d00d32f1434a45aaae7bc09a9",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "sqitch_sqlite_engine",
+    "path": "data/sqlite/sqitch_sqlite_engine",
+    "files": 5,
+    "url": "https://github.com/sqitchers/sqitch",
+    "commit": "0ab857e3bb5060e6feda0dd3e05ebb04f7aac85b",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "sqlite_cli_scripts",
+    "path": "data/sqlite/sqlite_cli_scripts",
+    "files": 12,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "sqlite",
+    "repo": "yii2_sqlite_schema",
+    "path": "data/sqlite/yii2_sqlite_schema",
+    "files": 7,
+    "url": "https://github.com/yiisoft/yii2",
+    "commit": "9265980e089733f657609a37a95ab86176cb6c00",
+    "license": "BSD 3-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "swift",
     "repo": "alamofire",
     "path": "data/swift/alamofire",
@@ -1640,6 +1882,28 @@
   },
   {
     "category": "tcl",
+    "repo": "macports_port_api",
+    "path": "data/tcl/macports_port_api",
+    "files": 20,
+    "url": "https://github.com/macports/macports-base",
+    "commit": "81fb1d2acda818f1075dd2196b650466dbd35117",
+    "license": "BSD 3-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "tcl",
+    "repo": "macports_registry",
+    "path": "data/tcl/macports_registry",
+    "files": 10,
+    "url": "https://github.com/macports/macports-base",
+    "commit": "81fb1d2acda818f1075dd2196b650466dbd35117",
+    "license": "BSD 3-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "tcl",
     "repo": "sqlite",
     "path": "data/tcl/sqlite",
     "files": 13,
@@ -1647,6 +1911,72 @@
     "commit": "f270460366134e350ad6e1509957f812c9700d2b",
     "license": "Public Domain (from pool clone's LICENSE.md, not found locally)",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "tcl",
+    "repo": "sqlite_core_dml",
+    "path": "data/tcl/sqlite_core_dml",
+    "files": 21,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "tcl",
+    "repo": "sqlite_cte_window",
+    "path": "data/tcl/sqlite_cte_window",
+    "files": 15,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "tcl",
+    "repo": "sqlite_fts5",
+    "path": "data/tcl/sqlite_fts5",
+    "files": 23,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "tcl",
+    "repo": "sqlite_json_triggers",
+    "path": "data/tcl/sqlite_json_triggers",
+    "files": 19,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "tcl",
+    "repo": "sqlite_query_planner",
+    "path": "data/tcl/sqlite_query_planner",
+    "files": 18,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "tcl",
+    "repo": "sqlite_rtree",
+    "path": "data/tcl/sqlite_rtree",
+    "files": 17,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
     "note": null
   },
   {

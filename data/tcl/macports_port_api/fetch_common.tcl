@@ -1,0 +1,280 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+#
+# Copyright (c) 2002-2003 Apple Inc.
+# Copyright (c) 2004-2014, 2016-2018 The MacPorts Project
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 3. Neither the name of Apple Inc. nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+package provide fetch_common 1.0
+package require portutil 1.0
+package require Pextlib 1.0
+
+namespace eval portfetch {
+    variable urlmap
+    array set urlmap {}
+    variable hostregex {[a-zA-Z]+://([a-zA-Z0-9\.\-_]+)}
+}
+
+# Name space for internal site lists storage
+namespace eval portfetch::mirror_sites {
+    variable sites
+
+    array set sites {}
+}
+
+# percent-encode all characters in str that are not unreserved in URIs
+proc portfetch::percent_encode {str} {
+    set outstr ""
+    set len [string length $str]
+    for {set i 0} {$i < $len} {incr i} {
+        set char [string index $str $i]
+        switch -- $char {
+            {-} -
+            {.} -
+            {_} -
+            {~} {
+                append outstr $char
+            }
+            default {
+                if {[string is ascii -strict $char] && [string is alnum -strict $char]} {
+                    append outstr $char
+                } else {
+                    foreach {a b} [split [format %02X [scan $char %c]] {}] {
+                        append outstr "%${a}${b}"
+                    }
+                }
+            }
+        }
+    }
+    return $outstr
+}
+
+# Given a site url and the name of the distfile, assemble url and
+# return it.
+proc portfetch::assemble_url {site distfile} {
+    if {[string index $site end] ne "/"} {
+        append site /
+    }
+    return "${site}[percent_encode ${distfile}]"
+}
+
+# Given a *_sites entry that possibly has a tag on the end, return a
+# list consisting of the part of the entry preceding the tag, and the
+# tag itself.
+proc portfetch::separate_tag {element} {
+    # tag will be after the last colon after the
+    # first slash after the ://
+    set lastcolon [string last : $element]
+    set aftersep [expr {[string first : $element] + 3}]
+    set firstslash [string first / $element $aftersep]
+    if {$firstslash != -1 && $firstslash < $lastcolon} {
+        set tag [string range $element ${lastcolon}+1 end]
+        set element [string range $element 0 ${lastcolon}-1]
+    } else {
+        set tag ""
+    }
+    return [list $element $tag]
+}
+
+# For a given mirror site type, e.g. "gnu" or "x11", check to see if there's a
+# pre-registered set of sites, and if so, return them.
+proc portfetch::mirror_sites {mirrors tag subdir mirrorfile} {
+    global name dist_subdir global_mirror_site
+
+    if {[file exists $mirrorfile]} {
+        source $mirrorfile
+    }
+
+    if {![info exists portfetch::mirror_sites::sites($mirrors)]} {
+        if {$mirrors ne $global_mirror_site} {
+            ui_warn "[format [msgcat::mc "No mirror sites on file for class %s"] $mirrors]"
+        }
+        return [list]
+    }
+
+    set ret [list]
+    set name_re {\$(?:name\y|\{name\})}
+    foreach element $portfetch::mirror_sites::sites($mirrors) {
+
+        # here we have the chance to take a look at tags, that possibly
+        # have been assigned in mirror_sites.tcl
+        lassign [separate_tag $element] element mirror_tag
+
+        # if the URL has $name embedded, kill any mirror_tag that may have been added
+        # since a mirror_tag and $name are incompatible
+        if {$mirror_tag ne "" && [regexp $name_re $element]} {
+            set mirror_tag ""
+        }
+
+        if {$mirror_tag eq "mirror"} {
+            set thesubdir ${dist_subdir}
+        } elseif {$subdir eq "" && $mirror_tag ne "nosubdir"} {
+            set thesubdir ${name}
+        } else {
+            set thesubdir ${subdir}
+        }
+
+        # parse an embedded $name. if present, remove the subdir
+        if {[regsub $name_re $element $thesubdir element] > 0} {
+            set thesubdir ""
+        }
+
+        if {$tag ne ""} {
+            append element "${thesubdir}:${tag}"
+        } else {
+            append element "${thesubdir}"
+        }
+
+        lappend ret $element
+    }
+
+    return $ret
+}
+
+# Checks sites.
+# sites tags create variables in the portfetch:: namespace containing all sites
+# within that tag distfiles are added in $site $distfile format, where $site is
+# the name of a variable in the portfetch:: namespace containing a list of fetch
+# sites
+proc portfetch::checksites {sitelists mirrorfile} {
+    global env
+    variable urlmap
+    set url_re {([a-zA-Z]+://.+)}
+    set tagged_url_re {([a-zA-Z]+://.+/?):([0-9A-Za-z_-]+)$}
+
+    foreach {listname extras} $sitelists {
+        upvar #0 $listname $listname
+        if {![info exists $listname]} {
+            continue
+        }
+        global ${listname}.mirror_subdir
+        set full_list [set $listname]
+        # add the specified global and user-defined mirrors
+        set global_sites [list]
+        set untagged_env_sites [list]
+        if {[llength $extras] >= 2} {
+            lassign $extras sglobal senv
+            if {[info exists env($senv)]} {
+                set full_list [list {*}$env($senv) {*}$full_list]
+                foreach env_site $env($senv) {
+                    if {![regexp $tagged_url_re $env_site]} {
+                        lappend untagged_env_sites $env_site
+                    }
+                }
+            }
+            if {$sglobal ne ""} {
+                set full_list [list $sglobal {*}$full_list]
+                set global_sites [mirror_sites $sglobal "" "" $mirrorfile]
+            }
+        }
+
+        set site_list [list]
+        foreach site $full_list {
+            if {[regexp $url_re $site match site]} {
+                lappend site_list $site
+            } else {
+                set splitlist [split $site :]
+                if {[llength $splitlist] > 3 || [llength $splitlist] <1} {
+                    ui_error [format [msgcat::mc "Unable to process mirror sites for: %s, ignoring."] $site]
+                }
+                lassign $splitlist mirrors subdir tag
+                if {[info exists ${listname}.mirror_subdir]} {
+                    append subdir [set ${listname}.mirror_subdir]
+                }
+                lappend site_list {*}[mirror_sites $mirrors $tag $subdir $mirrorfile]
+            }
+        }
+
+        set tags [dict create]
+        foreach site $site_list {
+            if {[regexp $tagged_url_re $site match site tag]} {
+                lappend urlmap($tag) $site
+                dict set tags $tag 1
+            } else {
+                lappend urlmap($listname) $site
+            }
+        }
+
+        # add in the global and user-defined mirrors for each tag
+        foreach tag [dict keys $tags] {
+            # Only add untagged sites from the environment here.
+            # Tagged ones will already be in the list.
+            set urlmap($tag) [list {*}$global_sites {*}$untagged_env_sites {*}$urlmap($tag)]
+        }
+    }
+}
+
+# sorts fetch_urls in order of ping time
+proc portfetch::sortsites {urls default_listvar} {
+    upvar $urls fetch_urls
+    variable urlmap
+
+    foreach {url_var distfile} $fetch_urls {
+        if {![info exists urlmap($url_var)]} {
+            if {$url_var ne $default_listvar} {
+                ui_error [format [msgcat::mc "No defined site for tag: %s, using $default_listvar"] $url_var]
+                set urlmap($url_var) $urlmap($default_listvar)
+            } else {
+                set urlmap($url_var) {}
+            }
+        }
+
+        if {[llength $urlmap($url_var)] <= 1} {
+            # there is only one mirror, no need to ping or sort
+            continue
+        }
+
+        set urlmap($url_var) [lsort -command compare_pingtimes $urlmap($url_var)]
+    }
+}
+
+proc portfetch::get_urls {} {
+    variable fetch_urls
+    variable urlmap
+    set urls [list]
+
+    portfetch::checkfiles fetch_urls
+
+    foreach {url_var distfile} $fetch_urls {
+        if {![info exists urlmap($url_var)]} {
+            ui_error [format [msgcat::mc "No defined site for tag: %s, using master_sites"] $url_var]
+            set urlmap($url_var) $urlmap(master_sites)
+        }
+        foreach site $urlmap($url_var) {
+            lappend urls $site
+        }
+    }
+
+    return $urls
+}
+
+# warn if DNS is broken
+proc portfetch::check_dns {} {
+    # check_broken_dns returns true at most once, so we don't have to worry about spamming this message
+    if {[check_broken_dns]} {
+        ui_warn "Your DNS servers incorrectly claim to know the address of nonexistent hosts. This may cause checksum mismatches for some ports. See this page for more information: <https://trac.macports.org/wiki/MisbehavingServers>"
+    }
+}
