@@ -211,7 +211,7 @@ KNOWN_UNKNOWN = {
     ("cobol", "gnucobol_internals"):
         "Pre-existing folder from before this audit tooling existed; original source clone/commit "
         "was not recorded at the time and cannot be reconstructed with confidence.",
-    ("python", "meow_turtle"):
+    ("embedded_python", "meow_turtle"):
         "Original embedded-firmware content from the repo owner's personal LEGO-sorter project "
         "(\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via "
         "@rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. "
