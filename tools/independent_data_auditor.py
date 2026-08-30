@@ -105,6 +105,25 @@ EXACT_PROVENANCE = {
     ("lua", "freebsd-src"): ("https://github.com/freebsd/freebsd-src", "c70755bc0d8f703dbaa1520c15e8213a95847dd5", "BSD (multiple clauses)"),
     ("lua", "darwin-xnu"): ("https://github.com/apple/darwin-xnu", "2ff845c2e033bd0ff64b5b6aa6063a1f8f65aa32", "Apple Public Source License 2.0"),
     ("livecode", "livecode"): ("https://github.com/livecode/livecode", "4606a10ea10b16d5071d0f9f263ccdd7ede8b31d", "GNU GPL v3.0 (with ATL/OpenSSL exception)"),
+    # html / css expansion (2026-08-30). Each folder is a curated subset copied
+    # from the same-named clone in the gitgalaxy/data pool at the commit below --
+    # recorded exact because this is the copy operation, not a later name-match.
+    ("html", "threejs_shader_examples"): ("https://github.com/mrdoob/three.js", "f04b082d40e8104ea3003c13fdf9dd6db8f88971", "MIT License"),
+    ("html", "revealjs_decks"): ("https://github.com/hakimel/reveal.js", "8bbbcf83104b817f5882a0e04772b9f9e26b265b", "MIT License"),
+    ("html", "html5_boilerplate"): ("https://github.com/h5bp/html5-boilerplate", "ce8ad3c32e1744da4adecb978797168d5ee7df51", "MIT License"),
+    ("html", "jquery_test_fixtures"): ("https://github.com/jquery/jquery", "b43c8046f5196186fcba0860dae1680f42797f93", "MIT License"),
+    ("html", "vscode_webviews"): ("https://github.com/microsoft/vscode", "a8d7dcd8683eef847562052b722d477b5134ef76", "MIT License"),
+    ("html", "angular_adev_templates"): ("https://github.com/angular/angular", "9d76ac82290e047f1481fb38bd95233e951a77de", "MIT License"),
+    ("html", "playwright_dom_fixtures"): ("https://github.com/microsoft/playwright", "ff6d41b3cb7bbf31f8d5b75793fec38c0151ca44", "Apache License 2.0"),
+    ("html", "cesium_sandcastle"): ("https://github.com/CesiumGS/cesium", "0becdbfc17b1015c338e147103876e2ac049f91e", "Apache License 2.0"),
+    ("css", "bootstrap_dist"): ("https://github.com/twbs/bootstrap", "060ff24924a2be67feb309b121b32559a549d02c", "MIT License"),
+    ("css", "bootstrap_minified"): ("https://github.com/twbs/bootstrap", "060ff24924a2be67feb309b121b32559a549d02c", "MIT License"),
+    ("css", "tailwindcss_atrules"): ("https://github.com/tailwindlabs/tailwindcss", "d7fc281a0e678bf92f0e82f4ab1b8edfd7cb1675", "MIT License"),
+    ("css", "mediawiki_resources"): ("https://github.com/wikimedia/mediawiki", "8863834e673e4f297bfbc40cd4d54ee9027ad876", "GNU GPL v2.0"),
+    ("css", "threejs_app_ui"): ("https://github.com/mrdoob/three.js", "f04b082d40e8104ea3003c13fdf9dd6db8f88971", "MIT License"),
+    ("css", "gutenberg_css_modules"): ("https://github.com/WordPress/gutenberg", "4af0efd09488abc25e84933c634230ac884cc2f8", "GNU GPL v2.0"),
+    ("css", "cytoscape_docs"): ("https://github.com/cytoscape/cytoscape.js", "816e98077a6447f491efec81b22cab19e5a56f25", "MIT License"),
+    ("css", "revealjs_themes"): ("https://github.com/hakimel/reveal.js", "8bbbcf83104b817f5882a0e04772b9f9e26b265b", "MIT License"),
 }
 
 # Hand-corrected matches for generically-named repo folders (e.g. "core",
@@ -137,6 +156,11 @@ KNOWN_UNKNOWN = {
     ("cobol", "gnucobol_internals"):
         "Pre-existing folder from before this audit tooling existed; original source clone/commit "
         "was not recorded at the time and cannot be reconstructed with confidence.",
+    ("python", "meow_turtle"):
+        "Original embedded-firmware content from the repo owner's personal LEGO-sorter project "
+        "(\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via "
+        "@rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. "
+        "Recorded unknown by design, not oversight.",
 }
 
 LICENSE_SIGNATURES = [

@@ -320,6 +320,39 @@
   },
   {
     "category": "css",
+    "repo": "bootstrap_dist",
+    "path": "data/css/bootstrap_dist",
+    "files": 4,
+    "url": "https://github.com/twbs/bootstrap",
+    "commit": "060ff24924a2be67feb309b121b32559a549d02c",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "css",
+    "repo": "bootstrap_minified",
+    "path": "data/css/bootstrap_minified",
+    "files": 4,
+    "url": "https://github.com/twbs/bootstrap",
+    "commit": "060ff24924a2be67feb309b121b32559a549d02c",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "css",
+    "repo": "cytoscape_docs",
+    "path": "data/css/cytoscape_docs",
+    "files": 4,
+    "url": "https://github.com/cytoscape/cytoscape.js",
+    "commit": "816e98077a6447f491efec81b22cab19e5a56f25",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "css",
     "repo": "element",
     "path": "data/css/element",
     "files": 3,
@@ -331,6 +364,28 @@
   },
   {
     "category": "css",
+    "repo": "gutenberg_css_modules",
+    "path": "data/css/gutenberg_css_modules",
+    "files": 5,
+    "url": "https://github.com/WordPress/gutenberg",
+    "commit": "4af0efd09488abc25e84933c634230ac884cc2f8",
+    "license": "GNU GPL v2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "css",
+    "repo": "mediawiki_resources",
+    "path": "data/css/mediawiki_resources",
+    "files": 6,
+    "url": "https://github.com/wikimedia/mediawiki",
+    "commit": "8863834e673e4f297bfbc40cd4d54ee9027ad876",
+    "license": "GNU GPL v2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "css",
     "repo": "odoo",
     "path": "data/css/odoo",
     "files": 3,
@@ -338,6 +393,39 @@
     "commit": "93095e1e9507fde18aefe91aac8c9cb53cadc2f3",
     "license": "GNU LGPL",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "css",
+    "repo": "revealjs_themes",
+    "path": "data/css/revealjs_themes",
+    "files": 7,
+    "url": "https://github.com/hakimel/reveal.js",
+    "commit": "8bbbcf83104b817f5882a0e04772b9f9e26b265b",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "css",
+    "repo": "tailwindcss_atrules",
+    "path": "data/css/tailwindcss_atrules",
+    "files": 6,
+    "url": "https://github.com/tailwindlabs/tailwindcss",
+    "commit": "d7fc281a0e678bf92f0e82f4ab1b8edfd7cb1675",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "css",
+    "repo": "threejs_app_ui",
+    "path": "data/css/threejs_app_ui",
+    "files": 4,
+    "url": "https://github.com/mrdoob/three.js",
+    "commit": "f04b082d40e8104ea3003c13fdf9dd6db8f88971",
+    "license": "MIT License",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -452,6 +540,17 @@
   },
   {
     "category": "html",
+    "repo": "angular_adev_templates",
+    "path": "data/html/angular_adev_templates",
+    "files": 6,
+    "url": "https://github.com/angular/angular",
+    "commit": "9d76ac82290e047f1481fb38bd95233e951a77de",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "html",
     "repo": "baseline",
     "path": "data/html/baseline",
     "files": 2,
@@ -460,6 +559,17 @@
     "license": null,
     "confidence": "unknown",
     "note": "No confidently-matched pool clone found. No local license file either."
+  },
+  {
+    "category": "html",
+    "repo": "cesium_sandcastle",
+    "path": "data/html/cesium_sandcastle",
+    "files": 5,
+    "url": "https://github.com/CesiumGS/cesium",
+    "commit": "0becdbfc17b1015c338e147103876e2ac049f91e",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "html",
@@ -474,6 +584,28 @@
   },
   {
     "category": "html",
+    "repo": "html5_boilerplate",
+    "path": "data/html/html5_boilerplate",
+    "files": 5,
+    "url": "https://github.com/h5bp/html5-boilerplate",
+    "commit": "ce8ad3c32e1744da4adecb978797168d5ee7df51",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "html",
+    "repo": "jquery_test_fixtures",
+    "path": "data/html/jquery_test_fixtures",
+    "files": 7,
+    "url": "https://github.com/jquery/jquery",
+    "commit": "b43c8046f5196186fcba0860dae1680f42797f93",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "html",
     "repo": "odoo_mako",
     "path": "data/html/odoo_mako",
     "files": 4,
@@ -482,6 +614,17 @@
     "license": "GNU LGPL",
     "confidence": "unknown",
     "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+  },
+  {
+    "category": "html",
+    "repo": "playwright_dom_fixtures",
+    "path": "data/html/playwright_dom_fixtures",
+    "files": 7,
+    "url": "https://github.com/microsoft/playwright",
+    "commit": "ff6d41b3cb7bbf31f8d5b75793fec38c0151ca44",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "html",
@@ -515,6 +658,39 @@
     "license": null,
     "confidence": "unknown",
     "note": "No confidently-matched pool clone found. No local license file either."
+  },
+  {
+    "category": "html",
+    "repo": "revealjs_decks",
+    "path": "data/html/revealjs_decks",
+    "files": 6,
+    "url": "https://github.com/hakimel/reveal.js",
+    "commit": "8bbbcf83104b817f5882a0e04772b9f9e26b265b",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "html",
+    "repo": "threejs_shader_examples",
+    "path": "data/html/threejs_shader_examples",
+    "files": 6,
+    "url": "https://github.com/mrdoob/three.js",
+    "commit": "f04b082d40e8104ea3003c13fdf9dd6db8f88971",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "html",
+    "repo": "vscode_webviews",
+    "path": "data/html/vscode_webviews",
+    "files": 6,
+    "url": "https://github.com/microsoft/vscode",
+    "commit": "a8d7dcd8683eef847562052b722d477b5134ef76",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "html",
@@ -1059,12 +1235,23 @@
     "category": "python",
     "repo": "fastapi",
     "path": "data/python/fastapi",
-    "files": 446,
+    "files": 240,
     "url": "https://github.com/tiangolo/fastapi.git",
     "commit": "1f442c454f2f74c7419f83c203e6333955399528",
     "license": "MIT License",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "python",
+    "repo": "meow_turtle",
+    "path": "data/python/meow_turtle",
+    "files": 14,
+    "url": null,
+    "commit": null,
+    "license": null,
+    "confidence": "unknown",
+    "note": "Original embedded-firmware content from the repo owner's personal LEGO-sorter project (\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via @rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. Recorded unknown by design, not oversight."
   },
   {
     "category": "python",
