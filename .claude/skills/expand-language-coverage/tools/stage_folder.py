@@ -46,8 +46,9 @@ _LICENSE_SIGNATURES = [
     # (godot, jQuery, and others ship the body only). Ordered last so an
     # explicit title above always wins.
     ("MIT License", re.compile(
-        r"Permission is hereby granted, free of charge, to any person obtaining a\s+"
-        r"copy of this software and associated documentation files", re.I)),
+        r"Permission is hereby granted,\s+free of charge,\s+to any person "
+        r"obtaining\s+a\s+copy\s+of\s+this\s+software\s+and\s+associated\s+"
+        r"documentation\s+files", re.I)),
 ]
 
 
