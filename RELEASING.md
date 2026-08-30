@@ -1,7 +1,9 @@
 # Releasing / tagging this repo
 
 This repo is currently tagged at `v1.1.0` (`v1.0` was cut 2026-07-03,
-`v1.1.0` on 2026-08-28).<sup>†</sup> The tag matters more than a normal
+`v1.1.0` on 2026-08-28).<sup>†</sup> **`v1.2.0` is drafted and waiting on the
+`gitgalaxy`-side golden-master regen** — see "Where things stand right now".
+The tag matters more than a normal
 "version number" would:
 **GitGalaxy's own CI pins to it.** This document exists so cutting the next
 tag is a deliberate, informed decision — not something that happens
@@ -75,7 +77,37 @@ side.
 
 ## Where things stand right now
 
-`v1.1.0` was cut 2026-08-28 against `main`, covering everything through the
+### `v1.2.0` — drafted 2026-08-30, **not yet tagged**
+
+The whole 2026-08-30 session's content-addition PRs have landed on `main`
+(#12, #13→#17, #14, #15, #16). This is a checkpoint-sized batch: **152 → 218
+`data/` repo-folders, 2,344 → 3,306 files.** By category, since `v1.1.0`:
+
+| Category | v1.1.0 | v1.2.0 | Notes |
+|---|---|---|---|
+| `sqlite` | — | 9 folders / 82 files | **New category.** GitGalaxy's `sqlite` standard is distinct from `sql`; real `.sql` exercising `WITH RECURSIVE` / `STRICT` / JSONB / FTS5 / R-Tree / dot-commands. Pool-limited to ~80 real files. |
+| `assembly` | 3 / 15 | 16 / 253 | NASM, GAS/AT&T, AArch64+NEON, 6502, ARM bare-metal, 16-bit boot, machine-generated perlasm. |
+| `groovy` | 2 / 9 | 16 / 329 | Was `.java`-only; now real Groovy — Gradle DSL, Spock specs, Jenkins view-DSL, `Jenkinsfile`. |
+| `cobol` | 11 / 308 | 15 / 589 | ~2×. NIST COBOL-85 CCVS conformance suite, che-che4z LSP fixtures, `cobol-check`. |
+| `tcl` | 1 / 13 | 9 / 156 | SQLite `.test` suite (TCL-harness-wraps-SQL) + macports-base app Tcl. |
+| `html` | 7 / 19 | 15 / 67 | Polyglot shader HTML, framework-microsyntax templates, CSP webviews, broken-DOM fixtures. |
+| `css` | 3 / 9 | 11 / 49 | Preprocessor at-rules, CSS Modules, minified, machine-generated, legacy. |
+| `python` | 6 / 487 | 7 / 295 | Added `meow_turtle` (RP2040 MicroPython firmware, embedded PIO asm); corrected a pre-existing `fastapi` file-count drift (446 → 240 to match the committed tree). |
+| `jcl` | 5 / 191 | 6 / 193 | Effectively flat — **`data/jcl/SOURCES.md` now documents that this category is at the pool's real-licensed-source ceiling**; growing it needs new licensed mainframe repos in `gitgalaxy/data`. |
+
+Non-content: added the `expand-language-coverage` skill
+(`.claude/skills/expand-language-coverage/`) — the repeatable
+survey → stage → provenance → PR workflow these expansions used.
+
+**Remaining before `v1.2.0` is real:** step 2 above (regenerate `gitgalaxy`'s
+golden masters + the tri-comparison / tree-sitter-accuracy artifacts against
+this `main`), then step 3 (cut the tag + publish release notes), then step 4
+(bump the pin). Full draft release notes are staged for
+`gh release create v1.2.0 --notes-file …`.
+
+### `v1.1.0`
+
+Cut 2026-08-28 against `main`, covering everything through the
 COBOL/JCL, shell/PowerShell, Lua/LiveCode corpus expansions and the
 issue-#4 provenance audit — see the
 [release notes](https://github.com/squid-protocol/language-crucible/releases/tag/v1.1.0)
