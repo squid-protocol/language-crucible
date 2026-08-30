@@ -188,6 +188,28 @@
   },
   {
     "category": "cobol",
+    "repo": "che-che4z_lsp_project_fixtures",
+    "path": "data/cobol/che-che4z_lsp_project_fixtures",
+    "files": 76,
+    "url": "https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol",
+    "commit": "dd1133952579575082914476fa699667b8790e1d",
+    "license": "Eclipse Public License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "cobol",
+    "repo": "che-che4z_nist_ccvs85",
+    "path": "data/cobol/che-che4z_nist_ccvs85",
+    "files": 151,
+    "url": "https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol",
+    "commit": "dd1133952579575082914476fa699667b8790e1d",
+    "license": "Eclipse Public License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "cobol",
     "repo": "cics-banking-sample-application-cbsa",
     "path": "data/cobol/cics-banking-sample-application-cbsa",
     "files": 67,
@@ -205,6 +227,28 @@
     "url": "https://github.com/cicsdev/cics-genapp",
     "commit": "63eca1b670d9199637bdc2ca7df6e4189a58c892",
     "license": "Eclipse Public License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "cobol",
+    "repo": "cics-java-jcics-samples",
+    "path": "data/cobol/cics-java-jcics-samples",
+    "files": 3,
+    "url": "https://github.com/cicsdev/cics-java-jcics-samples",
+    "commit": "11e86326f2600220cc610bdf4bee9afa77c206c0",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "cobol",
+    "repo": "cobol-check",
+    "path": "data/cobol/cobol-check",
+    "files": 46,
+    "url": "https://github.com/openmainframeproject/cobol-check",
+    "commit": "e372dd7f436c471883bd58ac71aab49861a57e5d",
+    "license": "Apache License 2.0",
     "confidence": "exact",
     "note": null
   },
@@ -234,7 +278,7 @@
     "category": "cobol",
     "repo": "gnucobol",
     "path": "data/cobol/gnucobol",
-    "files": 5,
+    "files": 10,
     "url": "https://github.com/paulsmith/gnucobol",
     "commit": "d139d06201cf0aba9d143e0f675f446c19603b36",
     "license": "GNU GPL v3.0",
@@ -931,6 +975,17 @@
     "url": "https://github.com/cicsdev/cics-genapp",
     "commit": "63eca1b670d9199637bdc2ca7df6e4189a58c892",
     "license": "Eclipse Public License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "jcl",
+    "repo": "cics-java-jcics-samples",
+    "path": "data/jcl/cics-java-jcics-samples",
+    "files": 2,
+    "url": "https://github.com/cicsdev/cics-java-jcics-samples",
+    "commit": "11e86326f2600220cc610bdf4bee9afa77c206c0",
+    "license": "Apache License 2.0",
     "confidence": "exact",
     "note": null
   },

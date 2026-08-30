@@ -1,36 +1,47 @@
 # JCL corpus sources
 
-This folder was substantially expanded on 2026-08-28 — previously it held a
-single repo (`cics-genapp`) with only 3 sample JCL members. JCL was the
-weakest-covered category in the Crucible relative to its importance for
-CICS/mainframe interpretation, so this pass prioritized real, licensed,
+Built out 2026-08-28 from a single 3-member repo to real, licensed,
 production-style JCL: compile/link-edit decks, DB2 bind/DDL, VSAM
-`IDCAMS DEFINE`, CICS resource definition (`DFHCSDUP`), and RACF setup.
+`IDCAMS DEFINE`, CICS resource definition (`DFHCSDUP`), RACF setup.
 
-All files are unmodified real source pulled from full clones held in the
-`gitgalaxy/data` pool. See `../cobol/SOURCES.md` for the parallel COBOL
-expansion (several of these repos contribute to both folders) and for the
-forged-content exclusion this pass had to account for.
+All files are unmodified real source from full clones in the `gitgalaxy/data`
+pool. See `../cobol/SOURCES.md` for the parallel COBOL work and the
+forged-content exclusions both categories share. File counts include each
+folder's `LICENSE` and match `data/PROVENANCE.json`.
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `cics-genapp` | 29 | https://github.com/cicsdev/cics-genapp | `63eca1b670d9199637bdc2ca7df6e4189a58c892` | Eclipse Public License 2.0 | Expanded from 3 to the complete `base/cntl` JCL deck: region/CICS resource defs, DB2 bind/create/drop, VSAM defs, CICS install. |
-| `cics-banking-sample-application-cbsa` | 100 unique | https://github.com/cicsdev/cics-banking-sample-application-cbsa | `46cbda52051d5cded017d72ad653df68b8ec1b60` | Eclipse Public License 2.0 | New. Combines `etc/install/base/buildjcl` (per-program compile/link-edit JCL), `db2jcl` (table/tablespace/index create+drop, BIND), and `installjcl` (CSD update, RACF, VSAM, CICS/z/OS Connect start-stop). **Deliberately excludes `src/base/cobol_src/*.jcl`** — verified synthetic/forged output from a prior GitGalaxy run (see `../cobol/SOURCES.md` caveats), not real upstream JCL. |
-| `cobol-programming-course` | 43 | https://github.com/openmainframeproject/cobol-programming-course | `11aca51998e11181925ff16c20b32c220360ff66` | CC-BY-4.0 | New. Open Mainframe Project course JCL: compile/link/go procs (`IGYWCL`/`IGYWCLG`), Db2 precompile/bind (`DB2CBL`, `DSNUPROC`), batch run JCL. |
-| `zopeneditor-sample` | 10 | https://github.com/IBM/zopeneditor-sample | `41f70551d85233829a90f7891af2b56092b471c3` | Apache License 2.0 | New. IBM z/OS Explorer/Editor sample JCL (allocate, compile procs, run JCL) matching the COBOL programs in `../cobol/zopeneditor-sample`. |
-| `cash-account-cobol` | 3 | https://github.com/IBMStockTrader/cash-account-cobol | `c35db0d1f283367109bcd5dfadd76560cf53b2dc` | Apache License 2.0 | New. DB2 bind/DDL and VSAM KSDS define JCL for IBM Stock Trader's cash-account service. |
+| `cics-genapp` | 31 | https://github.com/cicsdev/cics-genapp | `63eca1b670d9199637bdc2ca7df6e4189a58c892` | Eclipse Public License 2.0 | The complete `base/cntl` deck: region/CICS resource defs, DB2 bind/create/drop, VSAM defs, CICS install. |
+| `cics-banking-sample-application-cbsa` | 101 | https://github.com/cicsdev/cics-banking-sample-application-cbsa | `46cbda52051d5cded017d72ad653df68b8ec1b60` | Eclipse Public License 2.0 | `etc/install/base/buildjcl` (per-program compile/link-edit), `db2jcl` (table/tablespace/index create+drop, BIND), `installjcl` (CSD update, RACF, VSAM, CICS / z/OS Connect start-stop). **Excludes `src/base/cobol_src*/*.jcl`** — GitGalaxy-forged, not real upstream (see `../cobol/SOURCES.md`). |
+| `cobol-programming-course` | 44 | https://github.com/openmainframeproject/cobol-programming-course | `11aca51998e11181925ff16c20b32c220360ff66` | CC-BY-4.0 | Course JCL: compile/link/go procs (`IGYWCL`/`IGYWCLG`), Db2 precompile/bind (`DB2CBL`, `DSNUPROC`), batch run JCL. |
+| `zopeneditor-sample` | 11 | https://github.com/IBM/zopeneditor-sample | `41f70551d85233829a90f7891af2b56092b471c3` | Apache License 2.0 | IBM z/OS Explorer/Editor sample JCL (allocate, compile procs, run JCL) matching `../cobol/zopeneditor-sample`. |
+| `cash-account-cobol` | 4 | https://github.com/IBMStockTrader/cash-account-cobol | `c35db0d1f283367109bcd5dfadd76560cf53b2dc` | Apache License 2.0 | DB2 bind/DDL and VSAM KSDS define JCL for IBM Stock Trader's cash-account service. |
+| `cics-java-jcics-samples` | 2 | https://github.com/cicsdev/cics-java-jcics-samples | `11e86326f2600220cc610bdf4bee9afa77c206c0` | Apache License 2.0 | **New (2026-08-30).** The JCICS interop sample's build JCL, matching `../cobol/cics-java-jcics-samples`. |
 
-**Total: ~185 real JCL files across 5 repos** (up from 5 files / 1 repo, a ~37x increase).
+**Total: 193 files across 6 repo folders** (all exact).
 
-Commits above are the exact `HEAD` of the corresponding clone in the
-`gitgalaxy/data` pool at the moment these files were copied (2026-08-28).
+## This category is at its real-source ceiling
 
-## Caveat
+The 2026-08-30 pass set out to grow JCL ~10x and could not: **the entire
+`gitgalaxy/data` pool holds only ~191 real, licensed `.jcl` files, and this
+corpus already contains essentially all of them.** What remains is not usable:
 
-`cics-banking-sample-application-cbsa`'s `etc/install/base/buildjcl` and
-`db2jcl` directories each contained one filename collision with another
-selected subdirectory (`BANKDATA.jcl`, `DEFAULT.jcl`); the later copy in
-directory-listing order silently overwrote the earlier one on disk, so the
-folder holds 100 unique files rather than the 102 originally selected. Not
-a correctness issue for the corpus — both variants were legitimate real
-JCL — just a minor loss of duplicate-name diversity.
+- `temp_jcl_out/` (29), `corpus_cobol/cics-genapp_forged_*/` (31),
+  `cics-banking-cbsa/src/base/cobol_src*/` (58) — all GitGalaxy-forged output
+  carrying `AUTOGENERATED BY GITGALAXY ZERO-TRUST FORGE` headers.
+- `corpus_cobol/Cobol-Projects` (24 `.jcl`), `corpus_cobol/hyperion` (3),
+  `corpus_cobol/compilers` (5) — no discoverable upstream `LICENSE`.
+
+Growing JCL further needs new licensed mainframe repos added to the pool first
+(candidates: the full openmainframeproject org, IBM's `zos-*` sample repos, the
+Hercules/z390 ecosystems), or a decision to relax the licensing bar for this
+category. Neither is done here.
+
+## Caveat (pre-existing)
+
+`cics-banking-sample-application-cbsa`'s `buildjcl` and `db2jcl` directories each
+had one filename collision with another selected subdirectory (`BANKDATA.jcl`,
+`DEFAULT.jcl`); the later copy in listing order overwrote the earlier, so the
+folder holds 100 unique JCL members (+ `LICENSE`) rather than 102. Both variants
+were legitimate real JCL — a minor loss of duplicate-name diversity, not a
+correctness issue.
