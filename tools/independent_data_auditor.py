@@ -124,6 +124,23 @@ EXACT_PROVENANCE = {
     ("css", "gutenberg_css_modules"): ("https://github.com/WordPress/gutenberg", "4af0efd09488abc25e84933c634230ac884cc2f8", "GNU GPL v2.0"),
     ("css", "cytoscape_docs"): ("https://github.com/cytoscape/cytoscape.js", "816e98077a6447f491efec81b22cab19e5a56f25", "MIT License"),
     ("css", "revealjs_themes"): ("https://github.com/hakimel/reveal.js", "8bbbcf83104b817f5882a0e04772b9f9e26b265b", "MIT License"),
+    # groovy expansion (2026-08-30). Curated subsets copied from the pool clone
+    # at the commit below, at copy time -> exact. (The pre-existing `gradle` and
+    # `spock` folders hold only .java and stay pool-reference.)
+    ("groovy", "gradle_dsl_snippets"): ("https://github.com/gradle/gradle", "db62c2f2b404217cb6a7eef2598c6e84ab08fa27", "Apache License 2.0"),
+    ("groovy", "gradle_buildlogic_groovy"): ("https://github.com/gradle/gradle", "db62c2f2b404217cb6a7eef2598c6e84ab08fa27", "Apache License 2.0"),
+    ("groovy", "gradle_integtest_specs"): ("https://github.com/gradle/gradle", "db62c2f2b404217cb6a7eef2598c6e84ab08fa27", "Apache License 2.0"),
+    ("groovy", "gradle_sample_task_classes"): ("https://github.com/gradle/gradle", "db62c2f2b404217cb6a7eef2598c6e84ab08fa27", "Apache License 2.0"),
+    ("groovy", "spock_specs"): ("https://github.com/spockframework/spock", "b71e3d7590dae28d608aa92f90b45bef33aaeda8", "Apache License 2.0"),
+    ("groovy", "spock_core_groovy"): ("https://github.com/spockframework/spock", "b71e3d7590dae28d608aa92f90b45bef33aaeda8", "Apache License 2.0"),
+    ("groovy", "spock_smoke_specs"): ("https://github.com/spockframework/spock", "b71e3d7590dae28d608aa92f90b45bef33aaeda8", "Apache License 2.0"),
+    ("groovy", "spring_boot_gradle"): ("https://github.com/spring-projects/spring-boot", "5cecd3922fce651f13d16a85d8a29efaa7f44cfd", "Apache License 2.0"),
+    ("groovy", "flutter_android_gradle"): ("https://github.com/flutter/flutter", "75910740753c13a858bb39c3686afb71675e8dc4", "BSD 3-Clause License"),
+    ("groovy", "kotlin_build_gradle"): ("https://github.com/JetBrains/kotlin", "bcdc78880f23dd07f10607332e8a89a5e72d4e9a", "Apache License 2.0"),
+    ("groovy", "godot_android_gradle"): ("https://github.com/godotengine/godot", "4a919adccf8e398aceca75399c539078c54fe97f", "MIT License"),
+    ("groovy", "retrofit_gradle"): ("https://github.com/square/retrofit", "77e6ba21d9ba372d1b23ef29881912910da23347", "Apache License 2.0"),
+    ("groovy", "jenkins_view_groovy"): ("https://github.com/jenkinsci/jenkins", "bc6a2222ce5a9e104a4f5a96653f0e879461936b", "MIT License"),
+    ("groovy", "fineract_gradle_plugin"): ("https://github.com/apache/fineract", "e6e5a4b6eec5a33d327546c640e6b7f281b5ae42", "Apache License 2.0"),
 }
 
 # Hand-corrected matches for generically-named repo folders (e.g. "core",

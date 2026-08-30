@@ -496,6 +496,39 @@
   },
   {
     "category": "groovy",
+    "repo": "fineract_gradle_plugin",
+    "path": "data/groovy/fineract_gradle_plugin",
+    "files": 9,
+    "url": "https://github.com/apache/fineract",
+    "commit": "e6e5a4b6eec5a33d327546c640e6b7f281b5ae42",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "flutter_android_gradle",
+    "path": "data/groovy/flutter_android_gradle",
+    "files": 25,
+    "url": "https://github.com/flutter/flutter",
+    "commit": "75910740753c13a858bb39c3686afb71675e8dc4",
+    "license": "BSD 3-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "godot_android_gradle",
+    "path": "data/groovy/godot_android_gradle",
+    "files": 10,
+    "url": "https://github.com/godotengine/godot",
+    "commit": "4a919adccf8e398aceca75399c539078c54fe97f",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
     "repo": "gradle",
     "path": "data/groovy/gradle",
     "files": 4,
@@ -507,6 +540,83 @@
   },
   {
     "category": "groovy",
+    "repo": "gradle_buildlogic_groovy",
+    "path": "data/groovy/gradle_buildlogic_groovy",
+    "files": 25,
+    "url": "https://github.com/gradle/gradle",
+    "commit": "db62c2f2b404217cb6a7eef2598c6e84ab08fa27",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "gradle_dsl_snippets",
+    "path": "data/groovy/gradle_dsl_snippets",
+    "files": 26,
+    "url": "https://github.com/gradle/gradle",
+    "commit": "db62c2f2b404217cb6a7eef2598c6e84ab08fa27",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "gradle_integtest_specs",
+    "path": "data/groovy/gradle_integtest_specs",
+    "files": 31,
+    "url": "https://github.com/gradle/gradle",
+    "commit": "db62c2f2b404217cb6a7eef2598c6e84ab08fa27",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "gradle_sample_task_classes",
+    "path": "data/groovy/gradle_sample_task_classes",
+    "files": 21,
+    "url": "https://github.com/gradle/gradle",
+    "commit": "db62c2f2b404217cb6a7eef2598c6e84ab08fa27",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "jenkins_view_groovy",
+    "path": "data/groovy/jenkins_view_groovy",
+    "files": 30,
+    "url": "https://github.com/jenkinsci/jenkins",
+    "commit": "bc6a2222ce5a9e104a4f5a96653f0e879461936b",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "kotlin_build_gradle",
+    "path": "data/groovy/kotlin_build_gradle",
+    "files": 25,
+    "url": "https://github.com/JetBrains/kotlin",
+    "commit": "bcdc78880f23dd07f10607332e8a89a5e72d4e9a",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "retrofit_gradle",
+    "path": "data/groovy/retrofit_gradle",
+    "files": 15,
+    "url": "https://github.com/square/retrofit",
+    "commit": "77e6ba21d9ba372d1b23ef29881912910da23347",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
     "repo": "spock",
     "path": "data/groovy/spock",
     "files": 5,
@@ -514,6 +624,50 @@
     "commit": "b71e3d7590dae28d608aa92f90b45bef33aaeda8",
     "license": "Apache License 2.0",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "spock_core_groovy",
+    "path": "data/groovy/spock_core_groovy",
+    "files": 18,
+    "url": "https://github.com/spockframework/spock",
+    "commit": "b71e3d7590dae28d608aa92f90b45bef33aaeda8",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "spock_smoke_specs",
+    "path": "data/groovy/spock_smoke_specs",
+    "files": 25,
+    "url": "https://github.com/spockframework/spock",
+    "commit": "b71e3d7590dae28d608aa92f90b45bef33aaeda8",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "spock_specs",
+    "path": "data/groovy/spock_specs",
+    "files": 31,
+    "url": "https://github.com/spockframework/spock",
+    "commit": "b71e3d7590dae28d608aa92f90b45bef33aaeda8",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "groovy",
+    "repo": "spring_boot_gradle",
+    "path": "data/groovy/spring_boot_gradle",
+    "files": 29,
+    "url": "https://github.com/spring-projects/spring-boot",
+    "commit": "5cecd3922fce651f13d16a85d8a29efaa7f44cfd",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
     "note": null
   },
   {
