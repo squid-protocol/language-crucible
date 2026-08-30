@@ -29,7 +29,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `abap` | 1 | 8 | 1 pool-reference | Audited | [`data/abap/SOURCES.md`](data/abap/SOURCES.md) |
 | `agc_assembly` | 1 | 12 | 1 pool-reference | Audited | [`data/agc_assembly/SOURCES.md`](data/agc_assembly/SOURCES.md) |
 | `apex` | 1 | 8 | 1 pool-reference | Audited | [`data/apex/SOURCES.md`](data/apex/SOURCES.md) |
-| `assembly` | 3 | 15 | 3 pool-reference | Audited | [`data/assembly/SOURCES.md`](data/assembly/SOURCES.md) |
+| `assembly` | 16 | 253 | 12 exact, 3 pool-reference, 1 unknown | Audited | [`data/assembly/SOURCES.md`](data/assembly/SOURCES.md) |
 | `batch` | 2 | 7 | 2 pool-reference | Audited | [`data/batch/SOURCES.md`](data/batch/SOURCES.md) |
 | `blueprint` | 1 | 6 | 1 pool-reference | Audited | [`data/blueprint/SOURCES.md`](data/blueprint/SOURCES.md) |
 | `c` | 4 | 39 | 4 pool-reference | Audited | [`data/c/SOURCES.md`](data/c/SOURCES.md) |
@@ -72,9 +72,10 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `shell` | 13 | 282 | 13 exact | Curated | [`data/shell/SOURCES.md`](data/shell/SOURCES.md) |
 | `solidity` | 1 | 8 | 1 unknown | Audited | [`data/solidity/SOURCES.md`](data/solidity/SOURCES.md) |
 | `sql` | 4 | 10 | 3 unknown, 1 pool-reference | Audited | [`data/sql/SOURCES.md`](data/sql/SOURCES.md) |
+| `sqlite` | 9 | 82 | 9 exact | Audited | [`data/sqlite/SOURCES.md`](data/sqlite/SOURCES.md) |
 | `swift` | 1 | 8 | 1 pool-reference | Audited | [`data/swift/SOURCES.md`](data/swift/SOURCES.md) |
 | `tabular` | 4 | 9 | 4 unknown | Audited | [`data/tabular/SOURCES.md`](data/tabular/SOURCES.md) |
-| `tcl` | 1 | 13 | 1 pool-reference | Audited | [`data/tcl/SOURCES.md`](data/tcl/SOURCES.md) |
+| `tcl` | 9 | 156 | 8 exact, 1 pool-reference | Audited | [`data/tcl/SOURCES.md`](data/tcl/SOURCES.md) |
 | `td` | 1 | 5 | 1 pool-reference | Audited | [`data/td/SOURCES.md`](data/td/SOURCES.md) |
 | `text` | 1 | 1 | 1 unknown | Audited | [`data/text/SOURCES.md`](data/text/SOURCES.md) |
 | `typescript` | 6 | 46 | 5 pool-reference, 1 unknown | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
@@ -83,7 +84,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `yaml` | 1 | 8 | 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
 | `zig` | 4 | 41 | 4 pool-reference | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
 
-Six additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `markdown`, `pbtxt`, `sqlite`.
+Five additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `markdown`, `pbtxt`.
 
 ## Contributing new content
 
