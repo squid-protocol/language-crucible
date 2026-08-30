@@ -148,6 +148,37 @@ EXACT_PROVENANCE = {
     ("groovy", "retrofit_gradle"): ("https://github.com/square/retrofit", "77e6ba21d9ba372d1b23ef29881912910da23347", "Apache License 2.0"),
     ("groovy", "jenkins_view_groovy"): ("https://github.com/jenkinsci/jenkins", "bc6a2222ce5a9e104a4f5a96653f0e879461936b", "MIT License"),
     ("groovy", "fineract_gradle_plugin"): ("https://github.com/apache/fineract", "e6e5a4b6eec5a33d327546c640e6b7f281b5ae42", "Apache License 2.0"),
+    # assembly / sqlite / tcl expansion (2026-08-30). Same rule: curated subset
+    # copied from the pool clone at the commit below, at copy time -> exact.
+    ("assembly", "nasm_testsuite"): ("https://github.com/netwide-assembler/nasm", "3cb6231581679a9ab1a8eeb0342375eb7002cebe", "BSD 2-Clause License"),
+    ("assembly", "cosmopolitan_syscalls"): ("https://github.com/jart/cosmopolitan", "eedf7d2db6e5ee0e228862690339c166a3f003a7", "ISC License"),
+    ("assembly", "cosmopolitan_runtime"): ("https://github.com/jart/cosmopolitan", "eedf7d2db6e5ee0e228862690339c166a3f003a7", "ISC License"),
+    ("assembly", "xv6_x86_kernel"): ("https://github.com/mit-pdos/xv6-public", "eeb7b415dbcb12cc362d0783e41c3d1f44066b17", "MIT License"),
+    ("assembly", "freebsd_libc_string"): ("https://github.com/freebsd/freebsd-src", "c70755bc0d8f703dbaa1520c15e8213a95847dd5", "BSD (multiple clauses)"),
+    ("assembly", "freebsd_kernel_arch"): ("https://github.com/freebsd/freebsd-src", "c70755bc0d8f703dbaa1520c15e8213a95847dd5", "BSD (multiple clauses)"),
+    ("assembly", "linux_1_0_kernel"): ("https://github.com/kalamangga-net/linux-1.0", "733a0282d6e855c5eee87c86733dca8c0f3e1a42", "GNU GPL v2.0"),
+    ("assembly", "hellosilicon_aarch64"): ("https://github.com/below/HelloSilicon", "29170b7e69970e8bfb74e5f210bfe20fa2229d8a", "MIT License"),
+    ("assembly", "cpm65_6502"): ("https://github.com/davidgiven/cpm65", "ff7f5f938607195c562e53f0a4558086aab4663a", "BSD 2-Clause License"),
+    ("assembly", "os_tutorial_x86"): ("https://github.com/cfenollosa/os-tutorial", "8002382ee56f876119f77217220b8a5034e9bac1", "BSD 3-Clause License"),
+    ("assembly", "x86_bare_metal"): ("https://github.com/cirosantilli/x86-bare-metal-examples", "528ab2becc4992218ca0b7e297f3e1f1674268de", "GNU GPL v3.0"),
+    ("assembly", "blst_generated_asm"): ("https://github.com/supranational/blst", "f62244ef50ad1a603decdb8f215e982d2a467bb6", "Apache License 2.0"),
+    ("sqlite", "sqlite_cli_scripts"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("sqlite", "mediawiki_sqlite_tables"): ("https://github.com/wikimedia/mediawiki", "8863834e673e4f297bfbc40cd4d54ee9027ad876", "GNU GPL v2.0"),
+    ("sqlite", "mediawiki_sqlite_alterpatches"): ("https://github.com/wikimedia/mediawiki", "8863834e673e4f297bfbc40cd4d54ee9027ad876", "GNU GPL v2.0"),
+    ("sqlite", "sqitch_sqlite_engine"): ("https://github.com/sqitchers/sqitch", "0ab857e3bb5060e6feda0dd3e05ebb04f7aac85b", "MIT License"),
+    ("sqlite", "prisma_sqlite_migrations"): ("https://github.com/prisma/prisma", "ada077ba32b5801d00d32f1434a45aaae7bc09a9", "Apache License 2.0"),
+    ("sqlite", "prisma_typed_sql"): ("https://github.com/prisma/prisma", "ada077ba32b5801d00d32f1434a45aaae7bc09a9", "Apache License 2.0"),
+    ("sqlite", "yii2_sqlite_schema"): ("https://github.com/yiisoft/yii2", "9265980e089733f657609a37a95ab86176cb6c00", "BSD 3-Clause License"),
+    ("sqlite", "dancer2_sqlite"): ("https://github.com/PerlDancer/Dancer2", "25176c5b860493b4a6dcda5bc12ecbefa67df716", "Perl 5 terms (Artistic-1.0-or-GPL-1.0-or-later)"),
+    ("sqlite", "flask_tutorial_sqlite"): ("https://github.com/pallets/flask", "7ef2946fb5151b745df30201b8c27790cac53875", "BSD 3-Clause License"),
+    ("tcl", "sqlite_core_dml"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("tcl", "sqlite_query_planner"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("tcl", "sqlite_cte_window"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("tcl", "sqlite_json_triggers"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("tcl", "sqlite_fts5"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("tcl", "sqlite_rtree"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("tcl", "macports_port_api"): ("https://github.com/macports/macports-base", "81fb1d2acda818f1075dd2196b650466dbd35117", "BSD 3-Clause License"),
+    ("tcl", "macports_registry"): ("https://github.com/macports/macports-base", "81fb1d2acda818f1075dd2196b650466dbd35117", "BSD 3-Clause License"),
 }
 
 # Hand-corrected matches for generically-named repo folders (e.g. "core",
@@ -185,6 +216,11 @@ KNOWN_UNKNOWN = {
         "(\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via "
         "@rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. "
         "Recorded unknown by design, not oversight.",
+    ("assembly", "raspberrypi_baremetal"):
+        "ARMv7/ARMv8 bare-metal .asm from PeterLemon/RaspberryPi (pool clone "
+        "5783e31ba16353413a9248431da464e37a5619d1). That repo ships no LICENSE/COPYING file "
+        "anywhere and its README states no terms, so nothing is asserted. Kept for the ARM "
+        "bare-metal dialect coverage; recorded unknown by design.",
 }
 
 LICENSE_SIGNATURES = [
