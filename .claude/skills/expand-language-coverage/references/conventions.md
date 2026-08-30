@@ -16,6 +16,10 @@ provenance is per-folder.
 
 To keep flattened filenames short, point `--src` at the deepest common
 directory (`--src corpus_perl/sqitch/lib/App/Sqitch/Engine`), not the repo root.
+`stage_folder.py` flattens the path *relative to `--src`*, so a shallow `--src`
+over a deep `--find` produces long `a_b_c_d_Thing.groovy` names. When several
+matching files live under `.../src/main/groovy/<pkg>/`, aim `--src` at that
+`groovy/` (or `<pkg>/`) directory and use `--find "-name '*.groovy'"`.
 
 ## Sizing bands (files per category, for calibration)
 

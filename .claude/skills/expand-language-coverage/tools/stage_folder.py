@@ -42,6 +42,12 @@ _LICENSE_SIGNATURES = [
     ("Eclipse Public License 2.0", re.compile(r"Eclipse Public License\s*-?\s*v?\.?\s*2\.0", re.I)),
     ("The Unlicense", re.compile(r"\bunlicense\b", re.I)),
     ("Public Domain", re.compile(r"public domain|disclaims copyright", re.I)),
+    # Fallback: the bare MIT permission grant with no "MIT License" title
+    # (godot, jQuery, and others ship the body only). Ordered last so an
+    # explicit title above always wins.
+    ("MIT License", re.compile(
+        r"Permission is hereby granted, free of charge, to any person obtaining a\s+"
+        r"copy of this software and associated documentation files", re.I)),
 ]
 
 

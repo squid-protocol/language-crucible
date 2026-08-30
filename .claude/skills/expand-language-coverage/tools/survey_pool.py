@@ -50,6 +50,9 @@ _LICENSE_SIGNATURES = [
     ("Creative Commons", re.compile(r"Creative Commons", re.I)),
     ("The Unlicense", re.compile(r"\bunlicense\b", re.I)),
     ("Public Domain", re.compile(r"public domain|disclaims copyright", re.I)),
+    ("MIT License", re.compile(
+        r"Permission is hereby granted, free of charge, to any person obtaining a\s+"
+        r"copy of this software and associated documentation files", re.I)),
 ]
 
 
