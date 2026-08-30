@@ -39,6 +39,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `css` | 11 | 49 | 8 exact, 3 pool-reference | Audited | [`data/css/SOURCES.md`](data/css/SOURCES.md) |
 | `dart` | 1 | 8 | 1 pool-reference | Audited | [`data/dart/SOURCES.md`](data/dart/SOURCES.md) |
 | `dockerfile` | 1 | 71 | 1 pool-reference | Audited | [`data/dockerfile/SOURCES.md`](data/dockerfile/SOURCES.md) |
+| `embedded_python` | 1 | 14 | 1 unknown | Audited | [`data/embedded_python/SOURCES.md`](data/embedded_python/SOURCES.md) |
 | `fortran` | 1 | 15 | 1 unknown | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
 | `go` | 2 | 17 | 2 pool-reference | Audited | [`data/go/SOURCES.md`](data/go/SOURCES.md) |
 | `groovy` | 16 | 329 | 14 exact, 2 pool-reference | Audited | [`data/groovy/SOURCES.md`](data/groovy/SOURCES.md) |
@@ -64,7 +65,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `powershell` | 5 | 129 | 5 exact | Curated | [`data/powershell/SOURCES.md`](data/powershell/SOURCES.md) |
 | `proto` | 1 | 4 | 1 pool-reference | Audited | [`data/proto/SOURCES.md`](data/proto/SOURCES.md) |
 | `protobuf` | 1 | 1 | 1 unknown | Audited | [`data/protobuf/SOURCES.md`](data/protobuf/SOURCES.md) |
-| `python` | 7 | 295 | 6 pool-reference, 1 unknown | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
+| `python` | 6 | 281 | 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
 | `ruby` | 1 | 8 | 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
 | `rust` | 6 | 49 | 6 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
 | `scala` | 1 | 8 | 1 pool-reference | Audited | [`data/scala/SOURCES.md`](data/scala/SOURCES.md) |

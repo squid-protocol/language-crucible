@@ -92,7 +92,8 @@ The whole 2026-08-30 session's content-addition PRs have landed on `main`
 | `tcl` | 1 / 13 | 9 / 156 | SQLite `.test` suite (TCL-harness-wraps-SQL) + macports-base app Tcl. |
 | `html` | 7 / 19 | 15 / 67 | Polyglot shader HTML, framework-microsyntax templates, CSP webviews, broken-DOM fixtures. |
 | `css` | 3 / 9 | 11 / 49 | Preprocessor at-rules, CSS Modules, minified, machine-generated, legacy. |
-| `python` | 6 / 487 | 7 / 295 | Added `meow_turtle` (RP2040 MicroPython firmware, embedded PIO asm); corrected a pre-existing `fastapi` file-count drift (446 → 240 to match the committed tree). |
+| `python` | 6 / ~~487~~ 281 | 6 / 281 | No files changed — the v1.1.0 `487` was a bookkeeping error (the issue-#4 audit recorded `fastapi` at 446 files; the folder has only ever held 240). The v1.2.0 regen made the count honest. |
+| `embedded_python` | — | 1 / 14 | **New category.** `meow_turtle` — original RP2040/RP2350 MicroPython firmware (`boot.py`, `import machine`, `@rp2.asm_pio` PIO assembly embedded in Python). `unknown` by design. GitGalaxy classifies this separately from CPython. |
 | `jcl` | 5 / 191 | 6 / 193 | Effectively flat — **`data/jcl/SOURCES.md` now documents that this category is at the pool's real-licensed-source ceiling**; growing it needs new licensed mainframe repos in `gitgalaxy/data`. |
 
 Non-content: added the `expand-language-coverage` skill

@@ -649,6 +649,17 @@
     "note": null
   },
   {
+    "category": "embedded_python",
+    "repo": "meow_turtle",
+    "path": "data/embedded_python/meow_turtle",
+    "files": 14,
+    "url": null,
+    "commit": null,
+    "license": null,
+    "confidence": "unknown",
+    "note": "Original embedded-firmware content from the repo owner's personal LEGO-sorter project (\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via @rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. Recorded unknown by design, not oversight."
+  },
+  {
     "category": "fortran",
     "repo": "wrf",
     "path": "data/fortran/wrf",
@@ -1593,17 +1604,6 @@
     "license": "MIT License",
     "confidence": "pool-reference",
     "note": null
-  },
-  {
-    "category": "python",
-    "repo": "meow_turtle",
-    "path": "data/python/meow_turtle",
-    "files": 14,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "Original embedded-firmware content from the repo owner's personal LEGO-sorter project (\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via @rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. Recorded unknown by design, not oversight."
   },
   {
     "category": "python",
