@@ -76,6 +76,13 @@ EXACT_PROVENANCE = {
     ("cobol", "cobrix"): ("https://github.com/AbsaOSS/cobrix", "7200b77cdebb4244137f88b48e908acfc4ccbee1", "Apache License 2.0"),
     ("cobol", "gnucobol"): ("https://github.com/paulsmith/gnucobol", "d139d06201cf0aba9d143e0f675f446c19603b36", "GNU GPL v3.0"),
     ("cobol", "che-che4z-lsp-for-cobol"): ("https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol", "dd1133952579575082914476fa699667b8790e1d", "Eclipse Public License 2.0"),
+    # cobol 2x pass (2026-08-30). Same convention: curated subsets copied from
+    # the pool clone at the commit below, at copy time -> exact.
+    ("cobol", "che-che4z_nist_ccvs85"): ("https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol", "dd1133952579575082914476fa699667b8790e1d", "Eclipse Public License 2.0"),
+    ("cobol", "che-che4z_lsp_project_fixtures"): ("https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol", "dd1133952579575082914476fa699667b8790e1d", "Eclipse Public License 2.0"),
+    ("cobol", "cobol-check"): ("https://github.com/openmainframeproject/cobol-check", "e372dd7f436c471883bd58ac71aab49861a57e5d", "Apache License 2.0"),
+    ("cobol", "cics-java-jcics-samples"): ("https://github.com/cicsdev/cics-java-jcics-samples", "11e86326f2600220cc610bdf4bee9afa77c206c0", "Apache License 2.0"),
+    ("jcl", "cics-java-jcics-samples"): ("https://github.com/cicsdev/cics-java-jcics-samples", "11e86326f2600220cc610bdf4bee9afa77c206c0", "Apache License 2.0"),
     ("jcl", "cics-genapp"): ("https://github.com/cicsdev/cics-genapp", "63eca1b670d9199637bdc2ca7df6e4189a58c892", "Eclipse Public License 2.0"),
     ("jcl", "cics-banking-sample-application-cbsa"): ("https://github.com/cicsdev/cics-banking-sample-application-cbsa", "46cbda52051d5cded017d72ad653df68b8ec1b60", "Eclipse Public License 2.0"),
     ("jcl", "cobol-programming-course"): ("https://github.com/openmainframeproject/cobol-programming-course", "11aca51998e11181925ff16c20b32c220360ff66", "CC-BY-4.0"),

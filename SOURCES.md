@@ -33,7 +33,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `batch` | 2 | 7 | 2 pool-reference | Audited | [`data/batch/SOURCES.md`](data/batch/SOURCES.md) |
 | `blueprint` | 1 | 6 | 1 pool-reference | Audited | [`data/blueprint/SOURCES.md`](data/blueprint/SOURCES.md) |
 | `c` | 4 | 39 | 4 pool-reference | Audited | [`data/c/SOURCES.md`](data/c/SOURCES.md) |
-| `cobol` | 11 | 308 | 9 exact, 2 unknown | Curated | [`data/cobol/SOURCES.md`](data/cobol/SOURCES.md) |
+| `cobol` | 15 | 589 | 13 exact, 2 unknown | Curated | [`data/cobol/SOURCES.md`](data/cobol/SOURCES.md) |
 | `cpp` | 4 | 47 | 3 pool-reference, 1 unknown | Audited | [`data/cpp/SOURCES.md`](data/cpp/SOURCES.md) |
 | `csharp` | 1 | 7 | 1 pool-reference | Audited | [`data/csharp/SOURCES.md`](data/csharp/SOURCES.md) |
 | `css` | 11 | 49 | 8 exact, 3 pool-reference | Audited | [`data/css/SOURCES.md`](data/css/SOURCES.md) |
@@ -47,7 +47,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `html` | 15 | 67 | 8 exact, 7 unknown | Audited | [`data/html/SOURCES.md`](data/html/SOURCES.md) |
 | `java` | 1 | 8 | 1 pool-reference | Audited | [`data/java/SOURCES.md`](data/java/SOURCES.md) |
 | `javascript` | 3 | 23 | 3 pool-reference | Audited | [`data/javascript/SOURCES.md`](data/javascript/SOURCES.md) |
-| `jcl` | 5 | 191 | 5 exact | Curated | [`data/jcl/SOURCES.md`](data/jcl/SOURCES.md) |
+| `jcl` | 6 | 193 | 6 exact | Curated | [`data/jcl/SOURCES.md`](data/jcl/SOURCES.md) |
 | `json` | 2 | 5 | 1 unknown, 1 pool-reference | Audited | [`data/json/SOURCES.md`](data/json/SOURCES.md) |
 | `kotlin` | 1 | 7 | 1 pool-reference | Audited | [`data/kotlin/SOURCES.md`](data/kotlin/SOURCES.md) |
 | `livecode` | 1 | 99 | 1 exact | Curated | [`data/livecode/SOURCES.md`](data/livecode/SOURCES.md) |
