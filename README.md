@@ -98,3 +98,20 @@ galaxyscope /path/to/all_language_repo --output /tmp
 
 The engine parses without a compile step and produces a dependency graph, structural risk
 report, and complexity map regardless of whether any of the code in this corpus can build.
+
+## The GitGalaxy constellation
+
+This repo is one strand of the web of repos that build, prove, and showcase
+[GitGalaxy](https://github.com/squid-protocol/gitgalaxy). This is the **accuracy leg** — real,
+hostile, multi-language code the engine must parse correctly, release after release; the
+**consistency leg** (does it measure identical intent identically across languages?) is
+keyword-rosetta:
+
+- [gitgalaxy](https://github.com/squid-protocol/gitgalaxy) — the engine this corpus stress-tests (pinned via `LANGUAGE_CRUCIBLE_REF`)
+- **language-crucible** — *you are here*: the adversarial benchmark corpus
+- [keyword-rosetta](https://github.com/squid-protocol/keyword-rosetta) — one planted program in 46 languages, measuring cross-language measurement consistency
+- [gitgalaxy-raw-output](https://github.com/squid-protocol/gitgalaxy-raw-output) — unedited scans of real repos + speed telemetry (proves it *runs* at scale; this repo proves it's *correct*)
+- [gitgalaxy-population-analyses](https://github.com/squid-protocol/gitgalaxy-population-analyses) — statistics over the scan population
+- [cobol_to_java_examples](https://github.com/squid-protocol/cobol_to_java_examples) — 10 COBOL repos auto-translated to compiling Spring Boot architectures (several sources also live in this corpus's cobol/jcl categories)
+- [squid-telemetry](https://github.com/squid-protocol/squid-telemetry) — public distribution/adoption metrics
+- Docs: [architecture & methodology site](https://squid-protocol.github.io/gitgalaxy/) · [Museum of Code](https://squid-protocol.github.io/gitgalaxy/museum-of-code/) · [gitgalaxy.io](https://gitgalaxy.io/) · [PyPI](https://pypi.org/project/gitgalaxy/)
