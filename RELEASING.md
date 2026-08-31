@@ -1,8 +1,7 @@
 # Releasing / tagging this repo
 
-This repo is currently tagged at `v1.1.0` (`v1.0` was cut 2026-07-03,
-`v1.1.0` on 2026-08-28).<sup>†</sup> **`v1.2.0` is drafted and waiting on the
-`gitgalaxy`-side golden-master regen** — see "Where things stand right now".
+This repo is currently tagged at `v1.2.0` (`v1.0` was cut 2026-07-03,
+`v1.1.0` on 2026-08-28, `v1.2.0` on 2026-08-30).<sup>†</sup>
 The tag matters more than a normal
 "version number" would:
 **GitGalaxy's own CI pins to it.** This document exists so cutting the next
@@ -77,11 +76,16 @@ side.
 
 ## Where things stand right now
 
-### `v1.2.0` — drafted 2026-08-30, **not yet tagged**
+### `v1.2.0` — cut 2026-08-30 against `main` @ `77bc85e`
 
-The whole 2026-08-30 session's content-addition PRs have landed on `main`
-(#12, #13→#17, #14, #15, #16). This is a checkpoint-sized batch: **152 → 218
-`data/` repo-folders, 2,344 → 3,306 files.** By category, since `v1.1.0`:
+[Release](https://github.com/squid-protocol/language-crucible/releases/tag/v1.2.0).
+`gitgalaxy`'s pin was bumped to match: golden masters + tri-comparison /
+tree-sitter-accuracy artifacts regenerated and `LANGUAGE_CRUCIBLE_REF` +
+`tests/_crucible_pin.py` moved to `v1.2.0`
+([squid-protocol/gitgalaxy#2478](https://github.com/squid-protocol/gitgalaxy/pull/2478)).
+
+A checkpoint-sized batch: **152 → 218 `data/` repo-folders, 2,344 → 3,306
+files.** By category, since `v1.1.0`:
 
 | Category | v1.1.0 | v1.2.0 | Notes |
 |---|---|---|---|
@@ -100,11 +104,13 @@ Non-content: added the `expand-language-coverage` skill
 (`.claude/skills/expand-language-coverage/`) — the repeatable
 survey → stage → provenance → PR workflow these expansions used.
 
-**Remaining before `v1.2.0` is real:** step 2 above (regenerate `gitgalaxy`'s
-golden masters + the tri-comparison / tree-sitter-accuracy artifacts against
-this `main`), then step 3 (cut the tag + publish release notes), then step 4
-(bump the pin). Full draft release notes are staged for
-`gh release create v1.2.0 --notes-file …`.
+The `gitgalaxy`-side regen surfaced two genuine engine imprecisions that the
+new corpus content newly exercised (not regressions — the parser is unchanged):
+CSS `func_start` counts `@layer`/`@media`/`@keyframes`/`@supports` at-rules as
+functions (CSS function-precision 100% → 83.3%), and `groovy`'s Jenkins
+builder-DSL / bare-`def` content produces `func_start` false positives that
+tree-sitter can't ground-truth (it parses 0 functions in Groovy). Both are
+flagged for follow-up issues in #2478.
 
 ### `v1.1.0`
 
