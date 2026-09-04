@@ -11,7 +11,10 @@ carry dialect-correct files for that language, with per-repo HEAD / remote /
 license. Writes a JSON manifest scaffold to <repo>/.crucible-survey-<lang>.json.
 
 Env: GITGALAXY_POOL_PATH (default /srv/storage_16tb/projects/gitgalaxy/data)
-     GITGALAXY_STANDARDS  (default .../gitgalaxy/v6/gitgalaxy/standards/language_standards.py)
+     GITGALAXY_STANDARDS  (default .../gitgalaxy/v6/gitgalaxy/standards/language_standards.py;
+                           may also point at the language_standards/ package directory —
+                           gitgalaxy#2527 split the single file into a per-language package,
+                           and either form of the path resolves to the package's registry)
 """
 import argparse
 import json
@@ -37,10 +40,14 @@ _REGEX_NOISE = {
 _LICENSE_SIGNATURES = [
     ("MIT License", re.compile(r"\bMIT License\b", re.I)),
     ("Apache License 2.0", re.compile(r"Apache License,?\s*Version 2\.0", re.I)),
+    # AGPL/LGPL before GPL (their title lines also satisfy the plain-GPL
+    # signatures), anchored to the title block's "…LICENSE / Version N" shape so
+    # a plain GPL text's prose *mention* of the Lesser/Affero licenses (both
+    # GPL preambles have one) can't claim it.
+    ("GNU AGPL v3.0", re.compile(r"AFFERO GENERAL PUBLIC LICENSE\s*\n\s*Version 3", re.I)),
+    ("GNU LGPL", re.compile(r"LESSER GENERAL PUBLIC LICENSE\s*\n\s*Version", re.I)),
     ("GNU GPL v3.0", re.compile(r"GENERAL PUBLIC LICENSE\s*\n?\s*Version 3", re.I)),
     ("GNU GPL v2.0", re.compile(r"GENERAL PUBLIC LICENSE\s*\n?\s*Version 2", re.I)),
-    ("GNU LGPL", re.compile(r"LESSER GENERAL PUBLIC LICENSE", re.I)),
-    ("GNU AGPL v3.0", re.compile(r"AFFERO GENERAL PUBLIC LICENSE", re.I)),
     ("BSD 3-Clause License", re.compile(r"BSD 3-Clause|Redistribution.*?3\. Neither", re.I | re.S)),
     ("BSD 2-Clause License", re.compile(r"BSD 2-Clause", re.I)),
     ("BSD License", re.compile(r"Redistribution and use in source and binary forms", re.I)),
@@ -86,21 +93,11 @@ def _str_list(block: str, key: str) -> list[str]:
     return re.findall(r'["\']([^"\']+)["\']', m.group(1))
 
 
-def parse_standard(lang: str) -> dict:
-    text = Path(STANDARDS).read_text(errors="ignore")
-    block = slice_lang_block(text, lang)
-    exts = _str_list(block, 'extensions')
-    exact = _str_list(block, 'exact_matches')
-    shebangs = _str_list(block, 'shebangs')
-
+def _mine_markers(pattern_bodies: list[str]) -> list[str]:
     # Signature markers: literal word-ish tokens that appear inside the rules'
-    # raw-string regexes. Heuristic, for guiding grep -- not exhaustive.
-    rules_start = block.find('"rules"')
-    rules_txt = block[rules_start:] if rules_start >= 0 else block
-    raw = re.findall(r'r"(?:[^"\\]|\\.)*"|r\'(?:[^\'\\]|\\.)*\'', rules_txt)
+    # regexes. Heuristic, for guiding grep -- not exhaustive.
     markers: dict[str, int] = {}
-    for lit in raw:
-        body = lit[2:-1]
+    for body in pattern_bodies:
         # multi-word phrases like WITH\s+RECURSIVE, PRAGMA\s+journal_mode
         for phrase in re.findall(r'[A-Za-z_]{3,}(?:\\s\+[A-Za-z_]{3,}){1,3}', body):
             key = re.sub(r'\\s\+', ' ', phrase)
@@ -109,10 +106,10 @@ def parse_standard(lang: str) -> dict:
             if tok in _REGEX_NOISE or len(tok) < 3:
                 continue
             markers[tok] = markers.get(tok, 0) + 1
-    # dot-commands (SQLite / CLI style)
-    for dot in re.findall(r'\\\.\(\?:([a-z|]+)\)', rules_txt):
-        for d in dot.split("|"):
-            markers["." + d] = markers.get("." + d, 0) + 1
+        # dot-commands (SQLite / CLI style)
+        for dot in re.findall(r'\\\.\(\?:([a-z|]+)\)', body):
+            for d in dot.split("|"):
+                markers["." + d] = markers.get("." + d, 0) + 1
 
     ranked = sorted(markers, key=lambda k: (-markers[k], k))
     strong = [
@@ -121,12 +118,76 @@ def parse_standard(lang: str) -> dict:
             or re.match(r'[a-z]+_[a-z0-9_]+$', k)
             or (k.islower() and len(k) >= 4 and markers[k] >= 2))
     ][:50]
+    return strong or ranked[:40]
+
+
+def _resolve_standards() -> tuple[str, Path]:
+    """Return ("package"|"file", resolved path).
+
+    gitgalaxy#2527 split language_standards.py into a per-language package, so
+    the historical file default now names a directory (directly, or once .py is
+    stripped). Prefer the package registry; keep file-slicing for a genuinely
+    single-file (pre-split) checkout.
+    """
+    p = Path(STANDARDS)
+    if p.is_file():
+        return "file", p
+    if p.is_dir():
+        return "package", p
+    pkg = p.with_suffix("")
+    if pkg.is_dir():
+        return "package", pkg
+    sys.exit(
+        f"error: standards not found at {STANDARDS} — set GITGALAXY_STANDARDS to "
+        "language_standards.py (pre-split) or the language_standards/ package directory"
+    )
+
+
+def _registry(pkg: Path) -> dict:
+    # <engine-root>/gitgalaxy/standards/language_standards -> engine root is 3 up
+    engine_root = pkg.parents[2]
+    sys.path.insert(0, str(engine_root))
+    try:
+        from gitgalaxy.standards.language_standards import LANGUAGE_DEFINITIONS
+    except Exception as e:
+        sys.exit(f"error: could not import LANGUAGE_DEFINITIONS from {engine_root}: {e}")
+    return LANGUAGE_DEFINITIONS
+
+
+def parse_standard(lang: str) -> dict:
+    kind, path = _resolve_standards()
+    if kind == "package":
+        defs = _registry(path)
+        if lang not in defs:
+            sys.exit(f"error: language '{lang}' not in LANGUAGE_DEFINITIONS "
+                     f"({len(defs)} languages known)")
+        d = defs[lang]
+        exts = list(d.get("extensions", []))
+        exact = list(d.get("exact_matches", []))
+        shebangs = list(d.get("shebangs", []))
+        # planned_debt / fragile_debt are the shared multilingual TODO/FIXME
+        # alternations (GLOBAL_*_DEBT) — generic comment tokens, not dialect
+        # markers; the pre-split miner never saw them (bare name references).
+        bodies = [v.pattern for k, v in d.get("rules", {}).items()
+                  if not k.startswith("_") and isinstance(v, re.Pattern)
+                  and k not in ("planned_debt", "fragile_debt")]
+    else:
+        text = path.read_text(errors="ignore")
+        block = slice_lang_block(text, lang)
+        exts = _str_list(block, 'extensions')
+        exact = _str_list(block, 'exact_matches')
+        shebangs = _str_list(block, 'shebangs')
+        rules_start = block.find('"rules"')
+        rules_txt = block[rules_start:] if rules_start >= 0 else block
+        raw = re.findall(r'r"(?:[^"\\]|\\.)*"|r\'(?:[^\'\\]|\\.)*\'', rules_txt)
+        bodies = [lit[2:-1] for lit in raw]
+
     return {
         "language": lang,
         "extensions": exts,
         "exact_matches": exact,
         "shebangs": shebangs,
-        "markers": strong or ranked[:40],
+        "markers": _mine_markers(bodies),
     }
 
 

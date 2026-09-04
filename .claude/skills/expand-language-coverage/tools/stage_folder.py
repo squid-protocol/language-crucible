@@ -30,10 +30,14 @@ POOL = Path(os.environ.get("GITGALAXY_POOL_PATH", "/srv/storage_16tb/projects/gi
 _LICENSE_SIGNATURES = [
     ("MIT License", re.compile(r"\bMIT License\b", re.I)),
     ("Apache License 2.0", re.compile(r"Apache License,?\s*Version 2\.0", re.I)),
+    # AGPL/LGPL before GPL (their title lines also satisfy the plain-GPL
+    # signatures), anchored to the title block's "…LICENSE / Version N" shape so
+    # a plain GPL text's prose *mention* of the Lesser/Affero licenses (both
+    # GPL preambles have one) can't claim it.
+    ("GNU AGPL v3.0", re.compile(r"AFFERO GENERAL PUBLIC LICENSE\s*\n\s*Version 3", re.I)),
+    ("GNU LGPL", re.compile(r"LESSER GENERAL PUBLIC LICENSE\s*\n\s*Version", re.I)),
     ("GNU GPL v3.0", re.compile(r"GENERAL PUBLIC LICENSE\s*\n?\s*Version 3", re.I)),
     ("GNU GPL v2.0", re.compile(r"GENERAL PUBLIC LICENSE\s*\n?\s*Version 2", re.I)),
-    ("GNU LGPL", re.compile(r"LESSER GENERAL PUBLIC LICENSE", re.I)),
-    ("GNU AGPL v3.0", re.compile(r"AFFERO GENERAL PUBLIC LICENSE", re.I)),
     ("BSD 3-Clause License", re.compile(r"BSD 3-Clause", re.I)),
     ("BSD 2-Clause License", re.compile(r"BSD 2-Clause", re.I)),
     ("BSD License", re.compile(r"Redistribution and use in source and binary forms", re.I)),
