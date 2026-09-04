@@ -2354,6 +2354,72 @@
     "note": null
   },
   {
+    "category": "yaml",
+    "repo": "black_action",
+    "path": "data/yaml/black_action",
+    "files": 2,
+    "url": "https://github.com/psf/black",
+    "commit": "e079b7e100d1e181d4ee860ee4512bf3326f32c3",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yaml",
+    "repo": "grafana_compose",
+    "path": "data/yaml/grafana_compose",
+    "files": 4,
+    "url": "https://github.com/grafana/grafana",
+    "commit": "d9c23be0842c8ffd27e9dd7e7b6c78f0ea2a916b",
+    "license": "GNU AGPL v3.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yaml",
+    "repo": "moby_workflows",
+    "path": "data/yaml/moby_workflows",
+    "files": 17,
+    "url": "https://github.com/moby/moby",
+    "commit": "d74daf1afe932c3579fc98ffc8f4378e5357c2a0",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yaml",
+    "repo": "serenity_composite_actions",
+    "path": "data/yaml/serenity_composite_actions",
+    "files": 4,
+    "url": "https://github.com/SerenityOS/serenity",
+    "commit": "c224a9b0d6c1ae4868d2b34f0bdc7e7c2cd9e1c9",
+    "license": "BSD 2-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yaml",
+    "repo": "sqlmap_openapi",
+    "path": "data/yaml/sqlmap_openapi",
+    "files": 2,
+    "url": "https://github.com/sqlmapproject/sqlmap",
+    "commit": "c310c695a100268f8b91613c33e0541a6e5cda17",
+    "license": "GNU GPL v2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yaml",
+    "repo": "vscode_workflows",
+    "path": "data/yaml/vscode_workflows",
+    "files": 14,
+    "url": "https://github.com/microsoft/vscode",
+    "commit": "23c0b41d69d42b85e1ae7ee4b99801dc4e21e232",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "zig",
     "repo": "bun",
     "path": "data/zig/bun",

@@ -179,6 +179,14 @@ EXACT_PROVENANCE = {
     ("tcl", "sqlite_rtree"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
     ("tcl", "macports_port_api"): ("https://github.com/macports/macports-base", "81fb1d2acda818f1075dd2196b650466dbd35117", "BSD 3-Clause License"),
     ("tcl", "macports_registry"): ("https://github.com/macports/macports-base", "81fb1d2acda818f1075dd2196b650466dbd35117", "BSD 3-Clause License"),
+    # yaml expansion (2026-09-03, issues #23/#24). Same rule: curated subsets
+    # copied from the pool clone at the commit below, at copy time -> exact.
+    ("yaml", "moby_workflows"): ("https://github.com/moby/moby", "d74daf1afe932c3579fc98ffc8f4378e5357c2a0", "Apache License 2.0"),
+    ("yaml", "vscode_workflows"): ("https://github.com/microsoft/vscode", "23c0b41d69d42b85e1ae7ee4b99801dc4e21e232", "MIT License"),
+    ("yaml", "serenity_composite_actions"): ("https://github.com/SerenityOS/serenity", "c224a9b0d6c1ae4868d2b34f0bdc7e7c2cd9e1c9", "BSD 2-Clause License"),
+    ("yaml", "black_action"): ("https://github.com/psf/black", "e079b7e100d1e181d4ee860ee4512bf3326f32c3", "MIT License"),
+    ("yaml", "grafana_compose"): ("https://github.com/grafana/grafana", "d9c23be0842c8ffd27e9dd7e7b6c78f0ea2a916b", "GNU AGPL v3.0"),
+    ("yaml", "sqlmap_openapi"): ("https://github.com/sqlmapproject/sqlmap", "c310c695a100268f8b91613c33e0541a6e5cda17", "GNU GPL v2.0"),
 }
 
 # Hand-corrected matches for generically-named repo folders (e.g. "core",

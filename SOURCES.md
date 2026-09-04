@@ -82,7 +82,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `typescript` | 6 | 46 | 5 pool-reference, 1 unknown | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
 | `xml` | 5 | 24 | 4 pool-reference, 1 unknown | Audited | [`data/xml/SOURCES.md`](data/xml/SOURCES.md) |
 | `yacc` | 1 | 3 | 1 unknown | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
-| `yaml` | 1 | 8 | 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
+| `yaml` | 7 | 51 | 6 exact, 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
 | `zig` | 4 | 41 | 4 pool-reference | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
 
 Five additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `markdown`, `pbtxt`.
