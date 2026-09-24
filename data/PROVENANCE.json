@@ -451,6 +451,28 @@
     "note": null
   },
   {
+    "category": "cobol",
+    "repo": "Z-SMS-Gateway",
+    "path": "data/cobol/Z-SMS-Gateway",
+    "files": 5,
+    "url": "https://github.com/philhp/Z-SMS-Gateway",
+    "commit": "37fe29d4802817791357c026b7713edb30e01afc",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "cobol",
+    "repo": "zECS",
+    "path": "data/cobol/zECS",
+    "files": 7,
+    "url": "https://github.com/walmartlabs/zECS",
+    "commit": "6d6bcbbc89c9be086a58cb7ad2ff4d702e873d02",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "cpp",
     "repo": "NVDA",
     "path": "data/cpp/NVDA",

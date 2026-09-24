@@ -30,8 +30,10 @@ match `data/PROVENANCE.json`.
 | `che-che4z_lsp_project_fixtures` | 76 | https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol | `dd1133952579575082914476fa699667b8790e1d` | Eclipse Public License 2.0 | **New (2026-08-30).** The LSP's own `tests/test_files/project/` parser fixtures — Broadcom EPL-headered edge cases: XML PARSE/GENERATE, JSON PARSE, `EXEC SQL`/`EXEC CICS` embedded blocks, dialect keywords, deliberately-partial programs. |
 | `cobol-check` | 46 | https://github.com/openmainframeproject/cobol-check | `e372dd7f436c471883bd58ac71aab49861a57e5d` | Apache License 2.0 | **New (2026-08-30).** Open Mainframe Project's COBOL unit-test tool — its `src/` COBOL, `copybooks/`, and `testfiles/` (programs that exercise DB2 instructions, file I/O, PERFORM, string handling). |
 | `cics-java-jcics-samples` | 3 | https://github.com/cicsdev/cics-java-jcics-samples | `11e86326f2600220cc610bdf4bee9afa77c206c0` | Apache License 2.0 | **New (2026-08-30).** IBM's JCICS Java↔COBOL interop samples — `EC01.cbl` / `EDUCHAN.cbl` (CICS channels & containers from the COBOL side). Matching JCL in `data/jcl/cics-java-jcics-samples`. |
+| `zECS` | 7 | https://github.com/walmartlabs/zECS | `6d6bcbbc89c9be086a58cb7ad2ff4d702e873d02` | Apache License 2.0 | **New (2026-09-24, gitgalaxy#3512).** Walmart's z/OS Enterprise Cache Service — production CICS code making outbound HTTP calls (`EXEC CICS WEB OPEN` / `CONVERSE` / `PARSE` / `CLOSE`, plus one `WEB SEND`) and building responses with `DOCUMENT`, plus the ZECSZFC/ZECSZKC copybooks. The HTTP server program `ZECS001.cbl` (92 KB) was excluded by the size cap; its HLASM siblings are in `data/hlasm/zecs`. |
+| `Z-SMS-Gateway` | 5 | https://github.com/philhp/Z-SMS-Gateway | `37fe29d4802817791357c026b7713edb30e01afc` | Apache License 2.0 | **New (2026-09-24, gitgalaxy#3512).** A COBOL REST gateway on CICS TS that is both sides of HTTP: URIMAP-driven server programs (MESSAGES/HISTORY/BALANCE) and an outbound **client** (`WEB OPEN` / `WEB CONVERSE` / `WEB CLOSE`). Its CSD deck is in `data/csd/z_sms_gateway`. |
 
-**Total: 589 files across 15 repo folders** (13 exact, 2 unknown) — up from 308 / 11.
+**Total: 601 files across 17 repo folders** (15 exact, 2 unknown) — up from 589 / 15 (2026-09-24), 308 / 11 before that.
 
 ## 2026-08-30 expansion
 

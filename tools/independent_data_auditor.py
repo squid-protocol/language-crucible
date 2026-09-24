@@ -82,6 +82,10 @@ EXACT_PROVENANCE = {
     ("cobol", "che-che4z_lsp_project_fixtures"): ("https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol", "dd1133952579575082914476fa699667b8790e1d", "Eclipse Public License 2.0"),
     ("cobol", "cobol-check"): ("https://github.com/openmainframeproject/cobol-check", "e372dd7f436c471883bd58ac71aab49861a57e5d", "Apache License 2.0"),
     ("cobol", "cics-java-jcics-samples"): ("https://github.com/cicsdev/cics-java-jcics-samples", "11e86326f2600220cc610bdf4bee9afa77c206c0", "Apache License 2.0"),
+    # CICS coverage gaps (2026-09-24, gitgalaxy#3495/#3512): web server/client
+    # COBOL, copied from pool clones at the commit below -> exact.
+    ("cobol", "zECS"): ("https://github.com/walmartlabs/zECS", "6d6bcbbc89c9be086a58cb7ad2ff4d702e873d02", "Apache License 2.0"),
+    ("cobol", "Z-SMS-Gateway"): ("https://github.com/philhp/Z-SMS-Gateway", "37fe29d4802817791357c026b7713edb30e01afc", "Apache License 2.0"),
     ("jcl", "cics-java-jcics-samples"): ("https://github.com/cicsdev/cics-java-jcics-samples", "11e86326f2600220cc610bdf4bee9afa77c206c0", "Apache License 2.0"),
     ("jcl", "cics-genapp"): ("https://github.com/cicsdev/cics-genapp", "63eca1b670d9199637bdc2ca7df6e4189a58c892", "Eclipse Public License 2.0"),
     ("jcl", "cics-banking-sample-application-cbsa"): ("https://github.com/cicsdev/cics-banking-sample-application-cbsa", "46cbda52051d5cded017d72ad653df68b8ec1b60", "Eclipse Public License 2.0"),
