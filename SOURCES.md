@@ -72,8 +72,8 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `mlir` | 1 | 4 | 1 pool-reference | Audited | [`data/mlir/SOURCES.md`](data/mlir/SOURCES.md) |
 | `nix` | 2 | 10 | 2 pool-reference | Audited | [`data/nix/SOURCES.md`](data/nix/SOURCES.md) |
 | `objective-c` | 1 | 7 | 1 pool-reference | Audited | [`data/objective-c/SOURCES.md`](data/objective-c/SOURCES.md) |
-| `perl` | 4 | 29 | 4 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
-| `php` | 5 | 40 | 5 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |
+| `perl` | 4 | 29 | 1 content-verified, 3 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
+| `php` | 5 | 40 | 1 content-verified, 4 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |
 | `plaintext` | 4 | 11 | 4 pool-reference | Audited | [`data/plaintext/SOURCES.md`](data/plaintext/SOURCES.md) |
 | `pli` | 2 | 17 | 2 content-verified | Audited | [`data/pli/SOURCES.md`](data/pli/SOURCES.md) |
 | `powershell` | 5 | 129 | 5 exact | Curated | [`data/powershell/SOURCES.md`](data/powershell/SOURCES.md) |
@@ -82,7 +82,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `python` | 6 | 286 | 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
 | `rexx` | 3 | 28 | 3 content-verified | Audited | [`data/rexx/SOURCES.md`](data/rexx/SOURCES.md) |
 | `ruby` | 1 | 8 | 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
-| `rust` | 6 | 54 | 1 content-verified, 5 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
+| `rust` | 6 | 54 | 2 content-verified, 4 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
 | `scala` | 1 | 8 | 1 pool-reference | Audited | [`data/scala/SOURCES.md`](data/scala/SOURCES.md) |
 | `scheme` | 1 | 8 | 1 pool-reference | Audited | [`data/scheme/SOURCES.md`](data/scheme/SOURCES.md) |
 | `shell` | 13 | 284 | 13 exact | Curated | [`data/shell/SOURCES.md`](data/shell/SOURCES.md) |
@@ -98,7 +98,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `xml` | 5 | 26 | 1 content-verified, 4 pool-reference | Audited | [`data/xml/SOURCES.md`](data/xml/SOURCES.md) |
 | `yacc` | 1 | 3 | 1 content-verified | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
 | `yaml` | 7 | 51 | 6 exact, 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
-| `zig` | 5 | 45 | 4 pool-reference, 1 unknown | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
+| `zig` | 5 | 45 | 1 content-verified, 3 pool-reference, 1 unknown | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
 
 Five additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `markdown`, `pbtxt`.
 

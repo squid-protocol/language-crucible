@@ -348,6 +348,10 @@ CONTENT_VERIFIED = {
     # Pool-reference entries whose recorded commit postdated the copy; re-pinned
     # to a commit that holds every file (2026-09-30).
     ("rust", "bevy"): ("https://github.com/bevyengine/bevy", "45e454a83bffd7a496621ba77bc3429fa472733d"),
+    ("perl", "exiftool"): ("https://github.com/exiftool/exiftool", "de11d240cf7e521e939a0575a128ffe01b63be05"),
+    ("php", "wordpress"): ("https://github.com/WordPress/WordPress", "a7d2707212442acbf2840c54f60f1f572cf42ac5"),
+    ("rust", "tokio"): ("https://github.com/tokio-rs/tokio", "1fc450aefba4b05cdff9b7825ca5e39cccb3780e"),
+    ("zig", "tigerbeetle"): ("https://github.com/tigerbeetle/tigerbeetle", "b58f468cf951533307d151c0f0f94078b4eff182"),
     ("typescript", "vscode"): ("https://github.com/microsoft/vscode", "4370953ab5117ccc41f5a1f38324a5c1bf010ef9"),
     ("typescript", "typescript_compiler"): ("https://github.com/microsoft/TypeScript", "7b8cb3bdf82f400642b73173f941335775d6f730"),
     ("xml", "apex"): ("https://github.com/trailheadapps/apex-recipes", "3462c7d4bd72998b97da95bd613913a944c4bc0d"),

@@ -1515,10 +1515,10 @@
     "path": "data/perl/exiftool",
     "files": 7,
     "url": "https://github.com/exiftool/exiftool",
-    "commit": "78ef8fcfe519df7d074d15ed973efc9a9663a8e3",
+    "commit": "de11d240cf7e521e939a0575a128ffe01b63be05",
     "license": "GNU GPL v3.0",
-    "confidence": "pool-reference",
-    "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_perl/exiftool."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "perl",
@@ -1591,11 +1591,11 @@
     "repo": "wordpress",
     "path": "data/php/wordpress",
     "files": 8,
-    "url": "https://github.com/WordPress/WordPress.git",
-    "commit": "5f913088f4a04816043be019737a6e4590eae845",
+    "url": "https://github.com/WordPress/WordPress",
+    "commit": "a7d2707212442acbf2840c54f60f1f572cf42ac5",
     "license": "GNU GPL v2.0",
-    "confidence": "pool-reference",
-    "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_php/WordPress."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "plaintext",
@@ -1901,10 +1901,10 @@
     "path": "data/rust/tokio",
     "files": 14,
     "url": "https://github.com/tokio-rs/tokio",
-    "commit": "ee4de818065a97c0be0d6bfc18fb36725349aef8",
+    "commit": "1fc450aefba4b05cdff9b7825ca5e39cccb3780e",
     "license": "MIT License",
-    "confidence": "pool-reference",
-    "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_rust/tokio."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "rust",
@@ -2675,10 +2675,10 @@
     "path": "data/zig/tigerbeetle",
     "files": 14,
     "url": "https://github.com/tigerbeetle/tigerbeetle",
-    "commit": "f25402aa63c8231dbf7d039a6a4c381cd36f89c0",
+    "commit": "b58f468cf951533307d151c0f0f94078b4eff182",
     "license": "Apache License 2.0 (from pool clone's LICENSE, not found locally)",
-    "confidence": "pool-reference",
-    "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_zig/tigerbeetle."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "zig",
