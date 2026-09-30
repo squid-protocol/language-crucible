@@ -3,3 +3,6 @@ __pycache__/
 
 # expand-language-coverage skill: transient pool-survey output
 .crucible-survey-*.json
+
+# galaxyscope writes a dependency cache into any tree it scans; never commit it.
+data/.gitgalaxy/
