@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `wrf` | 15 | unknown | unknown | Public Domain | No confidently-matched pool clone found. Local license file detected (LICENSE.txt). |
+| `wrf` | 15 | https://github.com/wrf-model/WRF | `f15568ccc1447780e3bd664b9f0196edd784bf33` | Public Domain | Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit. |
 
-**Total: 15 files across 1 repo folder(s)** (1 unknown).
+**Total: 15 files across 1 repo folder(s)** (1 content-verified).

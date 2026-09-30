@@ -43,6 +43,10 @@ jobs:
           BASE: ${{ steps.base.outputs.ref }}
         run: python3 tools/corpus_gate.py policy --base "$BASE"
 
+      - name: Source tables match PROVENANCE.json
+        if: always()
+        run: python3 tools/generate_sources.py --check
+
       - name: Immutable (no edits under data/)
         if: always()
         env:

@@ -22,6 +22,8 @@ and diffs its golden masters against it.
 2. **Provenance is not optional.** Every `data/` folder needs a `SOURCES.md` row and a
    `PROVENANCE.json` entry; regenerate with
    `GITGALAXY_POOL_PATH=<pool> python3 tools/independent_data_auditor.py data --provenance`.
+   The `SOURCES.md` tables are generated from `PROVENANCE.json` by
+   `python3 tools/generate_sources.py`; never hand-edit a table row except its Notes cell.
    Unlicensed sources are **not added**: the license must be on the accept list in
    `tools/license_policy.json`, and the upstream license file is copied into the folder.
    (`KNOWN_UNKNOWN` holds only the folders that predate this rule.)

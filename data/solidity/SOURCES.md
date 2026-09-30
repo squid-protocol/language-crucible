@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `openzeppelin` | 8 | unknown | unknown | MIT License | No confidently-matched pool clone found. Local license file detected (LICENSE). |
+| `openzeppelin` | 8 | https://github.com/OpenZeppelin/openzeppelin-contracts | `9cfdccd35350f7bcc585cf2ede08cd04e7f0ec10` | MIT License | Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit. |
 
-**Total: 8 files across 1 repo folder(s)** (1 unknown).
+**Total: 8 files across 1 repo folder(s)** (1 content-verified).

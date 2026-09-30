@@ -126,7 +126,8 @@ Each `data/<language>/<folder>/` needs all of:
 - an entry in `data/PROVENANCE.json` with the upstream **GitHub URL**, the **40-character
   commit** the files were copied from, and the **license**, as an SPDX id;
 - the upstream **license file copied into the folder** (plus `NOTICE` for Apache projects);
-- a row in `data/<language>/SOURCES.md`.
+- a row in `data/<language>/SOURCES.md`, written by `python3 tools/generate_sources.py` from
+  `data/PROVENANCE.json` (add your own description in its Notes column).
 
 Code written for this repo rather than copied is recorded with `"origin": "original"` and is
 covered by the repository's own license.
@@ -146,19 +147,21 @@ category's `SOURCES.md` or `PROVENANCE.md`.
 
 ### What CI checks
 
-[`tools/corpus_gate.py`](tools/corpus_gate.py) runs three checks
+[`tools/corpus_gate.py`](tools/corpus_gate.py) and [`tools/generate_sources.py`](tools/generate_sources.py) run four checks
 ([`.github/workflows/corpus-gate.yml`](.github/workflows/corpus-gate.yml)):
 
 | Check | Fails when |
 |---|---|
 | `policy` | A folder has no provenance entry, no upstream URL and commit, an unknown or rejected license, no license file, or no `SOURCES.md` row |
 | `immutable` | A file under `data/` changes type, or is added as an executable or symlink. In-place replacements are passed to the `upstream` check |
+| `sources` | A `SOURCES.md` table does not match `data/PROVENANCE.json` (`tools/generate_sources.py --check`) |
 | `upstream` | A file added or replaced under `data/` is not identical, apart from line endings, to a file in the upstream repository at the commit its folder records |
 
 Run them before you push:
 
 ```bash
 python3 tools/corpus_gate.py policy
+python3 tools/generate_sources.py --check
 python3 tools/corpus_gate.py immutable --base origin/main
 GH_TOKEN=$(gh auth token) python3 tools/corpus_gate.py upstream --base origin/main
 ```

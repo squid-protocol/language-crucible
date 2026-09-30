@@ -28,4 +28,4 @@ See the root `SOURCES.md` for the methodology and confidence levels.
 | `x86_bare_metal` | 23 | https://github.com/cirosantilli/x86-bare-metal-examples | `528ab2becc4992218ca0b7e297f3e1f1674268de` | GNU GPL v3.0 | GAS-syntax (`.code16`, AT&T) bootsector examples: IDT/PIT/RTC, paging, zero-divide interrupt, BIOS teletype. Contrast to `os_tutorial_x86`'s NASM/Intel take on the same problems. |
 | `xv6_x86_kernel` | 8 | https://github.com/mit-pdos/xv6-public | `eeb7b415dbcb12cc362d0783e41c3d1f44066b17` | MIT License | The complete `.S` set from MIT's teaching OS: `bootasm.S`, `entry.S`, `swtch.S`, `trapasm.S`, `usys.S`. Small, heavily commented, canonical. |
 
-**Total: 253 files across 16 repo folder(s)** (12 exact, 3 pool-reference, 1 unknown).
+**Total: 248 files across 16 repo folder(s)** (13 exact, 3 pool-reference).

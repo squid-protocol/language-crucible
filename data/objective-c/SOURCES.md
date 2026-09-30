@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `worldwideweb` | 7 | https://github.com/simonw/1991-WWW-NeXT-Implementation.git | `032807bfe9b77b434c638667cba051be50047b23` | unknown | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `worldwideweb` | 7 | https://github.com/simonw/1991-WWW-NeXT-Implementation.git | `032807bfe9b77b434c638667cba051be50047b23` | LicenseRef-Public-Domain | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
 **Total: 7 files across 1 repo folder(s)** (1 pool-reference).

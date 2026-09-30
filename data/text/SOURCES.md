@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `baseline` | 1 | unknown | unknown | unknown | No confidently-matched pool clone found. No local license file either. |
+| `baseline` | 1 | none (original work) | n/a | Apache-2.0 | Written for this repository, not copied from an upstream. |
 
-**Total: 1 files across 1 repo folder(s)** (1 unknown).
+**Total: 1 files across 1 repo folder(s)** (1 original).

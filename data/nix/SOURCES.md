@@ -4,7 +4,7 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `bun` | 3 | https://github.com/oven-sh/bun | `1cc837687b1d1f8d558a40110fbe3e61cc41fbcd` | MIT License (from pool clone's LICENSE.md, not found locally) | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. 1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_zig/bun. |
+| `bun` | 4 | https://github.com/oven-sh/bun | `1cc837687b1d1f8d558a40110fbe3e61cc41fbcd` | MIT License (from pool clone's LICENSE.md, not found locally) | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. 1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_zig/bun. |
 | `ghostty` | 6 | https://github.com/ghostty-org/ghostty | `debcffbadb75221a030319c075fae12cfe114176` | MIT License | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
-**Total: 9 files across 2 repo folder(s)** (2 pool-reference).
+**Total: 10 files across 2 repo folder(s)** (2 pool-reference).
