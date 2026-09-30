@@ -11,8 +11,10 @@ By submitting this Pull Request, you acknowledge the following constraints:
 *Describe what this code represents. What parser limitation or structural boundary is this designed to test?*
 
 ### Source & License
-*Required for any new file(s) under `data/`. See [`SOURCES.md`](../SOURCES.md) for the format and confidence-level conventions this repo uses (issue [#4](https://github.com/squid-protocol/language-crucible/issues/4)).*
-- **Upstream repo URL:**
-- **Exact commit (if known):**
-- **License:**
-- **`data/<language>/SOURCES.md` row added:** yes / no *(if no, explain why — e.g. license genuinely couldn't be determined)*
+*Required for any new file(s) under `data/`. The rules are in the README, ["Adding to the corpus"](https://github.com/squid-protocol/language-crucible/blob/main/README.md#adding-to-the-corpus); CI enforces them.*
+- **Upstream GitHub repo URL:**
+- **Exact 40-character commit:**
+- **License (SPDX id, must be on the accept list in `tools/license_policy.json`):**
+- [ ] The upstream license file is copied into the folder.
+- [ ] `data/PROVENANCE.json` entry and `data/<language>/SOURCES.md` row added.
+- [ ] No file under `data/` was edited: files are added, deleted or moved unchanged only.

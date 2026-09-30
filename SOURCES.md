@@ -12,6 +12,14 @@ Every repo-folder entry across all `data/<language>/SOURCES.md` files is tagged 
 
 - **`unknown`** — no confidently-matched pool clone and/or no local license file. Recorded as unknown deliberately, per the issue's own guidance: "an honest 'unknown' is better than an asserted-but-wrong attribution." Don't treat these as safe to redistribute.
 
+Two more levels were added by the upstream verification pass of 2026-09-30, which compared every corpus file against its upstream repository by content (`tools/corpus_gate.py upstream --all`):
+
+- **`content-verified`** — every file in the folder is identical, apart from line endings, to a file in the recorded repository at the recorded commit. The commit is one at which all the files exist, which is not necessarily the one they were first copied from. This is a machine check, so it holds regardless of how the folder was originally sourced. See `CONTENT_VERIFIED` in `tools/independent_data_auditor.py`.
+
+- **`original`** — written for this repository rather than copied (the `baseline` control files and a few purpose-built payloads). There is no upstream; the repository's own license covers them.
+
+The same pass confirmed the license of every folder previously recorded as having none or an unrecognized one (`VERIFIED_LICENSE` in the same file). `data/PROVENANCE.json` carries those results. The per-category `SOURCES.md` tables and the table below were written before that pass and have not been regenerated, so where they disagree, `PROVENANCE.json` is right.
+
 ## Regenerating this audit
 
 `data/PROVENANCE.json` is the machine-readable source of truth this index and every `data/<language>/SOURCES.md` table were generated from. To reproduce or extend it:

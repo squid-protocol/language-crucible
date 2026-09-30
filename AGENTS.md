@@ -22,11 +22,20 @@ and diffs its golden masters against it.
 2. **Provenance is not optional.** Every `data/` folder needs a `SOURCES.md` row and a
    `PROVENANCE.json` entry; regenerate with
    `GITGALAXY_POOL_PATH=<pool> python3 tools/independent_data_auditor.py data --provenance`.
-   Unlicensed sources are recorded `unknown` (via `KNOWN_UNKNOWN`), never silently included.
+   Unlicensed sources are **not added**: the license must be on the accept list in
+   `tools/license_policy.json`, and the upstream license file is copied into the folder.
+   (`KNOWN_UNKNOWN` holds only the folders that predate this rule.)
 3. **Content comes from the source pool** (`gitgalaxy/data/` on the dev machine, a local-only
    directory of full clones) — not from ad-hoc downloads.
 4. **Cross-repo PRs carry a "Cross-repo" note** (companion PR links, merge order, what re-runs
    after) — see the ecosystem doc's PR convention.
+5. **Never edit a file under `data/`.** Corpus files are add / delete / move-unchanged / replace-with-upstream only,
+   and every added or replaced file must be identical (line endings aside) to a file in the
+   upstream repo at the commit its folder records.
+   Only `data/PROVENANCE.json` and the per-category `SOURCES.md` / `PROVENANCE.md` are editable.
+6. **The corpus gate must pass** — `python3 tools/corpus_gate.py policy`, `immutable --base
+   origin/main` and `upstream --base origin/main` (README, "Adding to the corpus"). Never add a
+   line to `tools/corpus_gate_baseline.json`; it only shrinks.
 
 ## Skills
 

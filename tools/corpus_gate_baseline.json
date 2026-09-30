@@ -1,0 +1,7 @@
+{
+  "_about": "Folders that predate tools/corpus_gate.py and still break a policy rule. This list may only shrink. Fix the folder, then run `python3 tools/corpus_gate.py policy --prune-baseline`.",
+  "waived": [
+    "no-license-file data/objective-c/worldwideweb",
+    "no-source data/zig/mach"
+  ]
+}

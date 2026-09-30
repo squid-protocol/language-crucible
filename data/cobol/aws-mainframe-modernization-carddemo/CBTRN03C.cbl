@@ -174,7 +174,7 @@
                    AND TRAN-PROC-TS (1:10) <= WS-END-DATE                       
                    CONTINUE                                                     
                 ELSE                                                            
-                   CONTINUE *> GitGalaxy Patch: Neutralized Lexical Trap                                                
+                   NEXT SENTENCE                                                
                 END-IF                                                          
                 IF END-OF-FILE = 'N'                                            
                    DISPLAY TRAN-RECORD                                          

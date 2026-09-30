@@ -1,0 +1,12 @@
+GitGalaxy Language Crucible
+Copyright 2026 Joe Esquibel
+
+The tooling in this repository (tools/, .github/, .claude/, the documentation)
+and the files written for it (the data/ folders recorded as "original" in
+data/PROVENANCE.json) are licensed under the Apache License, Version 2.0 (see
+LICENSE).
+
+Everything else under data/ is third-party source code, copied unmodified from
+the upstream project recorded for its folder in data/PROVENANCE.json. Each of
+those folders stays under its upstream license; the license file is included in
+the folder. This repository's license does not apply to it.

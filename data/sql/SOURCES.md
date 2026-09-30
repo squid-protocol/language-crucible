@@ -5,8 +5,10 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
 | `baseline` | 1 | unknown | unknown | unknown | No confidently-matched pool clone found. No local license file either. |
-| `mysql` | 3 | unknown | unknown | unknown | No confidently-matched pool clone found. No local license file either. |
-| `postgresql` | 3 | unknown | unknown | unknown | No confidently-matched pool clone found. No local license file either. |
+| `mediawiki_mysql` | 2 | https://github.com/wikimedia/mediawiki | `8863834e673e4f297bfbc40cd4d54ee9027ad876` | GPL-2.0-or-later | MySQL dialect: MediaWiki schema and patches. Split out of the former `mysql` folder, which mixed two sources. Verified by content 2026-09-30 (`tools/corpus_gate.py upstream --all`). |
+| `spamassassin_mysql` | 3 | https://github.com/apache/spamassassin | `d225e0485d55649745cb7bba3f646073dd10e009` | Apache-2.0 | MySQL dialect: SpamAssassin schema. Split out of the former `mysql` folder. Verified by content 2026-09-30 (`tools/corpus_gate.py upstream --all`). |
+| `mediawiki_postgresql` | 2 | https://github.com/wikimedia/mediawiki | `8863834e673e4f297bfbc40cd4d54ee9027ad876` | GPL-2.0-or-later | PostgreSQL dialect: MediaWiki schema. Split out of the former `postgresql` folder, which mixed two sources. Verified by content 2026-09-30 (`tools/corpus_gate.py upstream --all`). |
+| `sqlmap_postgresql` | 2 | https://github.com/sqlmapproject/sqlmap | `c310c695a100268f8b91613c33e0541a6e5cda17` | GPL-2.0-or-later | PostgreSQL dialect: sqlmap payload and fingerprint SQL. Split out of the former `postgresql` folder. Verified by content 2026-09-30 (`tools/corpus_gate.py upstream --all`). |
 | `sqlite` | 3 | https://github.com/sqlite/sqlite.git | `f270460366134e350ad6e1509957f812c9700d2b` | Public Domain (from pool clone's LICENSE.md, not found locally) | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
 **Total: 10 files across 4 repo folder(s)** (1 pool-reference, 3 unknown).

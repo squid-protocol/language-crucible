@@ -165,6 +165,9 @@ EXACT_PROVENANCE = {
     ("assembly", "cpm65_6502"): ("https://github.com/davidgiven/cpm65", "ff7f5f938607195c562e53f0a4558086aab4663a", "BSD 2-Clause License"),
     ("assembly", "os_tutorial_x86"): ("https://github.com/cfenollosa/os-tutorial", "8002382ee56f876119f77217220b8a5034e9bac1", "BSD 3-Clause License"),
     ("assembly", "x86_bare_metal"): ("https://github.com/cirosantilli/x86-bare-metal-examples", "528ab2becc4992218ca0b7e297f3e1f1674268de", "GNU GPL v3.0"),
+    # Replacement for the unlicensed raspberrypi_baremetal (2026-09-30): same
+    # ARMv7/ARMv8 bare-metal coverage, MIT-licensed. Copied at the commit below.
+    ("assembly", "rpi_smartstart_baremetal"): ("https://github.com/LdB-ECM/Raspberry-Pi", "33b176202b5ee12e19ed8757526190e62efb2975", "MIT License"),
     ("assembly", "blst_generated_asm"): ("https://github.com/supranational/blst", "f62244ef50ad1a603decdb8f215e982d2a467bb6", "Apache License 2.0"),
     ("sqlite", "sqlite_cli_scripts"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
     ("sqlite", "mediawiki_sqlite_tables"): ("https://github.com/wikimedia/mediawiki", "8863834e673e4f297bfbc40cd4d54ee9027ad876", "GNU GPL v2.0"),
@@ -228,12 +231,174 @@ KNOWN_UNKNOWN = {
         "(\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via "
         "@rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. "
         "Recorded unknown by design, not oversight.",
-    ("assembly", "raspberrypi_baremetal"):
-        "ARMv7/ARMv8 bare-metal .asm from PeterLemon/RaspberryPi (pool clone "
-        "5783e31ba16353413a9248431da464e37a5619d1). That repo ships no LICENSE/COPYING file "
-        "anywhere and its README states no terms, so nothing is asserted. Kept for the ARM "
-        "bare-metal dialect coverage; recorded unknown by design.",
 }
+
+# ---------------------------------------------------------------------------
+# Upstream verification pass (2026-09-30).
+#
+# Every corpus file was compared, by git blob hash, against the upstream
+# repository on GitHub (tools/corpus_gate.py upstream --all), and each
+# upstream's license was read from that repository. The three tables below
+# record what that pass established. They are applied last, by
+# apply_verified(), so they survive a regeneration whatever the pool holds.
+# ---------------------------------------------------------------------------
+
+# License confirmed against the upstream repository. These folders were
+# recorded as None or "present but unrecognized" only because detect_license()
+# does not know the file name (MIT-LICENSE, License.txt, copying.txt) or the
+# license text. Values are SPDX ids.
+VERIFIED_LICENSE = {
+    ("apex", "apex-recipes"): "CC0-1.0",
+    ("batch", "cpython"): "PSF-2.0",
+    ("c", "cpython"): "PSF-2.0",
+    ("cobol", "aws-mainframe-modernization-carddemo"): "Apache-2.0",
+    ("cobol", "gnucobol_internals"): "GPL-3.0-or-later",
+    ("cpp", "NVDA"): "GPL-2.0-only",
+    ("cpp", "godot"): "MIT",
+    ("csharp", "roslyn"): "MIT",
+    ("html", "cpython_jinja"): "PSF-2.0",
+    ("html", "polyglot_emscripten"): "PSF-2.0",
+    ("html", "polyglot_vscode"): "MIT",
+    ("javascript", "jquery"): "MIT",
+    ("m4", "curl"): "curl",
+    ("perl", "bugzilla"): "MPL-2.0",
+    ("perl", "mojo"): "Artistic-2.0",
+    ("php", "magento2"): "OSL-3.0",
+    ("php", "symfony"): "MIT",
+    ("plaintext", "cpython"): "PSF-2.0",
+    ("plaintext", "django"): "BSD-3-Clause",
+    ("python", "twisted"): "MIT",
+    ("python", "wtfpython"): "WTFPL",
+    ("ruby", "rails"): "MIT",
+    ("swift", "alamofire"): "MIT",
+    ("xml", "apex"): "CC0-1.0",
+    ("zig", "zig"): "MIT",
+    # Folders that had no provenance entry at all before this pass.
+    ("ada", "alire"): "GPL-3.0-only",
+    ("ada", "functional"): "BSD-3-Clause",
+    ("bms", "cbsa"): ("https://github.com/cicsdev/cics-banking-sample-application-cbsa", "46cbda52051d5cded017d72ad653df68b8ec1b60"),
+    ("bms", "genapp"): ("https://github.com/cicsdev/cics-genapp", "63eca1b670d9199637bdc2ca7df6e4189a58c892"),
+    ("csd", "cbsa"): ("https://github.com/cicsdev/cics-banking-sample-application-cbsa", "46cbda52051d5cded017d72ad653df68b8ec1b60"),
+    ("csd", "carddemo"): "Apache-2.0",
+    ("csd", "z_sms_gateway"): "Apache-2.0",
+    ("db2_sql", "db2unit"): "GPL-3.0-only",
+    ("hlasm", "che4z_hlasm"): "EPL-2.0",
+    ("hlasm", "zecs"): "Apache-2.0",
+    ("hlasm", "zopeneditor_sample"): "Apache-2.0",
+    ("pli", "dsf_cics_admin"): "MIT",
+    ("pli", "zopeneditor_sample"): "Apache-2.0",
+    ("rexx", "ibm_z_zos"): "Apache-2.0",
+    # Folders created or re-sourced on 2026-09-30.
+    ("bms", "cbsa"): "EPL-2.0",
+    ("bms", "genapp"): "EPL-2.0",
+    ("csd", "cbsa"): "EPL-2.0",
+    ("rexx", "hercules_hyperion"): "QPL-1.0",
+    ("rexx", "hercules_390_hyperion"): "QPL-1.0",
+    ("sql", "mediawiki_mysql"): "GPL-2.0-or-later",
+    ("sql", "mediawiki_postgresql"): "GPL-2.0-or-later",
+    ("sql", "spamassassin_mysql"): "Apache-2.0",
+    ("sql", "sqlmap_postgresql"): "GPL-2.0-or-later",
+    ("zig", "mach"): "Apache-2.0 OR MIT",
+    # No license file upstream. Kept by the owner's decision (2026-09-30) on
+    # the basis of CERN's 1993 public-domain release of its W3 software.
+    ("objective-c", "worldwideweb"): "LicenseRef-Public-Domain",
+}
+
+# Upstream confirmed by content. Value is (url, commit). With a commit, every
+# file in the folder is identical (apart from line endings) to a file in that
+# repository at that commit: confidence "content-verified". With None, the
+# files match the repository but no single commit holding all of them was
+# found, so the entry still has no commit.
+CONTENT_VERIFIED = {
+    ("ada", "alire"): ("https://github.com/alire-project/alire", "9d87a3f09613dbb4300e8841af1da1cf4002b7eb"),
+    ("ada", "functional"): ("https://github.com/abitofhelp/functional", "c1ff2600a58b24bf482ec1e44fb63c58c1b1e293"),
+    ("cobol", "aws-mainframe-modernization-carddemo"): ("https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol", "dd1133952579575082914476fa699667b8790e1d"),
+    ("cobol", "gnucobol_internals"): ("https://github.com/paulsmith/gnucobol", "d139d06201cf0aba9d143e0f675f446c19603b36"),
+    ("cpp", "mlir"): ("https://github.com/tensorflow/tensorflow", "c21c40c048e9b35d032d31ce41809c2cadeb8fca"),
+    ("bms", "cbsa"): ("https://github.com/cicsdev/cics-banking-sample-application-cbsa", "46cbda52051d5cded017d72ad653df68b8ec1b60"),
+    ("bms", "genapp"): ("https://github.com/cicsdev/cics-genapp", "63eca1b670d9199637bdc2ca7df6e4189a58c892"),
+    ("csd", "cbsa"): ("https://github.com/cicsdev/cics-banking-sample-application-cbsa", "46cbda52051d5cded017d72ad653df68b8ec1b60"),
+    ("csd", "carddemo"): ("https://github.com/aws-samples/aws-mainframe-modernization-carddemo", "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e"),
+    ("csd", "z_sms_gateway"): ("https://github.com/philhp/Z-SMS-Gateway", "37fe29d4802817791357c026b7713edb30e01afc"),
+    ("db2_sql", "db2unit"): ("https://github.com/angoca/db2unit", "f681cacd3773ff443168ad18b0026f0d7bf99f27"),
+    ("fortran", "wrf"): ("https://github.com/wrf-model/WRF", "f15568ccc1447780e3bd664b9f0196edd784bf33"),
+    ("hlasm", "che4z_hlasm"): ("https://github.com/eclipse-che4z/che-che4z-lsp-for-hlasm", "c083476819bec0d3267309972db18118e4e84253"),
+    ("hlasm", "zecs"): ("https://github.com/walmartlabs/zECS", "6d6bcbbc89c9be086a58cb7ad2ff4d702e873d02"),
+    ("hlasm", "zopeneditor_sample"): ("https://github.com/IBM/zopeneditor-sample", "41f70551d85233829a90f7891af2b56092b471c3"),
+    ("hlo", "xla"): ("https://github.com/tensorflow/tensorflow", "c21c40c048e9b35d032d31ce41809c2cadeb8fca"),
+    ("html", "cpython_jinja"): ("https://github.com/python/cpython", "1fd66eadd258223a0e3446b5b23ff2303294112c"),
+    ("html", "odoo_mako"): ("https://github.com/odoo/odoo", "93095e1e9507fde18aefe91aac8c9cb53cadc2f3"),
+    ("html", "polyglot_emscripten"): ("https://github.com/python/cpython", "1fd66eadd258223a0e3446b5b23ff2303294112c"),
+    ("html", "polyglot_odoo"): ("https://github.com/odoo/odoo", "93095e1e9507fde18aefe91aac8c9cb53cadc2f3"),
+    ("html", "polyglot_vscode"): ("https://github.com/microsoft/vscode", "a8d7dcd8683eef847562052b722d477b5134ef76"),
+    ("html", "wordpress_blocks"): ("https://github.com/WordPress/WordPress", "5f913088f4a04816043be019737a6e4590eae845"),
+    ("makefile", "freebsd"): ("https://github.com/freebsd/freebsd-src", "c70755bc0d8f703dbaa1520c15e8213a95847dd5"),
+    ("pli", "dsf_cics_admin"): ("https://github.com/navikt/DSF", "faade4961e316c89e8c312456bae411c63f1c482"),
+    ("pli", "zopeneditor_sample"): ("https://github.com/IBM/zopeneditor-sample", "41f70551d85233829a90f7891af2b56092b471c3"),
+    ("rexx", "hercules_hyperion"): ("https://github.com/SDL-Hercules-390/hyperion", "eae2a6f46f6f58de26dca064b347c4d2fad555e4"),
+    ("rexx", "hercules_390_hyperion"): ("https://github.com/hercules-390/hyperion", "bec74e3a3dc26acb251eb820b3aeafcee0576b88"),
+    ("rexx", "ibm_z_zos"): ("https://github.com/IBM/IBM-Z-zOS", "353ff171e2e6f9d881cadf4ca57c53f3b875c9aa"),
+    ("solidity", "openzeppelin"): ("https://github.com/OpenZeppelin/openzeppelin-contracts", "9cfdccd35350f7bcc585cf2ede08cd04e7f0ec10"),
+    ("sql", "mediawiki_mysql"): ("https://github.com/wikimedia/mediawiki", "8863834e673e4f297bfbc40cd4d54ee9027ad876"),
+    ("sql", "mediawiki_postgresql"): ("https://github.com/wikimedia/mediawiki", "8863834e673e4f297bfbc40cd4d54ee9027ad876"),
+    ("sql", "spamassassin_mysql"): ("https://github.com/apache/spamassassin", "d225e0485d55649745cb7bba3f646073dd10e009"),
+    ("sql", "sqlmap_postgresql"): ("https://github.com/sqlmapproject/sqlmap", "c310c695a100268f8b91613c33e0541a6e5cda17"),
+    ("tabular", "csv_erp"): ("https://github.com/odoo/odoo", "93095e1e9507fde18aefe91aac8c9cb53cadc2f3"),
+    ("tabular", "tsv_genomics"): ("https://github.com/igvteam/igv.js", "020ed83d7371c3b9a361766b68c280592bc1e574"),
+    # Pool-reference entries whose recorded commit postdated the copy; re-pinned
+    # to a commit that holds every file (2026-09-30).
+    ("rust", "bevy"): ("https://github.com/bevyengine/bevy", "45e454a83bffd7a496621ba77bc3429fa472733d"),
+    ("typescript", "vscode"): ("https://github.com/microsoft/vscode", "4370953ab5117ccc41f5a1f38324a5c1bf010ef9"),
+    ("typescript", "typescript_compiler"): ("https://github.com/microsoft/TypeScript", "7b8cb3bdf82f400642b73173f941335775d6f730"),
+    ("xml", "apex"): ("https://github.com/trailheadapps/apex-recipes", "3462c7d4bd72998b97da95bd613913a944c4bc0d"),
+    # Files come from several Mach versions that never coexisted in one commit.
+    ("zig", "mach"): ("https://github.com/hexops/mach", None),
+    ("yacc", "freebsd"): ("https://github.com/freebsd/freebsd-src", "c70755bc0d8f703dbaa1520c15e8213a95847dd5"),
+}
+
+# Written for this repository, not copied from anywhere. No upstream to
+# record; covered by this repository's own license.
+ORIGINAL_WORK = {
+    ("embedded_python", "meow_turtle"),
+    ("html", "baseline"),
+    ("json", "baseline"),
+    ("protobuf", "baseline"),
+    ("sql", "baseline"),
+    ("tabular", "baseline"),
+    ("tabular", "devsecops_payloads"),
+    ("text", "baseline"),
+}
+
+CONTENT_VERIFIED_NOTE = (
+    "Verified by content on 2026-09-30: every file is identical, apart from line "
+    "endings, to a file in this repository at this commit."
+)
+REPO_ONLY_NOTE = (
+    "Upstream repository confirmed by content on 2026-09-30, but no single commit "
+    "holding every file was found, so no commit is recorded."
+)
+
+
+def apply_verified(entries):
+    """Overlay the 2026-09-30 upstream verification onto generated entries."""
+    for e in entries:
+        key = (e["category"], e["repo"])
+        if key in ORIGINAL_WORK:
+            e["origin"] = "original"
+            e["confidence"] = "original"
+            e["license"] = "Apache-2.0"
+            e["note"] = "Written for this repository, not copied from an upstream."
+        if key in CONTENT_VERIFIED and e["confidence"] != "exact":
+            e["url"], e["commit"] = CONTENT_VERIFIED[key]
+            if e["commit"]:
+                e["confidence"] = "content-verified"
+                e["note"] = CONTENT_VERIFIED_NOTE
+            else:
+                e["note"] = REPO_ONLY_NOTE
+        if key in VERIFIED_LICENSE:
+            e["license"] = VERIFIED_LICENSE[key]
+    return entries
+
 
 LICENSE_SIGNATURES = [
     ("MIT License", re.compile(r"\bMIT License\b", re.I)),
@@ -408,7 +573,7 @@ def audit_provenance(data_root, pool_root=DEFAULT_POOL_PATH):
                 ),
             })
 
-    return entries
+    return apply_verified(entries)
 
 
 def print_provenance_summary(entries):
@@ -417,7 +582,7 @@ def print_provenance_summary(entries):
         by_confidence[e["confidence"]] += 1
     print("--- PROVENANCE COVERAGE ---")
     print(f"Total repo-folders audited: {len(entries)}")
-    for level in ("exact", "pool-reference", "unknown"):
+    for level in ("exact", "content-verified", "pool-reference", "original", "unknown"):
         print(f"  {level:>15}: {by_confidence.get(level, 0)}")
     ambiguous = [e for e in entries if e.get("note") and "AMBIGUOUS" in e["note"]]
     if ambiguous:

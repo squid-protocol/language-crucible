@@ -3,12 +3,34 @@
     "category": "abap",
     "repo": "abapGit",
     "path": "data/abap/abapGit",
-    "files": 8,
+    "files": 9,
     "url": "https://github.com/abapGit/abapGit",
     "commit": "951e2243efbf0dbbfb4978a4ffa182b77e2ee939",
     "license": "MIT License (from pool clone's LICENSE, not found locally)",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "ada",
+    "repo": "alire",
+    "path": "data/ada/alire",
+    "files": 27,
+    "url": "https://github.com/alire-project/alire",
+    "commit": "9d87a3f09613dbb4300e8841af1da1cf4002b7eb",
+    "license": "GPL-3.0-only",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "ada",
+    "repo": "functional",
+    "path": "data/ada/functional",
+    "files": 25,
+    "url": "https://github.com/abitofhelp/functional",
+    "commit": "c1ff2600a58b24bf482ec1e44fb63c58c1b1e293",
+    "license": "BSD-3-Clause",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "agc_assembly",
@@ -28,7 +50,7 @@
     "files": 8,
     "url": "https://github.com/trailheadapps/apex-recipes",
     "commit": "3462c7d4bd72998b97da95bd613913a944c4bc0d",
-    "license": "Creative Commons",
+    "license": "CC0-1.0",
     "confidence": "pool-reference",
     "note": null
   },
@@ -177,14 +199,14 @@
   },
   {
     "category": "assembly",
-    "repo": "raspberrypi_baremetal",
-    "path": "data/assembly/raspberrypi_baremetal",
-    "files": 16,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "ARMv7/ARMv8 bare-metal .asm from PeterLemon/RaspberryPi (pool clone 5783e31ba16353413a9248431da464e37a5619d1). That repo ships no LICENSE/COPYING file anywhere and its README states no terms, so nothing is asserted. Kept for the ARM bare-metal dialect coverage; recorded unknown by design."
+    "repo": "rpi_smartstart_baremetal",
+    "path": "data/assembly/rpi_smartstart_baremetal",
+    "files": 11,
+    "url": "https://github.com/LdB-ECM/Raspberry-Pi",
+    "commit": "33b176202b5ee12e19ed8757526190e62efb2975",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "assembly",
@@ -215,7 +237,7 @@
     "files": 4,
     "url": "https://github.com/python/cpython",
     "commit": "1fd66eadd258223a0e3446b5b23ff2303294112c",
-    "license": "present but unrecognized (see file)",
+    "license": "PSF-2.0",
     "confidence": "pool-reference",
     "note": null
   },
@@ -242,13 +264,35 @@
     "note": null
   },
   {
+    "category": "bms",
+    "repo": "cbsa",
+    "path": "data/bms/cbsa",
+    "files": 12,
+    "url": "https://github.com/cicsdev/cics-banking-sample-application-cbsa",
+    "commit": "46cbda52051d5cded017d72ad653df68b8ec1b60",
+    "license": "EPL-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "bms",
+    "repo": "genapp",
+    "path": "data/bms/genapp",
+    "files": 2,
+    "url": "https://github.com/cicsdev/cics-genapp",
+    "commit": "63eca1b670d9199637bdc2ca7df6e4189a58c892",
+    "license": "EPL-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
     "category": "c",
     "repo": "cpython",
     "path": "data/c/cpython",
     "files": 10,
     "url": "https://github.com/python/cpython",
     "commit": "1fd66eadd258223a0e3446b5b23ff2303294112c",
-    "license": "present but unrecognized (see file)",
+    "license": "PSF-2.0",
     "confidence": "pool-reference",
     "note": null
   },
@@ -278,7 +322,7 @@
     "category": "c",
     "repo": "sqlite",
     "path": "data/c/sqlite",
-    "files": 3,
+    "files": 4,
     "url": "https://github.com/sqlite/sqlite.git",
     "commit": "f270460366134e350ad6e1509957f812c9700d2b",
     "license": "Public Domain (from pool clone's LICENSE.md, not found locally)",
@@ -298,14 +342,25 @@
   },
   {
     "category": "cobol",
+    "repo": "Z-SMS-Gateway",
+    "path": "data/cobol/Z-SMS-Gateway",
+    "files": 5,
+    "url": "https://github.com/philhp/Z-SMS-Gateway",
+    "commit": "37fe29d4802817791357c026b7713edb30e01afc",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "cobol",
     "repo": "aws-mainframe-modernization-carddemo",
     "path": "data/cobol/aws-mainframe-modernization-carddemo",
-    "files": 72,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "Embedded fixture inside che-che4z-lsp-for-cobol/tests/test_files/, not a standalone clone; upstream is publicly MIT-licensed but that has not been independently verified against this exact copy. See data/cobol/SOURCES.md caveats."
+    "files": 75,
+    "url": "https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol",
+    "commit": "dd1133952579575082914476fa699667b8790e1d",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "cobol",
@@ -322,7 +377,7 @@
     "category": "cobol",
     "repo": "che-che4z-lsp-for-cobol",
     "path": "data/cobol/che-che4z-lsp-for-cobol",
-    "files": 3,
+    "files": 5,
     "url": "https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol",
     "commit": "dd1133952579575082914476fa699667b8790e1d",
     "license": "Eclipse Public License 2.0",
@@ -432,34 +487,12 @@
     "category": "cobol",
     "repo": "gnucobol_internals",
     "path": "data/cobol/gnucobol_internals",
-    "files": 7,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "Pre-existing folder from before this audit tooling existed; original source clone/commit was not recorded at the time and cannot be reconstructed with confidence."
-  },
-  {
-    "category": "cobol",
-    "repo": "zopeneditor-sample",
-    "path": "data/cobol/zopeneditor-sample",
-    "files": 9,
-    "url": "https://github.com/IBM/zopeneditor-sample",
-    "commit": "41f70551d85233829a90f7891af2b56092b471c3",
-    "license": "Apache License 2.0",
-    "confidence": "exact",
-    "note": null
-  },
-  {
-    "category": "cobol",
-    "repo": "Z-SMS-Gateway",
-    "path": "data/cobol/Z-SMS-Gateway",
-    "files": 5,
-    "url": "https://github.com/philhp/Z-SMS-Gateway",
-    "commit": "37fe29d4802817791357c026b7713edb30e01afc",
-    "license": "Apache License 2.0",
-    "confidence": "exact",
-    "note": null
+    "files": 10,
+    "url": "https://github.com/paulsmith/gnucobol",
+    "commit": "d139d06201cf0aba9d143e0f675f446c19603b36",
+    "license": "GPL-3.0-or-later",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "cobol",
@@ -473,13 +506,24 @@
     "note": null
   },
   {
+    "category": "cobol",
+    "repo": "zopeneditor-sample",
+    "path": "data/cobol/zopeneditor-sample",
+    "files": 9,
+    "url": "https://github.com/IBM/zopeneditor-sample",
+    "commit": "41f70551d85233829a90f7891af2b56092b471c3",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "cpp",
     "repo": "NVDA",
     "path": "data/cpp/NVDA",
     "files": 14,
     "url": "https://github.com/nvaccess/nvda.git",
     "commit": "a94c7f85bd2e8e3e290b314244ea921c4cd01b4c",
-    "license": null,
+    "license": "GPL-2.0-only",
     "confidence": "pool-reference",
     "note": null
   },
@@ -490,7 +534,7 @@
     "files": 16,
     "url": "https://github.com/godotengine/godot.git",
     "commit": "4a919adccf8e398aceca75399c539078c54fe97f",
-    "license": "present but unrecognized (see file)",
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": null
   },
@@ -499,11 +543,11 @@
     "repo": "mlir",
     "path": "data/cpp/mlir",
     "files": 9,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/tensorflow/tensorflow",
+    "commit": "c21c40c048e9b35d032d31ce41809c2cadeb8fca",
     "license": "Apache License 2.0",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "cpp",
@@ -517,13 +561,46 @@
     "note": null
   },
   {
+    "category": "csd",
+    "repo": "carddemo",
+    "path": "data/csd/carddemo",
+    "files": 7,
+    "url": "https://github.com/aws-samples/aws-mainframe-modernization-carddemo",
+    "commit": "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "csd",
+    "repo": "cbsa",
+    "path": "data/csd/cbsa",
+    "files": 4,
+    "url": "https://github.com/cicsdev/cics-banking-sample-application-cbsa",
+    "commit": "46cbda52051d5cded017d72ad653df68b8ec1b60",
+    "license": "EPL-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "csd",
+    "repo": "z_sms_gateway",
+    "path": "data/csd/z_sms_gateway",
+    "files": 3,
+    "url": "https://github.com/philhp/Z-SMS-Gateway",
+    "commit": "37fe29d4802817791357c026b7713edb30e01afc",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
     "category": "csharp",
     "repo": "roslyn",
     "path": "data/csharp/roslyn",
     "files": 7,
     "url": "https://github.com/dotnet/roslyn",
     "commit": "849bed61024b171e673b9a1fac565b30e3ae1934",
-    "license": null,
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": null
   },
@@ -660,6 +737,17 @@
     "note": null
   },
   {
+    "category": "db2_sql",
+    "repo": "db2unit",
+    "path": "data/db2_sql/db2unit",
+    "files": 12,
+    "url": "https://github.com/angoca/db2unit",
+    "commit": "f681cacd3773ff443168ad18b0026f0d7bf99f27",
+    "license": "GPL-3.0-only",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
     "category": "dockerfile",
     "repo": "moby",
     "path": "data/dockerfile/moby",
@@ -677,20 +765,21 @@
     "files": 14,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "Original embedded-firmware content from the repo owner's personal LEGO-sorter project (\"Ninelives\"): RP2040/RP2350 MicroPython with PIO assembly embedded in Python via @rp2.asm_pio. Contributed directly, not cloned -- no upstream repo and no license file. Recorded unknown by design, not oversight."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "fortran",
     "repo": "wrf",
     "path": "data/fortran/wrf",
     "files": 15,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/wrf-model/WRF",
+    "commit": "f15568ccc1447780e3bd664b9f0196edd784bf33",
     "license": "Public Domain",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "go",
@@ -902,15 +991,48 @@
     "note": null
   },
   {
+    "category": "hlasm",
+    "repo": "che4z_hlasm",
+    "path": "data/hlasm/che4z_hlasm",
+    "files": 18,
+    "url": "https://github.com/eclipse-che4z/che-che4z-lsp-for-hlasm",
+    "commit": "c083476819bec0d3267309972db18118e4e84253",
+    "license": "EPL-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "hlasm",
+    "repo": "zecs",
+    "path": "data/hlasm/zecs",
+    "files": 3,
+    "url": "https://github.com/walmartlabs/zECS",
+    "commit": "6d6bcbbc89c9be086a58cb7ad2ff4d702e873d02",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "hlasm",
+    "repo": "zopeneditor_sample",
+    "path": "data/hlasm/zopeneditor_sample",
+    "files": 3,
+    "url": "https://github.com/IBM/zopeneditor-sample",
+    "commit": "41f70551d85233829a90f7891af2b56092b471c3",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
     "category": "hlo",
     "repo": "xla",
     "path": "data/hlo/xla",
     "files": 4,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/tensorflow/tensorflow",
+    "commit": "c21c40c048e9b35d032d31ce41809c2cadeb8fca",
     "license": "Apache License 2.0",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "html",
@@ -930,9 +1052,10 @@
     "files": 2,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "html",
@@ -950,11 +1073,11 @@
     "repo": "cpython_jinja",
     "path": "data/html/cpython_jinja",
     "files": 4,
-    "url": null,
-    "commit": null,
-    "license": "present but unrecognized (see file)",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "url": "https://github.com/python/cpython",
+    "commit": "1fd66eadd258223a0e3446b5b23ff2303294112c",
+    "license": "PSF-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "html",
@@ -983,11 +1106,11 @@
     "repo": "odoo_mako",
     "path": "data/html/odoo_mako",
     "files": 4,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/odoo/odoo",
+    "commit": "93095e1e9507fde18aefe91aac8c9cb53cadc2f3",
     "license": "GNU LGPL",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "html",
@@ -1005,33 +1128,33 @@
     "repo": "polyglot_emscripten",
     "path": "data/html/polyglot_emscripten",
     "files": 2,
-    "url": null,
-    "commit": null,
-    "license": "present but unrecognized (see file)",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "url": "https://github.com/python/cpython",
+    "commit": "1fd66eadd258223a0e3446b5b23ff2303294112c",
+    "license": "PSF-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "html",
     "repo": "polyglot_odoo",
     "path": "data/html/polyglot_odoo",
     "files": 2,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/odoo/odoo",
+    "commit": "93095e1e9507fde18aefe91aac8c9cb53cadc2f3",
     "license": "GNU LGPL",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "html",
     "repo": "polyglot_vscode",
     "path": "data/html/polyglot_vscode",
-    "files": 1,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "files": 2,
+    "url": "https://github.com/microsoft/vscode",
+    "commit": "a8d7dcd8683eef847562052b722d477b5134ef76",
+    "license": "MIT",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "html",
@@ -1071,11 +1194,11 @@
     "repo": "wordpress_blocks",
     "path": "data/html/wordpress_blocks",
     "files": 4,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/WordPress/WordPress",
+    "commit": "5f913088f4a04816043be019737a6e4590eae845",
     "license": "GNU GPL v2.0",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "java",
@@ -1095,7 +1218,7 @@
     "files": 8,
     "url": "https://github.com/jquery/jquery.git",
     "commit": "b43c8046f5196186fcba0860dae1680f42797f93",
-    "license": "present but unrecognized (see file)",
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1194,9 +1317,10 @@
     "files": 1,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "json",
@@ -1257,7 +1381,7 @@
     "category": "lua",
     "repo": "freebsd-src",
     "path": "data/lua/freebsd-src",
-    "files": 16,
+    "files": 17,
     "url": "https://github.com/freebsd/freebsd-src",
     "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
     "license": "BSD (multiple clauses)",
@@ -1293,7 +1417,7 @@
     "files": 8,
     "url": "https://github.com/curl/curl",
     "commit": "8f3f470baec57f5e53e11fc2ecaa749201ca9c0c",
-    "license": "present but unrecognized (see file)",
+    "license": "curl",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1313,11 +1437,11 @@
     "repo": "freebsd",
     "path": "data/makefile/freebsd",
     "files": 2,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/freebsd/freebsd-src",
+    "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
     "license": "BSD License",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (COPYRIGHT)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "matlab",
@@ -1345,7 +1469,7 @@
     "category": "nix",
     "repo": "bun",
     "path": "data/nix/bun",
-    "files": 3,
+    "files": 4,
     "url": "https://github.com/oven-sh/bun",
     "commit": "1cc837687b1d1f8d558a40110fbe3e61cc41fbcd",
     "license": "MIT License (from pool clone's LICENSE.md, not found locally)",
@@ -1370,7 +1494,7 @@
     "files": 7,
     "url": "https://github.com/simonw/1991-WWW-NeXT-Implementation.git",
     "commit": "032807bfe9b77b434c638667cba051be50047b23",
-    "license": null,
+    "license": "LicenseRef-Public-Domain",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1381,7 +1505,7 @@
     "files": 6,
     "url": "https://github.com/bugzilla/bugzilla",
     "commit": "4299886770979cfb98c7417a6094c36a3ab19c00",
-    "license": "present but unrecognized (see file)",
+    "license": "MPL-2.0",
     "confidence": "pool-reference",
     "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_perl/bugzilla."
   },
@@ -1403,7 +1527,7 @@
     "files": 6,
     "url": "https://github.com/mojolicious/mojo.git",
     "commit": "19fc4f19a0d83204a458ae4a19d192b7eaf4ba81",
-    "license": "present but unrecognized (see file)",
+    "license": "Artistic-2.0",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1447,7 +1571,7 @@
     "files": 8,
     "url": "https://github.com/magento/magento2.git",
     "commit": "8d95ae6ee2a7dc1960f8f853af011fbabec2e0f0",
-    "license": "present but unrecognized (see file)",
+    "license": "OSL-3.0",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1458,7 +1582,7 @@
     "files": 8,
     "url": "https://github.com/symfony/symfony.git",
     "commit": "d75aa6cb9200149510699b90cb57e6e9be1408f9",
-    "license": "present but unrecognized (see file)",
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1477,7 +1601,7 @@
     "category": "plaintext",
     "repo": "ansible",
     "path": "data/plaintext/ansible",
-    "files": 1,
+    "files": 2,
     "url": "https://github.com/ansible/ansible",
     "commit": "8d24f0d32ffbc135cd1890c494ffa6730b994c8f",
     "license": "GNU GPL v3.0 (from pool clone's COPYING, not found locally)",
@@ -1491,7 +1615,7 @@
     "files": 3,
     "url": "https://github.com/python/cpython",
     "commit": "1fd66eadd258223a0e3446b5b23ff2303294112c",
-    "license": "present but unrecognized (see file)",
+    "license": "PSF-2.0",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1499,10 +1623,10 @@
     "category": "plaintext",
     "repo": "django",
     "path": "data/plaintext/django",
-    "files": 1,
+    "files": 3,
     "url": "https://github.com/django/django.git",
     "commit": "6b90f8a8d6994dc62cd91dde911fe56ec3389494",
-    "license": "present but unrecognized (see file) (from pool clone's LICENSE.python, not found locally)",
+    "license": "BSD-3-Clause",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1516,6 +1640,28 @@
     "license": "Apache License 2.0",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "pli",
+    "repo": "dsf_cics_admin",
+    "path": "data/pli/dsf_cics_admin",
+    "files": 12,
+    "url": "https://github.com/navikt/DSF",
+    "commit": "faade4961e316c89e8c312456bae411c63f1c482",
+    "license": "MIT",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "pli",
+    "repo": "zopeneditor_sample",
+    "path": "data/pli/zopeneditor_sample",
+    "files": 5,
+    "url": "https://github.com/IBM/zopeneditor-sample",
+    "commit": "41f70551d85233829a90f7891af2b56092b471c3",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "powershell",
@@ -1590,15 +1736,16 @@
     "files": 1,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "python",
     "repo": "airflow",
     "path": "data/python/airflow",
-    "files": 3,
+    "files": 5,
     "url": "https://github.com/apache/airflow.git",
     "commit": "f391942b90f2347272c321bcdd092c7b109cdc9e",
     "license": "Apache License 2.0 (from pool clone's LICENSE, not found locally)",
@@ -1609,7 +1756,7 @@
     "category": "python",
     "repo": "cython",
     "path": "data/python/cython",
-    "files": 4,
+    "files": 6,
     "url": "https://github.com/cython/cython.git",
     "commit": "72cfcf80e8aca6b200fac4c08027447a52291055",
     "license": "Apache License 2.0 (from pool clone's LICENSE.txt, not found locally)",
@@ -1642,10 +1789,10 @@
     "category": "python",
     "repo": "twisted",
     "path": "data/python/twisted",
-    "files": 4,
+    "files": 5,
     "url": "https://github.com/twisted/twisted.git",
     "commit": "3d84863915f8b6ec8a11be2132ebb2bd0b3d0c03",
-    "license": "Public Domain (from pool clone's LICENSE, not found locally)",
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1656,9 +1803,42 @@
     "files": 7,
     "url": "https://github.com/satwikkansal/wtfpython.git",
     "commit": "9323b863218670404405e0a0b9f54d2841a7452e",
-    "license": "present but unrecognized (see file)",
+    "license": "WTFPL",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "rexx",
+    "repo": "hercules_390_hyperion",
+    "path": "data/rexx/hercules_390_hyperion",
+    "files": 2,
+    "url": "https://github.com/hercules-390/hyperion",
+    "commit": "bec74e3a3dc26acb251eb820b3aeafcee0576b88",
+    "license": "QPL-1.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "rexx",
+    "repo": "hercules_hyperion",
+    "path": "data/rexx/hercules_hyperion",
+    "files": 7,
+    "url": "https://github.com/SDL-Hercules-390/hyperion",
+    "commit": "eae2a6f46f6f58de26dca064b347c4d2fad555e4",
+    "license": "QPL-1.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "rexx",
+    "repo": "ibm_z_zos",
+    "path": "data/rexx/ibm_z_zos",
+    "files": 19,
+    "url": "https://github.com/IBM/IBM-Z-zOS",
+    "commit": "353ff171e2e6f9d881cadf4ca57c53f3b875c9aa",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "ruby",
@@ -1667,7 +1847,7 @@
     "files": 8,
     "url": "https://github.com/rails/rails.git",
     "commit": "afd103d69abb7441da3d2ac5c737f8de3e678779",
-    "license": null,
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": null
   },
@@ -1675,12 +1855,12 @@
     "category": "rust",
     "repo": "bevy",
     "path": "data/rust/bevy",
-    "files": 7,
-    "url": "https://github.com/bevyengine/bevy.git",
-    "commit": "c7f779b8425e6bd110a5b6be28152206d139367b",
+    "files": 9,
+    "url": "https://github.com/bevyengine/bevy",
+    "commit": "45e454a83bffd7a496621ba77bc3429fa472733d",
     "license": "Apache License 2.0 (from pool clone's LICENSE-APACHE, not found locally)",
-    "confidence": "pool-reference",
-    "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_rust/bevy."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "rust",
@@ -1697,7 +1877,7 @@
     "category": "rust",
     "repo": "serde",
     "path": "data/rust/serde",
-    "files": 7,
+    "files": 9,
     "url": "https://github.com/serde-rs/serde.git",
     "commit": "fa7da4a93567ed347ad0735c28e439fca688ef26",
     "license": "Apache License 2.0 (from pool clone's LICENSE-APACHE, not found locally)",
@@ -1730,7 +1910,7 @@
     "category": "rust",
     "repo": "wasmtime",
     "path": "data/rust/wasmtime",
-    "files": 5,
+    "files": 6,
     "url": "https://github.com/bytecodealliance/wasmtime.git",
     "commit": "5b5e3573d7de1314c6fcd0d327d4e3640ce58138",
     "license": "Apache License 2.0 (from pool clone's LICENSE, not found locally)",
@@ -1807,7 +1987,7 @@
     "category": "shell",
     "repo": "freebsd-src",
     "path": "data/shell/freebsd-src",
-    "files": 28,
+    "files": 29,
     "url": "https://github.com/freebsd/freebsd-src",
     "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
     "license": "BSD (multiple clauses)",
@@ -1829,7 +2009,7 @@
     "category": "shell",
     "repo": "illumos-gate",
     "path": "data/shell/illumos-gate",
-    "files": 25,
+    "files": 26,
     "url": "https://github.com/illumos/illumos-gate",
     "commit": "bb22c2af5c5ffa416f82a7b13a92d58240c65a83",
     "license": "CDDL-1.0",
@@ -1907,11 +2087,11 @@
     "repo": "openzeppelin",
     "path": "data/solidity/openzeppelin",
     "files": 8,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/OpenZeppelin/openzeppelin-contracts",
+    "commit": "9cfdccd35350f7bcc585cf2ede08cd04e7f0ec10",
     "license": "MIT License",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "sql",
@@ -1920,42 +2100,65 @@
     "files": 1,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "sql",
-    "repo": "mysql",
-    "path": "data/sql/mysql",
-    "files": 3,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "repo": "mediawiki_mysql",
+    "path": "data/sql/mediawiki_mysql",
+    "files": 2,
+    "url": "https://github.com/wikimedia/mediawiki",
+    "commit": "8863834e673e4f297bfbc40cd4d54ee9027ad876",
+    "license": "GPL-2.0-or-later",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "sql",
-    "repo": "postgresql",
-    "path": "data/sql/postgresql",
+    "repo": "mediawiki_postgresql",
+    "path": "data/sql/mediawiki_postgresql",
+    "files": 2,
+    "url": "https://github.com/wikimedia/mediawiki",
+    "commit": "8863834e673e4f297bfbc40cd4d54ee9027ad876",
+    "license": "GPL-2.0-or-later",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "sql",
+    "repo": "spamassassin_mysql",
+    "path": "data/sql/spamassassin_mysql",
     "files": 3,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "url": "https://github.com/apache/spamassassin",
+    "commit": "d225e0485d55649745cb7bba3f646073dd10e009",
+    "license": "Apache-2.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "sql",
     "repo": "sqlite",
     "path": "data/sql/sqlite",
-    "files": 3,
+    "files": 4,
     "url": "https://github.com/sqlite/sqlite.git",
     "commit": "f270460366134e350ad6e1509957f812c9700d2b",
     "license": "Public Domain (from pool clone's LICENSE.md, not found locally)",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "sql",
+    "repo": "sqlmap_postgresql",
+    "path": "data/sql/sqlmap_postgresql",
+    "files": 2,
+    "url": "https://github.com/sqlmapproject/sqlmap",
+    "commit": "c310c695a100268f8b91613c33e0541a6e5cda17",
+    "license": "GPL-2.0-or-later",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "sqlite",
@@ -2063,7 +2266,7 @@
     "files": 8,
     "url": "https://github.com/Alamofire/Alamofire",
     "commit": "36f1747e31305e0cfda27864091318950c66a5b1",
-    "license": "present but unrecognized (see file)",
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": null
   },
@@ -2074,20 +2277,21 @@
     "files": 2,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "tabular",
     "repo": "csv_erp",
     "path": "data/tabular/csv_erp",
     "files": 3,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/odoo/odoo",
+    "commit": "93095e1e9507fde18aefe91aac8c9cb53cadc2f3",
     "license": "GNU LGPL",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "tabular",
@@ -2096,20 +2300,21 @@
     "files": 1,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "tabular",
     "repo": "tsv_genomics",
     "path": "data/tabular/tsv_genomics",
     "files": 3,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/igvteam/igv.js",
+    "commit": "020ed83d7371c3b9a361766b68c280592bc1e574",
     "license": "MIT License",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "tcl",
@@ -2137,7 +2342,7 @@
     "category": "tcl",
     "repo": "sqlite",
     "path": "data/tcl/sqlite",
-    "files": 13,
+    "files": 14,
     "url": "https://github.com/sqlite/sqlite.git",
     "commit": "f270460366134e350ad6e1509957f812c9700d2b",
     "license": "Public Domain (from pool clone's LICENSE.md, not found locally)",
@@ -2228,9 +2433,10 @@
     "files": 1,
     "url": null,
     "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "license": "Apache-2.0",
+    "confidence": "original",
+    "note": "Written for this repository, not copied from an upstream.",
+    "origin": "original"
   },
   {
     "category": "typescript",
@@ -2270,11 +2476,11 @@
     "repo": "typescript_compiler",
     "path": "data/typescript/typescript_compiler",
     "files": 7,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/microsoft/TypeScript",
+    "commit": "7b8cb3bdf82f400642b73173f941335775d6f730",
     "license": "Apache License 2.0",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (LICENSE.txt)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "typescript",
@@ -2282,10 +2488,10 @@
     "path": "data/typescript/vscode",
     "files": 11,
     "url": "https://github.com/microsoft/vscode",
-    "commit": "23c0b41d69d42b85e1ae7ee4b99801dc4e21e232",
+    "commit": "4370953ab5117ccc41f5a1f38324a5c1bf010ef9",
     "license": "MIT License",
-    "confidence": "pool-reference",
-    "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_web/vscode."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "typescript",
@@ -2302,18 +2508,18 @@
     "category": "xml",
     "repo": "apex",
     "path": "data/xml/apex",
-    "files": 6,
-    "url": null,
-    "commit": null,
-    "license": null,
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. No local license file either."
+    "files": 7,
+    "url": "https://github.com/trailheadapps/apex-recipes",
+    "commit": "3462c7d4bd72998b97da95bd613913a944c4bc0d",
+    "license": "CC0-1.0",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "xml",
     "repo": "jenkins",
     "path": "data/xml/jenkins",
-    "files": 3,
+    "files": 4,
     "url": "https://github.com/jenkinsci/jenkins",
     "commit": "bc6a2222ce5a9e104a4f5a96653f0e879461936b",
     "license": "MIT License (from pool clone's LICENSE.txt, not found locally)",
@@ -2358,11 +2564,11 @@
     "repo": "freebsd",
     "path": "data/yacc/freebsd",
     "files": 3,
-    "url": null,
-    "commit": null,
+    "url": "https://github.com/freebsd/freebsd-src",
+    "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
     "license": "BSD License",
-    "confidence": "unknown",
-    "note": "No confidently-matched pool clone found. Local license file detected (COPYRIGHT)."
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
     "category": "yaml",
@@ -2445,7 +2651,7 @@
     "category": "zig",
     "repo": "bun",
     "path": "data/zig/bun",
-    "files": 4,
+    "files": 5,
     "url": "https://github.com/oven-sh/bun",
     "commit": "1cc837687b1d1f8d558a40110fbe3e61cc41fbcd",
     "license": "MIT License (from pool clone's LICENSE.md, not found locally)",
@@ -2454,9 +2660,20 @@
   },
   {
     "category": "zig",
+    "repo": "mach",
+    "path": "data/zig/mach",
+    "files": 9,
+    "url": "https://github.com/hexops/mach",
+    "commit": null,
+    "license": "Apache-2.0 OR MIT",
+    "confidence": "unknown",
+    "note": "Upstream repository confirmed by content on 2026-09-30, but no single commit holding every file was found, so no commit is recorded."
+  },
+  {
+    "category": "zig",
     "repo": "tigerbeetle",
     "path": "data/zig/tigerbeetle",
-    "files": 13,
+    "files": 14,
     "url": "https://github.com/tigerbeetle/tigerbeetle",
     "commit": "f25402aa63c8231dbf7d039a6a4c381cd36f89c0",
     "license": "Apache License 2.0 (from pool clone's LICENSE, not found locally)",
@@ -2467,10 +2684,10 @@
     "category": "zig",
     "repo": "zig",
     "path": "data/zig/zig",
-    "files": 7,
+    "files": 8,
     "url": "https://github.com/ziglang/zig",
     "commit": "738d2be9d6b6ef3ff3559130c05159ef53336224",
-    "license": null,
+    "license": "MIT",
     "confidence": "pool-reference",
     "note": "Automated matcher found a case-variant 'Zig' candidate (TheAlgorithms/Zig, an algorithms-teaching repo); contents (Compilation.zig, Sema.zig, InternPool.zig) are unmistakably the self-hosting Zig compiler's own source."
   },
@@ -2478,7 +2695,7 @@
     "category": "zig",
     "repo": "zls",
     "path": "data/zig/zls",
-    "files": 17,
+    "files": 9,
     "url": "https://github.com/zigtools/zls.git",
     "commit": "ef64fa01d9b513add8596eec09574df8feadbd5c",
     "license": "MIT License (from pool clone's LICENSE, not found locally)",
