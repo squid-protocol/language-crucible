@@ -12,6 +12,14 @@ Every repo-folder entry across all `data/<language>/SOURCES.md` files is tagged 
 
 - **`unknown`** — no confidently-matched pool clone and/or no local license file. Recorded as unknown deliberately, per the issue's own guidance: "an honest 'unknown' is better than an asserted-but-wrong attribution." Don't treat these as safe to redistribute.
 
+Two more levels were added by the upstream verification pass of 2026-09-30, which compared every corpus file against its upstream repository by content (`tools/corpus_gate.py upstream --all`):
+
+- **`content-verified`** — every file in the folder is identical, apart from line endings, to a file in the recorded repository at the recorded commit. The commit is one at which all the files exist, which is not necessarily the one they were first copied from. This is a machine check, so it holds regardless of how the folder was originally sourced. See `CONTENT_VERIFIED` in `tools/independent_data_auditor.py`.
+
+- **`original`** — written for this repository rather than copied (the `baseline` control files and a few purpose-built payloads). There is no upstream; the repository's own license covers them.
+
+The same pass confirmed the license of every folder previously recorded as having none or an unrecognized one (`VERIFIED_LICENSE` in the same file). `data/PROVENANCE.json` carries those results. The per-category `SOURCES.md` tables and the table below are generated from it by `tools/generate_sources.py`, and CI fails if they drift.
+
 ## Regenerating this audit
 
 `data/PROVENANCE.json` is the machine-readable source of truth this index and every `data/<language>/SOURCES.md` table were generated from. To reproduce or extend it:
@@ -26,67 +34,74 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 
 | Category | Repo folders | Files | Confidence | Status | Details |
 |---|---|---|---|---|---|
-| `abap` | 1 | 8 | 1 pool-reference | Audited | [`data/abap/SOURCES.md`](data/abap/SOURCES.md) |
+| `abap` | 1 | 9 | 1 pool-reference | Audited | [`data/abap/SOURCES.md`](data/abap/SOURCES.md) |
+| `ada` | 2 | 52 | 2 content-verified | Audited | [`data/ada/SOURCES.md`](data/ada/SOURCES.md) |
 | `agc_assembly` | 1 | 12 | 1 pool-reference | Audited | [`data/agc_assembly/SOURCES.md`](data/agc_assembly/SOURCES.md) |
 | `apex` | 1 | 8 | 1 pool-reference | Audited | [`data/apex/SOURCES.md`](data/apex/SOURCES.md) |
-| `assembly` | 16 | 253 | 12 exact, 3 pool-reference, 1 unknown | Audited | [`data/assembly/SOURCES.md`](data/assembly/SOURCES.md) |
+| `assembly` | 16 | 248 | 13 exact, 3 pool-reference | Audited | [`data/assembly/SOURCES.md`](data/assembly/SOURCES.md) |
 | `batch` | 2 | 7 | 2 pool-reference | Audited | [`data/batch/SOURCES.md`](data/batch/SOURCES.md) |
 | `blueprint` | 1 | 6 | 1 pool-reference | Audited | [`data/blueprint/SOURCES.md`](data/blueprint/SOURCES.md) |
-| `c` | 4 | 39 | 4 pool-reference | Audited | [`data/c/SOURCES.md`](data/c/SOURCES.md) |
-| `cobol` | 17 | 601 | 15 exact, 2 unknown | Curated | [`data/cobol/SOURCES.md`](data/cobol/SOURCES.md) |
-| `cpp` | 4 | 47 | 3 pool-reference, 1 unknown | Audited | [`data/cpp/SOURCES.md`](data/cpp/SOURCES.md) |
+| `bms` | 2 | 14 | 2 content-verified | Audited | [`data/bms/SOURCES.md`](data/bms/SOURCES.md) |
+| `c` | 4 | 40 | 4 pool-reference | Audited | [`data/c/SOURCES.md`](data/c/SOURCES.md) |
+| `cobol` | 17 | 609 | 15 exact, 2 content-verified | Curated | [`data/cobol/SOURCES.md`](data/cobol/SOURCES.md) |
+| `cpp` | 4 | 47 | 1 content-verified, 3 pool-reference | Audited | [`data/cpp/SOURCES.md`](data/cpp/SOURCES.md) |
+| `csd` | 3 | 14 | 3 content-verified | Audited | [`data/csd/SOURCES.md`](data/csd/SOURCES.md) |
 | `csharp` | 1 | 7 | 1 pool-reference | Audited | [`data/csharp/SOURCES.md`](data/csharp/SOURCES.md) |
 | `css` | 11 | 49 | 8 exact, 3 pool-reference | Audited | [`data/css/SOURCES.md`](data/css/SOURCES.md) |
 | `dart` | 1 | 8 | 1 pool-reference | Audited | [`data/dart/SOURCES.md`](data/dart/SOURCES.md) |
+| `db2_sql` | 1 | 12 | 1 content-verified | Audited | [`data/db2_sql/SOURCES.md`](data/db2_sql/SOURCES.md) |
 | `dockerfile` | 1 | 71 | 1 pool-reference | Audited | [`data/dockerfile/SOURCES.md`](data/dockerfile/SOURCES.md) |
-| `embedded_python` | 1 | 14 | 1 unknown | Audited | [`data/embedded_python/SOURCES.md`](data/embedded_python/SOURCES.md) |
-| `fortran` | 1 | 15 | 1 unknown | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
+| `embedded_python` | 1 | 14 | 1 original | Audited | [`data/embedded_python/SOURCES.md`](data/embedded_python/SOURCES.md) |
+| `fortran` | 1 | 15 | 1 content-verified | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
 | `go` | 2 | 17 | 2 pool-reference | Audited | [`data/go/SOURCES.md`](data/go/SOURCES.md) |
 | `groovy` | 16 | 329 | 14 exact, 2 pool-reference | Audited | [`data/groovy/SOURCES.md`](data/groovy/SOURCES.md) |
 | `haskell` | 1 | 12 | 1 pool-reference | Audited | [`data/haskell/SOURCES.md`](data/haskell/SOURCES.md) |
-| `hlo` | 1 | 4 | 1 unknown | Audited | [`data/hlo/SOURCES.md`](data/hlo/SOURCES.md) |
-| `html` | 15 | 67 | 8 exact, 7 unknown | Audited | [`data/html/SOURCES.md`](data/html/SOURCES.md) |
+| `hlasm` | 3 | 24 | 3 content-verified | Audited | [`data/hlasm/SOURCES.md`](data/hlasm/SOURCES.md) |
+| `hlo` | 1 | 4 | 1 content-verified | Audited | [`data/hlo/SOURCES.md`](data/hlo/SOURCES.md) |
+| `html` | 15 | 68 | 8 exact, 6 content-verified, 1 original | Audited | [`data/html/SOURCES.md`](data/html/SOURCES.md) |
 | `java` | 1 | 8 | 1 pool-reference | Audited | [`data/java/SOURCES.md`](data/java/SOURCES.md) |
 | `javascript` | 3 | 23 | 3 pool-reference | Audited | [`data/javascript/SOURCES.md`](data/javascript/SOURCES.md) |
 | `jcl` | 6 | 193 | 6 exact | Curated | [`data/jcl/SOURCES.md`](data/jcl/SOURCES.md) |
-| `json` | 2 | 5 | 1 unknown, 1 pool-reference | Audited | [`data/json/SOURCES.md`](data/json/SOURCES.md) |
+| `json` | 2 | 5 | 1 pool-reference, 1 original | Audited | [`data/json/SOURCES.md`](data/json/SOURCES.md) |
 | `kotlin` | 1 | 7 | 1 pool-reference | Audited | [`data/kotlin/SOURCES.md`](data/kotlin/SOURCES.md) |
 | `livecode` | 1 | 99 | 1 exact | Curated | [`data/livecode/SOURCES.md`](data/livecode/SOURCES.md) |
-| `lua` | 5 | 119 | 5 exact | Curated | [`data/lua/SOURCES.md`](data/lua/SOURCES.md) |
+| `lua` | 5 | 120 | 5 exact | Curated | [`data/lua/SOURCES.md`](data/lua/SOURCES.md) |
 | `m4` | 2 | 11 | 2 pool-reference | Audited | [`data/m4/SOURCES.md`](data/m4/SOURCES.md) |
-| `makefile` | 1 | 2 | 1 unknown | Audited | [`data/makefile/SOURCES.md`](data/makefile/SOURCES.md) |
+| `makefile` | 1 | 2 | 1 content-verified | Audited | [`data/makefile/SOURCES.md`](data/makefile/SOURCES.md) |
 | `matlab` | 1 | 9 | 1 pool-reference | Audited | [`data/matlab/SOURCES.md`](data/matlab/SOURCES.md) |
 | `mlir` | 1 | 4 | 1 pool-reference | Audited | [`data/mlir/SOURCES.md`](data/mlir/SOURCES.md) |
-| `nix` | 2 | 9 | 2 pool-reference | Audited | [`data/nix/SOURCES.md`](data/nix/SOURCES.md) |
+| `nix` | 2 | 10 | 2 pool-reference | Audited | [`data/nix/SOURCES.md`](data/nix/SOURCES.md) |
 | `objective-c` | 1 | 7 | 1 pool-reference | Audited | [`data/objective-c/SOURCES.md`](data/objective-c/SOURCES.md) |
-| `perl` | 4 | 29 | 4 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
-| `php` | 5 | 40 | 5 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |
-| `plaintext` | 4 | 8 | 4 pool-reference | Audited | [`data/plaintext/SOURCES.md`](data/plaintext/SOURCES.md) |
+| `perl` | 4 | 29 | 1 content-verified, 3 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
+| `php` | 5 | 40 | 1 content-verified, 4 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |
+| `plaintext` | 4 | 11 | 4 pool-reference | Audited | [`data/plaintext/SOURCES.md`](data/plaintext/SOURCES.md) |
+| `pli` | 2 | 17 | 2 content-verified | Audited | [`data/pli/SOURCES.md`](data/pli/SOURCES.md) |
 | `powershell` | 5 | 129 | 5 exact | Curated | [`data/powershell/SOURCES.md`](data/powershell/SOURCES.md) |
 | `proto` | 1 | 4 | 1 pool-reference | Audited | [`data/proto/SOURCES.md`](data/proto/SOURCES.md) |
-| `protobuf` | 1 | 1 | 1 unknown | Audited | [`data/protobuf/SOURCES.md`](data/protobuf/SOURCES.md) |
-| `python` | 6 | 281 | 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
+| `protobuf` | 1 | 1 | 1 original | Audited | [`data/protobuf/SOURCES.md`](data/protobuf/SOURCES.md) |
+| `python` | 6 | 286 | 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
+| `rexx` | 3 | 28 | 3 content-verified | Audited | [`data/rexx/SOURCES.md`](data/rexx/SOURCES.md) |
 | `ruby` | 1 | 8 | 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
-| `rust` | 6 | 49 | 6 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
+| `rust` | 6 | 54 | 2 content-verified, 4 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
 | `scala` | 1 | 8 | 1 pool-reference | Audited | [`data/scala/SOURCES.md`](data/scala/SOURCES.md) |
 | `scheme` | 1 | 8 | 1 pool-reference | Audited | [`data/scheme/SOURCES.md`](data/scheme/SOURCES.md) |
-| `shell` | 13 | 282 | 13 exact | Curated | [`data/shell/SOURCES.md`](data/shell/SOURCES.md) |
-| `solidity` | 1 | 8 | 1 unknown | Audited | [`data/solidity/SOURCES.md`](data/solidity/SOURCES.md) |
-| `sql` | 4 | 10 | 3 unknown, 1 pool-reference | Audited | [`data/sql/SOURCES.md`](data/sql/SOURCES.md) |
+| `shell` | 13 | 284 | 13 exact | Curated | [`data/shell/SOURCES.md`](data/shell/SOURCES.md) |
+| `solidity` | 1 | 8 | 1 content-verified | Audited | [`data/solidity/SOURCES.md`](data/solidity/SOURCES.md) |
+| `sql` | 6 | 14 | 4 content-verified, 1 pool-reference, 1 original | Audited | [`data/sql/SOURCES.md`](data/sql/SOURCES.md) |
 | `sqlite` | 9 | 82 | 9 exact | Audited | [`data/sqlite/SOURCES.md`](data/sqlite/SOURCES.md) |
 | `swift` | 1 | 8 | 1 pool-reference | Audited | [`data/swift/SOURCES.md`](data/swift/SOURCES.md) |
-| `tabular` | 4 | 9 | 4 unknown | Audited | [`data/tabular/SOURCES.md`](data/tabular/SOURCES.md) |
-| `tcl` | 9 | 156 | 8 exact, 1 pool-reference | Audited | [`data/tcl/SOURCES.md`](data/tcl/SOURCES.md) |
+| `tabular` | 4 | 9 | 2 content-verified, 2 original | Audited | [`data/tabular/SOURCES.md`](data/tabular/SOURCES.md) |
+| `tcl` | 9 | 157 | 8 exact, 1 pool-reference | Audited | [`data/tcl/SOURCES.md`](data/tcl/SOURCES.md) |
 | `td` | 1 | 5 | 1 pool-reference | Audited | [`data/td/SOURCES.md`](data/td/SOURCES.md) |
-| `text` | 1 | 1 | 1 unknown | Audited | [`data/text/SOURCES.md`](data/text/SOURCES.md) |
-| `typescript` | 6 | 46 | 5 pool-reference, 1 unknown | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
-| `xml` | 5 | 24 | 4 pool-reference, 1 unknown | Audited | [`data/xml/SOURCES.md`](data/xml/SOURCES.md) |
-| `yacc` | 1 | 3 | 1 unknown | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
+| `text` | 1 | 1 | 1 original | Audited | [`data/text/SOURCES.md`](data/text/SOURCES.md) |
+| `typescript` | 6 | 46 | 2 content-verified, 4 pool-reference | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
+| `xml` | 5 | 26 | 1 content-verified, 4 pool-reference | Audited | [`data/xml/SOURCES.md`](data/xml/SOURCES.md) |
+| `yacc` | 1 | 3 | 1 content-verified | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
 | `yaml` | 7 | 51 | 6 exact, 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
-| `zig` | 4 | 41 | 4 pool-reference | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
+| `zig` | 5 | 45 | 1 content-verified, 3 pool-reference, 1 unknown | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
 
 Five additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `markdown`, `pbtxt`.
 
 ## Contributing new content
 
-If you're adding a new repo folder under `data/`, add a row to that category's `SOURCES.md` (create one if it doesn't exist yet, matching the table format above) with `exact` confidence — you know exactly what you copied and from where, so record it at copy time rather than leaving it for a future audit. The pull request template asks for this same information; filling it in there is usually the easiest place to draft it before copying it into `SOURCES.md`.
+If you're adding a new repo folder under `data/`, record it in `tools/independent_data_auditor.py` with `exact` confidence, update `data/PROVENANCE.json`, then run `python3 tools/generate_sources.py` to write its table row (the tool creates the category's `SOURCES.md` if needed; add your own description in the Notes column afterwards). Record `exact` confidence — you know exactly what you copied and from where, so record it at copy time rather than leaving it for a future audit. The pull request template asks for this same information; filling it in there is usually the easiest place to draft it before copying it into `SOURCES.md`.

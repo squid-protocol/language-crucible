@@ -25,4 +25,4 @@ means.
 | `tailwindcss_atrules` | 6 | https://github.com/tailwindlabs/tailwindcss | `d7fc281a0e678bf92f0e82f4ab1b8edfd7cb1675` | MIT License | Tailwind v4 source CSS: `@theme`, `@tailwind`, `@layer`, `@utility`, `@import "..." layer(...)` — a stylesheet that's really a DSL of custom at-rules. Includes one-line files (`@import 'tailwindcss';`) that are almost pure directive. |
 | `threejs_app_ui` | 4 | https://github.com/mrdoob/three.js | `f04b082d40e8104ea3003c13fdf9dd6db8f88971` | MIT License | Hand-written application CSS from the three.js editor and examples/manual UI: flexbox panels, dat.GUI overrides, CodeMirror skinning. Ordinary authored CSS as a contrast to the generated/preprocessed folders. |
 
-**Total: 49 files across 11 repo folder(s)** (3 pool-reference, 8 exact).
+**Total: 49 files across 11 repo folder(s)** (8 exact, 3 pool-reference).

@@ -18,7 +18,7 @@ folder's `LICENSE` and match `data/PROVENANCE.json`.
 | `cash-account-cobol` | 4 | https://github.com/IBMStockTrader/cash-account-cobol | `c35db0d1f283367109bcd5dfadd76560cf53b2dc` | Apache License 2.0 | DB2 bind/DDL and VSAM KSDS define JCL for IBM Stock Trader's cash-account service. |
 | `cics-java-jcics-samples` | 2 | https://github.com/cicsdev/cics-java-jcics-samples | `11e86326f2600220cc610bdf4bee9afa77c206c0` | Apache License 2.0 | **New (2026-08-30).** The JCICS interop sample's build JCL, matching `../cobol/cics-java-jcics-samples`. |
 
-**Total: 193 files across 6 repo folders** (all exact).
+**Total: 193 files across 6 repo folder(s)** (6 exact).
 
 ## This category is at its real-source ceiling
 

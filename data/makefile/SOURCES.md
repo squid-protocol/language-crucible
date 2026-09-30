@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `freebsd` | 2 | unknown | unknown | BSD License | No confidently-matched pool clone found. Local license file detected (COPYRIGHT). |
+| `freebsd` | 2 | https://github.com/freebsd/freebsd-src | `c70755bc0d8f703dbaa1520c15e8213a95847dd5` | BSD License | Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit. |
 
-**Total: 2 files across 1 repo folder(s)** (1 unknown).
+**Total: 2 files across 1 repo folder(s)** (1 content-verified).

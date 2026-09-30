@@ -1,0 +1,61 @@
+name: Corpus gate
+
+# Enforces README.md, "Adding to the corpus": license policy and provenance,
+# no edits to corpus files, and added files byte-identical to upstream.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: corpus-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Resolve base
+        id: base
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -n "$BASE_REF" ]; then
+            echo "ref=origin/$BASE_REF" >> "$GITHUB_OUTPUT"
+          else
+            echo "ref=$BEFORE" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Policy (provenance and licenses)
+        env:
+          BASE: ${{ steps.base.outputs.ref }}
+        run: python3 tools/corpus_gate.py policy --base "$BASE"
+
+      - name: Source tables match PROVENANCE.json
+        if: always()
+        run: python3 tools/generate_sources.py --check
+
+      - name: Immutable (no edits under data/)
+        if: always()
+        env:
+          BASE: ${{ steps.base.outputs.ref }}
+        run: python3 tools/corpus_gate.py immutable --base "$BASE"
+
+      - name: Upstream (added files match their source)
+        if: always()
+        env:
+          BASE: ${{ steps.base.outputs.ref }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/corpus_gate.py upstream --base "$BASE"

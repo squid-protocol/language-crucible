@@ -90,6 +90,87 @@ also need to move. And every file's upstream source, commit, and license is trac
 root [`SOURCES.md`](SOURCES.md) — see that file's "Confidence levels" section for what's been
 independently verified versus what's a best-effort match against the source pool.
 
+## Adding to the corpus
+
+The corpus is other people's source code, published here unmodified. Three rules keep that
+legal and keep the benchmark honest, and CI enforces all three on every pull request.
+
+### 1. Only code with a license that lets us publish it
+
+| Accepted | Examples |
+|---|---|
+| Permissive | MIT, BSD, ISC, Apache-2.0, PostgreSQL, PSF, zlib, curl |
+| Public domain | CC0, Unlicense, SQLite's blessing, US government works |
+| Copyleft | GPL, LGPL, AGPL, MPL-2.0, EPL, CDDL, APSL, OSL |
+| Attribution | CC BY, CC BY-SA |
+
+| Rejected | Why |
+|---|---|
+| No license anywhere upstream | Nobody has permission to republish it |
+| Noncommercial terms (CC BY-NC, PolyForm Noncommercial) | This corpus supports a commercial product |
+| Source-available terms (BUSL, SSPL, Elastic, Commons Clause) | Not open licenses |
+| Snippets from forums, blogs, gists, chat | Usually no license for reuse |
+| Proprietary, leaked or customer code | Not ours to publish |
+
+Copyleft is fine here because the corpus only stores copies and the engine reads them as
+input. Nothing in `data/` may ever be copied into the GitGalaxy engine, its package or its
+container image.
+
+The machine-readable list is [`tools/license_policy.json`](tools/license_policy.json). A license
+that is not on it is rejected until someone adds it there in its own pull request.
+
+### 2. Every folder says where it came from
+
+Each `data/<language>/<folder>/` needs all of:
+
+- an entry in `data/PROVENANCE.json` with the upstream **GitHub URL**, the **40-character
+  commit** the files were copied from, and the **license**, as an SPDX id;
+- the upstream **license file copied into the folder** (plus `NOTICE` for Apache projects);
+- a row in `data/<language>/SOURCES.md`, written by `python3 tools/generate_sources.py` from
+  `data/PROVENANCE.json` (add your own description in its Notes column).
+
+Code written for this repo rather than copied is recorded with `"origin": "original"` and is
+covered by the repository's own license.
+
+### 3. Corpus files are never edited
+
+Under `data/` you may **add** a file, **delete** a file, or **move** a file unchanged. You may
+not change a file's contents, not even whitespace. (Line endings are the one exception: a
+copy that differs from upstream only in CRLF versus LF still counts as unmodified.) Choosing a subset of an upstream repo and
+flattening its paths is fine; altering what is inside a file is not. If upstream fixed
+something, replace the file with upstream's new version and update the folder's commit;
+CI checks that the new content matches upstream.
+
+Everything outside `data/` can be edited normally: `tools/`, `README.md`, `SOURCES.md`, the
+workflows. Inside `data/`, only the metadata files are editable: `PROVENANCE.json` and each
+category's `SOURCES.md` or `PROVENANCE.md`.
+
+### What CI checks
+
+[`tools/corpus_gate.py`](tools/corpus_gate.py) and [`tools/generate_sources.py`](tools/generate_sources.py) run four checks
+([`.github/workflows/corpus-gate.yml`](.github/workflows/corpus-gate.yml)):
+
+| Check | Fails when |
+|---|---|
+| `policy` | A folder has no provenance entry, no upstream URL and commit, an unknown or rejected license, no license file, or no `SOURCES.md` row |
+| `immutable` | A file under `data/` changes type, or is added as an executable or symlink. In-place replacements are passed to the `upstream` check |
+| `sources` | A `SOURCES.md` table does not match `data/PROVENANCE.json` (`tools/generate_sources.py --check`) |
+| `upstream` | A file added or replaced under `data/` is not identical, apart from line endings, to a file in the upstream repository at the commit its folder records |
+
+Run them before you push:
+
+```bash
+python3 tools/corpus_gate.py policy
+python3 tools/generate_sources.py --check
+python3 tools/corpus_gate.py immutable --base origin/main
+GH_TOKEN=$(gh auth token) python3 tools/corpus_gate.py upstream --base origin/main
+```
+
+Folders that predate the gate and still break a policy rule are listed in
+[`tools/corpus_gate_baseline.json`](tools/corpus_gate_baseline.json). That list only shrinks:
+CI rejects any pull request that adds to it, and once a folder is fixed its line has to be
+removed (`python3 tools/corpus_gate.py policy --prune-baseline`).
+
 ## Running a Scan
 
 ```bash

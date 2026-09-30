@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `alamofire` | 8 | https://github.com/Alamofire/Alamofire | `36f1747e31305e0cfda27864091318950c66a5b1` | present but unrecognized (see file) | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `alamofire` | 8 | https://github.com/Alamofire/Alamofire | `36f1747e31305e0cfda27864091318950c66a5b1` | MIT | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
 **Total: 8 files across 1 repo folder(s)** (1 pool-reference).

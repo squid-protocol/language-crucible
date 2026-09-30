@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `xla` | 4 | unknown | unknown | Apache License 2.0 | No confidently-matched pool clone found. Local license file detected (LICENSE). |
+| `xla` | 4 | https://github.com/tensorflow/tensorflow | `c21c40c048e9b35d032d31ce41809c2cadeb8fca` | Apache License 2.0 | Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit. |
 
-**Total: 4 files across 1 repo folder(s)** (1 unknown).
+**Total: 4 files across 1 repo folder(s)** (1 content-verified).

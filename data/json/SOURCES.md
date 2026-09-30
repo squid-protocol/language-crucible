@@ -4,7 +4,7 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `baseline` | 1 | unknown | unknown | unknown | No confidently-matched pool clone found. No local license file either. |
+| `baseline` | 1 | none (original work) | n/a | Apache-2.0 | Written for this repository, not copied from an upstream. |
 | `kafka` | 4 | https://github.com/apache/kafka | `eb111f6695ef30889e7367bbad759f7e772d65ea` | Apache License 2.0 | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
-**Total: 5 files across 2 repo folder(s)** (1 pool-reference, 1 unknown).
+**Total: 5 files across 2 repo folder(s)** (1 pool-reference, 1 original).

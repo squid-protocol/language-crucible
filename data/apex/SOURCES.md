@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `apex-recipes` | 8 | https://github.com/trailheadapps/apex-recipes | `3462c7d4bd72998b97da95bd613913a944c4bc0d` | Creative Commons | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `apex-recipes` | 8 | https://github.com/trailheadapps/apex-recipes | `3462c7d4bd72998b97da95bd613913a944c4bc0d` | CC0-1.0 | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
 **Total: 8 files across 1 repo folder(s)** (1 pool-reference).

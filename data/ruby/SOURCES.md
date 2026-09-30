@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `rails` | 8 | https://github.com/rails/rails.git | `afd103d69abb7441da3d2ac5c737f8de3e678779` | unknown | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `rails` | 8 | https://github.com/rails/rails.git | `afd103d69abb7441da3d2ac5c737f8de3e678779` | MIT | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
 **Total: 8 files across 1 repo folder(s)** (1 pool-reference).

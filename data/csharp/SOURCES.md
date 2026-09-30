@@ -4,6 +4,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
-| `roslyn` | 7 | https://github.com/dotnet/roslyn | `849bed61024b171e673b9a1fac565b30e3ae1934` | unknown | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `roslyn` | 7 | https://github.com/dotnet/roslyn | `849bed61024b171e673b9a1fac565b30e3ae1934` | MIT | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
 
 **Total: 7 files across 1 repo folder(s)** (1 pool-reference).
