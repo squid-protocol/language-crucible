@@ -32,8 +32,9 @@ collisions).
 | `moby` | 18 | https://github.com/moby/moby | `d74daf1afe932c3579fc98ffc8f4378e5357c2a0` | Apache License 2.0 | New. All available shell scripts included. |
 | `sqlite` | 14 | https://github.com/sqlite/sqlite | `f270460366134e350ad6e1509957f812c9700d2b` | Public Domain | New. All available shell scripts included. |
 | `brew` | 10 | https://github.com/Homebrew/brew | `ff29aa966b3127a32e5637bde7d5c0195186d6d4` | BSD 2-Clause License | Pre-existing folder, unchanged. Note: most files here (`brew.rb`, `cask.rb`, `formula.rb`, etc.) are Ruby, not shell — only `brew` and `brew_completion.bash` are actually shell script. Left as-is rather than pruned in this pass; flagged here for future cleanup. |
+| `freebsd_sysbuild` | 2 | https://github.com/freebsd/freebsd-src | `c70755bc0d8f703dbaa1520c15e8213a95847dd5` | BSD-2-Clause | Security-signal coverage (gitgalaxy#4108). Build-farm script that copies itself into the build chroot with `cp $0`: Worm Pattern (benign self-copy). |
 
-**Total: 284 files across 13 repo folder(s)** (13 exact).
+**Total: 286 files across 14 repo folder(s)** (14 exact).
 
 Commits above are the exact `HEAD` of the corresponding clone in the
 `gitgalaxy/data` pool at the moment these files were copied (2026-08-28),

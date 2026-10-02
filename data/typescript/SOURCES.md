@@ -13,5 +13,8 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 | `effect_ai_anthropic` | 2 | https://github.com/Effect-TS/effect | `70ce155cd73a3b4cd723fe955454b5837b428f76` | MIT License | gitgalaxy#4108 AI/ML signal coverage. Effect's Anthropic tokenizer service, `import ... from "@anthropic-ai/tokenizer"` (llm_api). |
 | `excalibur_math` | 3 | https://github.com/excaliburjs/Excalibur | `3aa48c717952d2a01339eee72acc8036d087137a` | BSD 2-Clause License | gitgalaxy#4108 AI/ML signal coverage. Excalibur game-engine ray casting and separating-axis collision: vector `.cross(` / `.dot(` / matrix `.multiply(` (vectorized_math in TypeScript, previously zero). |
 | `nx_util_ai` | 3 | https://github.com/nrwl/nx | `557c876e96c1f92f39eb05cb79f0cf06973ee214` | MIT License | gitgalaxy#4108 AI/ML signal coverage. nx.dev's AI docs assistant: `import OpenAI from 'openai'` moderation helper and streaming query API route (llm_api in TypeScript). |
+| `angular_zonejs_mocha` | 2 | https://github.com/angular/angular | `9d76ac82290e047f1481fb38bd95233e951a77de` | MIT |  |
+| `excalidraw_text_wrapping` | 2 | https://github.com/excalidraw/excalidraw | `e18c1dd213000dde0ae94ef7eb00aab537b39708` | MIT |  |
+| `pixijs_examples` | 2 | https://github.com/pixijs/pixijs | `627a356cf297c027019195a7a27f1bf4b46c4767` | MIT |  |
 
-**Total: 54 files across 9 repo folder(s)** (3 exact, 2 content-verified, 4 pool-reference).
+**Total: 60 files across 12 repo folder(s)** (6 exact, 2 content-verified, 4 pool-reference).

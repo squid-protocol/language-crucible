@@ -287,6 +287,17 @@
   },
   {
     "category": "c",
+    "repo": "cosmopolitan_intrin",
+    "path": "data/c/cosmopolitan_intrin",
+    "files": 2,
+    "url": "https://github.com/jart/cosmopolitan",
+    "commit": "eedf7d2db6e5ee0e228862690339c166a3f003a7",
+    "license": "ISC",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "c",
     "repo": "cpython",
     "path": "data/c/cpython",
     "files": 10,
@@ -305,6 +316,17 @@
     "commit": "a77dfb96cb91780ca334d0d4cfd86957558007e0",
     "license": "GNU GPL v2.0",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "c",
+    "repo": "freebsd_openpam",
+    "path": "data/c/freebsd_openpam",
+    "files": 2,
+    "url": "https://github.com/freebsd/freebsd-src",
+    "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -561,6 +583,17 @@
     "note": null
   },
   {
+    "category": "cpp",
+    "repo": "serenity_ak_siphash_cpu",
+    "path": "data/cpp/serenity_ak_siphash_cpu",
+    "files": 3,
+    "url": "https://github.com/SerenityOS/serenity",
+    "commit": "c224a9b0d6c1ae4868d2b34f0bdc7e7c2cd9e1c9",
+    "license": "BSD-2-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "csd",
     "repo": "carddemo",
     "path": "data/csd/carddemo",
@@ -794,6 +827,17 @@
   },
   {
     "category": "go",
+    "repo": "go_runtime_rand",
+    "path": "data/go/go_runtime_rand",
+    "files": 2,
+    "url": "https://github.com/golang/go",
+    "commit": "d247ed00e498e9717fb7c80d126bee5a8afdb4e8",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "go",
     "repo": "kubernetes",
     "path": "data/go/kubernetes",
     "files": 8,
@@ -801,6 +845,17 @@
     "commit": "da663405beb487d66c27a0220ea4073305ae9077",
     "license": "Apache License 2.0",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "go",
+    "repo": "kubernetes_kubectl_tls",
+    "path": "data/go/kubernetes_kubectl_tls",
+    "files": 2,
+    "url": "https://github.com/kubernetes/kubernetes",
+    "commit": "da663405beb487d66c27a0220ea4073305ae9077",
+    "license": "Apache-2.0",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1202,6 +1257,39 @@
   },
   {
     "category": "java",
+    "repo": "flutter_android_editing_tests",
+    "path": "data/java/flutter_android_editing_tests",
+    "files": 2,
+    "url": "https://github.com/flutter/flutter",
+    "commit": "75910740753c13a858bb39c3686afb71675e8dc4",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "java",
+    "repo": "jenkins_cli",
+    "path": "data/java/jenkins_cli",
+    "files": 2,
+    "url": "https://github.com/jenkinsci/jenkins",
+    "commit": "bc6a2222ce5a9e104a4f5a96653f0e879461936b",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "java",
+    "repo": "selenium_grid_session_queue",
+    "path": "data/java/selenium_grid_session_queue",
+    "files": 3,
+    "url": "https://github.com/SeleniumHQ/selenium",
+    "commit": "549261ba1cccb1d3bfa662d35d7b144607abf51c",
+    "license": "Apache-2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "java",
     "repo": "springboot",
     "path": "data/java/springboot",
     "files": 8,
@@ -1209,6 +1297,28 @@
     "commit": "5cecd3922fce651f13d16a85d8a29efaa7f44cfd",
     "license": "Apache License 2.0",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "javascript",
+    "repo": "cesium_particle_emitters",
+    "path": "data/javascript/cesium_particle_emitters",
+    "files": 2,
+    "url": "https://github.com/CesiumGS/cesium",
+    "commit": "0becdbfc17b1015c338e147103876e2ac049f91e",
+    "license": "Apache-2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "javascript",
+    "repo": "javascript_algorithms_bits",
+    "path": "data/javascript/javascript_algorithms_bits",
+    "files": 2,
+    "url": "https://github.com/trekhleb/javascript-algorithms",
+    "commit": "115e42816808484f76de4e6703caa8280e03ed54",
+    "license": "MIT",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1224,6 +1334,17 @@
   },
   {
     "category": "javascript",
+    "repo": "node_tls_security_tests",
+    "path": "data/javascript/node_tls_security_tests",
+    "files": 8,
+    "url": "https://github.com/nodejs/node",
+    "commit": "cc967413c9b32e4d34d74a3b758ca71bee7a7746",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "javascript",
     "repo": "react",
     "path": "data/javascript/react",
     "files": 7,
@@ -1232,6 +1353,17 @@
     "license": "MIT License",
     "confidence": "pool-reference",
     "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_web/react."
+  },
+  {
+    "category": "javascript",
+    "repo": "react_error_codes",
+    "path": "data/javascript/react_error_codes",
+    "files": 2,
+    "url": "https://github.com/facebook/react",
+    "commit": "74568e8627aa43469b74f2972f427a209639d0b6",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "javascript",
@@ -1522,6 +1654,17 @@
   },
   {
     "category": "perl",
+    "repo": "ack3_tests",
+    "path": "data/perl/ack3_tests",
+    "files": 2,
+    "url": "https://github.com/beyondgrep/ack3",
+    "commit": "1c9cfd3508dd1109815d85e64c55656b00454289",
+    "license": "Artistic-2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "perl",
     "repo": "bugzilla",
     "path": "data/perl/bugzilla",
     "files": 6,
@@ -1588,6 +1731,17 @@
   },
   {
     "category": "php",
+    "repo": "laravel_validation_rules",
+    "path": "data/php/laravel_validation_rules",
+    "files": 2,
+    "url": "https://github.com/laravel/framework",
+    "commit": "6e6ec058bd555cd70b33656bd7254f3667b73822",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "php",
     "repo": "magento2",
     "path": "data/php/magento2",
     "files": 8,
@@ -1606,6 +1760,17 @@
     "commit": "d75aa6cb9200149510699b90cb57e6e9be1408f9",
     "license": "MIT",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "php",
+    "repo": "symfony_emoji_data",
+    "path": "data/php/symfony_emoji_data",
+    "files": 2,
+    "url": "https://github.com/symfony/symfony",
+    "commit": "d75aa6cb9200149510699b90cb57e6e9be1408f9",
+    "license": "MIT",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1787,6 +1952,17 @@
   },
   {
     "category": "python",
+    "repo": "airflow_opsgenie_tests",
+    "path": "data/python/airflow_opsgenie_tests",
+    "files": 3,
+    "url": "https://github.com/apache/airflow",
+    "commit": "f391942b90f2347272c321bcdd092c7b109cdc9e",
+    "license": "Apache-2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "python",
     "repo": "cython",
     "path": "data/python/cython",
     "files": 6,
@@ -1794,6 +1970,17 @@
     "commit": "72cfcf80e8aca6b200fac4c08027447a52291055",
     "license": "Apache License 2.0 (from pool clone's LICENSE.txt, not found locally)",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "python",
+    "repo": "django_db_tests",
+    "path": "data/python/django_db_tests",
+    "files": 3,
+    "url": "https://github.com/django/django",
+    "commit": "6b90f8a8d6994dc62cd91dde911fe56ec3389494",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1820,6 +2007,17 @@
   },
   {
     "category": "python",
+    "repo": "homeassistant_ble_integrations",
+    "path": "data/python/homeassistant_ble_integrations",
+    "files": 4,
+    "url": "https://github.com/home-assistant/core",
+    "commit": "375bd55ae6ea27814de1eaaf7c66846c4e767dc5",
+    "license": "Apache-2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "python",
     "repo": "langchain_agents",
     "path": "data/python/langchain_agents",
     "files": 4,
@@ -1828,6 +2026,17 @@
     "license": "MIT License",
     "confidence": "exact",
     "note": "gitgalaxy#4108 AI/ML signal coverage. LangChain v1 agent middleware + chat-model integration test, `from langchain.agents ...` / `from langchain.chat_models ...` (llm_orchestrator). Copied from the pool's PyPI sdist langchain-1.2.15; the commit is upstream tag `langchain==1.2.15`, path `libs/langchain_v1/`, every file blob-verified against it."
+  },
+  {
+    "category": "python",
+    "repo": "micropython_usb_tls",
+    "path": "data/python/micropython_usb_tls",
+    "files": 4,
+    "url": "https://github.com/micropython/micropython",
+    "commit": "2dc2e30d98ee225070e990586526f8e43b3c95a2",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "python",
@@ -1850,6 +2059,17 @@
     "license": "Apache License 2.0",
     "confidence": "exact",
     "note": "gitgalaxy#4108 AI/ML signal coverage. OpenCV DNN sample exporting torchvision ResNet-50 to ONNX: `import torch` / `torch.onnx` (dl_frameworks)."
+  },
+  {
+    "category": "python",
+    "repo": "pip_vendored_requests",
+    "path": "data/python/pip_vendored_requests",
+    "files": 2,
+    "url": "https://github.com/pypa/pip",
+    "commit": "fc9550be97a09d3752b7ee77791418f17c27bb6e",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "python",
@@ -1962,6 +2182,17 @@
     "note": null
   },
   {
+    "category": "ruby",
+    "repo": "rails_http_token_auth",
+    "path": "data/ruby/rails_http_token_auth",
+    "files": 2,
+    "url": "https://github.com/rails/rails",
+    "commit": "afd103d69abb7441da3d2ac5c737f8de3e678779",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "rust",
     "repo": "bevy",
     "path": "data/rust/bevy",
@@ -1971,6 +2202,17 @@
     "license": "Apache License 2.0 (from pool clone's LICENSE-APACHE, not found locally)",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "rust",
+    "repo": "bevy_asset_examples",
+    "path": "data/rust/bevy_asset_examples",
+    "files": 4,
+    "url": "https://github.com/bevyengine/bevy",
+    "commit": "842fa5c4559303edbd1774013bc0f3d0dd529799",
+    "license": "MIT OR Apache-2.0",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "rust",
@@ -2015,6 +2257,17 @@
     "license": "MIT License",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "rust",
+    "repo": "tokio_util_rand",
+    "path": "data/rust/tokio_util_rand",
+    "files": 2,
+    "url": "https://github.com/tokio-rs/tokio",
+    "commit": "ee4de818065a97c0be0d6bfc18fb36725349aef8",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "rust",
@@ -2101,6 +2354,17 @@
     "url": "https://github.com/freebsd/freebsd-src",
     "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
     "license": "BSD (multiple clauses)",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "shell",
+    "repo": "freebsd_sysbuild",
+    "path": "data/shell/freebsd_sysbuild",
+    "files": 2,
+    "url": "https://github.com/freebsd/freebsd-src",
+    "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
+    "license": "BSD-2-Clause",
     "confidence": "exact",
     "note": null
   },
@@ -2550,6 +2814,17 @@
   },
   {
     "category": "typescript",
+    "repo": "angular_zonejs_mocha",
+    "path": "data/typescript/angular_zonejs_mocha",
+    "files": 2,
+    "url": "https://github.com/angular/angular",
+    "commit": "9d76ac82290e047f1481fb38bd95233e951a77de",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "typescript",
     "repo": "assemblyscript",
     "path": "data/typescript/assemblyscript",
     "files": 7,
@@ -2583,6 +2858,17 @@
   },
   {
     "category": "typescript",
+    "repo": "excalidraw_text_wrapping",
+    "path": "data/typescript/excalidraw_text_wrapping",
+    "files": 2,
+    "url": "https://github.com/excalidraw/excalidraw",
+    "commit": "e18c1dd213000dde0ae94ef7eb00aab537b39708",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "typescript",
     "repo": "fp-ts",
     "path": "data/typescript/fp-ts",
     "files": 6,
@@ -2602,6 +2888,17 @@
     "license": "MIT License",
     "confidence": "exact",
     "note": "gitgalaxy#4108 AI/ML signal coverage. nx.dev's AI docs assistant: `import OpenAI from 'openai'` moderation helper and streaming query API route (llm_api in TypeScript)."
+  },
+  {
+    "category": "typescript",
+    "repo": "pixijs_examples",
+    "path": "data/typescript/pixijs_examples",
+    "files": 2,
+    "url": "https://github.com/pixijs/pixijs",
+    "commit": "627a356cf297c027019195a7a27f1bf4b46c4767",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "typescript",
@@ -2833,6 +3130,17 @@
     "license": "MIT",
     "confidence": "pool-reference",
     "note": "Automated matcher found a case-variant 'Zig' candidate (TheAlgorithms/Zig, an algorithms-teaching repo); contents (Compilation.zig, Sema.zig, InternPool.zig) are unmistakably the self-hosting Zig compiler's own source."
+  },
+  {
+    "category": "zig",
+    "repo": "zig_std_linux_mips",
+    "path": "data/zig/zig_std_linux_mips",
+    "files": 2,
+    "url": "https://github.com/ziglang/zig",
+    "commit": "738d2be9d6b6ef3ff3559130c05159ef53336224",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "zig",

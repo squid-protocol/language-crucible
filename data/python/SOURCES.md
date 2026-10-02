@@ -20,8 +20,13 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 | `tensorflow_ml_ops` | 3 | https://github.com/tensorflow/tensorflow | `c21c40c048e9b35d032d31ce41809c2cadeb8fca` | Apache License 2.0 | gitgalaxy#4108 AI/ML signal coverage. TFLite einsum op test and a TFRT matmul saved-model generator: `import tensorflow` (dl_frameworks) plus `tf.einsum` / `math_ops.matmul` (vectorized_math). |
 | `tensorflow_model_fixtures` | 3 | https://github.com/tensorflow/tensorflow | `c21c40c048e9b35d032d31ce41809c2cadeb8fca` | Apache License 2.0 | gitgalaxy#4108 AI/ML signal coverage. Two tiny real model files (a 652-byte TFLite flatbuffer and its 424-byte frozen GraphDef). The engine routes model-weight extensions to its tensor scanner, which is the only producer of llm_local_compute. |
 | `thealgorithms_machine_learning` | 3 | https://github.com/TheAlgorithms/Python | `840ca00ad389a947205a4a928171499f2228cbb7` | MIT License | gitgalaxy#4108 AI/ML signal coverage. Keras LSTM forecaster (dl_frameworks + `from sklearn.preprocessing` ml_traditional) and a NumPy logistic regression on sklearn datasets (ml_traditional + `np.dot` vectorized_math). |
+| `airflow_opsgenie_tests` | 3 | https://github.com/apache/airflow | `f391942b90f2347272c321bcdd092c7b109cdc9e` | Apache-2.0 |  |
+| `django_db_tests` | 3 | https://github.com/django/django | `6b90f8a8d6994dc62cd91dde911fe56ec3389494` | BSD-3-Clause |  |
+| `homeassistant_ble_integrations` | 4 | https://github.com/home-assistant/core | `375bd55ae6ea27814de1eaaf7c66846c4e767dc5` | Apache-2.0 |  |
+| `micropython_usb_tls` | 4 | https://github.com/micropython/micropython | `2dc2e30d98ee225070e990586526f8e43b3c95a2` | MIT |  |
+| `pip_vendored_requests` | 2 | https://github.com/pypa/pip | `fc9550be97a09d3752b7ee77791418f17c27bb6e` | MIT |  |
 
-**Total: 312 files across 14 repo folder(s)** (8 exact, 6 pool-reference).
+**Total: 328 files across 19 repo folder(s)** (13 exact, 6 pool-reference).
 
 `meow_turtle` (added 2026-08-30) was briefly filed here, then moved to
 [`data/embedded_python/`](../embedded_python/SOURCES.md) — it's MicroPython
