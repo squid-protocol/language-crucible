@@ -42,9 +42,9 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `batch` | 2 | 7 | 2 pool-reference | Audited | [`data/batch/SOURCES.md`](data/batch/SOURCES.md) |
 | `blueprint` | 1 | 6 | 1 pool-reference | Audited | [`data/blueprint/SOURCES.md`](data/blueprint/SOURCES.md) |
 | `bms` | 2 | 14 | 2 content-verified | Audited | [`data/bms/SOURCES.md`](data/bms/SOURCES.md) |
-| `c` | 4 | 40 | 4 pool-reference | Audited | [`data/c/SOURCES.md`](data/c/SOURCES.md) |
+| `c` | 6 | 44 | 2 exact, 4 pool-reference | Audited | [`data/c/SOURCES.md`](data/c/SOURCES.md) |
 | `cobol` | 17 | 609 | 15 exact, 2 content-verified | Curated | [`data/cobol/SOURCES.md`](data/cobol/SOURCES.md) |
-| `cpp` | 4 | 47 | 1 content-verified, 3 pool-reference | Audited | [`data/cpp/SOURCES.md`](data/cpp/SOURCES.md) |
+| `cpp` | 5 | 50 | 1 exact, 1 content-verified, 3 pool-reference | Audited | [`data/cpp/SOURCES.md`](data/cpp/SOURCES.md) |
 | `csd` | 3 | 14 | 3 content-verified | Audited | [`data/csd/SOURCES.md`](data/csd/SOURCES.md) |
 | `csharp` | 1 | 7 | 1 pool-reference | Audited | [`data/csharp/SOURCES.md`](data/csharp/SOURCES.md) |
 | `css` | 11 | 49 | 8 exact, 3 pool-reference | Audited | [`data/css/SOURCES.md`](data/css/SOURCES.md) |
@@ -53,14 +53,14 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `dockerfile` | 1 | 71 | 1 pool-reference | Audited | [`data/dockerfile/SOURCES.md`](data/dockerfile/SOURCES.md) |
 | `embedded_python` | 1 | 14 | 1 original | Audited | [`data/embedded_python/SOURCES.md`](data/embedded_python/SOURCES.md) |
 | `fortran` | 1 | 15 | 1 content-verified | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
-| `go` | 2 | 17 | 2 pool-reference | Audited | [`data/go/SOURCES.md`](data/go/SOURCES.md) |
+| `go` | 4 | 21 | 2 exact, 2 pool-reference | Audited | [`data/go/SOURCES.md`](data/go/SOURCES.md) |
 | `groovy` | 16 | 329 | 14 exact, 2 pool-reference | Audited | [`data/groovy/SOURCES.md`](data/groovy/SOURCES.md) |
 | `haskell` | 1 | 12 | 1 pool-reference | Audited | [`data/haskell/SOURCES.md`](data/haskell/SOURCES.md) |
 | `hlasm` | 3 | 24 | 3 content-verified | Audited | [`data/hlasm/SOURCES.md`](data/hlasm/SOURCES.md) |
 | `hlo` | 1 | 4 | 1 content-verified | Audited | [`data/hlo/SOURCES.md`](data/hlo/SOURCES.md) |
 | `html` | 15 | 68 | 8 exact, 6 content-verified, 1 original | Audited | [`data/html/SOURCES.md`](data/html/SOURCES.md) |
-| `java` | 1 | 8 | 1 pool-reference | Audited | [`data/java/SOURCES.md`](data/java/SOURCES.md) |
-| `javascript` | 3 | 23 | 3 pool-reference | Audited | [`data/javascript/SOURCES.md`](data/javascript/SOURCES.md) |
+| `java` | 4 | 15 | 3 exact, 1 pool-reference | Audited | [`data/java/SOURCES.md`](data/java/SOURCES.md) |
+| `javascript` | 7 | 37 | 4 exact, 3 pool-reference | Audited | [`data/javascript/SOURCES.md`](data/javascript/SOURCES.md) |
 | `jcl` | 6 | 193 | 6 exact | Curated | [`data/jcl/SOURCES.md`](data/jcl/SOURCES.md) |
 | `json` | 2 | 5 | 1 pool-reference, 1 original | Audited | [`data/json/SOURCES.md`](data/json/SOURCES.md) |
 | `kotlin` | 1 | 7 | 1 pool-reference | Audited | [`data/kotlin/SOURCES.md`](data/kotlin/SOURCES.md) |
@@ -72,20 +72,20 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `mlir` | 1 | 4 | 1 pool-reference | Audited | [`data/mlir/SOURCES.md`](data/mlir/SOURCES.md) |
 | `nix` | 2 | 10 | 2 pool-reference | Audited | [`data/nix/SOURCES.md`](data/nix/SOURCES.md) |
 | `objective-c` | 1 | 7 | 1 pool-reference | Audited | [`data/objective-c/SOURCES.md`](data/objective-c/SOURCES.md) |
-| `perl` | 4 | 29 | 1 content-verified, 3 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
-| `php` | 5 | 40 | 1 content-verified, 4 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |
+| `perl` | 5 | 31 | 1 exact, 1 content-verified, 3 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
+| `php` | 7 | 44 | 2 exact, 1 content-verified, 4 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |
 | `plaintext` | 4 | 11 | 4 pool-reference | Audited | [`data/plaintext/SOURCES.md`](data/plaintext/SOURCES.md) |
 | `pli` | 2 | 17 | 2 content-verified | Audited | [`data/pli/SOURCES.md`](data/pli/SOURCES.md) |
 | `powershell` | 5 | 129 | 5 exact | Curated | [`data/powershell/SOURCES.md`](data/powershell/SOURCES.md) |
 | `proto` | 1 | 4 | 1 pool-reference | Audited | [`data/proto/SOURCES.md`](data/proto/SOURCES.md) |
 | `protobuf` | 1 | 1 | 1 original | Audited | [`data/protobuf/SOURCES.md`](data/protobuf/SOURCES.md) |
-| `python` | 6 | 286 | 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
+| `python` | 11 | 302 | 5 exact, 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
 | `rexx` | 3 | 28 | 3 content-verified | Audited | [`data/rexx/SOURCES.md`](data/rexx/SOURCES.md) |
-| `ruby` | 1 | 8 | 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
-| `rust` | 6 | 54 | 2 content-verified, 4 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
+| `ruby` | 2 | 10 | 1 exact, 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
+| `rust` | 8 | 60 | 2 exact, 2 content-verified, 4 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
 | `scala` | 1 | 8 | 1 pool-reference | Audited | [`data/scala/SOURCES.md`](data/scala/SOURCES.md) |
 | `scheme` | 1 | 8 | 1 pool-reference | Audited | [`data/scheme/SOURCES.md`](data/scheme/SOURCES.md) |
-| `shell` | 13 | 284 | 13 exact | Curated | [`data/shell/SOURCES.md`](data/shell/SOURCES.md) |
+| `shell` | 14 | 286 | 14 exact | Curated | [`data/shell/SOURCES.md`](data/shell/SOURCES.md) |
 | `solidity` | 1 | 8 | 1 content-verified | Audited | [`data/solidity/SOURCES.md`](data/solidity/SOURCES.md) |
 | `sql` | 6 | 14 | 4 content-verified, 1 pool-reference, 1 original | Audited | [`data/sql/SOURCES.md`](data/sql/SOURCES.md) |
 | `sqlite` | 9 | 82 | 9 exact | Audited | [`data/sqlite/SOURCES.md`](data/sqlite/SOURCES.md) |
@@ -94,14 +94,38 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `tcl` | 9 | 157 | 8 exact, 1 pool-reference | Audited | [`data/tcl/SOURCES.md`](data/tcl/SOURCES.md) |
 | `td` | 1 | 5 | 1 pool-reference | Audited | [`data/td/SOURCES.md`](data/td/SOURCES.md) |
 | `text` | 1 | 1 | 1 original | Audited | [`data/text/SOURCES.md`](data/text/SOURCES.md) |
-| `typescript` | 6 | 46 | 2 content-verified, 4 pool-reference | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
+| `typescript` | 9 | 52 | 3 exact, 2 content-verified, 4 pool-reference | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
 | `xml` | 5 | 26 | 1 content-verified, 4 pool-reference | Audited | [`data/xml/SOURCES.md`](data/xml/SOURCES.md) |
 | `yacc` | 1 | 3 | 1 content-verified | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
 | `yaml` | 7 | 51 | 6 exact, 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
-| `zig` | 5 | 45 | 1 content-verified, 3 pool-reference, 1 unknown | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
+| `zig` | 6 | 47 | 1 exact, 1 content-verified, 3 pool-reference, 1 unknown | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
 
 Five additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `markdown`, `pbtxt`.
 
 ## Contributing new content
 
 If you're adding a new repo folder under `data/`, record it in `tools/independent_data_auditor.py` with `exact` confidence, update `data/PROVENANCE.json`, then run `python3 tools/generate_sources.py` to write its table row (the tool creates the category's `SOURCES.md` if needed; add your own description in the Notes column afterwards). Record `exact` confidence — you know exactly what you copied and from where, so record it at copy time rather than leaving it for a future audit. The pull request template asks for this same information; filling it in there is usually the easiest place to draft it before copying it into `SOURCES.md`.
+
+## Security-signal coverage (gitgalaxy#4108)
+
+Added 2026-10-02 so the golden master exercises GitGalaxy's security and low-level signals,
+which read 0 (or nearly 0) on the rest of the corpus. Every file is real upstream code, copied
+unmodified with `exact` provenance; the per-category `SOURCES.md` Notes name the shape each
+file carries. Credentials are upstream test fixtures and dummy values only. Worm-pattern and
+invisible-Unicode files are benign: self-copying test and build scripts, and emoji
+subdivision-flag tag sequences.
+
+| Signal | Folders |
+|---|---|
+| Invisible Unicode Payload Smuggling | `javascript/node_tls_security_tests` (V8 test), `typescript/excalidraw_text_wrapping`, `java/flutter_android_editing_tests`, `php/symfony_emoji_data` |
+| Self-Referential File Copy/Overwrite (Worm Pattern) | `javascript/node_tls_security_tests` (test-fs-lchown.js), `javascript/react_error_codes`, `perl/ack3_tests`, `shell/freebsd_sysbuild` |
+| Low-Level Bitwise / Cryptographic Math | `javascript/javascript_algorithms_bits`, `rust/tokio_util_rand`, `cpp/serenity_ak_siphash_cpu`, `go/go_runtime_rand` |
+| Safety & Constraint Bypasses | `javascript/node_tls_security_tests`, `python/homeassistant_ble_integrations` |
+| Hardware Bridge | `python/homeassistant_ble_integrations`, `python/micropython_usb_tls` |
+| Non-Standard / Steganographic Imports | `rust/bevy_asset_examples`, `typescript/pixijs_examples` |
+| Embedded Credentials & Keys, Hardcoded Payload Artifacts | `javascript/node_tls_security_tests`, `go/kubernetes_kubectl_tls`, `ruby/rails_http_token_auth`, `python/airflow_opsgenie_tests` |
+| Global Environment Mutation | `javascript/cesium_particle_emitters`, `typescript/angular_zonejs_mocha`, `python/pip_vendored_requests` |
+| Public API Declared Near Raw DB Sink | `python/django_db_tests`, `java/selenium_grid_session_queue` |
+| Auth Middleware | `c/freebsd_openpam`, `java/jenkins_cli`, `php/laravel_validation_rules`, `ruby/rails_http_token_auth` |
+| Cryptography | `javascript/node_tls_security_tests`, `python/micropython_usb_tls` |
+| Inline Assembly Blocks | `c/cosmopolitan_intrin`, `cpp/serenity_ak_siphash_cpu`, `zig/zig_std_linux_mips` |
