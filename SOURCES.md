@@ -116,9 +116,16 @@ file carries. Credentials are upstream test fixtures and dummy values only. Worm
 invisible-Unicode files are benign: self-copying test and build scripts, and emoji
 subdivision-flag tag sequences.
 
+The invisible-Unicode folders turned out to carry only emoji subdivision flags (U+1F3F4, a
+lowercase TAG-letter subdivision id, U+E007F CANCEL TAG), which the engine now exempts
+(gitgalaxy#4135). They stay as **negative controls**: Invisible Unicode Payload Smuggling must
+read 0 on them, so a regression that loses the exemption shows up in the golden master. The
+corpus carries no positive example of that signal; real tag-block smuggling is malware and is
+not added here (Quarantine Protocol). The engine's unit tests cover the positive shapes.
+
 | Signal | Folders |
 |---|---|
-| Invisible Unicode Payload Smuggling | `javascript/node_tls_security_tests` (V8 test), `typescript/excalidraw_text_wrapping`, `java/flutter_android_editing_tests`, `php/symfony_emoji_data` |
+| Invisible Unicode Payload Smuggling (negative control, must read 0) | `javascript/node_tls_security_tests` (V8 test), `typescript/excalidraw_text_wrapping`, `java/flutter_android_editing_tests`, `php/symfony_emoji_data` |
 | Self-Referential File Copy/Overwrite (Worm Pattern) | `javascript/node_tls_security_tests` (test-fs-lchown.js), `javascript/react_error_codes`, `perl/ack3_tests`, `shell/freebsd_sysbuild` |
 | Low-Level Bitwise / Cryptographic Math | `javascript/javascript_algorithms_bits`, `rust/tokio_util_rand`, `cpp/serenity_ak_siphash_cpu`, `go/go_runtime_rand` |
 | Safety & Constraint Bypasses | `javascript/node_tls_security_tests`, `python/homeassistant_ble_integrations` |
