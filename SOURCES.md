@@ -68,6 +68,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `lua` | 5 | 120 | 5 exact | Curated | [`data/lua/SOURCES.md`](data/lua/SOURCES.md) |
 | `m4` | 2 | 11 | 2 pool-reference | Audited | [`data/m4/SOURCES.md`](data/m4/SOURCES.md) |
 | `makefile` | 1 | 2 | 1 content-verified | Audited | [`data/makefile/SOURCES.md`](data/makefile/SOURCES.md) |
+| `markdown` | 2 | 5 | 2 exact | Audited | [`data/markdown/SOURCES.md`](data/markdown/SOURCES.md) |
 | `matlab` | 1 | 9 | 1 pool-reference | Audited | [`data/matlab/SOURCES.md`](data/matlab/SOURCES.md) |
 | `mlir` | 1 | 4 | 1 pool-reference | Audited | [`data/mlir/SOURCES.md`](data/mlir/SOURCES.md) |
 | `nix` | 2 | 10 | 2 pool-reference | Audited | [`data/nix/SOURCES.md`](data/nix/SOURCES.md) |
@@ -79,7 +80,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `powershell` | 5 | 129 | 5 exact | Curated | [`data/powershell/SOURCES.md`](data/powershell/SOURCES.md) |
 | `proto` | 1 | 4 | 1 pool-reference | Audited | [`data/proto/SOURCES.md`](data/proto/SOURCES.md) |
 | `protobuf` | 1 | 1 | 1 original | Audited | [`data/protobuf/SOURCES.md`](data/protobuf/SOURCES.md) |
-| `python` | 11 | 302 | 5 exact, 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
+| `python` | 19 | 328 | 13 exact, 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
 | `rexx` | 3 | 28 | 3 content-verified | Audited | [`data/rexx/SOURCES.md`](data/rexx/SOURCES.md) |
 | `ruby` | 2 | 10 | 1 exact, 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
 | `rust` | 8 | 60 | 2 exact, 2 content-verified, 4 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
@@ -94,13 +95,13 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `tcl` | 9 | 157 | 8 exact, 1 pool-reference | Audited | [`data/tcl/SOURCES.md`](data/tcl/SOURCES.md) |
 | `td` | 1 | 5 | 1 pool-reference | Audited | [`data/td/SOURCES.md`](data/td/SOURCES.md) |
 | `text` | 1 | 1 | 1 original | Audited | [`data/text/SOURCES.md`](data/text/SOURCES.md) |
-| `typescript` | 9 | 52 | 3 exact, 2 content-verified, 4 pool-reference | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
+| `typescript` | 12 | 60 | 6 exact, 2 content-verified, 4 pool-reference | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
 | `xml` | 5 | 26 | 1 content-verified, 4 pool-reference | Audited | [`data/xml/SOURCES.md`](data/xml/SOURCES.md) |
 | `yacc` | 1 | 3 | 1 content-verified | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
 | `yaml` | 7 | 51 | 6 exact, 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
 | `zig` | 6 | 47 | 1 exact, 1 content-verified, 3 pool-reference, 1 unknown | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
 
-Five additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `markdown`, `pbtxt`.
+Four additional `data/` directories currently hold no content and so have no `SOURCES.md`: `blp`, `csv`, `glsl`, `pbtxt`.
 
 ## Contributing new content
 
@@ -129,3 +130,22 @@ subdivision-flag tag sequences.
 | Auth Middleware | `c/freebsd_openpam`, `java/jenkins_cli`, `php/laravel_validation_rules`, `ruby/rails_http_token_auth` |
 | Cryptography | `javascript/node_tls_security_tests`, `python/micropython_usb_tls` |
 | Inline Assembly Blocks | `c/cosmopolitan_intrin`, `cpp/serenity_ak_siphash_cpu`, `zig/zig_std_linux_mips` |
+
+## AI/ML and diagram signal coverage (gitgalaxy#4108, 2026-10-02)
+
+Added so the golden master exercises signals that fired on zero crucible files: Cloud LLM API
+Integrations, AI Orchestration Frameworks, Vector Databases (RAG), Local Inference & Tensor Math,
+Deep Learning, Traditional ML, Architectural Diagrams (Mermaid), plus more Vectorized Math
+(including its first TypeScript hits). All are `exact`, copied unmodified from the pool, each
+folder ships its upstream licence (and Apache `NOTICE` where upstream has one):
+
+- `python/`: `airflow_ai_providers`, `homeassistant_anthropic`, `langchain_agents`,
+  `tensorflow_ml_ops`, `tensorflow_model_fixtures`, `opencv_dnn_conversion`,
+  `thealgorithms_machine_learning`, `scikit-learn_examples`
+- `typescript/`: `nx_util_ai`, `effect_ai_anthropic`, `excalibur_math`
+- `markdown/` (new category): `airflow_job_lifecycle`, `kubernetes_client_go`
+
+These signals are only defined for Python, JavaScript and TypeScript (and Markdown for diagrams),
+so no other language can carry them. `tensorflow_model_fixtures` holds two tiny real binary model
+files on purpose: Local Inference & Tensor Math is produced only by the engine's model-weight
+scanner, which is keyed on model-file extensions.

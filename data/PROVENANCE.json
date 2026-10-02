@@ -1576,6 +1576,28 @@
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
+    "category": "markdown",
+    "repo": "airflow_job_lifecycle",
+    "path": "data/markdown/airflow_job_lifecycle",
+    "files": 3,
+    "url": "https://github.com/apache/airflow",
+    "commit": "f391942b90f2347272c321bcdd092c7b109cdc9e",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Airflow's job-lifecycle design note with two ```mermaid sequence diagrams (lit_diagrams). Lives outside docs/, which the engine ignores. NOTICE copied per Apache-2.0."
+  },
+  {
+    "category": "markdown",
+    "repo": "kubernetes_client_go",
+    "path": "data/markdown/kubernetes_client_go",
+    "files": 2,
+    "url": "https://github.com/kubernetes/kubernetes",
+    "commit": "da663405beb487d66c27a0220ea4073305ae9077",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. client-go's ARCHITECTURE.md (from the kubernetes staging tree) with a ```mermaid informer-flow diagram (lit_diagrams)."
+  },
+  {
     "category": "matlab",
     "repo": "eeglab",
     "path": "data/matlab/eeglab",
@@ -1919,6 +1941,17 @@
   },
   {
     "category": "python",
+    "repo": "airflow_ai_providers",
+    "path": "data/python/airflow_ai_providers",
+    "files": 6,
+    "url": "https://github.com/apache/airflow",
+    "commit": "f391942b90f2347272c321bcdd092c7b109cdc9e",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Airflow's OpenAI hook (`from openai import OpenAI` -> llm_api) and Pinecone hook/operator/example DAG (`from pinecone import ...` -> llm_vector_store). NOTICE copied per Apache-2.0."
+  },
+  {
+    "category": "python",
     "repo": "airflow_opsgenie_tests",
     "path": "data/python/airflow_opsgenie_tests",
     "files": 3,
@@ -1963,6 +1996,17 @@
   },
   {
     "category": "python",
+    "repo": "homeassistant_anthropic",
+    "path": "data/python/homeassistant_anthropic",
+    "files": 2,
+    "url": "https://github.com/home-assistant/core",
+    "commit": "375bd55ae6ea27814de1eaaf7c66846c4e767dc5",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Home Assistant's Anthropic integration coordinator: a bare `import anthropic` client (llm_api)."
+  },
+  {
+    "category": "python",
     "repo": "homeassistant_ble_integrations",
     "path": "data/python/homeassistant_ble_integrations",
     "files": 4,
@@ -1971,6 +2015,17 @@
     "license": "Apache-2.0",
     "confidence": "exact",
     "note": null
+  },
+  {
+    "category": "python",
+    "repo": "langchain_agents",
+    "path": "data/python/langchain_agents",
+    "files": 4,
+    "url": "https://github.com/langchain-ai/langchain",
+    "commit": "dd637313c92db239433f792f6bdb4f14478eaa4d",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. LangChain v1 agent middleware + chat-model integration test, `from langchain.agents ...` / `from langchain.chat_models ...` (llm_orchestrator). Copied from the pool's PyPI sdist langchain-1.2.15; the commit is upstream tag `langchain==1.2.15`, path `libs/langchain_v1/`, every file blob-verified against it."
   },
   {
     "category": "python",
@@ -1996,6 +2051,17 @@
   },
   {
     "category": "python",
+    "repo": "opencv_dnn_conversion",
+    "path": "data/python/opencv_dnn_conversion",
+    "files": 2,
+    "url": "https://github.com/opencv/opencv",
+    "commit": "69bdcc93861cda196df935dd2975e6f1384ceced",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. OpenCV DNN sample exporting torchvision ResNet-50 to ONNX: `import torch` / `torch.onnx` (dl_frameworks)."
+  },
+  {
+    "category": "python",
     "repo": "pip_vendored_requests",
     "path": "data/python/pip_vendored_requests",
     "files": 2,
@@ -2004,6 +2070,50 @@
     "license": "MIT",
     "confidence": "exact",
     "note": null
+  },
+  {
+    "category": "python",
+    "repo": "scikit-learn_examples",
+    "path": "data/python/scikit-learn_examples",
+    "files": 3,
+    "url": "https://github.com/scikit-learn/scikit-learn",
+    "commit": "94af1dff678e8a7a6fc627b85a5489980c063331",
+    "license": "BSD 3-Clause License",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Two short scikit-learn gallery examples (custom SVM kernel, non-negative least squares): `from sklearn ...` (ml_traditional) with `np.dot` (vectorized_math)."
+  },
+  {
+    "category": "python",
+    "repo": "tensorflow_ml_ops",
+    "path": "data/python/tensorflow_ml_ops",
+    "files": 3,
+    "url": "https://github.com/tensorflow/tensorflow",
+    "commit": "c21c40c048e9b35d032d31ce41809c2cadeb8fca",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. TFLite einsum op test and a TFRT matmul saved-model generator: `import tensorflow` (dl_frameworks) plus `tf.einsum` / `math_ops.matmul` (vectorized_math)."
+  },
+  {
+    "category": "python",
+    "repo": "tensorflow_model_fixtures",
+    "path": "data/python/tensorflow_model_fixtures",
+    "files": 3,
+    "url": "https://github.com/tensorflow/tensorflow",
+    "commit": "c21c40c048e9b35d032d31ce41809c2cadeb8fca",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Two tiny real model files (a 652-byte TFLite flatbuffer and its 424-byte frozen GraphDef). The engine routes model-weight extensions to its tensor scanner, which is the only producer of llm_local_compute."
+  },
+  {
+    "category": "python",
+    "repo": "thealgorithms_machine_learning",
+    "path": "data/python/thealgorithms_machine_learning",
+    "files": 3,
+    "url": "https://github.com/TheAlgorithms/Python",
+    "commit": "840ca00ad389a947205a4a928171499f2228cbb7",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Keras LSTM forecaster (dl_frameworks + `from sklearn.preprocessing` ml_traditional) and a NumPy logistic regression on sklearn datasets (ml_traditional + `np.dot` vectorized_math)."
   },
   {
     "category": "python",
@@ -2726,6 +2836,28 @@
   },
   {
     "category": "typescript",
+    "repo": "effect_ai_anthropic",
+    "path": "data/typescript/effect_ai_anthropic",
+    "files": 2,
+    "url": "https://github.com/Effect-TS/effect",
+    "commit": "70ce155cd73a3b4cd723fe955454b5837b428f76",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Effect's Anthropic tokenizer service, `import ... from \"@anthropic-ai/tokenizer\"` (llm_api)."
+  },
+  {
+    "category": "typescript",
+    "repo": "excalibur_math",
+    "path": "data/typescript/excalibur_math",
+    "files": 3,
+    "url": "https://github.com/excaliburjs/Excalibur",
+    "commit": "3aa48c717952d2a01339eee72acc8036d087137a",
+    "license": "BSD 2-Clause License",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. Excalibur game-engine ray casting and separating-axis collision: vector `.cross(` / `.dot(` / matrix `.multiply(` (vectorized_math in TypeScript, previously zero)."
+  },
+  {
+    "category": "typescript",
     "repo": "excalidraw_text_wrapping",
     "path": "data/typescript/excalidraw_text_wrapping",
     "files": 2,
@@ -2745,6 +2877,17 @@
     "license": "MIT License",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "typescript",
+    "repo": "nx_util_ai",
+    "path": "data/typescript/nx_util_ai",
+    "files": 3,
+    "url": "https://github.com/nrwl/nx",
+    "commit": "557c876e96c1f92f39eb05cb79f0cf06973ee214",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "gitgalaxy#4108 AI/ML signal coverage. nx.dev's AI docs assistant: `import OpenAI from 'openai'` moderation helper and streaming query API route (llm_api in TypeScript)."
   },
   {
     "category": "typescript",

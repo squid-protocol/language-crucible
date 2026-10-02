@@ -226,6 +226,21 @@ EXACT_PROVENANCE = {
     ("perl", "ack3_tests"): ("https://github.com/beyondgrep/ack3", "1c9cfd3508dd1109815d85e64c55656b00454289", "Artistic-2.0"),
     ("shell", "freebsd_sysbuild"): ("https://github.com/freebsd/freebsd-src", "c70755bc0d8f703dbaa1520c15e8213a95847dd5", "BSD-2-Clause"),
     ("zig", "zig_std_linux_mips"): ("https://github.com/ziglang/zig", "738d2be9d6b6ef3ff3559130c05159ef53336224", "MIT"),
+    # AI/ML + diagram signal coverage (2026-10-02, gitgalaxy#4108): copied from pool
+    # clones (langchain: PyPI sdist, blob-verified against the upstream tag) -> exact.
+    ("python", "airflow_ai_providers"): ("https://github.com/apache/airflow", "f391942b90f2347272c321bcdd092c7b109cdc9e", "Apache License 2.0"),
+    ("python", "homeassistant_anthropic"): ("https://github.com/home-assistant/core", "375bd55ae6ea27814de1eaaf7c66846c4e767dc5", "Apache License 2.0"),
+    ("python", "langchain_agents"): ("https://github.com/langchain-ai/langchain", "dd637313c92db239433f792f6bdb4f14478eaa4d", "MIT License"),
+    ("python", "tensorflow_ml_ops"): ("https://github.com/tensorflow/tensorflow", "c21c40c048e9b35d032d31ce41809c2cadeb8fca", "Apache License 2.0"),
+    ("python", "tensorflow_model_fixtures"): ("https://github.com/tensorflow/tensorflow", "c21c40c048e9b35d032d31ce41809c2cadeb8fca", "Apache License 2.0"),
+    ("python", "opencv_dnn_conversion"): ("https://github.com/opencv/opencv", "69bdcc93861cda196df935dd2975e6f1384ceced", "Apache License 2.0"),
+    ("python", "thealgorithms_machine_learning"): ("https://github.com/TheAlgorithms/Python", "840ca00ad389a947205a4a928171499f2228cbb7", "MIT License"),
+    ("python", "scikit-learn_examples"): ("https://github.com/scikit-learn/scikit-learn", "94af1dff678e8a7a6fc627b85a5489980c063331", "BSD 3-Clause License"),
+    ("typescript", "nx_util_ai"): ("https://github.com/nrwl/nx", "557c876e96c1f92f39eb05cb79f0cf06973ee214", "MIT License"),
+    ("typescript", "effect_ai_anthropic"): ("https://github.com/Effect-TS/effect", "70ce155cd73a3b4cd723fe955454b5837b428f76", "MIT License"),
+    ("typescript", "excalibur_math"): ("https://github.com/excaliburjs/Excalibur", "3aa48c717952d2a01339eee72acc8036d087137a", "BSD 2-Clause License"),
+    ("markdown", "airflow_job_lifecycle"): ("https://github.com/apache/airflow", "f391942b90f2347272c321bcdd092c7b109cdc9e", "Apache License 2.0"),
+    ("markdown", "kubernetes_client_go"): ("https://github.com/kubernetes/kubernetes", "da663405beb487d66c27a0220ea4073305ae9077", "Apache License 2.0"),
 }
 
 # Hand-corrected matches for generically-named repo folders (e.g. "core",
