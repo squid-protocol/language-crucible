@@ -594,6 +594,28 @@
     "note": null
   },
   {
+    "category": "crystal",
+    "repo": "crystal_stdlib_http",
+    "path": "data/crystal/crystal_stdlib_http",
+    "files": 19,
+    "url": "https://github.com/crystal-lang/crystal",
+    "commit": "48118b0e8f564567495228e273ef6a88d563d15f",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "Crystal standard-library HTTP client, server, cookies and form-data code (src/http): `@[...]` annotations in 4 of 18 files, `abstract def` / `def self.` in 8, a little generic code."
+  },
+  {
+    "category": "crystal",
+    "repo": "kemal_framework",
+    "path": "data/crystal/kemal_framework",
+    "files": 13,
+    "url": "https://github.com/kemalcr/kemal",
+    "commit": "da9841225d8e7968763668ac8e8dd218cfdb1882",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "Crystal web framework (src/): `def`-heavy classes and modules, with `macro` definitions or `@[...]` annotations in 4 of 12 files. Flattened names. First Crystal category, so the tree-sitter accuracy audit can measure Crystal."
+  },
+  {
     "category": "csd",
     "repo": "carddemo",
     "path": "data/csd/carddemo",
@@ -792,6 +814,39 @@
     "note": null
   },
   {
+    "category": "elixir",
+    "repo": "elixir_stdlib",
+    "path": "data/elixir/elixir_stdlib",
+    "files": 17,
+    "url": "https://github.com/elixir-lang/elixir",
+    "commit": "4be04f7bf70002b1d13bd31fefebbd43dea5fdbf",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "Elixir standard library (lib/elixir/lib): `@doc` heredocs in 14 of 16 files, `@spec` in 12, `defmacro` in 6. Files carry an Apache-2.0 SPDX header, matching the repository license."
+  },
+  {
+    "category": "elixir",
+    "repo": "elixir_tests",
+    "path": "data/elixir/elixir_tests",
+    "files": 5,
+    "url": "https://github.com/elixir-lang/elixir",
+    "commit": "4be04f7bf70002b1d13bd31fefebbd43dea5fdbf",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "Elixir's own ExUnit tests: `.exs` scripts, the second Elixir extension, built from `describe` and `test` blocks."
+  },
+  {
+    "category": "elixir",
+    "repo": "phoenix_framework",
+    "path": "data/elixir/phoenix_framework",
+    "files": 15,
+    "url": "https://github.com/phoenixframework/phoenix",
+    "commit": "25ad987fe48f87bcb4f1f772ccfc8e9cacc423d2",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "Phoenix web framework (lib/phoenix): `defmacro` in 3 of 14 files, `@behaviour` in 7, Plug and pipeline code in 4."
+  },
+  {
     "category": "embedded_python",
     "repo": "meow_turtle",
     "path": "data/embedded_python/meow_turtle",
@@ -804,6 +859,28 @@
     "origin": "original"
   },
   {
+    "category": "erlang",
+    "repo": "cowboy_http_server",
+    "path": "data/erlang/cowboy_http_server",
+    "files": 17,
+    "url": "https://github.com/ninenines/cowboy",
+    "commit": "931f4ffcd35edb862405a67142c15042b0a51ca2",
+    "license": "ISC License",
+    "confidence": "exact",
+    "note": "Cowboy HTTP server (src/*.erl): `-spec` in 15 of 16 files, `-behaviour` in 9, `-record` in 6."
+  },
+  {
+    "category": "erlang",
+    "repo": "ranch_socket_pool",
+    "path": "data/erlang/ranch_socket_pool",
+    "files": 13,
+    "url": "https://github.com/ninenines/ranch",
+    "commit": "4c42ff16d3f51df63585607f3f2bc8b5f406aa77",
+    "license": "ISC License",
+    "confidence": "exact",
+    "note": "Ranch socket acceptor pool (src/*.erl): supervisor modules and `-spec` types (11 of 12 files); a second Erlang codebase for authoring variety."
+  },
+  {
     "category": "fortran",
     "repo": "wrf",
     "path": "data/fortran/wrf",
@@ -813,6 +890,17 @@
     "license": "Public Domain",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "fsharp",
+    "repo": "giraffe_web",
+    "path": "data/fsharp/giraffe_web",
+    "files": 23,
+    "url": "https://github.com/giraffe-fsharp/Giraffe",
+    "commit": "41d056027cba1b889732fa1e3ccd84a0b9dd6313",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "Giraffe ASP.NET Core web library (src/Giraffe): F# `module`s in 21 of 22 files, `member` definitions and type extensions in 8, and handler functions."
   },
   {
     "category": "go",
@@ -1044,6 +1132,17 @@
     "license": "GNU GPL v2.0",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "hcl",
+    "repo": "terraform_aws_vpc",
+    "path": "data/hcl/terraform_aws_vpc",
+    "files": 31,
+    "url": "https://github.com/terraform-aws-modules/terraform-aws-vpc",
+    "commit": "577ad620abe00da27a3a0f1e5acee041959fb3be",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": "Terraform AWS VPC module and its examples: top-level `resource`, `variable`, `locals`, `output` and `module` blocks in 16 of 30 files; the rest are `versions.tf` / `outputs.tf` style files. Flattened names (examples_<dir>_<file>)."
   },
   {
     "category": "hlasm",
@@ -1466,6 +1565,17 @@
     "note": null
   },
   {
+    "category": "julia",
+    "repo": "dataframes_jl",
+    "path": "data/julia/dataframes_jl",
+    "files": 31,
+    "url": "https://github.com/JuliaData/DataFrames.jl",
+    "commit": "f995e957e0b999693ddae529f55fb019010dcf38",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "DataFrames.jl (src/): macro calls (`@...`) in 25 of 30 files, parametric `{T}` / `where` signatures in 17."
+  },
+  {
     "category": "kotlin",
     "repo": "okhttp",
     "path": "data/kotlin/okhttp",
@@ -1620,6 +1730,17 @@
     "note": null
   },
   {
+    "category": "nim",
+    "repo": "nim_stdlib",
+    "path": "data/nim/nim_stdlib",
+    "files": 31,
+    "url": "https://github.com/nim-lang/Nim",
+    "commit": "a109d698f08127422c6a65cfc6eb85a8c963ab2a",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "Nim standard library (lib/pure): `proc` in 28 of 30 files, `template` in 22, `macro` in 3, async code in 7. The compiler and stdlib are MIT under the repository's copying.txt."
+  },
+  {
     "category": "nix",
     "repo": "bun",
     "path": "data/nix/bun",
@@ -1651,6 +1772,17 @@
     "license": "LicenseRef-Public-Domain",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "ocaml",
+    "repo": "janestreet_base",
+    "path": "data/ocaml/janestreet_base",
+    "files": 31,
+    "url": "https://github.com/janestreet/base",
+    "commit": "49a861eb32041978d72e369f85f89a4547a50f1f",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "Jane Street Base (src/): 18 `.ml` implementations and 12 `.mli` interfaces; `module type` in 10 files and functor-style code in 6."
   },
   {
     "category": "perl",
@@ -1849,6 +1981,28 @@
     "license": "Apache-2.0",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "postgresql",
+    "repo": "pgvector_extension",
+    "path": "data/postgresql/pgvector_extension",
+    "files": 9,
+    "url": "https://github.com/pgvector/pgvector",
+    "commit": "305e756a31e467fb5741ec997882c0f623300dce",
+    "license": "PostgreSQL License",
+    "confidence": "exact",
+    "note": "pgvector extension upgrade scripts (sql/): every file opens with a psql `\\echo ... \\quit` guard line; `CREATE FUNCTION` appears in 3 of 8."
+  },
+  {
+    "category": "postgresql",
+    "repo": "pgvector_tests",
+    "path": "data/postgresql/pgvector_tests",
+    "files": 8,
+    "url": "https://github.com/pgvector/pgvector",
+    "commit": "305e756a31e467fb5741ec997882c0f623300dce",
+    "license": "PostgreSQL License",
+    "confidence": "exact",
+    "note": "pgvector regression tests (test/sql). Only the 7 files the engine classifies as postgresql were kept; 7 plain-SQL test files that it classifies as db2_sql were left out."
   },
   {
     "category": "powershell",
@@ -2136,6 +2290,28 @@
     "license": "WTFPL",
     "confidence": "pool-reference",
     "note": null
+  },
+  {
+    "category": "r",
+    "repo": "dplyr_package",
+    "path": "data/r/dplyr_package",
+    "files": 16,
+    "url": "https://github.com/tidyverse/dplyr",
+    "commit": "819c99f7284b3a413b391c60bea49ae7bfb8bafc",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "dplyr package R sources (R/): roxygen comment blocks in all 15 files, tidy-evaluation `{{ }}` in 3. The upstream CRAN LICENSE stub and LICENSE.md are both MIT."
+  },
+  {
+    "category": "r",
+    "repo": "rlang_package",
+    "path": "data/r/rlang_package",
+    "files": 16,
+    "url": "https://github.com/r-lib/rlang",
+    "commit": "b4a2a057ea67613cc13cdbaed9eb0c421400e96a",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": "rlang package R sources (R/): roxygen comment blocks in 14 of 15 files and a few S3 `UseMethod` generics."
   },
   {
     "category": "rexx",

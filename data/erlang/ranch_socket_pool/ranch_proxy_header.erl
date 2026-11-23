@@ -1,0 +1,1587 @@
+%% Copyright (c) Loïc Hoguin <essen@ninenines.eu>
+%%
+%% Permission to use, copy, modify, and/or distribute this software for any
+%% purpose with or without fee is hereby granted, provided that the above
+%% copyright notice and this permission notice appear in all copies.
+%%
+%% THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+%% WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+%% MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+%% ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+%% WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+%% ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+%% OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+-module(ranch_proxy_header).
+
+-ifdef(TEST).
+-include_lib("stdlib/include/assert.hrl").
+-endif.
+
+-export([parse/1]).
+-export([header/1]).
+-export([header/2]).
+-export([to_connection_info/1]).
+
+-type proxy_info() :: #{
+	%% Mandatory part.
+	version := 1 | 2,
+	command := local | proxy,
+	transport_family => undefined | ipv4 | ipv6 | unix,
+	transport_protocol => undefined | stream | dgram,
+	%% Addresses.
+	src_address => inet:ip_address() | binary(),
+	src_port => inet:port_number(),
+	dest_address => inet:ip_address() | binary(),
+	dest_port => inet:port_number(),
+	%% Extra TLV-encoded data.
+	alpn => binary(), %% US-ASCII.
+	authority => binary(), %% UTF-8.
+	unique_id => binary(), %% Opaque byte sequence of up to 128 bytes.
+	ssl => #{
+		client := [ssl | cert_conn | cert_sess],
+		verified := boolean(),
+		version => binary(), %% US-ASCII.
+		cipher => binary(), %% US-ASCII.
+		sig_alg => binary(), %% US-ASCII.
+		key_alg => binary(), %% US-ASCII.
+		group => binary(), %% US-ASCII.
+		sig_scheme => binary(), %% US-ASCII.
+		client_cert => binary(), %% ASN.1 DER.
+		cn => binary() %% UTF-8.
+	},
+	netns => binary(), %% US-ASCII.
+	%% Unknown TLVs can't be parsed so the raw data is given.
+	raw_tlvs => [{0..255, binary()}]
+}.
+-export_type([proxy_info/0]).
+
+-type build_opts() :: #{
+	checksum => crc32c,
+	padding => pos_integer() %% >= 3
+}.
+
+%% Parsing.
+
+-spec parse(Data) -> {ok, proxy_info(), Data} | {error, atom()} when Data::binary().
+parse(<<"\r\n\r\n\0\r\nQUIT\n", Rest/bits>>) ->
+	parse_v2(Rest);
+parse(<<"PROXY ", Rest/bits>>) ->
+	case binary:split(Rest, <<"\r\n">>) of
+		[_Line] ->
+			{error, 'Malformed or incomplete PROXY protocol header line. (PP 2.1)'};
+		[Line, _] when byte_size(Line) + 8 > 107 ->
+			{error, 'The PROXY protocol header line exceeds 107 bytes. (PP 2.1)'};
+		[Line, Rest1] ->
+			case parse_v1(Line) of
+				{ok, Info} ->
+					{ok, Info, Rest1};
+				{error, Reason} ->
+					{error, Reason}
+			end
+	end;
+parse(_) ->
+	{error, 'The PROXY protocol header signature was not recognized. (PP 2.1, PP 2.2)'}.
+
+-ifdef(TEST).
+parse_unrecognized_header_test() ->
+	{error, _} = parse(<<"GET / HTTP/1.1\r\n">>),
+	ok.
+-endif.
+
+%% Human-readable header format (Version 1).
+%% The CRLF and any bytes after it have already been removed.
+parse_v1(<<"TCP4 ", Rest/bits>>) ->
+	parse_v1(Rest, ipv4);
+parse_v1(<<"TCP6 ", Rest/bits>>) ->
+	parse_v1(Rest, ipv6);
+parse_v1(<<"UNKNOWN">>) ->
+	{ok, #{
+		version => 1,
+		command => proxy,
+		transport_family => undefined,
+		transport_protocol => undefined
+	}};
+parse_v1(<<"UNKNOWN ", _/bits>>) ->
+	{ok, #{
+		version => 1,
+		command => proxy,
+		transport_family => undefined,
+		transport_protocol => undefined
+	}};
+parse_v1(_) ->
+	{error, 'The INET protocol and family string was not recognized. (PP 2.1)'}.
+
+parse_v1(Rest0, Family) ->
+	try
+		{ok, SrcAddr, Rest1} = parse_ip(Rest0, Family),
+		{ok, DestAddr, Rest2} = parse_ip(Rest1, Family),
+		{ok, SrcPort, Rest3} = parse_port(Rest2, $\s),
+		{ok, DestPort, <<>>} = parse_port(Rest3),
+		{ok, #{
+			version => 1,
+			command => proxy,
+			transport_family => Family,
+			transport_protocol => stream,
+			src_address => SrcAddr,
+			src_port => SrcPort,
+			dest_address => DestAddr,
+			dest_port => DestPort
+		}}
+	catch
+		throw:parse_ipv4_error ->
+			{error, 'Failed to parse an IPv4 address in the PROXY protocol header line. (PP 2.1)'};
+		throw:parse_ipv6_error ->
+			{error, 'Failed to parse an IPv6 address in the PROXY protocol header line. (PP 2.1)'};
+		throw:parse_port_error ->
+			{error, 'Failed to parse a port number in the PROXY protocol header line. (PP 2.1)'};
+		_:_ ->
+			{error, 'Malformed or incomplete PROXY protocol header line. (PP 2.1)'}
+	end.
+
+parse_ip(<<Addr:7/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:8/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:9/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:10/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:11/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:12/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:13/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:14/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(<<Addr:15/binary, $\s, Rest/binary>>, ipv4) -> parse_ipv4(Addr, Rest);
+parse_ip(Data, ipv6) ->
+	[Addr, Rest] = binary:split(Data, <<$\s>>),
+	parse_ipv6(Addr, Rest).
+
+parse_ipv4(Addr0, Rest) ->
+	case inet:parse_ipv4strict_address(binary_to_list(Addr0)) of
+		{ok, Addr} -> {ok, Addr, Rest};
+		{error, einval} -> throw(parse_ipv4_error)
+	end.
+
+%% PP 2.1 is hex groups and one ::. A dotted tail is accepted
+%% for now. HAProxy issue 2963 is the ::ffff:d.d.d.d case:
+%% https://github.com/haproxy/haproxy/issues/2963
+%% inet_ntop does not write a zone, so % stays rejected.
+parse_ipv6(Addr0, Rest) ->
+	case binary:match(Addr0, <<"%">>) of
+		nomatch ->
+			case inet:parse_ipv6strict_address(binary_to_list(Addr0)) of
+				{ok, Addr} -> {ok, Addr, Rest};
+				{error, einval} -> throw(parse_ipv6_error)
+			end;
+		_ ->
+			throw(parse_ipv6_error)
+	end.
+
+parse_port(<<Port:1/binary, C, Rest/bits>>, C) -> parse_port1(Port, Rest);
+parse_port(<<Port:2/binary, C, Rest/bits>>, C) -> parse_port1(Port, Rest);
+parse_port(<<Port:3/binary, C, Rest/bits>>, C) -> parse_port1(Port, Rest);
+parse_port(<<Port:4/binary, C, Rest/bits>>, C) -> parse_port1(Port, Rest);
+parse_port(<<Port:5/binary, C, Rest/bits>>, C) -> parse_port1(Port, Rest);
+parse_port(_, _) -> throw(parse_port_error).
+
+parse_port(Port) when byte_size(Port) >= 1, byte_size(Port) =< 5 ->
+	parse_port1(Port, <<>>);
+parse_port(_) ->
+	throw(parse_port_error).
+
+%% PP 2.1 forbids heading zeroes. A single 0 is in range.
+parse_port1(<<A>>, Rest) when A >= $0, A =< $9 ->
+	{ok, A - $0, Rest};
+parse_port1(<<A, B>>, Rest)
+		when A >= $1, A =< $9, B >= $0, B =< $9 ->
+	{ok, (A - $0) * 10 + (B - $0), Rest};
+parse_port1(<<A, B, C>>, Rest)
+		when A >= $1, A =< $9, B >= $0, B =< $9, C >= $0, C =< $9 ->
+	{ok, (A - $0) * 100 + (B - $0) * 10 + (C - $0), Rest};
+parse_port1(<<A, B, C, D>>, Rest)
+		when A >= $1, A =< $9, B >= $0, B =< $9,
+			C >= $0, C =< $9, D >= $0, D =< $9 ->
+	{ok, (A - $0) * 1000 + (B - $0) * 100
+		+ (C - $0) * 10 + (D - $0), Rest};
+parse_port1(<<A, B, C, D, E>>, Rest)
+		when A >= $1, A =< $9, B >= $0, B =< $9,
+			C >= $0, C =< $9, D >= $0, D =< $9, E >= $0, E =< $9 ->
+	Port = (A - $0) * 10000 + (B - $0) * 1000
+		+ (C - $0) * 100 + (D - $0) * 10 + (E - $0),
+	case Port =< 65535 of
+		true ->
+			{ok, Port, Rest};
+		false ->
+			throw(parse_port_error)
+	end;
+parse_port1(_, _) ->
+	throw(parse_port_error).
+
+-ifdef(TEST).
+parse_v1_test() ->
+	%% Examples taken from the PROXY protocol header specification.
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := ipv4,
+		transport_protocol := stream,
+		src_address := {255, 255, 255, 255},
+		src_port := 65535,
+		dest_address := {255, 255, 255, 255},
+		dest_port := 65535
+	}, <<>>} = parse(<<"PROXY TCP4 255.255.255.255 255.255.255.255 65535 65535\r\n">>),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := ipv6,
+		transport_protocol := stream,
+		src_address := {65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535},
+		src_port := 65535,
+		dest_address := {65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535},
+		dest_port := 65535
+	}, <<>>} = parse(<<"PROXY TCP6 "
+		"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff "
+		"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 65535 65535\r\n">>),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := undefined,
+		transport_protocol := undefined
+	}, <<>>} = parse(<<"PROXY UNKNOWN\r\n">>),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := undefined,
+		transport_protocol := undefined
+	}, <<>>} = parse(<<"PROXY UNKNOWN "
+		"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff "
+		"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 65535 65535\r\n">>),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := ipv4,
+		transport_protocol := stream,
+		src_address := {192, 168, 0, 1},
+		src_port := 56324,
+		dest_address := {192, 168, 0, 11},
+		dest_port := 443
+	}, <<"GET / HTTP/1.1\r\nHost: 192.168.0.11\r\n\r\n">>} = parse(<<
+		"PROXY TCP4 192.168.0.1 192.168.0.11 56324 443\r\n"
+		"GET / HTTP/1.1\r\n"
+		"Host: 192.168.0.11\r\n"
+		"\r\n">>),
+	%% Test cases taken from tomciopp/proxy_protocol.
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := ipv4,
+		transport_protocol := stream,
+		src_address := {192, 168, 0, 1},
+		src_port := 56324,
+		dest_address := {192, 168, 0, 11},
+		dest_port := 443
+	}, <<"GET / HTTP/1.1\r">>} = parse(<<
+		"PROXY TCP4 192.168.0.1 192.168.0.11 56324 443\r\nGET / HTTP/1.1\r">>),
+	{error, _} = parse(<<"PROXY TCP4 192.1638.0.1 192.168.0.11 56324 443\r\nGET / HTTP/1.1\r">>),
+	{error, _} = parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 1111111 443\r\nGET / HTTP/1.1\r">>),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := ipv6,
+		transport_protocol := stream,
+		src_address := {8193, 3512, 0, 66, 0, 35374, 880, 29492},
+		src_port := 4124,
+		dest_address := {8193, 3512, 0, 66, 0, 35374, 880, 29493},
+		dest_port := 443
+	}, <<"GET / HTTP/1.1\r">>} = parse(<<"PROXY TCP6 "
+		"2001:0db8:0000:0042:0000:8a2e:0370:7334 "
+		"2001:0db8:0000:0042:0000:8a2e:0370:7335 4124 443\r\nGET / HTTP/1.1\r">>),
+	{error, _} = parse(<<"PROXY TCP6 "
+		"2001:0db8:0000:0042:0000:8a2e:0370:7334 "
+		"2001:0db8:00;0:0042:0000:8a2e:0370:7335 4124 443\r\nGET / HTTP/1.1\r">>),
+	{error, _} = parse(<<"PROXY TCP6 "
+		"2001:0db8:0000:0042:0000:8a2e:0370:7334 "
+		"2001:0db8:0000:0042:0000:8a2e:0370:7335 4124 foo\r\nGET / HTTP/1.1\r">>),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := undefined,
+		transport_protocol := undefined
+	}, <<"GET / HTTP/1.1\r">>} = parse(<<"PROXY UNKNOWN 4124 443\r\nGET / HTTP/1.1\r">>),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := undefined,
+		transport_protocol := undefined
+	}, <<"GET / HTTP/1.1\r">>} = parse(<<"PROXY UNKNOWN\r\nGET / HTTP/1.1\r">>),
+	ok.
+
+%% PP 2.1: no heading zero. A single 0 is port 0.
+parse_v1_port_test() ->
+	{error, _} = parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 +80 443\r\n">>),
+	{error, _} = parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 0080 443\r\n">>),
+	{ok, #{src_port := 0, dest_port := 443}, <<>>}
+		= parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 0 443\r\n">>),
+	{error, _} = parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 443 +80\r\n">>),
+	{ok, #{src_port := 80, dest_port := 0}, <<>>}
+		= parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 80 0\r\n">>),
+	{error, _} = parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 08 443\r\n">>),
+	{error, _} = parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 65536 443\r\n">>),
+	{ok, #{src_port := 80, dest_port := 443}, <<>>}
+		= parse(<<"PROXY TCP4 192.168.0.1 192.168.0.11 80 443\r\n">>),
+	Zero = #{
+		version => 1,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {192, 168, 0, 1},
+		src_port => 0,
+		dest_address => {192, 168, 0, 11},
+		dest_port => 0
+	},
+	{ok, Zero, <<>>} = parse(iolist_to_binary(header(Zero))),
+	V4 = Zero#{version => 2},
+	{ok, V4, <<>>} = parse(iolist_to_binary(header(V4))),
+	V6 = V4#{
+		transport_family => ipv6,
+		src_address => {0, 0, 0, 0, 0, 0, 0, 1},
+		dest_address => {0, 0, 0, 0, 0, 16#ffff, 0, 1}
+	},
+	{ok, V6, <<>>} = parse(iolist_to_binary(header(V6))),
+	ok.
+
+%% No zone. A dotted tail is accepted.
+parse_v1_ipv6_test() ->
+	{error, _} = parse(<<"PROXY TCP6 fe80::1%lo ::1 1 2\r\n">>),
+	{error, _} = parse(<<"PROXY TCP6 ::1 fe80::1%1 1 2\r\n">>),
+	{ok, #{src_address := {0, 0, 0, 0, 0, 16#ffff, 16#c000, 16#201}}, <<>>}
+		= parse(<<"PROXY TCP6 ::ffff:192.0.2.1 ::1 1 2\r\n">>),
+	{ok, #{src_address := {0, 0, 0, 0, 0, 0, 16#c000, 16#201}}, <<>>}
+		= parse(<<"PROXY TCP6 ::192.0.2.1 ::1 1 2\r\n">>),
+	{ok, #{src_address := {8193, 3512, 0, 0, 0, 0, 16#c000, 16#201}}, <<>>}
+		= parse(<<"PROXY TCP6 2001:db8::192.0.2.1 ::1 1 2\r\n">>),
+	{ok, #{src_address := {1, 2, 3, 4, 5, 6, 16#c000, 16#201}}, <<>>}
+		= parse(<<"PROXY TCP6 1:2:3:4:5:6:192.0.2.1 ::1 1 2\r\n">>),
+	{ok, #{src_address := {0, 0, 0, 0, 16#ffff, 1, 16#c000, 16#201}}, <<>>}
+		= parse(<<"PROXY TCP6 ::ffff:1:192.0.2.1 ::1 1 2\r\n">>),
+	{ok, #{src_address := {0, 0, 0, 0, 0, 1, 16#c000, 16#201}}, <<>>}
+		= parse(<<"PROXY TCP6 ::1:192.0.2.1 ::1 1 2\r\n">>),
+	{ok, #{
+		transport_family := ipv6,
+		src_address := {65152, 0, 0, 0, 0, 0, 0, 1},
+		dest_address := {0, 0, 0, 0, 0, 0, 0, 1}
+	}, <<>>} = parse(<<"PROXY TCP6 fe80::1 ::1 1 2\r\n">>),
+	%% inet:ntoa prints fe80::1%01 for Scoped and a dotted tail for
+	%% Mapped. Scoped is written as eight hex groups. The dotted
+	%% tail is kept.
+	Scoped = {16#fe80, 1, 0, 0, 0, 0, 0, 1},
+	Mapped = {0, 0, 0, 0, 0, 16#ffff, 16#c000, 16#201},
+	Info = #{
+		version => 1,
+		command => proxy,
+		transport_family => ipv6,
+		transport_protocol => stream,
+		src_address => Scoped,
+		src_port => 1,
+		dest_address => Mapped,
+		dest_port => 2
+	},
+	Header = iolist_to_binary(header(Info)),
+	{ok, #{src_address := Scoped, dest_address := Mapped}, <<>>}
+		= parse(Header),
+	{_, _} = binary:match(Header, <<"fe80:1:0:0:0:0:0:1">>),
+	{_, _} = binary:match(Header, <<"::ffff:192.0.2.1">>),
+	nomatch = binary:match(Header, <<"%">>),
+	ok.
+
+%% PP 2.1: the CRLF must occur in the first 107 bytes. The worst case
+%% in the spec is 107 including CRLF; one more byte is invalid.
+parse_v1_unknown_length_test() ->
+	Worst = <<"PROXY UNKNOWN "
+		"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff "
+		"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 65535 65535\r\n">>,
+	107 = byte_size(Worst),
+	{ok, #{
+		version := 1,
+		command := proxy,
+		transport_family := undefined,
+		transport_protocol := undefined
+	}, <<>>} = parse(Worst),
+	<<Prefix:105/binary, "\r\n">> = Worst,
+	TooLong = <<Prefix/binary, "x\r\n">>,
+	108 = byte_size(TooLong),
+	{error, _} = parse(TooLong),
+	{error, _} = parse(<<Prefix/binary, "xx">>),
+	{error, _} = parse(Prefix),
+	ok.
+
+%% inet:parse_ipv6strict_address accepts an IPv4-tailed form longer
+%% than the 39-character hex form in the PP 2.1 length table.
+parse_v1_tcp6_length_test() ->
+	Addr = <<"ffff:ffff:ffff:ffff:ffff:ffff:255.255.255.255">>,
+	Line = <<"PROXY TCP6 ", Addr/binary, " ", Addr/binary,
+		" 65535 65535\r\n">>,
+	116 = byte_size(Line),
+	{error, _} = parse(Line),
+	{error, _} = parse(<<"PROXY TCP6 ", (binary:copy(<<"a">>, 200))/binary,
+		" ::1 1 2\r\n">>),
+	{ok, #{transport_family := ipv6}, <<"GET">>}
+		= parse(<<"PROXY TCP6 ::1 ::1 1 2\r\nGET">>),
+	ok.
+-endif.
+
+%% Binary header format (version 2).
+
+%% LOCAL.
+parse_v2(<<2:4, 0:4, _:8, Len:16, Rest0/bits>>) ->
+	case Rest0 of
+		<<_:Len/binary, Rest/bits>> ->
+			{ok, #{
+				version => 2,
+				command => local
+			}, Rest};
+		_ ->
+			{error, 'Missing data in the PROXY protocol binary header. (PP 2.2)'}
+	end;
+%% PROXY.
+parse_v2(<<2:4, 1:4, Family:4, Protocol:4, Len:16, Rest/bits>>)
+		when Family =< 3, Protocol =< 2 ->
+	case Rest of
+		<<Header:Len/binary, _/bits>> ->
+			parse_v2(Rest, Len, parse_family(Family), parse_protocol(Protocol),
+				<<Family:4, Protocol:4, Len:16, Header:Len/binary>>);
+		_ ->
+			{error, 'Missing data in the PROXY protocol binary header. (PP 2.2)'}
+	end;
+%% Errors.
+parse_v2(<<Version:4, _/bits>>) when Version =/= 2 ->
+	{error, 'Invalid version in the PROXY protocol binary header. (PP 2.2)'};
+parse_v2(<<_:4, Command:4, _/bits>>) when Command > 1 ->
+	{error, 'Invalid command in the PROXY protocol binary header. (PP 2.2)'};
+parse_v2(<<_:8, Family:4, _/bits>>) when Family > 3 ->
+	{error, 'Invalid address family in the PROXY protocol binary header. (PP 2.2)'};
+parse_v2(<<_:12, Protocol:4, _/bits>>) when Protocol > 2 ->
+	{error, 'Invalid transport protocol in the PROXY protocol binary header. (PP 2.2)'};
+%% Fewer than 4 bytes: the version block is incomplete.
+parse_v2(_) ->
+	{error, 'Missing data in the PROXY protocol binary header. (PP 2.2)'}.
+
+parse_family(0) -> undefined;
+parse_family(1) -> ipv4;
+parse_family(2) -> ipv6;
+parse_family(3) -> unix.
+
+parse_protocol(0) -> undefined;
+parse_protocol(1) -> stream;
+parse_protocol(2) -> dgram.
+
+parse_v2(Data, Len, Family, Protocol, _)
+		when Family =:= undefined; Protocol =:= undefined ->
+	<<_:Len/binary, Rest/bits>> = Data,
+	{ok, #{
+		version => 2,
+		command => proxy,
+		%% In case only one value was undefined, we set both explicitly.
+		%% It doesn't make sense to have only one known value.
+		transport_family => undefined,
+		transport_protocol => undefined
+	}, Rest};
+parse_v2(<<
+		S1, S2, S3, S4,
+		D1, D2, D3, D4,
+		SrcPort:16, DestPort:16, Rest/bits>>, Len, Family=ipv4, Protocol, Header)
+		when Len >= 12 ->
+	parse_tlv(Rest, Len - 12, #{
+		version => 2,
+		command => proxy,
+		transport_family => Family,
+		transport_protocol => Protocol,
+		src_address => {S1, S2, S3, S4},
+		src_port => SrcPort,
+		dest_address => {D1, D2, D3, D4},
+		dest_port => DestPort
+	}, Header);
+parse_v2(<<
+		S1:16, S2:16, S3:16, S4:16, S5:16, S6:16, S7:16, S8:16,
+		D1:16, D2:16, D3:16, D4:16, D5:16, D6:16, D7:16, D8:16,
+		SrcPort:16, DestPort:16, Rest/bits>>, Len, Family=ipv6, Protocol, Header)
+		when Len >= 36 ->
+	parse_tlv(Rest, Len - 36, #{
+		version => 2,
+		command => proxy,
+		transport_family => Family,
+		transport_protocol => Protocol,
+		src_address => {S1, S2, S3, S4, S5, S6, S7, S8},
+		src_port => SrcPort,
+		dest_address => {D1, D2, D3, D4, D5, D6, D7, D8},
+		dest_port => DestPort
+	}, Header);
+parse_v2(<<SrcAddr0:108/binary, DestAddr0:108/binary, Rest/bits>>,
+		Len, Family=unix, Protocol, Header)
+		when Len >= 216 ->
+	SrcAddr = parse_unix_address(SrcAddr0),
+	DestAddr = parse_unix_address(DestAddr0),
+	parse_tlv(Rest, Len - 216, #{
+		version => 2,
+		command => proxy,
+		transport_family => Family,
+		transport_protocol => Protocol,
+		src_address => SrcAddr,
+		dest_address => DestAddr
+	}, Header);
+parse_v2(_, _, _, _, _) ->
+	{error, 'Invalid length in the PROXY protocol binary header. (PP 2.2)'}.
+
+%% A 108-byte address has no room for a terminator. A shorter
+%% address is the bytes before the first NUL. A leading NUL is
+%% the empty address. A match of 64 bytes or less does not keep
+%% the rest of the header.
+parse_unix_address(Addr) ->
+	case first_nul(Addr) of
+		undefined ->
+			binary:copy(Addr);
+		0 ->
+			<<>>;
+		Pos ->
+			<<UnixAddr:Pos/binary, _/bits>> = Addr,
+			maybe_copy_binary(UnixAddr)
+	end.
+
+-ifdef(TEST).
+parse_v2_test() ->
+	%% Test cases taken from tomciopp/proxy_protocol.
+	{ok, #{
+		version := 2,
+		command := proxy,
+		transport_family := ipv4,
+		transport_protocol := stream,
+		src_address := {127, 0, 0, 1},
+		src_port := 444,
+		dest_address := {192, 168, 0, 1},
+		dest_port := 443
+	}, <<"GET / HTTP/1.1\r\n">>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10, %% Signature.
+		33, %% Version and command.
+		17, %% Family and protocol.
+		0, 12, %% Length.
+		127, 0, 0, 1, %% Source address.
+		192, 168, 0, 1, %% Destination address.
+		1, 188, %% Source port.
+		1, 187, %% Destination port.
+		"GET / HTTP/1.1\r\n">>),
+	{ok, #{
+		version := 2,
+		command := proxy,
+		transport_family := ipv4,
+		transport_protocol := dgram,
+		src_address := {127, 0, 0, 1},
+		src_port := 444,
+		dest_address := {192, 168, 0, 1},
+		dest_port := 443
+	}, <<"GET / HTTP/1.1\r\n">>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10, %% Signature.
+		33, %% Version and command.
+		18, %% Family and protocol.
+		0, 12, %% Length.
+		127, 0, 0, 1, %% Source address.
+		192, 168, 0, 1, %% Destination address.
+		1, 188, %% Source port.
+		1, 187, %% Destination port.
+		"GET / HTTP/1.1\r\n">>),
+	{ok, #{
+		version := 2,
+		command := proxy,
+		transport_family := ipv6,
+		transport_protocol := stream,
+		src_address := {5532, 4240, 1, 0, 0, 0, 0, 0},
+		src_port := 444,
+		dest_address := {8193, 3512, 1, 0, 0, 0, 0, 0},
+		dest_port := 443
+	}, <<"GET / HTTP/1.1\r\n">>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10, %% Signature.
+		33, %% Version and command.
+		33, %% Family and protocol.
+		0, 36, %% Length.
+		21, 156, 16, 144, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, %% Source address.
+		32, 1, 13, 184, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, %% Destination address.
+		1, 188, %% Source port.
+		1, 187, %% Destination port.
+		"GET / HTTP/1.1\r\n">>),
+	{ok, #{
+		version := 2,
+		command := proxy,
+		transport_family := ipv6,
+		transport_protocol := dgram,
+		src_address := {5532, 4240, 1, 0, 0, 0, 0, 0},
+		src_port := 444,
+		dest_address := {8193, 3512, 1, 0, 0, 0, 0, 0},
+		dest_port := 443
+	}, <<"GET / HTTP/1.1\r\n">>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10, %% Signature.
+		33, %% Version and command.
+		34, %% Family and protocol.
+		0, 36, %% Length.
+		21, 156, 16, 144, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, %% Source address.
+		32, 1, 13, 184, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, %% Destination address.
+		1, 188, %% Source port.
+		1, 187, %% Destination port.
+		"GET / HTTP/1.1\r\n">>),
+	Path = <<"/var/pgsql_sock">>,
+	Len = byte_size(Path),
+	Padding = 8 * (108 - Len),
+	{ok, #{
+		version := 2,
+		command := proxy,
+		transport_family := unix,
+		transport_protocol := stream,
+		src_address := Path,
+		dest_address := Path
+	}, <<"GET / HTTP/1.1\r\n">>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10,
+		33,
+		49,
+		0, 216,
+		Path/binary, 0:Padding,
+		Path/binary, 0:Padding,
+		"GET / HTTP/1.1\r\n">>),
+	{ok, #{
+		version := 2,
+		command := proxy,
+		transport_family := unix,
+		transport_protocol := dgram,
+		src_address := Path,
+		dest_address := Path
+	}, <<"GET / HTTP/1.1\r\n">>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10,
+		33,
+		50,
+		0, 216,
+		Path/binary, 0:Padding,
+		Path/binary, 0:Padding,
+		"GET / HTTP/1.1\r\n">>),
+	ok.
+
+parse_v2_regression_test() ->
+	%% Real packet received from AWS. We confirm that the CRC32C
+	%% check succeeds only (in other words that ok is returned).
+	{ok, _, <<>>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10, 33, 17, 0, 84,
+		172, 31, 7, 113, 172, 31, 10, 31, 200, 242, 0, 80, 3, 0, 4,
+		232, 214, 137, 45, 234, 0, 23, 1, 118, 112, 99, 101, 45, 48,
+		56, 100, 50, 98, 102, 49, 53, 102, 97, 99, 53, 48, 48, 49, 99,
+		57, 4, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0>>),
+	ok.
+
+parse_v2_truncated_test() ->
+	Sig = <<"\r\n\r\n\0\r\nQUIT\n">>,
+	{error, _} = parse(Sig),
+	{error, _} = parse(<<Sig/binary, 16#21>>),
+	{error, _} = parse(<<Sig/binary, 16#21, 16#11>>),
+	{error, _} = parse(<<Sig/binary, 16#21, 16#11, 0>>),
+	{error, _} = parse(<<Sig/binary, 16#20>>),
+	{error, _} = parse(<<Sig/binary, 16#10>>),
+	{error, _} = parse(<<Sig/binary, 16#22>>),
+	ok.
+-endif.
+
+%% A match of 64 bytes or less does not keep the rest of the header.
+maybe_copy_binary(Bin) when byte_size(Bin) =< 64 ->
+	Bin;
+maybe_copy_binary(Bin) ->
+	binary:copy(Bin).
+
+parse_tlv(Rest, 0, Info, _) ->
+	{ok, maps:remove(checksum, Info), Rest};
+%% PP2_TYPE_ALPN.
+parse_tlv(<<16#1, TLVLen:16, ALPN:TLVLen/binary, Rest/bits>>, Len, Info, Header) ->
+	parse_tlv(Rest, Len - TLVLen - 3, Info#{alpn => maybe_copy_binary(ALPN)}, Header);
+%% PP2_TYPE_AUTHORITY.
+parse_tlv(<<16#2, TLVLen:16, Authority:TLVLen/binary, Rest/bits>>, Len, Info, Header) ->
+	parse_tlv(Rest, Len - TLVLen - 3, Info#{authority => maybe_copy_binary(Authority)}, Header);
+%% PP2_TYPE_CRC32C. A second length-4 CRC is an error and is not checked.
+parse_tlv(<<16#3, TLVLen:16, CRC32C:32, Rest/bits>>, Len0, Info, Header)
+		when TLVLen =:= 4, Len0 >= 7, not is_map_key(checksum, Info) ->
+	Len = Len0 - TLVLen - 3,
+	BeforeLen = byte_size(Header) - Len - TLVLen,
+	<<Before:BeforeLen/binary, _:32, After:Len/binary>> = Header,
+	%% The initial CRC is ranch_crc32c:crc32c(<<"\r\n\r\n\0\r\nQUIT\n", 2:4, 1:4>>).
+	case ranch_crc32c:crc32c(2900412422, [Before, <<0:32>>, After]) of
+		CRC32C ->
+			parse_tlv(Rest, Len, Info#{checksum => crc32c}, Header);
+		_ ->
+			{error, 'Failed CRC32C verification in PROXY protocol binary header. (PP 2.2)'}
+	end;
+parse_tlv(<<16#3, TLVLen:16, _:32, _/bits>>, Len0, #{checksum := crc32c}, _)
+		when TLVLen =:= 4, Len0 >= 7 ->
+	{error, 'Duplicate CRC32C TLV in PROXY protocol binary header. (PP 2.2)'};
+parse_tlv(<<16#3, _/bits>>, _, _, _) ->
+	{error, 'Invalid TLV length in the PROXY protocol binary header. (PP 2.2)'};
+%% PP2_TYPE_NOOP.
+parse_tlv(<<16#4, TLVLen:16, _:TLVLen/binary, Rest/bits>>, Len, Info, Header) ->
+	parse_tlv(Rest, Len - TLVLen - 3, Info, Header);
+%% PP2_TYPE_UNIQUE_ID.
+parse_tlv(<<16#5, TLVLen:16, UniqueID:TLVLen/binary, Rest/bits>>, Len, Info, Header)
+		when TLVLen =< 128 ->
+	parse_tlv(Rest, Len - TLVLen - 3, Info#{unique_id => maybe_copy_binary(UniqueID)}, Header);
+parse_tlv(<<16#5, _/bits>>, _, _, _) ->
+	{error, 'Invalid TLV length in the PROXY protocol binary header. (PP 2.2, PP 2.2.5)'};
+%% PP2_TYPE_SSL.
+parse_tlv(<<16#20, TLVLen:16, Client0, Verify:32, Rest0/bits>>, Len, Info, Header) ->
+	SubsLen = TLVLen - 5,
+	case Rest0 of
+		<<Subs:SubsLen/binary, Rest/bits>> ->
+			Client = parse_client(<<Client0>>),
+			SSL0 = #{
+				client => Client,
+				verified => Verify =:= 0 andalso cert_presented(Client)
+			},
+			case parse_ssl_tlv(Subs, SubsLen, SSL0) of
+				{ok, SSL, <<>>} ->
+					parse_tlv(Rest, Len - TLVLen - 3,
+						Info#{ssl => drop_unpresented_cert(SSL)}, Header);
+				Error={error, _} ->
+					Error
+			end;
+		_ ->
+			{error, 'Invalid TLV length in the PROXY protocol binary header. (PP 2.2)'}
+	end;
+parse_tlv(<<16#20, _/bits>>, _, _, _) ->
+	{error, 'Invalid TLV length in the PROXY protocol binary header. (PP 2.2)'};
+%% PP2_TYPE_NETNS.
+parse_tlv(<<16#30, TLVLen:16, NetNS:TLVLen/binary, Rest/bits>>, Len, Info, Header) ->
+	parse_tlv(Rest, Len - TLVLen - 3, Info#{netns => maybe_copy_binary(NetNS)}, Header);
+%% Unknown TLV. The total on-wire size, including each type
+%% and length, is at most 1024 bytes.
+parse_tlv(<<TLVType, TLVLen:16, TLVValue:TLVLen/binary, Rest/bits>>, Len, Info, Header) ->
+	RawTLVs = maps:get(raw_tlvs, Info, []),
+	case raw_tlv_size(RawTLVs) + TLVLen + 3 > 1024 of
+		true ->
+			{error, 'Unknown TLV exceeds 1024 bytes in PROXY protocol binary header. (PP 2.2)'};
+		false ->
+			parse_tlv(Rest, Len - TLVLen - 3,
+				Info#{raw_tlvs => [{TLVType, maybe_copy_binary(TLVValue)}|RawTLVs]}, Header)
+	end;
+%% Invalid TLV length.
+parse_tlv(_, _, _, _) ->
+	{error, 'Invalid TLV length in the PROXY protocol binary header. (PP 2.2)'}.
+
+parse_client(<<_:5, ClientCertSess:1, ClientCertConn:1, ClientSSL:1>>) ->
+	Client0 = case ClientCertSess of
+		0 -> [];
+		1 -> [cert_sess]
+	end,
+	Client1 = case ClientCertConn of
+		0 -> Client0;
+		1 -> [cert_conn|Client0]
+	end,
+	case ClientSSL of
+		0 -> Client1;
+		1 -> [ssl|Client1]
+	end.
+
+%% PP2_CLIENT_CERT_CONN or PP2_CLIENT_CERT_SESS. The verify
+%% field alone is not enough: senders leave it at 0 when no
+%% client certificate was presented.
+cert_presented(Client) ->
+	lists:member(cert_conn, Client) orelse lists:member(cert_sess, Client).
+
+%% CN and client_cert name a client certificate. A sender
+%% can attach either TLV without cert_conn or cert_sess.
+drop_unpresented_cert(SSL=#{client := Client}) ->
+	case cert_presented(Client) of
+		true ->
+			SSL;
+		false ->
+			maps:without([cn, client_cert], SSL)
+	end.
+
+parse_ssl_tlv(Rest, 0, Info) ->
+	{ok, Info, Rest};
+%% Valid TLVs.
+parse_ssl_tlv(<<TLVType, TLVLen:16, TLVValue:TLVLen/binary, Rest/bits>>, Len, Info) ->
+	case ssl_subtype(TLVType) of
+		undefined ->
+			{error, 'Invalid TLV subtype for PP2_TYPE_SSL in PROXY protocol binary header. (PP 2.2)'};
+		Type ->
+			parse_ssl_tlv(Rest, Len - TLVLen - 3, Info#{Type => maybe_copy_binary(TLVValue)})
+	end;
+%% Invalid TLV length.
+parse_ssl_tlv(_, _, _) ->
+	{error, 'Invalid TLV length in the PROXY protocol binary header. (PP 2.2)'}.
+
+ssl_subtype(16#21) -> version;
+ssl_subtype(16#22) -> cn;
+ssl_subtype(16#23) -> cipher;
+ssl_subtype(16#24) -> sig_alg;
+ssl_subtype(16#25) -> key_alg;
+ssl_subtype(16#26) -> group;
+ssl_subtype(16#27) -> sig_scheme;
+ssl_subtype(16#28) -> client_cert;
+ssl_subtype(_) -> undefined.
+
+%% Building.
+
+-spec header(proxy_info()) -> iodata().
+header(ProxyInfo) ->
+	header(ProxyInfo, #{}).
+
+-spec header(proxy_info(), build_opts()) -> iodata().
+header(#{version := 2, command := local}, _) ->
+	<<"\r\n\r\n\0\r\nQUIT\n", 2:4, 0:28>>;
+header(#{version := 2, command := proxy,
+		transport_family := Family,
+		transport_protocol := Protocol}, _)
+		when Family =:= undefined; Protocol =:= undefined ->
+	<<"\r\n\r\n\0\r\nQUIT\n", 2:4, 1:4, 0:24>>;
+header(ProxyInfo=#{version := 2, command := proxy,
+		transport_family := Family,
+		transport_protocol := Protocol}, Opts) ->
+	Addresses = addresses(ProxyInfo),
+	TLVs = tlvs(ProxyInfo, Opts),
+	ExtraLen = case Opts of
+		#{checksum := crc32c} -> 7;
+		_ -> 0
+	end,
+	Len = iolist_size(Addresses) + iolist_size(TLVs) + ExtraLen,
+	Len > 65535 andalso error(badarg),
+	Header = [
+		<<"\r\n\r\n\0\r\nQUIT\n", 2:4, 1:4>>,
+		<<(family(Family)):4, (protocol(Protocol)):4>>,
+		<<Len:16>>,
+		Addresses,
+		TLVs
+	],
+	case Opts of
+		#{checksum := crc32c} ->
+			CRC32C = ranch_crc32c:crc32c([Header, <<16#3, 4:16, 0:32>>]),
+			[Header, <<16#3, 4:16, CRC32C:32>>];
+		_ ->
+			Header
+	end;
+header(#{version := 1, command := proxy,
+		transport_family := undefined,
+		transport_protocol := undefined}, _) ->
+	<<"PROXY UNKNOWN\r\n">>;
+header(#{version := 1, command := proxy,
+		transport_family := Family0,
+		transport_protocol := stream,
+		src_address := SrcAddress, src_port := SrcPort,
+		dest_address := DestAddress, dest_port := DestPort}, _)
+		when SrcPort >= 0, SrcPort =< 65535, DestPort >= 0, DestPort =< 65535 ->
+	[
+		<<"PROXY ">>,
+		case Family0 of
+			ipv4 when tuple_size(SrcAddress) =:= 4, tuple_size(DestAddress) =:= 4 ->
+				[<<"TCP4 ">>, inet:ntoa(SrcAddress), $\s, inet:ntoa(DestAddress)];
+			ipv6 when tuple_size(SrcAddress) =:= 8, tuple_size(DestAddress) =:= 8 ->
+				[<<"TCP6 ">>, ipv6_text(SrcAddress), $\s, ipv6_text(DestAddress)]
+		end,
+		$\s,
+		integer_to_binary(SrcPort),
+		$\s,
+		integer_to_binary(DestPort),
+		$\r, $\n
+	].
+
+%% inet:ntoa appends % and a zone for some link-local tuples.
+%% Write eight hex groups then, so the second word is kept.
+%% A dotted tail is left as inet:ntoa prints it.
+ipv6_text(Addr) ->
+	Text = list_to_binary(inet:ntoa(Addr)),
+	case binary:match(Text, <<"%">>) of
+		nomatch ->
+			Text;
+		_ ->
+			Groups = [string:lowercase(integer_to_binary(W, 16))
+				|| W <- tuple_to_list(Addr)],
+			iolist_to_binary(lists:join($:, Groups))
+	end.
+
+family(ipv4) -> 1;
+family(ipv6) -> 2;
+family(unix) -> 3.
+
+protocol(stream) -> 1;
+protocol(dgram) -> 2.
+
+addresses(#{transport_family := ipv4,
+		src_address := {S1, S2, S3, S4}, src_port := SrcPort,
+		dest_address := {D1, D2, D3, D4}, dest_port := DestPort})
+		when SrcPort >= 0, SrcPort =< 65535, DestPort >= 0, DestPort =< 65535 ->
+	<<S1, S2, S3, S4, D1, D2, D3, D4, SrcPort:16, DestPort:16>>;
+addresses(#{transport_family := ipv6,
+		src_address := {S1, S2, S3, S4, S5, S6, S7, S8}, src_port := SrcPort,
+		dest_address := {D1, D2, D3, D4, D5, D6, D7, D8}, dest_port := DestPort})
+		when SrcPort >= 0, SrcPort =< 65535, DestPort >= 0, DestPort =< 65535 ->
+	<<
+		S1:16, S2:16, S3:16, S4:16, S5:16, S6:16, S7:16, S8:16,
+		D1:16, D2:16, D3:16, D4:16, D5:16, D6:16, D7:16, D8:16,
+		SrcPort:16, DestPort:16
+	>>;
+addresses(#{transport_family := unix,
+		src_address := SrcAddress, dest_address := DestAddress})
+		when byte_size(SrcAddress) =< 108, byte_size(DestAddress) =< 108 ->
+	case {first_nul(SrcAddress), first_nul(DestAddress)} of
+		{undefined, undefined} ->
+			SrcPadding = 8 * (108 - byte_size(SrcAddress)),
+			DestPadding = 8 * (108 - byte_size(DestAddress)),
+			<<
+				SrcAddress/binary, 0:SrcPadding,
+				DestAddress/binary, 0:DestPadding
+			>>;
+		{_, _} ->
+			error(badarg)
+	end.
+
+first_nul(Bin) ->
+	first_nul(Bin, 0).
+
+%% Seven bytes fit in a small integer. Subtracting 0x01
+%% from a byte sets that byte's high bit when it was 0.
+%% A 16#01 before that NUL sets the same bit, so the word
+%% is scanned to find the real byte.
+first_nul(<<Int:56, Rest/binary>> = Bin, Off) ->
+	Mask = (Int - 16#01010101010101) band bnot Int
+		band 16#80808080808080,
+	case Mask of
+		0 ->
+			first_nul(Rest, Off + 7);
+		_ ->
+			Off + nul_at(Bin)
+	end;
+%% At most six bytes remain. This clause must stay
+%% below the seven-byte clause.
+first_nul(Bin, Off) ->
+	case nul_at(Bin) of
+		undefined ->
+			undefined;
+		At ->
+			Off + At
+	end.
+
+nul_at(<<0, _/bits>>) ->
+	0;
+nul_at(<<_, 0, _/bits>>) ->
+	1;
+nul_at(<<_, _, 0, _/bits>>) ->
+	2;
+nul_at(<<_, _, _, 0, _/bits>>) ->
+	3;
+nul_at(<<_, _, _, _, 0, _/bits>>) ->
+	4;
+nul_at(<<_, _, _, _, _, 0, _/bits>>) ->
+	5;
+nul_at(<<_, _, _, _, _, _, 0, _/bits>>) ->
+	6;
+nul_at(<<_/bits>>) ->
+	undefined.
+
+tlvs(ProxyInfo, Opts) ->
+	[
+		binary_tlv(ProxyInfo, alpn, 16#1),
+		binary_tlv(ProxyInfo, authority, 16#2),
+		binary_tlv(ProxyInfo, unique_id, 16#5),
+		ssl_tlv(ProxyInfo),
+		binary_tlv(ProxyInfo, netns, 16#30),
+		raw_tlvs(ProxyInfo),
+		noop_tlv(Opts)
+	].
+
+binary_tlv(Info, Key, Type) ->
+	case Info of
+		#{Key := Bin} ->
+			Len = byte_size(Bin),
+			<<Type, Len:16, Bin/binary>>;
+		_ ->
+			<<>>
+	end.
+
+noop_tlv(#{padding := Len0}) when Len0 >= 3 ->
+	Len = Len0 - 3,
+	<<16#4, Len:16, 0:Len/unit:8>>;
+noop_tlv(_) ->
+	<<>>.
+
+ssl_tlv(#{ssl := Info=#{client := Client0, verified := Verify0}}) ->
+	Client = client(Client0, 0),
+	Verify = case Verify0 andalso cert_presented(Client0) of
+		true -> 0;
+		false -> 1
+	end,
+	TLVs = [
+		binary_tlv(Info, version, 16#21),
+		presented_tlv(Info, Client0, cn, 16#22),
+		binary_tlv(Info, cipher, 16#23),
+		binary_tlv(Info, sig_alg, 16#24),
+		binary_tlv(Info, key_alg, 16#25),
+		binary_tlv(Info, group, 16#26),
+		binary_tlv(Info, sig_scheme, 16#27),
+		presented_tlv(Info, Client0, client_cert, 16#28)
+	],
+	Len = iolist_size(TLVs) + 5,
+	[<<16#20, Len:16, Client, Verify:32>>, TLVs];
+ssl_tlv(_) ->
+	<<>>.
+
+presented_tlv(Info, Client, Key, Type) ->
+	case cert_presented(Client) of
+		true ->
+			binary_tlv(Info, Key, Type);
+		false ->
+			<<>>
+	end.
+
+client([], Client) -> Client;
+client([ssl|Tail], Client) -> client(Tail, Client bor 16#1);
+client([cert_conn|Tail], Client) -> client(Tail, Client bor 16#2);
+client([cert_sess|Tail], Client) -> client(Tail, Client bor 16#4).
+
+raw_tlvs(Info) ->
+	TLVs = maps:get(raw_tlvs, Info, []),
+	raw_tlv_size(TLVs) > 1024 andalso error(badarg),
+	[begin
+		Len = byte_size(Bin),
+		<<Type, Len:16, Bin/binary>>
+	end || {Type, Bin} <- TLVs].
+
+%% Type byte plus 16-bit length.
+raw_tlv_size(TLVs) ->
+	lists:sum([3 + byte_size(Bin) || {_, Bin} <- TLVs]).
+
+-ifdef(TEST).
+v1_test() ->
+	Test1 = #{
+		version => 1,
+		command => proxy,
+		transport_family => undefined,
+		transport_protocol => undefined
+	},
+	{ok, Test1, <<>>} = parse(iolist_to_binary(header(Test1))),
+	Test2 = #{
+		version => 1,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {127, 0, 0, 1},
+		src_port => 1234,
+		dest_address => {10, 11, 12, 13},
+		dest_port => 23456
+	},
+	{ok, Test2, <<>>} = parse(iolist_to_binary(header(Test2))),
+	Test3 = #{
+		version => 1,
+		command => proxy,
+		transport_family => ipv6,
+		transport_protocol => stream,
+		src_address => {1, 2, 3, 4, 5, 6, 7, 8},
+		src_port => 1234,
+		dest_address => {65535, 55555, 2222, 333, 1, 9999, 777, 8},
+		dest_port => 23456
+	},
+	{ok, Test3, <<>>} = parse(iolist_to_binary(header(Test3))),
+	ok.
+
+v2_test() ->
+	Test0 = #{
+		version => 2,
+		command => local
+	},
+	{ok, Test0, <<>>} = parse(iolist_to_binary(header(Test0))),
+	Test1 = #{
+		version => 2,
+		command => proxy,
+		transport_family => undefined,
+		transport_protocol => undefined
+	},
+	{ok, Test1, <<>>} = parse(iolist_to_binary(header(Test1))),
+	Test2 = #{
+		version => 2,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {127, 0, 0, 1},
+		src_port => 1234,
+		dest_address => {10, 11, 12, 13},
+		dest_port => 23456
+	},
+	{ok, Test2, <<>>} = parse(iolist_to_binary(header(Test2))),
+	Test3 = #{
+		version => 2,
+		command => proxy,
+		transport_family => ipv6,
+		transport_protocol => stream,
+		src_address => {1, 2, 3, 4, 5, 6, 7, 8},
+		src_port => 1234,
+		dest_address => {65535, 55555, 2222, 333, 1, 9999, 777, 8},
+		dest_port => 23456
+	},
+	{ok, Test3, <<>>} = parse(iolist_to_binary(header(Test3))),
+	Test4 = #{
+		version => 2,
+		command => proxy,
+		transport_family => unix,
+		transport_protocol => dgram,
+		src_address => <<"/run/source.sock">>,
+		dest_address => <<"/run/destination.sock">>
+	},
+	{ok, Test4, <<>>} = parse(iolist_to_binary(header(Test4))),
+	ok.
+
+unix_nul_address_test() ->
+	Base = #{
+		version => 2,
+		command => proxy,
+		transport_family => unix,
+		transport_protocol => stream,
+		src_address => <<"/tmp/a">>,
+		dest_address => <<"/tmp/b">>
+	},
+	?assertError(badarg, header(Base#{src_address => <<"/tmp/a\0/evil">>})),
+	?assertError(badarg, header(Base#{dest_address => <<"/tmp/b\0/evil">>})),
+	?assertError(badarg, header(Base#{src_address => <<"/tmp/ab", 0>>})),
+	?assertError(badarg, header(Base#{src_address => <<"/tmp/abc", 0>>})),
+	?assertError(badarg, header(Base#{src_address => <<"/tmp/abcd", 0>>})),
+	?assertError(badarg, header(Base#{src_address => <<"/tmp/abcde", 0>>})),
+	?assertError(badarg, header(Base#{src_address => <<"/tmp/abcdef", 0>>})),
+	?assertError(badarg, header(Base#{src_address => <<"/tmp/abcdefg", 0>>})),
+	Path = binary:copy(<<$a>>, 107),
+	Round = Base#{src_address => Path},
+	{ok, Round, <<>>} = parse(iolist_to_binary(header(Round))),
+	Full = binary:copy(<<$b>>, 108),
+	RoundFull = Base#{src_address => Full, dest_address => Full},
+	{ok, RoundFull, <<>>} = parse(iolist_to_binary(header(RoundFull))),
+	Empty = Base#{src_address => <<>>, dest_address => <<>>},
+	{ok, Empty, <<>>} = parse(iolist_to_binary(header(Empty))),
+	%% A 16#01 before the NUL stays in the address.
+	One = <<1, 1, 0, 0:(8 * 105)>>,
+	{ok, #{src_address := GotOne, dest_address := <<>>}, <<>>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10,
+		33, 49, 0, 216,
+		One/binary,
+		0:108/unit:8
+	>>),
+	<<1, 1>> = GotOne,
+	%% A leading NUL is an empty address.
+	Abstract = <<0, "name", 0:(8 * (108 - 5))>>,
+	{ok, #{src_address := <<>>, dest_address := <<>>}, <<>>} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10,
+		33, 49, 0, 216,
+		Abstract/binary,
+		Abstract/binary
+	>>),
+	Name64 = binary:copy(<<$c>>, 64),
+	Round64 = Base#{src_address => Name64},
+	{ok, Round64, <<>>} = parse(iolist_to_binary(header(Round64))),
+	ok.
+
+ssl_verified_requires_cert_flag_test() ->
+	%% PP2_CLIENT_SSL only. The verify field is 0.
+	{ok, #{ssl := #{client := [ssl], verified := false}}, <<>>} =
+		parse(ssl_header(16#01, 0)),
+	%% A certificate on the session, DER omitted.
+	{ok, #{ssl := #{client := [ssl, cert_sess], verified := true}}, <<>>} =
+		parse(ssl_header(16#05, 0)),
+	%% A certificate on this connection.
+	{ok, #{ssl := #{client := [ssl, cert_conn], verified := true}}, <<>>} =
+		parse(ssl_header(16#03, 0)),
+	%% Both flags and a successful verify field.
+	{ok, #{ssl := #{client := [ssl, cert_conn, cert_sess], verified := true}}, <<>>} =
+		parse(ssl_header(16#07, 0)),
+	%% Presented, and the proxy rejected it.
+	{ok, #{ssl := #{client := [ssl, cert_conn, cert_sess], verified := false}}, <<>>} =
+		parse(ssl_header(16#07, 1)),
+	%% header/1 must not emit verify 0 without a cert flag.
+	<<"\r\n\r\n\0\r\nQUIT\n", 16#21, 16#11, 20:16,
+		127, 0, 0, 1, 10, 0, 0, 1,
+		1:16, 443:16,
+		16#20, 5:16, 16#01, 1:32>> =
+		iolist_to_binary(header(#{
+			version => 2,
+			command => proxy,
+			transport_family => ipv4,
+			transport_protocol => stream,
+			src_address => {127, 0, 0, 1},
+			src_port => 1,
+			dest_address => {10, 0, 0, 1},
+			dest_port => 443,
+			ssl => #{client => [ssl], verified => true}
+		})),
+	ok.
+
+ssl_short_tlv_test() ->
+	%% PP2_TYPE_SSL shorter than the client byte and verify field,
+	%% and last in the header.
+	{error, _} = parse(<<
+		"\r\n\r\n\0\r\nQUIT\n",
+		16#21, 16#11, 19:16,
+		127, 0, 0, 1, 10, 0, 0, 1,
+		1:16, 443:16,
+		16#20, 4:16, 0, 0, 0, 0
+	>>),
+	ok.
+
+ssl_header(Client, Verify) ->
+	<<
+		"\r\n\r\n\0\r\nQUIT\n",
+		16#21, 16#11, 20:16,
+		127, 0, 0, 1, 10, 0, 0, 1,
+		1:16, 443:16,
+		16#20, 5:16, Client, Verify:32
+	>>.
+
+ssl_cn_requires_cert_flag_test() ->
+	{ok, #{ssl := NoCert}, <<>>} = parse(ssl_cn_header(16#01, 0)),
+	false = maps:is_key(cn, NoCert),
+	{ok, #{ssl := #{client := [ssl, cert_sess], cn := <<"alice">>}}, <<>>} =
+		parse(ssl_cn_header(16#05, 0)),
+	{ok, #{ssl := #{client := [ssl, cert_conn], cn := <<"alice">>}}, <<>>} =
+		parse(ssl_cn_header(16#03, 0)),
+	%% header/1 must not emit the CN without a cert flag.
+	<<"\r\n\r\n\0\r\nQUIT\n", 16#21, 16#11, 20:16,
+		127, 0, 0, 1, 10, 0, 0, 1,
+		1:16, 443:16,
+		16#20, 5:16, 16#01, 1:32>> =
+		iolist_to_binary(header(#{
+			version => 2,
+			command => proxy,
+			transport_family => ipv4,
+			transport_protocol => stream,
+			src_address => {127, 0, 0, 1},
+			src_port => 1,
+			dest_address => {10, 0, 0, 1},
+			dest_port => 443,
+			ssl => #{client => [ssl], verified => true, cn => <<"alice">>}
+		})),
+	ok.
+
+ssl_cn_header(Client, Verify) ->
+	<<
+		"\r\n\r\n\0\r\nQUIT\n",
+		16#21, 16#11, 28:16,
+		127, 0, 0, 1, 10, 0, 0, 1,
+		1:16, 443:16,
+		16#20, 13:16, Client, Verify:32,
+		16#22, 5:16, "alice"
+	>>.
+
+ssl_client_cert_requires_cert_flag_test() ->
+	Cert = <<16#30, 16#03, 1, 2, 3>>,
+	{ok, #{ssl := NoCert}, <<>>} = parse(ssl_client_cert_header(16#01, 0)),
+	false = maps:is_key(client_cert, NoCert),
+	{ok, #{ssl := #{client := [ssl, cert_sess], client_cert := Cert}}, <<>>} =
+		parse(ssl_client_cert_header(16#05, 0)),
+	{ok, #{ssl := #{client := [ssl, cert_conn], client_cert := Cert}}, <<>>} =
+		parse(ssl_client_cert_header(16#03, 0)),
+	%% Presented, and the proxy rejected it.
+	{ok, #{ssl := #{client := [ssl, cert_conn],
+		verified := false, client_cert := Cert}}, <<>>} =
+		parse(ssl_client_cert_header(16#03, 1)),
+	%% header/1 must not emit the certificate without a cert flag.
+	<<"\r\n\r\n\0\r\nQUIT\n", 16#21, 16#11, 20:16,
+		127, 0, 0, 1, 10, 0, 0, 1,
+		1:16, 443:16,
+		16#20, 5:16, 16#01, 1:32>> =
+		iolist_to_binary(header(#{
+			version => 2,
+			command => proxy,
+			transport_family => ipv4,
+			transport_protocol => stream,
+			src_address => {127, 0, 0, 1},
+			src_port => 1,
+			dest_address => {10, 0, 0, 1},
+			dest_port => 443,
+			ssl => #{client => [ssl], verified => true, client_cert => Cert}
+		})),
+	ok.
+
+ssl_client_cert_header(Client, Verify) ->
+	<<
+		"\r\n\r\n\0\r\nQUIT\n",
+		16#21, 16#11, 28:16,
+		127, 0, 0, 1, 10, 0, 0, 1,
+		1:16, 443:16,
+		16#20, 13:16, Client, Verify:32,
+		16#28, 5:16, 16#30, 16#03, 1, 2, 3
+	>>.
+
+v2_tlvs_test() ->
+	Common = #{
+		version => 2,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {127, 0, 0, 1},
+		src_port => 1234,
+		dest_address => {10, 11, 12, 13},
+		dest_port => 23456
+	},
+	Test1 = Common#{alpn => <<"h2">>},
+	{ok, Test1, <<>>} = parse(iolist_to_binary(header(Test1))),
+	Test2 = Common#{authority => <<"internal.example.org">>},
+	{ok, Test2, <<>>} = parse(iolist_to_binary(header(Test2))),
+	Test3 = Common#{netns => <<"/var/run/netns/example">>},
+	{ok, Test3, <<>>} = parse(iolist_to_binary(header(Test3))),
+	Test4 = Common#{ssl => #{
+		client => [ssl, cert_conn, cert_sess],
+		verified => true,
+		version => <<"TLSv1.3">>,
+		cipher => <<"ECDHE-RSA-AES128-GCM-SHA256">>,
+		sig_alg => <<"SHA256">>,
+		key_alg => <<"RSA2048">>,
+		group => <<"secp256r1">>,
+		sig_scheme => <<"rsa_pss_rsae_sha256">>,
+		client_cert => <<16#30, 16#03, 1, 2, 3>>,
+		cn => <<"example.com">>
+	}},
+	{ok, Test4, <<>>} = parse(iolist_to_binary(header(Test4))),
+	%% Note that the raw_tlvs order is not relevant and therefore
+	%% the parser does not reverse the list it builds.
+	RawTLVs=[
+		%% The only custom TLV I am aware of is defined at:
+		%% https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#proxy-protocol
+		{16#ea, <<16#1, "instance-id">>},
+		%% This TLV is entirely fictional.
+		{16#ff, <<1, 2, 3, 4, 5, 6, 7, 8, 9, 0>>}
+	],
+	Test5In = Common#{raw_tlvs => RawTLVs},
+	Test5Out = Test5In#{raw_tlvs => lists:reverse(RawTLVs)},
+	{ok, Test5Out, <<>>} = parse(iolist_to_binary(header(Test5In))),
+	Test6 = Common#{unique_id => rand:bytes(rand:uniform(128))},
+	{ok, Test6, <<>>} = parse(iolist_to_binary(header(Test6))),
+	%% IPv4 addresses are 12 bytes and the SSL TLV adds 11 bytes
+	%% around the certificate. 12 + 11 + 65512 = 65535.
+	CertInfo = #{client => [ssl, cert_conn], verified => true},
+	MaxCert = Common#{ssl => CertInfo#{client_cert => binary:copy(<<$a>>, 65512)}},
+	{ok, MaxCert, <<>>} = parse(iolist_to_binary(header(MaxCert))),
+	OverCert = Common#{ssl => CertInfo#{client_cert => binary:copy(<<$a>>, 65513)}},
+	?assertError(badarg, header(OverCert)),
+	ok.
+
+v2_raw_tlv_limit_test() ->
+	Common = #{
+		version => 2,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {127, 0, 0, 1},
+		src_port => 1234,
+		dest_address => {10, 11, 12, 13},
+		dest_port => 23456
+	},
+	%% 1021 bytes of value plus the 3-byte TLV header is 1024.
+	ExactVal = binary:copy(<<$a>>, 1021),
+	Exact = Common#{raw_tlvs => [{16#ea, ExactVal}]},
+	{ok, Exact, <<>>} = parse(iolist_to_binary(header(Exact))),
+	%% A known TLV and NOOP padding do not count toward that cap.
+	WithKnown = Exact#{authority => binary:copy(<<$b>>, 200)},
+	{ok, WithKnown, <<>>} = parse(iolist_to_binary(
+		header(WithKnown, #{padding => 64}))),
+	%% One more value byte is 1025 bytes on the wire.
+	OverVal = binary:copy(<<$a>>, 1022),
+	{error, _} = parse(<<
+		"\r\n\r\n\0\r\nQUIT\n",
+		16#21, 16#11, (12 + 3 + 1022):16,
+		127, 0, 0, 1, 10, 11, 12, 13,
+		1234:16, 23456:16,
+		16#ea, 1022:16, OverVal/binary
+	>>),
+	?assertError(badarg, header(Common#{raw_tlvs => [{16#ea, OverVal}]})),
+	%% An empty unknown TLV is 3 bytes and crosses the cap.
+	{error, _} = parse(<<
+		"\r\n\r\n\0\r\nQUIT\n",
+		16#21, 16#11, (12 + 1024 + 3):16,
+		127, 0, 0, 1, 10, 11, 12, 13,
+		1234:16, 23456:16,
+		16#ea, 1021:16, ExactVal/binary,
+		16#eb, 0:16
+	>>),
+	?assertError(badarg, header(Common#{raw_tlvs => [
+		{16#ea, ExactVal},
+		{16#eb, <<>>}
+	]})),
+	ok.
+
+v2_checksum_test() ->
+	Test = #{
+		version => 2,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {127, 0, 0, 1},
+		src_port => 1234,
+		dest_address => {10, 11, 12, 13},
+		dest_port => 23456
+	},
+	{ok, Test, <<>>} = parse(iolist_to_binary(header(Test, #{checksum => crc32c}))),
+	%% Both CRC32C values match this header. A second one is rejected.
+	{error, _} = parse(<<
+		13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10,
+		33, 17, 0, 26,
+		127, 0, 0, 1, 10, 11, 12, 13, 4, 210, 91, 160,
+		3, 0, 4, 24, 150, 128, 115,
+		3, 0, 4, 146, 137, 26, 132
+	>>),
+	ok.
+
+v2_checksum_short_length_test() ->
+	%% CRC32C TLV is 7 bytes but the remaining length only accounts
+	%% for 6. Rest still contains the full TLV (plus following data).
+	{error, 'Invalid TLV length in the PROXY protocol binary header. (PP 2.2)'}
+		= parse(<<
+			13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10, %% Signature.
+			33, %% Version and command.
+			17, %% Family and protocol.
+			0, 18, %% Length: 12 (addresses) + 6 (one short of CRC32C TLV).
+			127, 0, 0, 1, %% Source address.
+			192, 168, 0, 1, %% Destination address.
+			1, 188, %% Source port.
+			1, 187, %% Destination port.
+			3, 0, 4, 1, 2, 3, 4 %% CRC32C TLV (7 bytes).
+		>>),
+	ok.
+
+v2_padding_test() ->
+	Test = #{
+		version => 2,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {127, 0, 0, 1},
+		src_port => 1234,
+		dest_address => {10, 11, 12, 13},
+		dest_port => 23456
+	},
+	{ok, Test, <<>>} = parse(iolist_to_binary(header(Test, #{padding => 123}))),
+	ok.
+-endif.
+
+%% Helper to convert proxy_info() to ssl:connection_info().
+%%
+%% Because there isn't a lot of fields common to both types
+%% this only ends up returning the keys protocol, selected_cipher_suite
+%% and sni_hostname *at most*.
+
+%% The type ssl:connection_info/0 is not exported. We just
+%% replicate the relevant info tuples here.
+-type ssl_connection_info() :: [
+	{sni_hostname, term()} |
+	{selected_cipher_suite, ssl:erl_cipher_suite()} |
+	{protocol, ssl:protocol_version()}
+].
+
+-spec to_connection_info(proxy_info()) -> ssl_connection_info().
+to_connection_info(ProxyInfo=#{ssl := SSL}) ->
+	ConnInfo0 = case ProxyInfo of
+		#{authority := Authority} ->
+			[{sni_hostname, Authority}];
+		_ ->
+			[]
+	end,
+	ConnInfo = case SSL of
+		#{cipher := Cipher} ->
+			case ssl:str_to_suite(binary_to_list(Cipher)) of
+				{error, {not_recognized, _}} ->
+					ConnInfo0;
+				CipherInfo ->
+					[{selected_cipher_suite, CipherInfo}|ConnInfo0]
+			end;
+		_ ->
+			ConnInfo0
+	end,
+	%% https://www.openssl.org/docs/man1.1.1/man3/SSL_get_version.html
+	case SSL of
+		#{version := <<"TLSv1.3">>} -> [{protocol, 'tlsv1.3'}|ConnInfo];
+		#{version := <<"TLSv1.2">>} -> [{protocol, 'tlsv1.2'}|ConnInfo];
+		#{version := <<"TLSv1.1">>} -> [{protocol, 'tlsv1.1'}|ConnInfo];
+		#{version := <<"TLSv1">>} -> [{protocol, tlsv1}|ConnInfo];
+		#{version := <<"SSLv3">>} -> [{protocol, sslv3}|ConnInfo];
+		#{version := <<"SSLv2">>} -> [{protocol, sslv2}|ConnInfo];
+		%% <<"unknown">>, unsupported or missing version.
+		_ -> ConnInfo
+	end;
+%% No SSL/TLS information available.
+to_connection_info(_) ->
+	[].
+
+-ifdef(TEST).
+to_connection_info_test() ->
+	Common = #{
+		version => 2,
+		command => proxy,
+		transport_family => ipv4,
+		transport_protocol => stream,
+		src_address => {127, 0, 0, 1},
+		src_port => 1234,
+		dest_address => {10, 11, 12, 13},
+		dest_port => 23456
+	},
+	%% Version 1.
+	[] = to_connection_info(#{
+		version => 1,
+		command => proxy,
+		transport_family => undefined,
+		transport_protocol => undefined
+	}),
+	[] = to_connection_info(Common#{version => 1}),
+	%% Version 2, no ssl data.
+	[] = to_connection_info(#{
+		version => 2,
+		command => local
+	}),
+	[] = to_connection_info(#{
+		version => 2,
+		command => proxy,
+		transport_family => undefined,
+		transport_protocol => undefined
+	}),
+	[] = to_connection_info(Common),
+	[] = to_connection_info(#{
+		version => 2,
+		command => proxy,
+		transport_family => unix,
+		transport_protocol => dgram,
+		src_address => <<"/run/source.sock">>,
+		dest_address => <<"/run/destination.sock">>
+	}),
+	[] = to_connection_info(Common#{netns => <<"/var/run/netns/example">>}),
+	[] = to_connection_info(Common#{raw_tlvs => [
+		{16#ff, <<1, 2, 3, 4, 5, 6, 7, 8, 9, 0>>}
+	]}),
+	%% Version 2, with ssl-related data.
+	[] = to_connection_info(Common#{alpn => <<"h2">>}),
+	%% The authority alone is not enough to deduce that this is SNI.
+	[] = to_connection_info(Common#{authority => <<"internal.example.org">>}),
+	[
+		{protocol, 'tlsv1.3'},
+		{selected_cipher_suite, #{
+			cipher := aes_128_gcm,
+			key_exchange := ecdhe_rsa,
+			mac := aead,
+			prf := sha256
+		}}
+	] = to_connection_info(Common#{ssl => #{
+		client => [ssl, cert_conn, cert_sess],
+		verified => true,
+		version => <<"TLSv1.3">>,
+		cipher => <<"ECDHE-RSA-AES128-GCM-SHA256">>,
+		sig_alg => <<"SHA256">>,
+		key_alg => <<"RSA2048">>,
+		cn => <<"example.com">>
+	}}),
+	[
+		{protocol, 'tlsv1.3'},
+		{selected_cipher_suite, #{
+			cipher := aes_128_gcm,
+			key_exchange := ecdhe_rsa,
+			mac := aead,
+			prf := sha256
+		}},
+		{sni_hostname, <<"internal.example.org">>}
+	] = to_connection_info(Common#{authority => <<"internal.example.org">>, ssl => #{
+		client => [ssl, cert_conn, cert_sess],
+		verified => true,
+		version => <<"TLSv1.3">>,
+		cipher => <<"ECDHE-RSA-AES128-GCM-SHA256">>,
+		sig_alg => <<"SHA256">>,
+		key_alg => <<"RSA2048">>,
+		cn => <<"example.com">>
+	}}),
+	ok.
+-endif.
