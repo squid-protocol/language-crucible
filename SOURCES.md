@@ -45,17 +45,22 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `c` | 6 | 44 | 2 exact, 4 pool-reference | Audited | [`data/c/SOURCES.md`](data/c/SOURCES.md) |
 | `cobol` | 17 | 609 | 15 exact, 2 content-verified | Curated | [`data/cobol/SOURCES.md`](data/cobol/SOURCES.md) |
 | `cpp` | 5 | 50 | 1 exact, 1 content-verified, 3 pool-reference | Audited | [`data/cpp/SOURCES.md`](data/cpp/SOURCES.md) |
+| `crystal` | 2 | 32 | 2 exact | Audited | [`data/crystal/SOURCES.md`](data/crystal/SOURCES.md) |
 | `csd` | 3 | 14 | 3 content-verified | Audited | [`data/csd/SOURCES.md`](data/csd/SOURCES.md) |
 | `csharp` | 1 | 7 | 1 pool-reference | Audited | [`data/csharp/SOURCES.md`](data/csharp/SOURCES.md) |
 | `css` | 11 | 49 | 8 exact, 3 pool-reference | Audited | [`data/css/SOURCES.md`](data/css/SOURCES.md) |
 | `dart` | 1 | 8 | 1 pool-reference | Audited | [`data/dart/SOURCES.md`](data/dart/SOURCES.md) |
 | `db2_sql` | 1 | 12 | 1 content-verified | Audited | [`data/db2_sql/SOURCES.md`](data/db2_sql/SOURCES.md) |
 | `dockerfile` | 1 | 71 | 1 pool-reference | Audited | [`data/dockerfile/SOURCES.md`](data/dockerfile/SOURCES.md) |
+| `elixir` | 3 | 37 | 3 exact | Audited | [`data/elixir/SOURCES.md`](data/elixir/SOURCES.md) |
 | `embedded_python` | 1 | 14 | 1 original | Audited | [`data/embedded_python/SOURCES.md`](data/embedded_python/SOURCES.md) |
+| `erlang` | 2 | 30 | 2 exact | Audited | [`data/erlang/SOURCES.md`](data/erlang/SOURCES.md) |
 | `fortran` | 1 | 15 | 1 content-verified | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
+| `fsharp` | 1 | 23 | 1 exact | Audited | [`data/fsharp/SOURCES.md`](data/fsharp/SOURCES.md) |
 | `go` | 4 | 21 | 2 exact, 2 pool-reference | Audited | [`data/go/SOURCES.md`](data/go/SOURCES.md) |
 | `groovy` | 16 | 329 | 14 exact, 2 pool-reference | Audited | [`data/groovy/SOURCES.md`](data/groovy/SOURCES.md) |
 | `haskell` | 1 | 12 | 1 pool-reference | Audited | [`data/haskell/SOURCES.md`](data/haskell/SOURCES.md) |
+| `hcl` | 1 | 31 | 1 exact | Audited | [`data/hcl/SOURCES.md`](data/hcl/SOURCES.md) |
 | `hlasm` | 3 | 24 | 3 content-verified | Audited | [`data/hlasm/SOURCES.md`](data/hlasm/SOURCES.md) |
 | `hlo` | 1 | 4 | 1 content-verified | Audited | [`data/hlo/SOURCES.md`](data/hlo/SOURCES.md) |
 | `html` | 15 | 68 | 8 exact, 6 content-verified, 1 original | Audited | [`data/html/SOURCES.md`](data/html/SOURCES.md) |
@@ -63,6 +68,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `javascript` | 7 | 37 | 4 exact, 3 pool-reference | Audited | [`data/javascript/SOURCES.md`](data/javascript/SOURCES.md) |
 | `jcl` | 6 | 193 | 6 exact | Curated | [`data/jcl/SOURCES.md`](data/jcl/SOURCES.md) |
 | `json` | 2 | 5 | 1 pool-reference, 1 original | Audited | [`data/json/SOURCES.md`](data/json/SOURCES.md) |
+| `julia` | 1 | 31 | 1 exact | Audited | [`data/julia/SOURCES.md`](data/julia/SOURCES.md) |
 | `kotlin` | 1 | 7 | 1 pool-reference | Audited | [`data/kotlin/SOURCES.md`](data/kotlin/SOURCES.md) |
 | `livecode` | 1 | 99 | 1 exact | Curated | [`data/livecode/SOURCES.md`](data/livecode/SOURCES.md) |
 | `lua` | 5 | 120 | 5 exact | Curated | [`data/lua/SOURCES.md`](data/lua/SOURCES.md) |
@@ -71,16 +77,20 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `markdown` | 2 | 5 | 2 exact | Audited | [`data/markdown/SOURCES.md`](data/markdown/SOURCES.md) |
 | `matlab` | 1 | 9 | 1 pool-reference | Audited | [`data/matlab/SOURCES.md`](data/matlab/SOURCES.md) |
 | `mlir` | 1 | 4 | 1 pool-reference | Audited | [`data/mlir/SOURCES.md`](data/mlir/SOURCES.md) |
+| `nim` | 1 | 31 | 1 exact | Audited | [`data/nim/SOURCES.md`](data/nim/SOURCES.md) |
 | `nix` | 2 | 10 | 2 pool-reference | Audited | [`data/nix/SOURCES.md`](data/nix/SOURCES.md) |
 | `objective-c` | 1 | 7 | 1 pool-reference | Audited | [`data/objective-c/SOURCES.md`](data/objective-c/SOURCES.md) |
+| `ocaml` | 1 | 31 | 1 exact | Audited | [`data/ocaml/SOURCES.md`](data/ocaml/SOURCES.md) |
 | `perl` | 5 | 31 | 1 exact, 1 content-verified, 3 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
 | `php` | 7 | 44 | 2 exact, 1 content-verified, 4 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |
 | `plaintext` | 4 | 11 | 4 pool-reference | Audited | [`data/plaintext/SOURCES.md`](data/plaintext/SOURCES.md) |
 | `pli` | 2 | 17 | 2 content-verified | Audited | [`data/pli/SOURCES.md`](data/pli/SOURCES.md) |
+| `postgresql` | 2 | 17 | 2 exact | Audited | [`data/postgresql/SOURCES.md`](data/postgresql/SOURCES.md) |
 | `powershell` | 5 | 129 | 5 exact | Curated | [`data/powershell/SOURCES.md`](data/powershell/SOURCES.md) |
 | `proto` | 1 | 4 | 1 pool-reference | Audited | [`data/proto/SOURCES.md`](data/proto/SOURCES.md) |
 | `protobuf` | 1 | 1 | 1 original | Audited | [`data/protobuf/SOURCES.md`](data/protobuf/SOURCES.md) |
 | `python` | 19 | 328 | 13 exact, 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
+| `r` | 2 | 32 | 2 exact | Audited | [`data/r/SOURCES.md`](data/r/SOURCES.md) |
 | `rexx` | 3 | 28 | 3 content-verified | Audited | [`data/rexx/SOURCES.md`](data/rexx/SOURCES.md) |
 | `ruby` | 2 | 10 | 1 exact, 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
 | `rust` | 8 | 60 | 2 exact, 2 content-verified, 4 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |

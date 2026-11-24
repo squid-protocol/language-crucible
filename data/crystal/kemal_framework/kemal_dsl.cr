@@ -1,0 +1,262 @@
+# Kemal DSL is defined here and it's baked into global scope.
+# These methods are available globally in your application.
+#
+# ## Available DSL Methods
+#
+# - **HTTP Routes**: `get`, `post`, `put`, `patch`, `delete`, `options`, `query`
+# - **WebSocket**: `ws`
+# - **Server-Sent Events**: `sse`
+# - **Filters**: `before_all`, `before_get`, `after_all`, `after_get`, etc.
+# - **Error Handling**: `error`
+# - **Modular Routing**: `mount`
+HTTP_METHODS   = %w[get post put patch delete options query]
+FILTER_METHODS = %w[get post put patch delete options query all]
+
+# Defines a route for the given HTTP method.
+#
+# NOTE: The path must start with a `/`.
+#
+# ```
+# get "/hello" do |env|
+#   "Hello World!"
+# end
+#
+# post "/users" do |env|
+#   "User created"
+# end
+# ```
+#
+# `query` implements the HTTP QUERY method (RFC 10008): a safe, idempotent
+# request that carries the query in the request body, so handlers must not
+# change server state. A QUERY request that has a body but no `Content-Type`
+# header is rejected with 400. Responding with 415/406/422 for unsupported or
+# unprocessable query formats is up to the handler, which can advertise the
+# supported formats via the `Accept-Query` response header. Browsers always
+# send a CORS preflight for QUERY as it is not a CORS-safelisted method.
+#
+# ```
+# query "/search" do |env|
+#   q = env.params.json["q"]? # or env.params.body for form-encoded queries
+#   search_products(q).to_json
+# end
+# ```
+{% for method in HTTP_METHODS %}
+  def {{ method.id }}(path : String, &block : HTTP::Server::Context -> _)
+    raise Kemal::Exceptions::InvalidPathStartException.new({{ method }}, path) unless Kemal::Utils.path_starts_with_slash?(path)
+    Kemal::RouteHandler::INSTANCE.add_route({{ method }}.upcase, path, &block)
+  end
+{% end %}
+
+# Defines a WebSocket route.
+#
+# NOTE: The path must start with a `/`.
+#
+# ```
+# ws "/chat" do |socket, env|
+#   socket.on_message do |msg|
+#     socket.send "Echo: #{msg}"
+#   end
+# end
+# ```
+def ws(path : String, &block : HTTP::WebSocket, HTTP::Server::Context ->)
+  raise Kemal::Exceptions::InvalidPathStartException.new("ws", path) unless Kemal::Utils.path_starts_with_slash?(path)
+  Kemal::WebSocketHandler::INSTANCE.add_route path, &block
+end
+
+# Defines a Server-Sent Events (SSE) route.
+#
+# NOTE: The path must start with a `/`.
+#
+# ```
+# sse "/events" do |stream, env|
+#   loop do
+#     stream.send("tick #{Time.utc}")
+#     sleep 1
+#   end
+# end
+# ```
+def sse(path : String, &block : Kemal::EventStream, HTTP::Server::Context ->)
+  raise Kemal::Exceptions::InvalidPathStartException.new("sse", path) unless Kemal::Utils.path_starts_with_slash?(path)
+  Kemal::RouteHandler::INSTANCE.add_route("GET", path) do |env|
+    Kemal::EventStream.serve(env, &block)
+  end
+end
+
+# Defines an error handler for the given HTTP status code.
+#
+# ```
+# error 404 do |env|
+#   "Page not found"
+# end
+# ```
+def error(status_code : Int32, &block : HTTP::Server::Context, Exception -> _)
+  Kemal.config.add_error_handler status_code, &block
+end
+
+# Defines an error handler for the given `HTTP::Status`.
+#
+# ```
+# error :not_found do |env|
+#   "Page not found"
+# end
+# ```
+def error(status : HTTP::Status, &block : HTTP::Server::Context, Exception -> _)
+  Kemal.config.add_error_handler status.code, &block
+end
+
+# Defines an error handler for the given exception type.
+#
+# ```
+# error MyCustomException do |env, ex|
+#   "Error: #{HTML.escape(ex.message.to_s)}"
+# end
+# ```
+#
+# The response is `text/html` unless the handler sets another content type, so a
+# message built from request data - `raise "User #{name} not found"` - has to be
+# escaped before it goes into the page. Kemal's own exceptions carry no request
+# data in their messages; the request is on `ex.context` where there is one.
+#
+# The exception is logged at `error` level before the handler runs, as it is
+# for a `500` rendered by `error 500`: the handler owns the response, not the
+# record of the failure.
+def error(exception : Exception.class, &block : HTTP::Server::Context, Exception -> _)
+  Kemal.config.add_exception_handler exception, &block
+end
+
+# Defines filters that run before or after requests.
+#
+# Available methods:
+# - `before_all`, `before_get`, `before_post`, `before_put`, `before_patch`, `before_delete`, `before_options`, `before_query`
+# - `after_all`, `after_get`, `after_post`, `after_put`, `after_patch`, `after_delete`, `after_options`, `after_query`
+#
+# ```
+# before_all do |env|
+#   env.response.content_type = "application/json"
+# end
+#
+# before_get "/admin/*" do |env|
+#   # Authentication check
+# end
+#
+# # Multiple paths
+# after_post ["/users", "/posts"] do |env|
+#   # Logging
+# end
+# ```
+#
+# NOTE: Response headers must be set before the response body is written,
+# so use `before_*` filters for header changes.
+#
+# `before_all` and `after_all` share their names with the `describe`-level hooks
+# of Crystal's `spec` library, and as top-level definitions they win. Called
+# directly inside a `describe` block they therefore register the spec hook, as
+# a spec author expects (see `Kemal::SpecHooks`); called anywhere else - the top
+# level of a file, a route, an example - they register Kemal's filter.
+{% for type in ["before", "after"] %}
+  {% for method in FILTER_METHODS %}
+    def {{ type.id }}_{{ method.id }}(path : String = "*", &block : HTTP::Server::Context -> _)
+      {% if method == "all" %}
+        filter = block
+        {% if @top_level.has_constant?("Spec") %}
+          unless Spec.cli.current_context.is_a?(Spec::RootContext)
+            # A spec hook takes no argument; the filter block was typed to take a
+            # context, so it gets a blank one it will never look at.
+            return Spec::KemalHooks.{{ type.id }}_all do
+              filter.call(HTTP::Server::Context.new(HTTP::Request.new("GET", "/"), HTTP::Server::Response.new(IO::Memory.new)))
+            end
+          end
+        {% end %}
+      {% end %}
+      Kemal::FilterHandler::INSTANCE.{{ type.id }}({{ method }}.upcase, path, &block)
+    end
+
+    def {{ type.id }}_{{ method.id }}(paths : Enumerable(String), &block : HTTP::Server::Context -> _)
+      # One block for every path, so it runs once where several of them match.
+      filter = Kemal::FilterHandler::FilterBlock.new(shared: true, &block)
+      paths.each do |path|
+        Kemal::FilterHandler::INSTANCE._add_route_filter({{ method }}.upcase, path, :{{ type.id }}, filter)
+      end
+    end
+  {% end %}
+{% end %}
+
+# Adds a `HTTP::Handler` (middleware) to the handler chain.
+# The handler runs for all requests.
+#
+# ```
+# use MyHandler.new
+# ```
+def use(handler : HTTP::Handler)
+  Kemal.config.add_handler(handler)
+end
+
+# Adds a `HTTP::Handler` (middleware) at a specific position in the handler chain.
+#
+# ```
+# use MyHandler.new, position: 1
+# ```
+def use(handler : HTTP::Handler, position : Int32)
+  Kemal.config.add_handler(handler, position)
+end
+
+# Adds a `HTTP::Handler` (middleware) that only runs for requests matching the path prefix.
+#
+# ```
+# use "/api", AuthHandler.new
+# ```
+#
+# The handler will execute for:
+# - Exact match: `/api`
+# - Prefix match: `/api/users`, `/api/posts/1`
+#
+# But NOT for:
+# - `/`, `/apiv2`, `/other`
+def use(path : String, handler : HTTP::Handler)
+  Kemal.config.add_handler(Kemal::PathHandler.new(path, handler))
+end
+
+# Adds multiple `HTTP::Handler` (middlewares) for a specific path prefix.
+#
+# ```
+# use "/api", [AuthHandler.new, RateLimiter.new, CorsHandler.new]
+# ```
+def use(path : String, handlers : Enumerable(HTTP::Handler))
+  handlers.each do |handler|
+    use(path, handler)
+  end
+end
+
+# Mounts a router without additional prefix.
+#
+# ```
+# api = Kemal::Router.new
+# api.get "/users" do |env|
+#   "users"
+# end
+#
+# mount api
+# # Result: GET /users
+# ```
+def mount(router : Kemal::Router)
+  router.register_routes
+end
+
+# Mounts a router at the given *path* prefix.
+#
+# NOTE: The path must start with a `/`.
+#
+# All routes defined in the router will be prefixed with the given path.
+#
+# ```
+# api = Kemal::Router.new
+# api.get "/users" do |env|
+#   "users"
+# end
+#
+# mount "/api/v1", api
+# # Result: GET /api/v1/users
+# ```
+def mount(path : String, router : Kemal::Router)
+  router.register_routes(path)
+end
