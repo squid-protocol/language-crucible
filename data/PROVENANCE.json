@@ -992,6 +992,28 @@
   },
   {
     "category": "fortran",
+    "repo": "fpm_fortran",
+    "path": "data/fortran/fpm_fortran",
+    "files": 13,
+    "url": "https://github.com/fortran-lang/fpm",
+    "commit": "ffe90aeea703820596bc58149f76f3c50a668819",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "fortran",
+    "repo": "stdlib_fortran",
+    "path": "data/fortran/stdlib_fortran",
+    "files": 13,
+    "url": "https://github.com/fortran-lang/stdlib",
+    "commit": "7a87e3e23f44fb9ec3b4532d22c2c101950e4a6b",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "fortran",
     "repo": "wrf",
     "path": "data/fortran/wrf",
     "files": 15,
@@ -1245,6 +1267,17 @@
   },
   {
     "category": "haskell",
+    "repo": "aeson_core",
+    "path": "data/haskell/aeson_core",
+    "files": 13,
+    "url": "https://github.com/haskell/aeson",
+    "commit": "aafea1f4c2d4dfb5a0f068fab50bf8254256f25f",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "haskell",
     "repo": "pandoc",
     "path": "data/haskell/pandoc",
     "files": 12,
@@ -1262,6 +1295,17 @@
     "url": "https://github.com/jgm/pandoc",
     "commit": "7777de6adb166d92b4c9ee4b24054637ab8477b7",
     "license": "GPL-2.0-or-later",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "haskell",
+    "repo": "xmonad_core",
+    "path": "data/haskell/xmonad_core",
+    "files": 13,
+    "url": "https://github.com/xmonad/xmonad",
+    "commit": "1ed7242e2b05dc1a5e2c88e7ef130288680e89c3",
+    "license": "BSD-3-Clause",
     "confidence": "exact",
     "note": null
   },
@@ -2974,6 +3018,17 @@
     "note": null
   },
   {
+    "category": "solidity",
+    "repo": "solady_utils",
+    "path": "data/solidity/solady_utils",
+    "files": 13,
+    "url": "https://github.com/Vectorized/solady",
+    "commit": "258f67cc71e39cff307b726939ade17e9d8bcf5c",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "sql",
     "repo": "baseline",
     "path": "data/sql/baseline",
@@ -3158,6 +3213,28 @@
     "url": "https://github.com/ghostty-org/ghostty",
     "commit": "debcffbadb75221a030319c075fae12cfe114176",
     "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "swift",
+    "repo": "swift_argument_parser",
+    "path": "data/swift/swift_argument_parser",
+    "files": 13,
+    "url": "https://github.com/apple/swift-argument-parser",
+    "commit": "d225b6fe8aed45478d1e36e770bf269c5d48d3a9",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "swift",
+    "repo": "swift_nio_core",
+    "path": "data/swift/swift_nio_core",
+    "files": 13,
+    "url": "https://github.com/apple/swift-nio",
+    "commit": "b003027fc38b649a43e9aad77c3d4e4a2c5b6997",
+    "license": "Apache License 2.0",
     "confidence": "exact",
     "note": null
   },
