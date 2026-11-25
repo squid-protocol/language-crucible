@@ -5,5 +5,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
 | `pandoc` | 12 | https://github.com/jgm/pandoc.git | `7777de6adb166d92b4c9ee4b24054637ab8477b7` | GNU GPL v2.0 | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `pandoc_writers` | 11 | https://github.com/jgm/pandoc | `7777de6adb166d92b4c9ee4b24054637ab8477b7` | GPL-2.0-or-later | Pandoc's output writers (src/Text/Pandoc/Writers): `module` / `LANGUAGE` pragmas in 10 of 10 files, `OverloadedStrings` in 9, and typed function signatures (`::` with `->`) in 9. Recorded GPL-2.0-or-later (file headers say "GNU GPL, version 2 or above"). |
 
-**Total: 12 files across 1 repo folder(s)** (1 pool-reference).
+**Total: 23 files across 2 repo folder(s)** (1 exact, 1 pool-reference).

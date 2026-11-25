@@ -705,6 +705,28 @@
   },
   {
     "category": "csharp",
+    "repo": "powershell_commands_utility",
+    "path": "data/csharp/powershell_commands_utility",
+    "files": 13,
+    "url": "https://github.com/PowerShell/PowerShell",
+    "commit": "a17f1761eca57d90856062e35add0f013a1c703f",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "csharp",
+    "repo": "powertoys_common",
+    "path": "data/csharp/powertoys_common",
+    "files": 13,
+    "url": "https://github.com/microsoft/PowerToys",
+    "commit": "4ce451edd0a66ba4fe1366ff6a912c30be59feb3",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "csharp",
     "repo": "roslyn",
     "path": "data/csharp/roslyn",
     "files": 7,
@@ -712,6 +734,17 @@
     "commit": "849bed61024b171e673b9a1fac565b30e3ae1934",
     "license": "MIT",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "csharp",
+    "repo": "runtime_linq",
+    "path": "data/csharp/runtime_linq",
+    "files": 13,
+    "url": "https://github.com/dotnet/runtime",
+    "commit": "aba46e33ea5ddd45d90e5c6a8b46bba6744ddc9a",
+    "license": "MIT License",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -837,6 +870,28 @@
   },
   {
     "category": "dart",
+    "repo": "dart_sdk_analyzer",
+    "path": "data/dart/dart_sdk_analyzer",
+    "files": 13,
+    "url": "https://github.com/dart-lang/sdk",
+    "commit": "eb59896079d9cda5351c2f713a22be89b9f9562c",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "dart",
+    "repo": "dart_sdk_language_tests",
+    "path": "data/dart/dart_sdk_language_tests",
+    "files": 13,
+    "url": "https://github.com/dart-lang/sdk",
+    "commit": "eb59896079d9cda5351c2f713a22be89b9f9562c",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "dart",
     "repo": "flutter",
     "path": "data/dart/flutter",
     "files": 8,
@@ -945,6 +1000,17 @@
     "license": "Public Domain",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "fortran",
+    "repo": "wrf_physics",
+    "path": "data/fortran/wrf_physics",
+    "files": 11,
+    "url": "https://github.com/wrf-model/WRF",
+    "commit": "f15568ccc1447780e3bd664b9f0196edd784bf33",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "fsharp",
@@ -1186,6 +1252,17 @@
     "commit": "7777de6adb166d92b4c9ee4b24054637ab8477b7",
     "license": "GNU GPL v2.0",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "haskell",
+    "repo": "pandoc_writers",
+    "path": "data/haskell/pandoc_writers",
+    "files": 11,
+    "url": "https://github.com/jgm/pandoc",
+    "commit": "7777de6adb166d92b4c9ee4b24054637ab8477b7",
+    "license": "GPL-2.0-or-later",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -2546,6 +2623,17 @@
   },
   {
     "category": "ruby",
+    "repo": "homebrew_ruby",
+    "path": "data/ruby/homebrew_ruby",
+    "files": 13,
+    "url": "https://github.com/Homebrew/brew",
+    "commit": "ff29aa966b3127a32e5637bde7d5c0195186d6d4",
+    "license": "BSD 2-Clause License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "ruby",
     "repo": "rails",
     "path": "data/ruby/rails",
     "files": 8,
@@ -2563,6 +2651,17 @@
     "url": "https://github.com/rails/rails",
     "commit": "afd103d69abb7441da3d2ac5c737f8de3e678779",
     "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "ruby",
+    "repo": "selenium_ruby",
+    "path": "data/ruby/selenium_ruby",
+    "files": 13,
+    "url": "https://github.com/SeleniumHQ/selenium",
+    "commit": "549261ba1cccb1d3bfa662d35d7b144607abf51c",
+    "license": "Apache License 2.0",
     "confidence": "exact",
     "note": null
   },
@@ -2652,6 +2751,28 @@
     "commit": "5b5e3573d7de1314c6fcd0d327d4e3640ce58138",
     "license": "Apache License 2.0 (from pool clone's LICENSE, not found locally)",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "scala",
+    "repo": "cobrix_scala",
+    "path": "data/scala/cobrix_scala",
+    "files": 13,
+    "url": "https://github.com/AbsaOSS/cobrix",
+    "commit": "7200b77cdebb4244137f88b48e908acfc4ccbee1",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "scala",
+    "repo": "gradle_scala",
+    "path": "data/scala/gradle_scala",
+    "files": 11,
+    "url": "https://github.com/gradle/gradle",
+    "commit": "db62c2f2b404217cb6a7eef2598c6e84ab08fa27",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -2842,6 +2963,17 @@
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
   },
   {
+    "category": "solidity",
+    "repo": "openzeppelin_tokens",
+    "path": "data/solidity/openzeppelin_tokens",
+    "files": 11,
+    "url": "https://github.com/OpenZeppelin/openzeppelin-contracts",
+    "commit": "9cfdccd35350f7bcc585cf2ede08cd04e7f0ec10",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "sql",
     "repo": "baseline",
     "path": "data/sql/baseline",
@@ -3016,6 +3148,28 @@
     "commit": "36f1747e31305e0cfda27864091318950c66a5b1",
     "license": "MIT",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "swift",
+    "repo": "ghostty_macos",
+    "path": "data/swift/ghostty_macos",
+    "files": 13,
+    "url": "https://github.com/ghostty-org/ghostty",
+    "commit": "debcffbadb75221a030319c075fae12cfe114176",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "swift",
+    "repo": "vapor_sources",
+    "path": "data/swift/vapor_sources",
+    "files": 13,
+    "url": "https://github.com/vapor/vapor",
+    "commit": "ff88583e10f02aa47be49e632d5179f89e855e03",
+    "license": "MIT License",
+    "confidence": "exact",
     "note": null
   },
   {

@@ -259,6 +259,22 @@ EXACT_PROVENANCE = {
     ("r", "rlang_package"): ("https://github.com/r-lib/rlang", "b4a2a057ea67613cc13cdbaed9eb0c421400e96a", "MIT License"),
     ("postgresql", "pgvector_extension"): ("https://github.com/pgvector/pgvector", "305e756a31e467fb5741ec997882c0f623300dce", "PostgreSQL License"),
     ("postgresql", "pgvector_tests"): ("https://github.com/pgvector/pgvector", "305e756a31e467fb5741ec997882c0f623300dce", "PostgreSQL License"),
+    # 2026-11-25 (tier 1, batch 2): broaden csharp / swift / scala / dart / ruby / haskell / solidity / fortran. Copied verbatim from the pool
+    # clone at its HEAD, evenly sampled across the named subtree; licenses read from each upstream's own license text.
+    ("csharp", "runtime_linq"): ("https://github.com/dotnet/runtime", "aba46e33ea5ddd45d90e5c6a8b46bba6744ddc9a", "MIT License"),
+    ("csharp", "powertoys_common"): ("https://github.com/microsoft/PowerToys", "4ce451edd0a66ba4fe1366ff6a912c30be59feb3", "MIT License"),
+    ("csharp", "powershell_commands_utility"): ("https://github.com/PowerShell/PowerShell", "a17f1761eca57d90856062e35add0f013a1c703f", "MIT License"),
+    ("swift", "vapor_sources"): ("https://github.com/vapor/vapor", "ff88583e10f02aa47be49e632d5179f89e855e03", "MIT License"),
+    ("swift", "ghostty_macos"): ("https://github.com/ghostty-org/ghostty", "debcffbadb75221a030319c075fae12cfe114176", "MIT License"),
+    ("scala", "cobrix_scala"): ("https://github.com/AbsaOSS/cobrix", "7200b77cdebb4244137f88b48e908acfc4ccbee1", "Apache License 2.0"),
+    ("scala", "gradle_scala"): ("https://github.com/gradle/gradle", "db62c2f2b404217cb6a7eef2598c6e84ab08fa27", "Apache License 2.0"),
+    ("dart", "dart_sdk_analyzer"): ("https://github.com/dart-lang/sdk", "eb59896079d9cda5351c2f713a22be89b9f9562c", "BSD License"),
+    ("dart", "dart_sdk_language_tests"): ("https://github.com/dart-lang/sdk", "eb59896079d9cda5351c2f713a22be89b9f9562c", "BSD License"),
+    ("ruby", "homebrew_ruby"): ("https://github.com/Homebrew/brew", "ff29aa966b3127a32e5637bde7d5c0195186d6d4", "BSD 2-Clause License"),
+    ("ruby", "selenium_ruby"): ("https://github.com/SeleniumHQ/selenium", "549261ba1cccb1d3bfa662d35d7b144607abf51c", "Apache License 2.0"),
+    ("haskell", "pandoc_writers"): ("https://github.com/jgm/pandoc", "7777de6adb166d92b4c9ee4b24054637ab8477b7", "GNU GPL v2.0"),
+    ("solidity", "openzeppelin_tokens"): ("https://github.com/OpenZeppelin/openzeppelin-contracts", "9cfdccd35350f7bcc585cf2ede08cd04e7f0ec10", "MIT License"),
+    ("fortran", "wrf_physics"): ("https://github.com/wrf-model/WRF", "f15568ccc1447780e3bd664b9f0196edd784bf33", "Public Domain"),
     # 2026-11-25 (tier 1, batch 1): broaden kotlin / matlab / makefile / objective-c. Copied verbatim from the pool clone at its HEAD;
     # licenses read from each upstream's own license text.
     ("kotlin", "retrofit_kotlin"): ("https://github.com/square/retrofit", "77e6ba21d9ba372d1b23ef29881912910da23347", "Apache License 2.0"),
@@ -352,6 +368,9 @@ VERIFIED_LICENSE = {
     ("html", "polyglot_vscode"): "MIT",
     ("javascript", "jquery"): "MIT",
     ("m4", "curl"): "curl",
+    ("dart", "dart_sdk_analyzer"): "BSD-3-Clause",
+    ("dart", "dart_sdk_language_tests"): "BSD-3-Clause",
+    ("haskell", "pandoc_writers"): "GPL-2.0-or-later",
     ("matlab", "fieldtrip_core"): "GPL-3.0-or-later",
     ("objective-c", "afnetworking"): "MIT",
     ("objective-c", "godot_ios"): "MIT",

@@ -47,19 +47,19 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `cpp` | 5 | 50 | 1 exact, 1 content-verified, 3 pool-reference | Audited | [`data/cpp/SOURCES.md`](data/cpp/SOURCES.md) |
 | `crystal` | 2 | 32 | 2 exact | Audited | [`data/crystal/SOURCES.md`](data/crystal/SOURCES.md) |
 | `csd` | 3 | 14 | 3 content-verified | Audited | [`data/csd/SOURCES.md`](data/csd/SOURCES.md) |
-| `csharp` | 1 | 7 | 1 pool-reference | Audited | [`data/csharp/SOURCES.md`](data/csharp/SOURCES.md) |
+| `csharp` | 4 | 46 | 3 exact, 1 pool-reference | Audited | [`data/csharp/SOURCES.md`](data/csharp/SOURCES.md) |
 | `css` | 11 | 49 | 8 exact, 3 pool-reference | Audited | [`data/css/SOURCES.md`](data/css/SOURCES.md) |
-| `dart` | 1 | 8 | 1 pool-reference | Audited | [`data/dart/SOURCES.md`](data/dart/SOURCES.md) |
+| `dart` | 3 | 34 | 2 exact, 1 pool-reference | Audited | [`data/dart/SOURCES.md`](data/dart/SOURCES.md) |
 | `db2_sql` | 1 | 12 | 1 content-verified | Audited | [`data/db2_sql/SOURCES.md`](data/db2_sql/SOURCES.md) |
 | `dockerfile` | 1 | 71 | 1 pool-reference | Audited | [`data/dockerfile/SOURCES.md`](data/dockerfile/SOURCES.md) |
 | `elixir` | 3 | 37 | 3 exact | Audited | [`data/elixir/SOURCES.md`](data/elixir/SOURCES.md) |
 | `embedded_python` | 1 | 14 | 1 original | Audited | [`data/embedded_python/SOURCES.md`](data/embedded_python/SOURCES.md) |
 | `erlang` | 2 | 30 | 2 exact | Audited | [`data/erlang/SOURCES.md`](data/erlang/SOURCES.md) |
-| `fortran` | 1 | 15 | 1 content-verified | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
+| `fortran` | 2 | 26 | 1 exact, 1 content-verified | Audited | [`data/fortran/SOURCES.md`](data/fortran/SOURCES.md) |
 | `fsharp` | 1 | 23 | 1 exact | Audited | [`data/fsharp/SOURCES.md`](data/fsharp/SOURCES.md) |
 | `go` | 4 | 21 | 2 exact, 2 pool-reference | Audited | [`data/go/SOURCES.md`](data/go/SOURCES.md) |
 | `groovy` | 16 | 329 | 14 exact, 2 pool-reference | Audited | [`data/groovy/SOURCES.md`](data/groovy/SOURCES.md) |
-| `haskell` | 1 | 12 | 1 pool-reference | Audited | [`data/haskell/SOURCES.md`](data/haskell/SOURCES.md) |
+| `haskell` | 2 | 23 | 1 exact, 1 pool-reference | Audited | [`data/haskell/SOURCES.md`](data/haskell/SOURCES.md) |
 | `hcl` | 1 | 31 | 1 exact | Audited | [`data/hcl/SOURCES.md`](data/hcl/SOURCES.md) |
 | `hlasm` | 3 | 24 | 3 content-verified | Audited | [`data/hlasm/SOURCES.md`](data/hlasm/SOURCES.md) |
 | `hlo` | 1 | 4 | 1 content-verified | Audited | [`data/hlo/SOURCES.md`](data/hlo/SOURCES.md) |
@@ -92,15 +92,15 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `python` | 19 | 328 | 13 exact, 6 pool-reference | Audited | [`data/python/SOURCES.md`](data/python/SOURCES.md) |
 | `r` | 2 | 32 | 2 exact | Audited | [`data/r/SOURCES.md`](data/r/SOURCES.md) |
 | `rexx` | 3 | 28 | 3 content-verified | Audited | [`data/rexx/SOURCES.md`](data/rexx/SOURCES.md) |
-| `ruby` | 2 | 10 | 1 exact, 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
+| `ruby` | 4 | 36 | 3 exact, 1 pool-reference | Audited | [`data/ruby/SOURCES.md`](data/ruby/SOURCES.md) |
 | `rust` | 8 | 60 | 2 exact, 2 content-verified, 4 pool-reference | Audited | [`data/rust/SOURCES.md`](data/rust/SOURCES.md) |
-| `scala` | 1 | 8 | 1 pool-reference | Audited | [`data/scala/SOURCES.md`](data/scala/SOURCES.md) |
+| `scala` | 3 | 32 | 2 exact, 1 pool-reference | Audited | [`data/scala/SOURCES.md`](data/scala/SOURCES.md) |
 | `scheme` | 1 | 8 | 1 pool-reference | Audited | [`data/scheme/SOURCES.md`](data/scheme/SOURCES.md) |
 | `shell` | 14 | 286 | 14 exact | Curated | [`data/shell/SOURCES.md`](data/shell/SOURCES.md) |
-| `solidity` | 1 | 8 | 1 content-verified | Audited | [`data/solidity/SOURCES.md`](data/solidity/SOURCES.md) |
+| `solidity` | 2 | 19 | 1 exact, 1 content-verified | Audited | [`data/solidity/SOURCES.md`](data/solidity/SOURCES.md) |
 | `sql` | 6 | 14 | 4 content-verified, 1 pool-reference, 1 original | Audited | [`data/sql/SOURCES.md`](data/sql/SOURCES.md) |
 | `sqlite` | 9 | 82 | 9 exact | Audited | [`data/sqlite/SOURCES.md`](data/sqlite/SOURCES.md) |
-| `swift` | 1 | 8 | 1 pool-reference | Audited | [`data/swift/SOURCES.md`](data/swift/SOURCES.md) |
+| `swift` | 3 | 34 | 2 exact, 1 pool-reference | Audited | [`data/swift/SOURCES.md`](data/swift/SOURCES.md) |
 | `tabular` | 4 | 9 | 2 content-verified, 2 original | Audited | [`data/tabular/SOURCES.md`](data/tabular/SOURCES.md) |
 | `tcl` | 9 | 157 | 8 exact, 1 pool-reference | Audited | [`data/tcl/SOURCES.md`](data/tcl/SOURCES.md) |
 | `td` | 1 | 5 | 1 pool-reference | Audited | [`data/td/SOURCES.md`](data/td/SOURCES.md) |
