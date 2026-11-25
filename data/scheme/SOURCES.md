@@ -5,5 +5,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
 | `racket` | 8 | https://github.com/racket/racket | `afbc55a2ad3d98158c1cc8207be87936e3706c5a` | MIT License | Pre-existing corpus content. Provenance identified during the issue #4 audit (2026-08-28) by matching this folder's name against the `gitgalaxy/data` pool and reading that clone's current commit — see root `SOURCES.md` for what 'pool-reference' confidence does and doesn't guarantee. |
+| `racket_scheme` | 11 | https://github.com/racket/racket | `afbc55a2ad3d98158c1cc8207be87936e3706c5a` | MIT License | Racket's Chez Scheme and test sources (`.ss` / `.scm`): top-level `(define ...)` forms in 9 of 10 files and `define-syntax` / `library` / `module` forms in 5; Scheme proper, not `#lang racket`. |
 
-**Total: 8 files across 1 repo folder(s)** (1 pool-reference).
+**Total: 19 files across 2 repo folder(s)** (1 exact, 1 pool-reference).
