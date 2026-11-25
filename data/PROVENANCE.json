@@ -1632,6 +1632,17 @@
   },
   {
     "category": "kotlin",
+    "repo": "gradle_kotlin",
+    "path": "data/kotlin/gradle_kotlin",
+    "files": 13,
+    "url": "https://github.com/gradle/gradle",
+    "commit": "db62c2f2b404217cb6a7eef2598c6e84ab08fa27",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "kotlin",
     "repo": "okhttp",
     "path": "data/kotlin/okhttp",
     "files": 7,
@@ -1639,6 +1650,28 @@
     "commit": "c396b08f7a06e412c4cc8f5c83b0d7ed19f7fa6c",
     "license": "Apache License 2.0",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "kotlin",
+    "repo": "retrofit_kotlin",
+    "path": "data/kotlin/retrofit_kotlin",
+    "files": 17,
+    "url": "https://github.com/square/retrofit",
+    "commit": "77e6ba21d9ba372d1b23ef29881912910da23347",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "kotlin",
+    "repo": "spring_boot_kotlin",
+    "path": "data/kotlin/spring_boot_kotlin",
+    "files": 15,
+    "url": "https://github.com/spring-projects/spring-boot",
+    "commit": "5cecd3922fce651f13d16a85d8a29efaa7f44cfd",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1764,6 +1797,17 @@
   },
   {
     "category": "makefile",
+    "repo": "cosmopolitan_build_mk",
+    "path": "data/makefile/cosmopolitan_build_mk",
+    "files": 7,
+    "url": "https://github.com/jart/cosmopolitan",
+    "commit": "eedf7d2db6e5ee0e228862690339c166a3f003a7",
+    "license": "ISC License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "makefile",
     "repo": "freebsd",
     "path": "data/makefile/freebsd",
     "files": 2,
@@ -1772,6 +1816,17 @@
     "license": "BSD License",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "makefile",
+    "repo": "micropython_make",
+    "path": "data/makefile/micropython_make",
+    "files": 11,
+    "url": "https://github.com/micropython/micropython",
+    "commit": "2dc2e30d98ee225070e990586526f8e43b3c95a2",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "markdown",
@@ -1804,6 +1859,28 @@
     "commit": "514a923047228fe24bfd9564c587e8a6b1cf56bb",
     "license": "BSD License",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "matlab",
+    "repo": "fieldtrip_core",
+    "path": "data/matlab/fieldtrip_core",
+    "files": 11,
+    "url": "https://github.com/fieldtrip/fieldtrip",
+    "commit": "2f3917526e6a01d37fbb224a02618f4fc61d47d9",
+    "license": "GPL-3.0-or-later",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "matlab",
+    "repo": "fieldtrip_plotting_utils",
+    "path": "data/matlab/fieldtrip_plotting_utils",
+    "files": 13,
+    "url": "https://github.com/fieldtrip/fieldtrip",
+    "commit": "2f3917526e6a01d37fbb224a02618f4fc61d47d9",
+    "license": "GNU GPL v3.0",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1848,6 +1925,39 @@
     "commit": "debcffbadb75221a030319c075fae12cfe114176",
     "license": "MIT License",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "objective-c",
+    "repo": "afnetworking",
+    "path": "data/objective-c/afnetworking",
+    "files": 16,
+    "url": "https://github.com/AFNetworking/AFNetworking",
+    "commit": "d9f589cc2c1fe9d55eb5eea00558010afea7a41e",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "objective-c",
+    "repo": "godot_ios",
+    "path": "data/objective-c/godot_ios",
+    "files": 7,
+    "url": "https://github.com/godotengine/godot",
+    "commit": "4a919adccf8e398aceca75399c539078c54fe97f",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "objective-c",
+    "repo": "tensorflow_lite_objc",
+    "path": "data/objective-c/tensorflow_lite_objc",
+    "files": 11,
+    "url": "https://github.com/tensorflow/tensorflow",
+    "commit": "c21c40c048e9b35d032d31ce41809c2cadeb8fca",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
     "note": null
   },
   {
