@@ -5,5 +5,6 @@ Provenance recorded 2026-08-28 as part of the issue #4 audit (squid-protocol/lan
 | Repo folder | Files | Upstream | Commit | License | Notes |
 |---|---|---|---|---|---|
 | `wrf` | 15 | https://github.com/wrf-model/WRF | `f15568ccc1447780e3bd664b9f0196edd784bf33` | Public Domain | Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit. |
+| `wrf_physics` | 11 | https://github.com/wrf-model/WRF | `f15568ccc1447780e3bd664b9f0196edd784bf33` | Public Domain | WRF physics modules (phys/, `.F` files): `MODULE` in 8 of 10 files, `SUBROUTINE` in 8, `USE` statements in 7, and C-preprocessor directives in 6. Fixed/free-form Fortran with CPP, a physics counterpart to `wrf`. Capped by the pool: no other licensed Fortran repo is in it. |
 
-**Total: 15 files across 1 repo folder(s)** (1 content-verified).
+**Total: 26 files across 2 repo folder(s)** (1 exact, 1 content-verified).
