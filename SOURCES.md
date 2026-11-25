@@ -34,9 +34,9 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 
 | Category | Repo folders | Files | Confidence | Status | Details |
 |---|---|---|---|---|---|
-| `abap` | 1 | 9 | 1 pool-reference | Audited | [`data/abap/SOURCES.md`](data/abap/SOURCES.md) |
+| `abap` | 4 | 49 | 3 exact, 1 pool-reference | Audited | [`data/abap/SOURCES.md`](data/abap/SOURCES.md) |
 | `ada` | 2 | 52 | 2 content-verified | Audited | [`data/ada/SOURCES.md`](data/ada/SOURCES.md) |
-| `agc_assembly` | 1 | 12 | 1 pool-reference | Audited | [`data/agc_assembly/SOURCES.md`](data/agc_assembly/SOURCES.md) |
+| `agc_assembly` | 3 | 36 | 2 exact, 1 content-verified | Audited | [`data/agc_assembly/SOURCES.md`](data/agc_assembly/SOURCES.md) |
 | `apex` | 1 | 8 | 1 pool-reference | Audited | [`data/apex/SOURCES.md`](data/apex/SOURCES.md) |
 | `assembly` | 16 | 248 | 13 exact, 3 pool-reference | Audited | [`data/assembly/SOURCES.md`](data/assembly/SOURCES.md) |
 | `batch` | 2 | 7 | 2 pool-reference | Audited | [`data/batch/SOURCES.md`](data/batch/SOURCES.md) |
@@ -72,7 +72,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `kotlin` | 1 | 7 | 1 pool-reference | Audited | [`data/kotlin/SOURCES.md`](data/kotlin/SOURCES.md) |
 | `livecode` | 1 | 99 | 1 exact | Curated | [`data/livecode/SOURCES.md`](data/livecode/SOURCES.md) |
 | `lua` | 5 | 120 | 5 exact | Curated | [`data/lua/SOURCES.md`](data/lua/SOURCES.md) |
-| `m4` | 2 | 11 | 2 pool-reference | Audited | [`data/m4/SOURCES.md`](data/m4/SOURCES.md) |
+| `m4` | 5 | 41 | 3 exact, 2 pool-reference | Audited | [`data/m4/SOURCES.md`](data/m4/SOURCES.md) |
 | `makefile` | 1 | 2 | 1 content-verified | Audited | [`data/makefile/SOURCES.md`](data/makefile/SOURCES.md) |
 | `markdown` | 2 | 5 | 2 exact | Audited | [`data/markdown/SOURCES.md`](data/markdown/SOURCES.md) |
 | `matlab` | 1 | 9 | 1 pool-reference | Audited | [`data/matlab/SOURCES.md`](data/matlab/SOURCES.md) |
@@ -107,7 +107,7 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `text` | 1 | 1 | 1 original | Audited | [`data/text/SOURCES.md`](data/text/SOURCES.md) |
 | `typescript` | 12 | 60 | 6 exact, 2 content-verified, 4 pool-reference | Audited | [`data/typescript/SOURCES.md`](data/typescript/SOURCES.md) |
 | `xml` | 5 | 26 | 1 content-verified, 4 pool-reference | Audited | [`data/xml/SOURCES.md`](data/xml/SOURCES.md) |
-| `yacc` | 1 | 3 | 1 content-verified | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
+| `yacc` | 5 | 27 | 4 exact, 1 content-verified | Audited | [`data/yacc/SOURCES.md`](data/yacc/SOURCES.md) |
 | `yaml` | 7 | 51 | 6 exact, 1 pool-reference | Audited | [`data/yaml/SOURCES.md`](data/yaml/SOURCES.md) |
 | `zig` | 6 | 47 | 1 exact, 1 content-verified, 3 pool-reference, 1 unknown | Audited | [`data/zig/SOURCES.md`](data/zig/SOURCES.md) |
 
