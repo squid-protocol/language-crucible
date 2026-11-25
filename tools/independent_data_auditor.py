@@ -268,6 +268,17 @@ EXACT_PROVENANCE = {
     ("fortran", "fpm_fortran"): ("https://github.com/fortran-lang/fpm", "ffe90aeea703820596bc58149f76f3c50a668819", "MIT License"),
     ("swift", "swift_nio_core"): ("https://github.com/apple/swift-nio", "b003027fc38b649a43e9aad77c3d4e4a2c5b6997", "Apache License 2.0"),
     ("swift", "swift_argument_parser"): ("https://github.com/apple/swift-argument-parser", "d225b6fe8aed45478d1e36e770bf269c5d48d3a9", "Apache License 2.0"),
+    # 2026-11-25 (batch 3): legacy languages from burned estates first (CardDemo, DBB MortgageApplication, GenApp), then pli / apex / nix / scheme.
+    ("bms", "carddemo_bms"): ("https://github.com/aws-samples/aws-mainframe-modernization-carddemo", "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e", "Apache License 2.0"),
+    ("bms", "dbb_mortgage_bms"): ("https://github.com/IBM/dbb", "ce2c1be58eb049e000c6627bd8273263fef0c606", "Apache License 2.0"),
+    ("db2_sql", "carddemo_ddl"): ("https://github.com/aws-samples/aws-mainframe-modernization-carddemo", "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e", "Apache License 2.0"),
+    ("hlasm", "carddemo_hlasm"): ("https://github.com/aws-samples/aws-mainframe-modernization-carddemo", "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e", "Apache License 2.0"),
+    ("rexx", "dbb_mortgage_rexx"): ("https://github.com/IBM/dbb", "ce2c1be58eb049e000c6627bd8273263fef0c606", "Apache License 2.0"),
+    ("rexx", "genapp_rexx"): ("https://github.com/cicsdev/cics-genapp", "63eca1b670d9199637bdc2ca7df6e4189a58c892", "Eclipse Public License 2.0"),
+    ("pli", "dsf_pli_more"): ("https://github.com/navikt/DSF", "faade4961e316c89e8c312456bae411c63f1c482", "MIT License"),
+    ("apex", "fflib_apex_common"): ("https://github.com/apex-enterprise-patterns/fflib-apex-common", "286d0d12b40f22b1cb41a5fb451d4a9dd690e11a", "BSD License"),
+    ("nix", "angular_nix"): ("https://github.com/angular/angular", "9d76ac82290e047f1481fb38bd95233e951a77de", "MIT License"),
+    ("scheme", "racket_scheme"): ("https://github.com/racket/racket", "afbc55a2ad3d98158c1cc8207be87936e3706c5a", "MIT License"),
     # 2026-11-25 (tier 1, batch 2): broaden csharp / swift / scala / dart / ruby / haskell / solidity / fortran. Copied verbatim from the pool
     # clone at its HEAD, evenly sampled across the named subtree; licenses read from each upstream's own license text.
     ("csharp", "runtime_linq"): ("https://github.com/dotnet/runtime", "aba46e33ea5ddd45d90e5c6a8b46bba6744ddc9a", "MIT License"),
@@ -379,6 +390,7 @@ VERIFIED_LICENSE = {
     ("m4", "curl"): "curl",
     ("haskell", "xmonad_core"): "BSD-3-Clause",
     ("haskell", "aeson_core"): "BSD-3-Clause",
+    ("apex", "fflib_apex_common"): "BSD-3-Clause",
     ("dart", "dart_sdk_analyzer"): "BSD-3-Clause",
     ("dart", "dart_sdk_language_tests"): "BSD-3-Clause",
     ("haskell", "pandoc_writers"): "GPL-2.0-or-later",

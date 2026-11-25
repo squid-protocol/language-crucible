@@ -110,6 +110,17 @@
     "note": null
   },
   {
+    "category": "apex",
+    "repo": "fflib_apex_common",
+    "path": "data/apex/fflib_apex_common",
+    "files": 13,
+    "url": "https://github.com/apex-enterprise-patterns/fflib-apex-common",
+    "commit": "286d0d12b40f22b1cb41a5fb451d4a9dd690e11a",
+    "license": "BSD-3-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "assembly",
     "repo": "blst_generated_asm",
     "path": "data/assembly/blst_generated_asm",
@@ -320,6 +331,17 @@
   },
   {
     "category": "bms",
+    "repo": "carddemo_bms",
+    "path": "data/bms/carddemo_bms",
+    "files": 22,
+    "url": "https://github.com/aws-samples/aws-mainframe-modernization-carddemo",
+    "commit": "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "bms",
     "repo": "cbsa",
     "path": "data/bms/cbsa",
     "files": 12,
@@ -328,6 +350,17 @@
     "license": "EPL-2.0",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "bms",
+    "repo": "dbb_mortgage_bms",
+    "path": "data/bms/dbb_mortgage_bms",
+    "files": 3,
+    "url": "https://github.com/IBM/dbb",
+    "commit": "ce2c1be58eb049e000c6627bd8273263fef0c606",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "bms",
@@ -903,6 +936,17 @@
   },
   {
     "category": "db2_sql",
+    "repo": "carddemo_ddl",
+    "path": "data/db2_sql/carddemo_ddl",
+    "files": 7,
+    "url": "https://github.com/aws-samples/aws-mainframe-modernization-carddemo",
+    "commit": "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "db2_sql",
     "repo": "db2unit",
     "path": "data/db2_sql/db2unit",
     "files": 12,
@@ -1319,6 +1363,17 @@
     "license": "Apache License 2.0",
     "confidence": "exact",
     "note": "Terraform AWS VPC module and its examples: top-level `resource`, `variable`, `locals`, `output` and `module` blocks in 16 of 30 files; the rest are `versions.tf` / `outputs.tf` style files. Flattened names (examples_<dir>_<file>)."
+  },
+  {
+    "category": "hlasm",
+    "repo": "carddemo_hlasm",
+    "path": "data/hlasm/carddemo_hlasm",
+    "files": 3,
+    "url": "https://github.com/aws-samples/aws-mainframe-modernization-carddemo",
+    "commit": "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "hlasm",
@@ -2028,6 +2083,17 @@
   },
   {
     "category": "nix",
+    "repo": "angular_nix",
+    "path": "data/nix/angular_nix",
+    "files": 8,
+    "url": "https://github.com/angular/angular",
+    "commit": "9d76ac82290e047f1481fb38bd95233e951a77de",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "nix",
     "repo": "bun",
     "path": "data/nix/bun",
     "files": 4,
@@ -2289,6 +2355,17 @@
     "license": "MIT",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "pli",
+    "repo": "dsf_pli_more",
+    "path": "data/pli/dsf_pli_more",
+    "files": 13,
+    "url": "https://github.com/navikt/DSF",
+    "commit": "faade4961e316c89e8c312456bae411c63f1c482",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "pli",
@@ -2634,6 +2711,28 @@
   },
   {
     "category": "rexx",
+    "repo": "dbb_mortgage_rexx",
+    "path": "data/rexx/dbb_mortgage_rexx",
+    "files": 21,
+    "url": "https://github.com/IBM/dbb",
+    "commit": "ce2c1be58eb049e000c6627bd8273263fef0c606",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "rexx",
+    "repo": "genapp_rexx",
+    "path": "data/rexx/genapp_rexx",
+    "files": 3,
+    "url": "https://github.com/cicsdev/cics-genapp",
+    "commit": "63eca1b670d9199637bdc2ca7df6e4189a58c892",
+    "license": "Eclipse Public License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "rexx",
     "repo": "hercules_390_hyperion",
     "path": "data/rexx/hercules_390_hyperion",
     "files": 2,
@@ -2839,6 +2938,17 @@
     "commit": "afbc55a2ad3d98158c1cc8207be87936e3706c5a",
     "license": "MIT License",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "scheme",
+    "repo": "racket_scheme",
+    "path": "data/scheme/racket_scheme",
+    "files": 11,
+    "url": "https://github.com/racket/racket",
+    "commit": "afbc55a2ad3d98158c1cc8207be87936e3706c5a",
+    "license": "MIT License",
+    "confidence": "exact",
     "note": null
   },
   {
