@@ -69,17 +69,17 @@ This re-walks every `data/<language>/<repo>` folder, re-detects local licenses, 
 | `jcl` | 6 | 193 | 6 exact | Curated | [`data/jcl/SOURCES.md`](data/jcl/SOURCES.md) |
 | `json` | 2 | 5 | 1 pool-reference, 1 original | Audited | [`data/json/SOURCES.md`](data/json/SOURCES.md) |
 | `julia` | 1 | 31 | 1 exact | Audited | [`data/julia/SOURCES.md`](data/julia/SOURCES.md) |
-| `kotlin` | 1 | 7 | 1 pool-reference | Audited | [`data/kotlin/SOURCES.md`](data/kotlin/SOURCES.md) |
+| `kotlin` | 4 | 52 | 3 exact, 1 pool-reference | Audited | [`data/kotlin/SOURCES.md`](data/kotlin/SOURCES.md) |
 | `livecode` | 1 | 99 | 1 exact | Curated | [`data/livecode/SOURCES.md`](data/livecode/SOURCES.md) |
 | `lua` | 5 | 120 | 5 exact | Curated | [`data/lua/SOURCES.md`](data/lua/SOURCES.md) |
 | `m4` | 5 | 41 | 3 exact, 2 pool-reference | Audited | [`data/m4/SOURCES.md`](data/m4/SOURCES.md) |
-| `makefile` | 1 | 2 | 1 content-verified | Audited | [`data/makefile/SOURCES.md`](data/makefile/SOURCES.md) |
+| `makefile` | 3 | 20 | 2 exact, 1 content-verified | Audited | [`data/makefile/SOURCES.md`](data/makefile/SOURCES.md) |
 | `markdown` | 2 | 5 | 2 exact | Audited | [`data/markdown/SOURCES.md`](data/markdown/SOURCES.md) |
-| `matlab` | 1 | 9 | 1 pool-reference | Audited | [`data/matlab/SOURCES.md`](data/matlab/SOURCES.md) |
+| `matlab` | 3 | 33 | 2 exact, 1 pool-reference | Audited | [`data/matlab/SOURCES.md`](data/matlab/SOURCES.md) |
 | `mlir` | 1 | 4 | 1 pool-reference | Audited | [`data/mlir/SOURCES.md`](data/mlir/SOURCES.md) |
 | `nim` | 1 | 31 | 1 exact | Audited | [`data/nim/SOURCES.md`](data/nim/SOURCES.md) |
 | `nix` | 2 | 10 | 2 pool-reference | Audited | [`data/nix/SOURCES.md`](data/nix/SOURCES.md) |
-| `objective-c` | 1 | 7 | 1 pool-reference | Audited | [`data/objective-c/SOURCES.md`](data/objective-c/SOURCES.md) |
+| `objective-c` | 4 | 41 | 3 exact, 1 pool-reference | Audited | [`data/objective-c/SOURCES.md`](data/objective-c/SOURCES.md) |
 | `ocaml` | 1 | 31 | 1 exact | Audited | [`data/ocaml/SOURCES.md`](data/ocaml/SOURCES.md) |
 | `perl` | 5 | 31 | 1 exact, 1 content-verified, 3 pool-reference | Audited | [`data/perl/SOURCES.md`](data/perl/SOURCES.md) |
 | `php` | 7 | 44 | 2 exact, 1 content-verified, 4 pool-reference | Audited | [`data/php/SOURCES.md`](data/php/SOURCES.md) |

@@ -275,6 +275,18 @@ EXACT_PROVENANCE = {
     ("haskell", "pandoc_writers"): ("https://github.com/jgm/pandoc", "7777de6adb166d92b4c9ee4b24054637ab8477b7", "GNU GPL v2.0"),
     ("solidity", "openzeppelin_tokens"): ("https://github.com/OpenZeppelin/openzeppelin-contracts", "9cfdccd35350f7bcc585cf2ede08cd04e7f0ec10", "MIT License"),
     ("fortran", "wrf_physics"): ("https://github.com/wrf-model/WRF", "f15568ccc1447780e3bd664b9f0196edd784bf33", "Public Domain"),
+    # 2026-11-25 (tier 1, batch 1): broaden kotlin / matlab / makefile / objective-c. Copied verbatim from the pool clone at its HEAD;
+    # licenses read from each upstream's own license text.
+    ("kotlin", "retrofit_kotlin"): ("https://github.com/square/retrofit", "77e6ba21d9ba372d1b23ef29881912910da23347", "Apache License 2.0"),
+    ("kotlin", "spring_boot_kotlin"): ("https://github.com/spring-projects/spring-boot", "5cecd3922fce651f13d16a85d8a29efaa7f44cfd", "Apache License 2.0"),
+    ("kotlin", "gradle_kotlin"): ("https://github.com/gradle/gradle", "db62c2f2b404217cb6a7eef2598c6e84ab08fa27", "Apache License 2.0"),
+    ("matlab", "fieldtrip_core"): ("https://github.com/fieldtrip/fieldtrip", "2f3917526e6a01d37fbb224a02618f4fc61d47d9", "GNU GPL v3.0"),
+    ("matlab", "fieldtrip_plotting_utils"): ("https://github.com/fieldtrip/fieldtrip", "2f3917526e6a01d37fbb224a02618f4fc61d47d9", "GNU GPL v3.0"),
+    ("makefile", "micropython_make"): ("https://github.com/micropython/micropython", "2dc2e30d98ee225070e990586526f8e43b3c95a2", "MIT License"),
+    ("makefile", "cosmopolitan_build_mk"): ("https://github.com/jart/cosmopolitan", "eedf7d2db6e5ee0e228862690339c166a3f003a7", "ISC License"),
+    ("objective-c", "afnetworking"): ("https://github.com/AFNetworking/AFNetworking", "d9f589cc2c1fe9d55eb5eea00558010afea7a41e", "present but unrecognized (see file)"),
+    ("objective-c", "godot_ios"): ("https://github.com/godotengine/godot", "4a919adccf8e398aceca75399c539078c54fe97f", "present but unrecognized (see file)"),
+    ("objective-c", "tensorflow_lite_objc"): ("https://github.com/tensorflow/tensorflow", "c21c40c048e9b35d032d31ce41809c2cadeb8fca", "Apache License 2.0"),
     # 2026-11-25: broaden the thin categories (agc_assembly / abap / yacc / m4). Every file copied verbatim from the pool clone at the
     # commit shown (git HEAD of the clone); licenses read from each upstream's own license text. Permissive, public-domain and GPL only.
     ("agc_assembly", "apollo-11_comanche055_cm"): ("https://github.com/chrislgarry/Apollo-11", "247dd7d0d1b0e7f9f270750ec08983e0a72e73e1", "Public Domain"),
@@ -359,6 +371,9 @@ VERIFIED_LICENSE = {
     ("dart", "dart_sdk_analyzer"): "BSD-3-Clause",
     ("dart", "dart_sdk_language_tests"): "BSD-3-Clause",
     ("haskell", "pandoc_writers"): "GPL-2.0-or-later",
+    ("matlab", "fieldtrip_core"): "GPL-3.0-or-later",
+    ("objective-c", "afnetworking"): "MIT",
+    ("objective-c", "godot_ios"): "MIT",
     ("m4", "libffi_racket"): "MIT",
     ("m4", "nasm_autoconf_macros"): "BSD-2-Clause",
     ("m4", "gnupg_m4"): "GPL-3.0-or-later",
