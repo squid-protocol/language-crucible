@@ -259,6 +259,20 @@ EXACT_PROVENANCE = {
     ("r", "rlang_package"): ("https://github.com/r-lib/rlang", "b4a2a057ea67613cc13cdbaed9eb0c421400e96a", "MIT License"),
     ("postgresql", "pgvector_extension"): ("https://github.com/pgvector/pgvector", "305e756a31e467fb5741ec997882c0f623300dce", "PostgreSQL License"),
     ("postgresql", "pgvector_tests"): ("https://github.com/pgvector/pgvector", "305e756a31e467fb5741ec997882c0f623300dce", "PostgreSQL License"),
+    # 2026-11-25: broaden the thin categories (agc_assembly / abap / yacc / m4). Every file copied verbatim from the pool clone at the
+    # commit shown (git HEAD of the clone); licenses read from each upstream's own license text. Permissive, public-domain and GPL only.
+    ("agc_assembly", "apollo-11_comanche055_cm"): ("https://github.com/chrislgarry/Apollo-11", "247dd7d0d1b0e7f9f270750ec08983e0a72e73e1", "Public Domain"),
+    ("agc_assembly", "apollo-11_luminary099_lm"): ("https://github.com/chrislgarry/Apollo-11", "247dd7d0d1b0e7f9f270750ec08983e0a72e73e1", "Public Domain"),
+    ("abap", "abap2xlsx"): ("https://github.com/abap2xlsx/abap2xlsx", "f33b94c8efbe3f5228aa6bdb85ecedf25e0b5def", "Apache License 2.0"),
+    ("abap", "abapgit_ui_pages"): ("https://github.com/abapGit/abapGit", "951e2243efbf0dbbfb4978a4ffa182b77e2ee939", "MIT License"),
+    ("abap", "abapgit_objects_core"): ("https://github.com/abapGit/abapGit", "951e2243efbf0dbbfb4978a4ffa182b77e2ee939", "MIT License"),
+    ("yacc", "freebsd_yacc_lex"): ("https://github.com/freebsd/freebsd-src", "c70755bc0d8f703dbaa1520c15e8213a95847dd5", "BSD License"),
+    ("yacc", "sqlite_lemon"): ("https://github.com/sqlite/sqlite", "f270460366134e350ad6e1509957f812c9700d2b", "Public Domain"),
+    ("yacc", "prometheus_goyacc"): ("https://github.com/prometheus/prometheus", "cb3382314d63ed457279c9582cd6db63d0a06631", "Apache License 2.0"),
+    ("yacc", "gnucobol_cobc"): ("https://github.com/paulsmith/gnucobol", "d139d06201cf0aba9d143e0f675f446c19603b36", "GNU GPL v3.0"),
+    ("m4", "nasm_autoconf_macros"): ("https://github.com/netwide-assembler/nasm", "3cb6231581679a9ab1a8eeb0342375eb7002cebe", "BSD License"),
+    ("m4", "libffi_racket"): ("https://github.com/racket/racket", "afbc55a2ad3d98158c1cc8207be87936e3706c5a", "present but unrecognized (see file)"),
+    ("m4", "gnupg_m4"): ("https://github.com/gpg/gnupg", "9673bbc47bc006f360da6ce938c6ea682116c7e2", "GNU GPL v3.0"),
 }
 
 # Hand-corrected matches for generically-named repo folders (e.g. "core",
@@ -326,6 +340,10 @@ VERIFIED_LICENSE = {
     ("html", "polyglot_vscode"): "MIT",
     ("javascript", "jquery"): "MIT",
     ("m4", "curl"): "curl",
+    ("m4", "libffi_racket"): "MIT",
+    ("m4", "nasm_autoconf_macros"): "BSD-2-Clause",
+    ("m4", "gnupg_m4"): "GPL-3.0-or-later",
+    ("yacc", "gnucobol_cobc"): "GPL-3.0-or-later",
     ("perl", "bugzilla"): "MPL-2.0",
     ("perl", "mojo"): "Artistic-2.0",
     ("php", "magento2"): "OSL-3.0",
@@ -375,6 +393,7 @@ VERIFIED_LICENSE = {
 # files match the repository but no single commit holding all of them was
 # found, so the entry still has no commit.
 CONTENT_VERIFIED = {
+    ("agc_assembly", "apollo-11"): ("https://github.com/chrislgarry/Apollo-11", "247dd7d0d1b0e7f9f270750ec08983e0a72e73e1"),
     ("ada", "alire"): ("https://github.com/alire-project/alire", "9d87a3f09613dbb4300e8841af1da1cf4002b7eb"),
     ("ada", "functional"): ("https://github.com/abitofhelp/functional", "c1ff2600a58b24bf482ec1e44fb63c58c1b1e293"),
     ("cobol", "aws-mainframe-modernization-carddemo"): ("https://github.com/eclipse-che4z/che-che4z-lsp-for-cobol", "dd1133952579575082914476fa699667b8790e1d"),

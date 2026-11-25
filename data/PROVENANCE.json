@@ -1,6 +1,17 @@
 [
   {
     "category": "abap",
+    "repo": "abap2xlsx",
+    "path": "data/abap/abap2xlsx",
+    "files": 18,
+    "url": "https://github.com/abap2xlsx/abap2xlsx",
+    "commit": "f33b94c8efbe3f5228aa6bdb85ecedf25e0b5def",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "abap",
     "repo": "abapGit",
     "path": "data/abap/abapGit",
     "files": 9,
@@ -8,6 +19,28 @@
     "commit": "951e2243efbf0dbbfb4978a4ffa182b77e2ee939",
     "license": "MIT License (from pool clone's LICENSE, not found locally)",
     "confidence": "pool-reference",
+    "note": null
+  },
+  {
+    "category": "abap",
+    "repo": "abapgit_objects_core",
+    "path": "data/abap/abapgit_objects_core",
+    "files": 11,
+    "url": "https://github.com/abapGit/abapGit",
+    "commit": "951e2243efbf0dbbfb4978a4ffa182b77e2ee939",
+    "license": "MIT License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "abap",
+    "repo": "abapgit_ui_pages",
+    "path": "data/abap/abapgit_ui_pages",
+    "files": 11,
+    "url": "https://github.com/abapGit/abapGit",
+    "commit": "951e2243efbf0dbbfb4978a4ffa182b77e2ee939",
+    "license": "MIT License",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -40,7 +73,29 @@
     "url": "https://github.com/chrislgarry/Apollo-11",
     "commit": "247dd7d0d1b0e7f9f270750ec08983e0a72e73e1",
     "license": "Public Domain",
-    "confidence": "pool-reference",
+    "confidence": "content-verified",
+    "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "agc_assembly",
+    "repo": "apollo-11_comanche055_cm",
+    "path": "data/agc_assembly/apollo-11_comanche055_cm",
+    "files": 11,
+    "url": "https://github.com/chrislgarry/Apollo-11",
+    "commit": "247dd7d0d1b0e7f9f270750ec08983e0a72e73e1",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "agc_assembly",
+    "repo": "apollo-11_luminary099_lm",
+    "path": "data/agc_assembly/apollo-11_luminary099_lm",
+    "files": 13,
+    "url": "https://github.com/chrislgarry/Apollo-11",
+    "commit": "247dd7d0d1b0e7f9f270750ec08983e0a72e73e1",
+    "license": "Public Domain",
+    "confidence": "exact",
     "note": null
   },
   {
@@ -1675,6 +1730,39 @@
     "note": "1 deeper same-named git clone(s) also found (likely vendored copies within other projects, not used): /srv/storage_16tb/projects/gitgalaxy/data/corpus_cobol/gnucobol."
   },
   {
+    "category": "m4",
+    "repo": "gnupg_m4",
+    "path": "data/m4/gnupg_m4",
+    "files": 10,
+    "url": "https://github.com/gpg/gnupg",
+    "commit": "9673bbc47bc006f360da6ce938c6ea682116c7e2",
+    "license": "GPL-3.0-or-later",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "m4",
+    "repo": "libffi_racket",
+    "path": "data/m4/libffi_racket",
+    "files": 4,
+    "url": "https://github.com/racket/racket",
+    "commit": "afbc55a2ad3d98158c1cc8207be87936e3706c5a",
+    "license": "MIT",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "m4",
+    "repo": "nasm_autoconf_macros",
+    "path": "data/m4/nasm_autoconf_macros",
+    "files": 16,
+    "url": "https://github.com/netwide-assembler/nasm",
+    "commit": "3cb6231581679a9ab1a8eeb0342375eb7002cebe",
+    "license": "BSD-2-Clause",
+    "confidence": "exact",
+    "note": null
+  },
+  {
     "category": "makefile",
     "repo": "freebsd",
     "path": "data/makefile/freebsd",
@@ -3185,6 +3273,50 @@
     "license": "BSD License",
     "confidence": "content-verified",
     "note": "Verified by content on 2026-09-30: every file is identical, apart from line endings, to a file in this repository at this commit."
+  },
+  {
+    "category": "yacc",
+    "repo": "freebsd_yacc_lex",
+    "path": "data/yacc/freebsd_yacc_lex",
+    "files": 13,
+    "url": "https://github.com/freebsd/freebsd-src",
+    "commit": "c70755bc0d8f703dbaa1520c15e8213a95847dd5",
+    "license": "BSD License",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yacc",
+    "repo": "gnucobol_cobc",
+    "path": "data/yacc/gnucobol_cobc",
+    "files": 4,
+    "url": "https://github.com/paulsmith/gnucobol",
+    "commit": "d139d06201cf0aba9d143e0f675f446c19603b36",
+    "license": "GPL-3.0-or-later",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yacc",
+    "repo": "prometheus_goyacc",
+    "path": "data/yacc/prometheus_goyacc",
+    "files": 4,
+    "url": "https://github.com/prometheus/prometheus",
+    "commit": "cb3382314d63ed457279c9582cd6db63d0a06631",
+    "license": "Apache License 2.0",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "category": "yacc",
+    "repo": "sqlite_lemon",
+    "path": "data/yacc/sqlite_lemon",
+    "files": 3,
+    "url": "https://github.com/sqlite/sqlite",
+    "commit": "f270460366134e350ad6e1509957f812c9700d2b",
+    "license": "Public Domain",
+    "confidence": "exact",
+    "note": null
   },
   {
     "category": "yaml",
