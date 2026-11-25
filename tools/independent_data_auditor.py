@@ -259,6 +259,15 @@ EXACT_PROVENANCE = {
     ("r", "rlang_package"): ("https://github.com/r-lib/rlang", "b4a2a057ea67613cc13cdbaed9eb0c421400e96a", "MIT License"),
     ("postgresql", "pgvector_extension"): ("https://github.com/pgvector/pgvector", "305e756a31e467fb5741ec997882c0f623300dce", "PostgreSQL License"),
     ("postgresql", "pgvector_tests"): ("https://github.com/pgvector/pgvector", "305e756a31e467fb5741ec997882c0f623300dce", "PostgreSQL License"),
+    # 2026-11-25 (batch 4, pool expansion): haskell / solidity / fortran / swift were capped at one pool repo each, so new permissive upstreams were
+    # shallow-cloned into the pool (HEAD at clone time) and evenly sampled.
+    ("haskell", "xmonad_core"): ("https://github.com/xmonad/xmonad", "1ed7242e2b05dc1a5e2c88e7ef130288680e89c3", "BSD License"),
+    ("haskell", "aeson_core"): ("https://github.com/haskell/aeson", "aafea1f4c2d4dfb5a0f068fab50bf8254256f25f", "BSD License"),
+    ("solidity", "solady_utils"): ("https://github.com/Vectorized/solady", "258f67cc71e39cff307b726939ade17e9d8bcf5c", "MIT License"),
+    ("fortran", "stdlib_fortran"): ("https://github.com/fortran-lang/stdlib", "7a87e3e23f44fb9ec3b4532d22c2c101950e4a6b", "MIT License"),
+    ("fortran", "fpm_fortran"): ("https://github.com/fortran-lang/fpm", "ffe90aeea703820596bc58149f76f3c50a668819", "MIT License"),
+    ("swift", "swift_nio_core"): ("https://github.com/apple/swift-nio", "b003027fc38b649a43e9aad77c3d4e4a2c5b6997", "Apache License 2.0"),
+    ("swift", "swift_argument_parser"): ("https://github.com/apple/swift-argument-parser", "d225b6fe8aed45478d1e36e770bf269c5d48d3a9", "Apache License 2.0"),
     # 2026-11-25 (batch 3): legacy languages from burned estates first (CardDemo, DBB MortgageApplication, GenApp), then pli / apex / nix / scheme.
     ("bms", "carddemo_bms"): ("https://github.com/aws-samples/aws-mainframe-modernization-carddemo", "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e", "Apache License 2.0"),
     ("bms", "dbb_mortgage_bms"): ("https://github.com/IBM/dbb", "ce2c1be58eb049e000c6627bd8273263fef0c606", "Apache License 2.0"),
@@ -379,6 +388,8 @@ VERIFIED_LICENSE = {
     ("html", "polyglot_vscode"): "MIT",
     ("javascript", "jquery"): "MIT",
     ("m4", "curl"): "curl",
+    ("haskell", "xmonad_core"): "BSD-3-Clause",
+    ("haskell", "aeson_core"): "BSD-3-Clause",
     ("apex", "fflib_apex_common"): "BSD-3-Clause",
     ("dart", "dart_sdk_analyzer"): "BSD-3-Clause",
     ("dart", "dart_sdk_language_tests"): "BSD-3-Clause",
